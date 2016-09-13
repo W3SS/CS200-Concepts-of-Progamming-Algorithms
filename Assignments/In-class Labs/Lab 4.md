@@ -326,23 +326,23 @@ Otherwise, display a message that the mission was a failure.
 
 **Main Menu**
 
-![Main menu](cl4-mainmenu.png)
+![Main menu](images/cl4-mainmenu.png)
 
 **Mission parameter setup**
 
-![Setup](cl4-setup.png)
+![Setup](images/cl4-setup.png)
 
 **Mission start**
 
-![Mission start](cl4-mission.png)
+![Mission start](images/cl4-mission.png)
 
 **Mission success**
 
-![Success](cl4-missionsuccess.png)
+![Success](images/cl4-missionsuccess.png)
 
 **Mission failure**
 
-![Failure](cl4-missionfailed.png)
+![Failure](images/cl4-missionfailed.png)
 
 
 ---
