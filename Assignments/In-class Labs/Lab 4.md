@@ -23,6 +23,9 @@ adjust the supply levels, and display the status.
 
 Make sure to upload all your source files (.cpp) to the Dropbox.
 
+When you're uploading your source to the Dropbox, make sure
+to also leave a comment with the URL of your repository!
+
 **Add the name of all people in your team in the upload comments**.
 
 ---
@@ -202,6 +205,8 @@ the program quits when choosing 3. Continue after testing.
 
 ## Commit!
 
+![Octocat](https://s-media-cache-ak0.pinimg.com/736x/9d/4d/31/9d4d314ec7722d05541111a180e4e54b.jpg)
+
 On your project GitHub repository, upload your current version of the
 source file! (Check the [GitHub Instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/Extra/Intro%20to%20Source%20Control.md) document for help!)
 
@@ -238,10 +243,12 @@ If there are any logic errors, make sure you catch them before continuing.
 
 ## Commit!
 
+![Octocat](https://octodex.github.com/images/codercat.jpg)
+
 Time to update your changes on GitHub. You can use the **edit** feature
 and paste in your current code in order to store the changes.
 
-Also - time to switch the coder! Whoever has been watching should now
+Also - **time to switch the coder!** Whoever has been watching should now
 use GitHub to download the project and work on the code.
 
 
@@ -334,6 +341,13 @@ Use an if statement and look at **missionSuccess*. If it is true,
 display a message that the mission was a success.
 
 Otherwise, display a message that the mission was a failure.
+
+## Commit!
+
+Finally, make sure to commit your final version!
+
+When you're uploading your source to the Dropbox, make sure
+to also leave a comment with the URL of your repository!
 
 ---
 
