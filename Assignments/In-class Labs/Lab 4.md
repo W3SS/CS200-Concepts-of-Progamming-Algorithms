@@ -200,6 +200,12 @@ After putting in these placeholders and functionality, build and run the program
 Make sure that the placeholder labels show up when selecting 1 or 2, and make sure
 the program quits when choosing 3. Continue after testing.
 
+## Commit!
+
+On your project GitHub repository, upload your current version of the
+source file! (Check the [GitHub Instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/Extra/Intro%20to%20Source%20Control.md) document for help!)
+
+
 ## 3. Setting mission parameters
 
 ![Setup screenshot](images/cl4-setup.png)
@@ -229,6 +235,15 @@ the parameters, write them back out to the user with this code:
 
 Build and run, make sure what the user inputted is displayed properly.
 If there are any logic errors, make sure you catch them before continuing.
+
+## Commit!
+
+Time to update your changes on GitHub. You can use the **edit** feature
+and paste in your current code in order to store the changes.
+
+Also - time to switch the coder! Whoever has been watching should now
+use GitHub to download the project and work on the code.
+
 
 ## 4. Setting up the Simulation
 

@@ -134,6 +134,11 @@ If you're pair programming, it is time to switch and let the other person
 pull down the code and make changes!
 
 
+For your group project, you might also want to **zip** your entire 
+Visual Studio project file and upload that as well, so the other
+person doesn't have to spend time setting up Visual Studio!
+
+
 ### 5. Make changes to an existing source file
 
 When you open a source file on the GitHub web interface, there will be an
