@@ -155,3 +155,52 @@ amount in an array, and use a for loop to display each amount.
 would be useful, since the class could contain the 
 ingredient name and the measurement name.
 
+---
+
+## Optional: Make up credit
+
+![Screenshot](images/cl2-05.png)
+
+To earn back some points on this assignment, you can update the program to use a **while loop** and an **if statement** so that the program does not automatically close at the end, and allows the user to keep re-running the program without actually closing and re-opening the program.
+
+### Modifications:
+
+1. At the beginning of **int main()**, create a **boolean** variable named "isDone", and assign it the value of **false**.
+
+2. You are going to add a **while loop** that contains the *entire* original program, from *declaring the ingredients variables* to *getting a ratio* to *displaying the ingredient list*. The while loop's run condition is **while isDone is false**.
+
+Your original program should be contained *within* this new while loop's curly braces:
+
+    while ( condition ) 
+    { // beginning of while loop
+        // internal contents
+        
+        float tspBakingSoda;
+        
+        // ...etc...
+        
+        cout << ( ratio * eggs ) << " eggs" << endl;
+        
+    } // end of while loop
+
+At the **end of the while loop**, before the closing curly brace, you are going to add functionality to ask the user if they want to run the program again:
+
+1. Ask the user "Try another batch? (y/n): " (use cout)
+
+2. Create a temporary variable named **choice**, whose data type is a **character**.
+
+3. Have the user enter the value of **choice** with cin.
+
+4. Use an if statement to see if the value of **choice** is either 'n' or 'N' (they can enter either lower-case n or upper-case N). Within the if statement...
+
+    1. If the user has entered 'n' or 'N', set the **isDone** variable to true. This will keep the loop from executing again.
+
+5. You don't need to have an "else" statement for any other option; if they enter anything else, it will just loop the program again.
+
+### Notes
+
+Remember that chars are single-characters and you use single-quotes ' ' with them - so in your if statement, make sure you're checking for 'n' or 'N'.
+
+### Turn-In
+
+Re-submit your new program with these changes (and the original program corrected) to get full credit.
