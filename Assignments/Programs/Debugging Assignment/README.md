@@ -18,11 +18,11 @@ Once you're done fixing the different assignments, you will turn in each of the 
 
 ---
 
-# Debugging Tools
+# Part 1: Debugging Tools
 
 ---
 
-# Debugging
+# Part 2: Debugging
 
 These small programs contain common programming mistakes. It's your job to investigate these mistakes and correct them so that they perform the expected functionality!
 
