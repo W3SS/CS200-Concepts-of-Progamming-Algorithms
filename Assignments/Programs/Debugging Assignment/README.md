@@ -2,9 +2,7 @@
 
 ## Introduction
 
-This assignment will step you through using the debugging tools in Visual Studio and Code::Blocks.
-
-You will also have to solve some programming problems and figure out why they're not working as expected!
+Read the document on debugging and common programming mistakes. Afterward, use that document to try to fix the small programs in this document (or in the attached .zip).
 
 ## Turn-in
 
@@ -18,11 +16,7 @@ Once you're done fixing the different assignments, you will turn in each of the 
 
 ---
 
-# Part 1: Debugging Tools
-
----
-
-# Part 2: Debugging
+# Debug Me
 
 These small programs contain common programming mistakes. It's your job to investigate these mistakes and correct them so that they perform the expected functionality!
 
