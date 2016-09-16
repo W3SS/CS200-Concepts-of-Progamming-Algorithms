@@ -216,7 +216,7 @@ source file! (Check the [GitHub Instructions](https://github.com/Rachels-Courses
 ![Setup screenshot](images/cl4-setup.png)
 
 In the **Setup mission parameters** part of the program, you will
-ask the user to input four parameters:
+ask the user to input these parameters:
 
 1. Food grown per day
 2. Cleanup per person per day
