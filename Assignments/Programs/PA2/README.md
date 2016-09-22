@@ -119,7 +119,7 @@ Then, create a game loop that will keep looping while **done** is false. ( B )
 ## Next, each NPC (Non-Player Character) gets to move:
 
 1. Create a for loop that starts at 1 and ends at 3 (inclusive). Increment by 1 each time. ( F )
-	Within the loop:
+2. Within the loop:
 	1. You can reuse the variable **attackWho** for each of the NPC's choices.
 	Generate a random number for the NPC's decision like this:
 	attackWho = rand() % 4; // Between 0 and 3.
