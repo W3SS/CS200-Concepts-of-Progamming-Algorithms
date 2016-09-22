@@ -498,8 +498,296 @@ Here is some sample code:
 
 It might take some practice to get used to, so let's get to it!
 
-### Practice 2C: asdf
+### Practice 2C: Two arrays
+
+1. Declare an array of strings. Its name is **items** and its size is 3.
+2. Declare an array of floats. Its name is **prices** and its size is 3.
+3. Declare an integer named **arraySize**. Set it to 3.
+4. Declare an integer named **itemCount**. Set it to 0.
+5. Create a while loop... while the itemCount is less than the arraySize:
+	1. Display a message to the user: "Enter item name: " (cout)
+	2. Get the user's input and store it in **items** at the position **itemCount**. (cin)
+	3. Display a message to the user: "Ener price: "
+	4. Get the user's input ands tore it in the **prices** array at the position **itemCount**
+	5. Add 1 to **itemCount**
+6. Once that while loop is finished, declare a new integer variable named **counter** and initialize it to 0.
+7. Create a second while loop... while the counter is less than itemCount:
+	1. Display the item # (counter), and then the item name and item price.
+	Use the counter variable to access one item of the array.
+	2. Increment counter by 1.
+	
+In each case, the loop is written to access one element of the array at a time.
+The loop cycles 3 times, going from 0, 1, and 2, and allows us to access
+every element of the array through variables instead of manually
+adding things by hard-coding them.
+
+Sample output:
+
+	Enter item name: hamburger
+	Enter price: 5.99
+	Enter item name: burrito
+	Enter price: 3.99
+	Enter item name: churro
+	Enter price: 0.99
+
+	Item #0: hamburger, $5.99
+	Item #1: burrito, $3.99
+	Item #2: churro, $0.99
+
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string items[3];
+		float prices[3];
+		int arraySize = 3;
+		int itemCount = 0;
+		
+		while ( itemCount < arraySize )
+		{
+			cout << "Enter item name: ";
+			cin >> items[itemCount];
+			cout << "Enter price: ";
+			cin >> prices[itemCount];
+			itemCount++;
+		}
+		
+		cout << endl;
+		
+		int counter = 0;
+		while ( counter < itemCount )
+		{
+			cout << "Item #" << counter << ": " << items[counter] << ", $" << prices[counter] << endl;
+			counter++;
+		}
+		
+		return 0;
+	}
+
+</details>
+
+---
 
 ## Part 3: For-Loops
+
+For-loops are another type of loop. They generally will use integers (but can use other data types)
+and make it easy to specify a begin #, an end #, and some amount to change by each time - all within the
+same line of code.
+
+	for ( int i = 0; i < 10; i++ )
+	{
+		// ...
+	}
+	
+There are three sections within the ( ) of a for-loop:
+
+1. Declaring (and/or) initializing a counter variable.
+2. Specifying the condition for how long it will loop (similar to while loop)
+3. After the loop executes, this third part is executed: usually used to increment the counter variable.
+
+### Practice 3A. Iterating from 1 to 100
+
+Write a for-loop that begins at 1, ends at 100 (inclusive), and goes up by 5 each time.
+
+Within the loop, output the value of your counter.
+
+Sample output:
+
+	1 6 11 16 21 26 31 36 41 46 51 56 61 66 71 76 81 86 91 96 
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		for ( int i = 1; i <= 100; i += 5 )
+		{
+			cout << i << " ";
+		}
+		
+		return 0;
+	}
+</details>
+
+### Practice 3B. Iterating from 20 to 0
+
+Write a for-loop that begins at 20 and ends at 0 (exclusive), and goes down by 1 each time.
+
+Sample output:
+
+	20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		for ( int i = 20; i > 0; i-- )
+		{
+			cout << i << " ";
+		}
+		
+		return 0;
+	}
+</details>
+
+
+
+### Practice 3C. Using a for-loop with an array
+
+For the following code:
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string letters[5] = { "A", "B", "C", "D", "E" };
+		
+		return 0;
+	}
+
+Add a for loop that iterates over every element of the **letters** array
+and displays it to the screen.
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string letters[5] = { "A", "B", "C", "D", "E" };
+		
+		for ( int i = 0; i < 5; i++ )
+		{
+			cout << letters[i] << endl;
+		}
+		
+		return 0;
+	}
+</details>
+
+
+### Practice 3D. More for loops with an array
+
+Modify 2C to use two for-loops instead of two while-loops
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string items[3];
+		float prices[3];
+		int arraySize = 3;
+		int itemCount = 0;
+		
+		for ( itemCount = 0; itemCount < arraySize; itemCount++ )
+		{
+			cout << "Enter item name: ";
+			cin >> items[itemCount];
+			cout << "Enter price: ";
+			cin >> prices[itemCount];
+			itemCount++;
+		}
+		
+		cout << endl;
+		
+		for ( int counter = 0; counter < itemCount; counter++ )
+		{
+			cout << "Item #" << counter << ": " << items[counter] << ", $" << prices[counter] << endl;
+			counter++;
+		}
+		
+		return 0;
+	}
+</details>
+
+### Practice 3E. More loops with an array!
+
+For the following code:
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string cities[20];
+		int arraySize = 20;
+		cities[0] = "Lee's Summit";
+		cities[1] = "Raytown";
+		cities[2] = "Independence";
+		cities[3] = "Belton";
+		int itemCount = 4;
+		
+		return 0;
+	}
+
+Write a for-loop that iterates over all elements of the array that contain a value,
+displaying the value of each element.
+
+<details>
+	<summary><strong>
+		Program solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+
+	int main()
+	{
+		string cities[20];
+		int arraySize = 20;
+		cities[0] = "Lee's Summit";
+		cities[1] = "Raytown";
+		cities[2] = "Independence";
+		cities[3] = "Belton";
+		int itemCount = 4;
+		
+		for ( int i = 0; i < itemCount; i++ )
+		{
+			cout << cities[i] << endl;
+		}
+		
+		return 0;
+	}
+
+</details>
+
+
 
 ---
