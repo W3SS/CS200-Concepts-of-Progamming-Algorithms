@@ -97,7 +97,7 @@ which works similarly to how the player choses their attack. ( F )
 1. Seed the random number generator
 2. Create an **integer** variable named **round** and initialize it to 1.
 3. Create an array of integers called **HP**. It is size 4. ( A )
-4. Initialize all the HP to 100. (A)
+4. Initialize all the HP to 100. ( A )
 5. Create a **boolean** variable called **done** and initialize it to false. ( B )
 
 Then, create a game loop that will keep looping while **done** is false. ( B )
