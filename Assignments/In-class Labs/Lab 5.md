@@ -140,7 +140,7 @@ Sample output:
 
 	Enter your first name: Morris
 	Enter your last name: Rachel
-	Formatted: Rachel, Morris
+	Formatted: Morris, Rachel
 
 
 <details>
