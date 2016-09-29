@@ -28,8 +28,7 @@ to also leave a comment with the URL of your repository!
 
 **Add the name of all people in your team in the upload comments**.
 
-You can either combine all the practices in one source file,
-or create separate ones!
+Turn in as one source file.
 
 
 
