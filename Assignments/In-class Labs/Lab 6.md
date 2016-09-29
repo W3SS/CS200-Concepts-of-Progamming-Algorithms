@@ -74,7 +74,7 @@ Remember: arrays don't automatically keep track of how many elements they have, 
 
 Assign text to each room manually, to be similar to the map above. For the gray squares, you can fill out whatever text you'd like. You will assign text to each room like this:
 
-	room[0][2] = "Village Inn \n You could order some tasty pancakes here.";
+	rooms[0][2] = "Village Inn \n You could order some tasty pancakes here.";
 
 ## Test 1 (Temporary code)
 
