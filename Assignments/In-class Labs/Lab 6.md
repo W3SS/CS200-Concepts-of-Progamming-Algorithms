@@ -55,6 +55,14 @@ Then, you can generate a number between 0 and *n* (not-inclusive) with:
 	int randomNumber = rand() % n;
 ---
 
+## Review: Strings
+
+Make sure to include the string library, since we're using strings!
+
+	#include <string>
+
+---
+
 # Feature 1: An array of rooms
 
 We're going to create a grid of rooms that is 4 "rooms" wide and 3 "rooms" tall. It will look something like this: 
