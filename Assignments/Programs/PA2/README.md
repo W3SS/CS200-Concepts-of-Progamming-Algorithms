@@ -63,30 +63,30 @@ tackling the program:
 
 ## Iteration 1
 
-Create the array of HPs and initialize them. ( A )
+Create the array of HPs and initialize them. **( A )**
 
-Create your game's while loop (while not done). ( B )
+Create your game's while loop (while not done). **( B )**
 
 Within the game loop, just remove 5 from each player's HP automatically - no user menu or input or
 anything.
 
 Write the if statements to check to see if the player loses or wins,
-and make sure to stop the game loop in this case. ( C )
+and make sure to stop the game loop in this case. **( C )**
 
 Test to make sure your if statements work.
 
 ## Iteration 2
 
-Implement the main menu which allows the player to choose who to attack. ( D )
+Implement the main menu which allows the player to choose who to attack. **( D )**
 
-Adjust the chosen NPC's HP based on the player's input. ( E )
+Adjust the chosen NPC's HP based on the player's input. **( E )**
 
 Don't implement the NPC's attack choices.
 
 ## Iteration 3
 
 Create the for-loop within the game loop that lets each NPC choose who to attack,
-which works similarly to how the player choses their attack. ( F )
+which works similarly to how the player choses their attack. **( F )**
 
 ---
 
@@ -96,20 +96,20 @@ which works similarly to how the player choses their attack. ( F )
 
 1. Seed the random number generator
 2. Create an **integer** variable named **round** and initialize it to 1.
-3. Create an array of integers called **HP**. It is size 4. ( A )
-4. Initialize all the HP to 100. (A)
-5. Create a **boolean** variable called **done** and initialize it to false. ( B )
+3. Create an array of integers called **HP**. It is size 4. **( A )**
+4. Initialize all the HP to 100. **( A )**
+5. Create a **boolean** variable called **done** and initialize it to false. **( B )**
 
-Then, create a game loop that will keep looping while **done** is false. ( B )
+Then, create a game loop that will keep looping while **done** is false. **( B )**
 
 ## Within the game loop:
 
-1. Display the stats screen: ( D )
+1. Display the stats screen: **( D )**
 	1. Display the round #
 	2. Display all the players' HP with a for-loop
 	3. Ask the user who they want to attack
 
-2. Write code to have the player attack: ( E )
+2. Write code to have the player attack: **( E )**
 	2. Create a variable called **attackWho**, which is an integer. 
 	3. Have the user input their choice and store it in **attackWho**. 
 	4. After the player has selected, display a message: 
@@ -118,8 +118,8 @@ Then, create a game loop that will keep looping while **done** is false. ( B )
 
 ## Next, each NPC (Non-Player Character) gets to move:
 
-1. Create a for loop that starts at 1 and ends at 3 (inclusive). Increment by 1 each time. ( F )
-	Within the loop:
+1. Create a for loop that starts at 1 and ends at 3 (inclusive). Increment by 1 each time. **( F )**
+2. Within the loop:
 	1. You can reuse the variable **attackWho** for each of the NPC's choices.
 	Generate a random number for the NPC's decision like this:
 	attackWho = rand() % 4; // Between 0 and 3.
@@ -133,11 +133,11 @@ Then, create a game loop that will keep looping while **done** is false. ( B )
 After each NPC moves, you will want to check to see if any of the win/lose
 conditions have been met:
 
-1. If player HP is less than or equal to 0...  ( C )
+1. If player HP is less than or equal to 0...  **( C )**
 	2. Display "You lose"
 	3. Set **done** to true.
 
-2. Otherwise, if player1's HP is <= 0, and player2's HP is <= 0, and player3's HP is <= 0... ( C )
+2. Otherwise, if player1's HP is <= 0, and player2's HP is <= 0, and player3's HP is <= 0... **( C )**
 	1. Display "You win!"
 	2. Set **done** to true.
 

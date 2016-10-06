@@ -140,7 +140,7 @@ Sample output:
 
 	Enter your first name: Morris
 	Enter your last name: Rachel
-	Formatted: Rachel, Morris
+	Formatted: Morris, Rachel
 
 
 <details>
@@ -210,18 +210,16 @@ And it generates this file:
 	
 	int main()
 	{
-		string firstName, lastName;
+		string note, filename;
+		cout << "Enter a filename: ";
+		cin >> filename;
+		cin.ignore();
 	
-		cout << "Enter your first name: ";
-		cin >> firstName;
+		cout << "Enter a note: ";
+		getline(cin, note);
 	
-		cout << "Enter your last name: ";
-		cin >> lastName;
-	
-		string formattedName;
-		formattedName = lastName + ", " + firstName;
-	
-		cout << "Formatted: " << formattedName << endl;
+		string command = "echo \"" + note + "\" > " + filename;
+		system(command.c_str());
 	
 		return 0;
 	}
