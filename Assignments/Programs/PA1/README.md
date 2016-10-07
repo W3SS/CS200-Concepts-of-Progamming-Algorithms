@@ -168,7 +168,7 @@ Display the current value of **m_balance**.
 	</tr>
 	
 	<tr>
-		<td> 10% </td>
+		<td> 5% </td>
 		<td> ViewBalance() </td>
 		<td> Display the value of m_balance with label. </td>
 	</tr>
