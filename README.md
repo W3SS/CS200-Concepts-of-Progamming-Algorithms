@@ -59,6 +59,11 @@ Upon successful completion of this course, the student should be able to:
 * Utilizing Visual Studio and/or Code::Blocks' debugging tools
 * GitHub and introductory source control
 
+### Cultural
+
+* Notable (lesser-known) people in Computer Science
+* Challenges that the industry face
+
 ### Miscellaneous
 
 * Hardware
