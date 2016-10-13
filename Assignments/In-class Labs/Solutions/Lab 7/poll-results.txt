@@ -1,0 +1,3 @@
+cats: 4
+dogs: 1
+ferrets: 2
