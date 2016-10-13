@@ -320,6 +320,10 @@ Inside the while loop, use the **find()** function on the lineOfText
 to search for the **searchFor** string. If it is found,
 display the line # and the string of text.
 
+Back in **main**, update it to ask the user what to search for.
+Store their answer in a string. You will also pass this string into
+the **SearchFile** function as the 2nd argument.
+
 ![Screenshot](images/cl7-06.png)
 
 <details>
@@ -371,6 +375,230 @@ display the line # and the string of text.
 ---
 
 # Program 4: Randomly generated poetry
+
+Create two text files for this one. Add as many words as you want to these files!
+
+nouns.txt:
+
+	roses
+	violets
+	sugars
+	cats
+	dogs
+	pizzas
+	computers
+	robots
+	dinosaurs
+
+adjectives.txt:
+
+	red
+	blue
+	sweet
+	gigantic
+	electronic
+	tasty
+	friendly
+	cute
+
+We will need three functions for this program:
+
+* LoadNouns
+	* return type: void
+	* parameters:
+		* string array of nouns, size 100
+		* integer nounCount, passed by reference
+* LoadAdjectives
+	* return type: void
+	* parameters:
+		* string array of adjectives, size 100
+		* integer adjectiveCount, passed by reference
+* GeneratePoem
+	* return type: string
+	* parameters:
+		* string array of nouns, size 100
+		* integer nounCount, passed by reference
+		* string array of adjectives, size 100
+		* integer adjectiveCount, passed by reference
+
+When something is "passed by reference", this means we want to be able
+to change its value within the function. Normally, non-array variables
+are passed *by value* by default, so a *copy* is made of that variable
+when the function is called, and the changes don't get "saved" back
+at the caller's level.
+
+Your function definitions should look like this:
+
+	void LoadNouns( string nouns[100], int & nounCount )
+	{
+	}
+
+	void LoadAdjectives( string adjectives[100], int & adjectiveCount )
+	{
+	}
+
+	string GeneratePoem( string nouns[100], int nounCount, string adjectives[100], int adjectiveCount )
+	{
+	}
+
+### main:
+
+First, within main, seed a random number generator:
+
+	srand( time( NULL ) );
+
+(You will need to include cstdlib and ctime libraries!)
+
+	#include <cstdlib>
+	#include <ctime>
+
+Then, create some variables:
+
+* a string array of nouns, size 100
+* an integer called nounCount
+* a string array of adjectives, size 100
+* an integer called adjectiveCount
+
+Call the **LoadNouns** function, passing in your noun array and nounCount,
+followed by a call to **LoadAdjectives**, passing in the adjective array and adjectiveCount.
+
+Afterwards, create a **string variable** called **poem**.
+Call the **GeneratePoem** function, and assign its return value to your poem variable.
+
+Finally, use **cout** to display the random poem to the screen.
+
+### Load Nouns:
+
+1. Create an **ifstream** variable and load in the *nouns.txt* file.
+2. Initialize the **nounCount** parameter to 0.
+3. Create a string buffer.
+4. While we are getting input from the ifstream variable, into the string buffer...
+	5. Copy the contents from the buffer into the array at the proper position.
+	( nouns[ nounCount ] = buffer; )
+	6. Increment the nounCount by 1.
+5. After the array is done, close the ifstream variable.
+
+Your LoadAdjectives function will be almost the same, but with different variables!
+
+### Generate Poem:
+
+We are going to copy the format of
+
+	roses are red,
+	violets are blue,
+	sugar is sweet,
+	and so are you!
+
+So instead, we'll do something like:
+
+	random-nouns are random-adjective,
+	random-nouns are random-adjective,
+	random-nouns are random-adjective,
+	and so are you!
+
+Start off by creating a local string variable called **poem**. Initialize it to an empty string.
+
+Build one line of the poem at a time. Remember that the amount of elements in the noun array
+is between 0 and *nounCount*. You can get a random noun index through rand():
+
+	int randomNoun = rand() % nounCount;
+
+Then, you can access the *string* (the noun itself) with:
+
+	nouns[ randomNoun ]
+
+so you'll be building the poem line by line:
+
+	int randomNoun = rand() % nounCount;
+	int randomAdj = rand() % adjectiveCount;
+
+	poem += nouns[ randomNoun ] + " are " + adjectives[ randomAdj ] + ", \n";
+
+...and so on.
+
+
+![Screenshot](images/cl7-07.png)
+
+<details>
+	<summary><strong>
+		A solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	#include <cstdlib>
+	#include <ctime>
+	using namespace std;
+
+	void LoadNouns( string nouns[100], int & nounCount )
+	{
+		ifstream input( "nouns.txt" );
+	
+		nounCount = 0;
+	
+		string buffer;
+		while ( input >> buffer )
+		{
+			nouns[ nounCount ] = buffer;
+			nounCount++;
+		}
+	
+		input.close();
+	}
+
+	void LoadAdjectives( string adjectives[100], int & adjectiveCount )
+	{
+		ifstream input( "adjectives.txt" );
+	
+		adjectiveCount = 0;
+	
+		string buffer;
+		while ( input >> buffer )
+		{
+			adjectives[ adjectiveCount ] = buffer;
+			adjectiveCount++;
+		}
+	
+		input.close();
+	}
+
+	string GeneratePoem( string nouns[100], int nounCount, string adjectives[100], int adjectiveCount )
+	{
+		string poem = 	nouns[ rand() % nounCount ] + " are " +
+						adjectives[ rand() % adjectiveCount ] + ", \n" +
+						nouns[ rand() % nounCount ] + " are " +
+						adjectives[ rand() % adjectiveCount ] + ", \n" +
+						nouns[ rand() % nounCount ] + " are " +
+						adjectives[ rand() % adjectiveCount ] + ", \n" +
+						"and so are you!";
+		return poem;
+	}
+
+
+	int main()
+	{
+		srand( time( NULL ) );
+	
+		string nouns[100];
+		int nounCount;
+		string adjectives[100];
+		int adjectiveCount;
+	
+		LoadNouns( nouns, nounCount );
+		LoadAdjectives( adjectives, adjectiveCount );
+	
+		string poem = GeneratePoem( nouns, nounCount, adjectives, adjectiveCount );
+	
+		cout << "RANDOM POEM:" << endl;
+		cout << poem << endl;
+	
+		return 0;
+	}
+
+
+
+</details>
 
 ---
 
