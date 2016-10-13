@@ -182,6 +182,7 @@ Make sure to close the file once you're finished.
 
 </details>
 
+---
 
 # Program 2: Read all contents from a file
 
@@ -257,6 +258,8 @@ After the while loop, make sure to close the input file:
 	input.close();
 
 
+![Screenshot](images/cl7-02.png)
+
 <details>
 	<summary><strong>
 		A solution
@@ -291,11 +294,287 @@ After the while loop, make sure to close the input file:
 
 </details>
 
-# Program : Save and load a list of courses
+---
 
-# Program : Search a text document
+# Program 3: Search a text document
 
-# Program : Randomly generated poetry
+We will use the *fable.txt* file in this project again. You can modify
+the previous program, but make this a new program - you will turn them in
+as separate projects.
+
+Change your **ReadFile** function to **SearchFile**. Its parameter list
+should have:
+
+* filename (string)
+* searchFor (string)
+
+Inside the function, add a new integer variable called **lineCount**
+and initialize it to 0. Inside the while loop, increment lineCount
+at the end of every cycle.
+
+Instead of displaying each line of text to the screen with cout,
+you will remove that line and only display lines that have the
+item being searched for.
+
+Inside the while loop, use the **find()** function on the lineOfText
+to search for the **searchFor** string. If it is found,
+display the line # and the string of text.
+
+![Screenshot](images/cl7-06.png)
+
+<details>
+	<summary><strong>
+		A solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	using namespace std;
+
+	void SearchFile( string filename, string searchFor )
+	{
+		ifstream input;
+		input.open( filename );
+		
+		string lineOfText;
+		
+		int lineCount = 0;
+		while ( getline( input, lineOfText ) )
+		{		
+			if ( lineOfText.find( searchFor ) != string::npos )
+			{
+				cout << "FOUND AT LINE " << lineCount << ": " << lineOfText << endl << endl;
+			}
+			
+			lineCount++;
+		}
+		
+		input.close();
+	}
+
+	int main()
+	{
+		string searchFor;
+		cout << "Search for what? ";
+		cin >> searchFor;
+		
+		SearchFile( "fable.txt", searchFor );
+		
+		return 0;
+	}
+
+
+</details>
+
+
+---
+
+# Program 4: Randomly generated poetry
+
+---
+
+# Program 5: Save and load a list of courses
+
+Create a text file of courses that contains the following:
+
+	CS134
+	CS200
+	CS201
+	CS205
+	CS210
+	CS211
+	CS225
+	CS235
+	CS236
+	CS250
+	CS255
+
+Remember that the text file needs to go in the same directory as the
+source files!
+
+Create two functions in your program:
+
+1. LoadClasses
+	1. Return type: int
+	2. Parameters:
+		1. A string array of classes, of size 100.
+2. SaveClasses
+	1. Return type: void
+	2. Parameters:
+		1. A string array of classes, of size 100.
+		2. An integer of the class count.
+		
+Your function signatures should look like this:
+
+	int LoadClasses( string classes[100] )
+	{
+	}
+
+	void SaveClasses( string classes[100], int classCount )
+	{
+	}
+	
+Remember that when we have arrays as function parameters, they are passed
+*by reference* automatically, so we can make changes to the array
+and those changes will be preserved at the caller-level (in our case,
+we will eventually call it from main.)
+
+
+### main:
+
+Copy this code into main:
+
+	int main()
+	{
+		string classes[100];
+		int classCount = LoadClasses( classes );
+		
+		for ( int i = 0; i < classCount; i++ )
+		{
+			cout << i << ". " << classes[i] << endl;
+		}
+		
+		cout << "Edit which class? ";
+		int edit;
+		cin >> edit;
+		
+		cout << "New class name? ";
+		cin >> classes[edit];
+		
+		SaveClasses( classes, classCount );
+		
+		return 0;
+	}
+
+We are creating an array of strings to store class names. We don't know
+how many classes are in the text file, so we're high-balling it with 
+a size of 100.
+
+We also need to keep track of the actual *classCount*, because we could have
+anywhere between 0 and 100 items in our list.
+
+The **LoadClasses** function is called, and it will return the amount of
+classes loaded in, so we need to store this in a variable, so we are storing
+it in **classCount**.
+
+Next, we have a for-loop to display all of the courses and their index # in the array.
+
+We ask the user what class they want to edit, and then what they want to change
+the course's name to.
+
+Afterward, we call **SaveClasses** to save the changes. We pass in the
+array of classes *and* the classCount, because otherwise it wouldn't know
+how many items to output.
+
+### LoadClasses function:
+
+1. Create an **ifstream** object and open the *courses.txt* file (or whatever you saved it as.)
+2. Create an integer variable to count how many courses are loaded in from the text file. Initialize it to 0.
+3. Create a string "buffer" variable to store class names into before we store them in the array.
+4. Create a while-loop that will continue looping while we're getting input from the **input** ifstream variable and storing it
+	in the **buffer** string variable.
+	
+In the loop, the buffer variable is storing the current class read in at this point. You will need to store it into the array.
+You can save it at the correct position by using your *counter* integer variable.
+
+For example:
+
+	classes[counter] = buffer;
+	counter++;
+
+After the loop is finished, make sure to **close** the ifstream object,
+and then **return** the counter variable.
+
+### SaveClasses function:
+
+1. Create an **ofstream** object and open the *courses.txt* file.
+2. Use a for-loop to iterate through every element of the array: from 0 to the classCount.
+	1. Within the loop, output the class at the current position (for example, classes[i]).
+	Make sure you're outputting it to your ofstream, *not* your cout.
+3. After the loop is done, make sure to close your ofstream object.
+
+Solution is below if you need additional help.
+
+#### Screenshots
+
+Original text file:
+
+![Original text file](images/cl7-03.png)
+
+Program run:
+
+![Program run](images/cl7-04.png)
+
+New text file:
+
+![New text file](images/cl7-05.png)
+
+<details>
+	<summary><strong>
+		A solution
+	</strong></summary>
+
+	#include <iostream>
+	#include <fstream>
+	#include <string>
+	using namespace std;
+
+	int LoadClasses( string classes[100] )
+	{
+		ifstream input( "courses.txt" );
+		
+		int index = 0;
+		string buffer;
+		
+		while ( input >> buffer )
+		{
+			classes[index] = buffer;
+			index++;
+		}
+		
+		input.close();
+		
+		return index;
+	}
+
+	void SaveClasses( string classes[100], int classCount )
+	{
+		ofstream output( "courses.txt" );
+		
+		for ( int i = 0; i < classCount; i++ )
+		{
+			output << classes[i] << endl;
+		}
+		
+		output.close();
+	}
+
+	int main()
+	{
+		string classes[100];
+		int classCount = LoadClasses( classes );
+		
+		for ( int i = 0; i < classCount; i++ )
+		{
+			cout << i << ". " << classes[i] << endl;
+		}
+		
+		cout << "Edit which class? ";
+		int edit;
+		cin >> edit;
+		
+		cout << "New class name? ";
+		cin >> classes[edit];
+		
+		SaveClasses( classes, classCount );
+		
+		return 0;
+	}
+
+
+</details>
+
 
 
 
