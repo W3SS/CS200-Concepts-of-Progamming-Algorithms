@@ -69,6 +69,8 @@ Our Book object will contain these two enumerations to keep track of each Book's
 
 ## Struct: Book
 
+![Cute](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Artwork/Cuties/book-cute.png?raw=true)
+
 Our Book struct will contain the title, author, and purchase and reading status.
 The struct declaration will also be above main, but below the enumeration declarations.
 
@@ -219,6 +221,8 @@ Make sure to commit your changes to your project repository before continuing! :
 ---
 
 # Iteration 2: Array of Books
+
+![Cute books](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Artwork/Cuties/books.png?raw=true)
 
 Now we're going to start dealing with an array of books, as well as starting a simple menu system.
 Rather than storing a lot of logic in main(), let's create functions to distribute all
@@ -411,12 +415,19 @@ Test the program and make sure to backup your work before continuing!
 
 ---
 
-# Iteration 3: Saving and loading data to the text file
+# Iteration 3: Book stats
+
+![Books being ranked](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Artwork/Cuties/books-ranking.png?raw=true)
+
+
 
 ---
 
+# Iteration 4: Saving and loading data to the text file
 
-# Iteration 4: Book stats
+
+
+---
 
 ---
 
