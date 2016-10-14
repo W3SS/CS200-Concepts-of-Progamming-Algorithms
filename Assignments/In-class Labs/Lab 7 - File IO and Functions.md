@@ -417,9 +417,9 @@ We will need three functions for this program:
 	* return type: string
 	* parameters:
 		* string array of nouns, size 100
-		* integer nounCount, passed by reference
+		* integer nounCount
 		* string array of adjectives, size 100
-		* integer adjectiveCount, passed by reference
+		* integer adjectiveCount
 
 When something is "passed by reference", this means we want to be able
 to change its value within the function. Normally, non-array variables
