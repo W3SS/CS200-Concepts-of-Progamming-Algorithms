@@ -419,103 +419,257 @@ Test the program and make sure to backup your work before continuing!
 
 ![Books being ranked](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Artwork/Cuties/books-ranking.png?raw=true)
 
+We are going to add a feature to the program so that the user can see
+stats on their books - how many are finished, currently reading, and 
+"unstarted".
 
+## DisplayStats
+
+* Return type: void
+* Parameters:
+	* Book array of size 100 (named books)
+	* bookCount, an integer
+
+Within this function, create three temporary integer variables:
+
+* totalFinished
+* totalReading
+* totalUnstarted
+
+Initialize each of these to 0.
+
+Create a for loop to go through each of the books and look at their
+status. If the status is FINISHED, add 1 to the totalFinished. If the status is NOT_STARTED, add 1 to totalUnstarted. If the status is READING, then add 1 to the totalReading.
+
+After you're done computing the information, display it to the user with some cout statements.
+
+## Test and backup
+
+* Add several books with the different statuses
+* Call DisplayStats to make sure it is accurate and works properly.
 
 ---
 
-# Iteration 4: Saving and loading data to the text file
+# Iteration 4: Saving book data to a text file
 
+Now that we have the core functionality, we will want to save our
+book list to a file so that we don't have to keep entering books in
+every time we run the program.
 
+## SaveList
+
+* Return type: void
+* Parameters:
+	* Book array, size 100
+	* bookCount, an integer passed by reference
+
+The book text file will need to follow a specific format so that,
+when we read the file back in, we can easily write a **parser** to
+deal with the data.
+
+The format of the file will look like this:
+
+	BOOK_0
+	Harry Potter and the Sorcerer's Stone
+	J K Rowling
+	1
+	0
+	BOOK_1
+	Refactoring
+	Martin Fowler
+	2
+	1
+
+The output will always be in the order:
+
+1. BOOK_number - the marker that we're loading in a new book.
+2. Title
+3. Author
+4. Purchase Status
+5. Reading Status
+
+In your SaveList function, do the following:
+
+1. Create an **ofstream** object named output.
+2. Use the open() function of output to open "booklist.txt".
+3. Create a for loop. For each of the books in the array...
+	1. output "BOOK_" and then the current index (from the for loop) on its own line
+	2. output the book's title on its own line
+	3. output the book's author on its own line
+	4. output the book's purchase status on its own line
+	5. output the book's reading status on its own line 
+4. Close the output.
+
+Make sure to call this function before the program quits - before the return 0 in main().
+
+## Test and backup
+
+Test your program by adding several books and then quitting.
+
+Open your project folder, where your source code is stored, and look for
+*booklist.txt*. Its contents should look similar to:
+
+	BOOK_0
+	Harry Potter and the Sorcerer's Stone
+	J K Rowling
+	0
+	2
+	BOOK_1
+	Harry Potter and the Chamber of Secrets
+	J K Rowling
+	0
+	2
+	BOOK_2
+	City of Ladies
+	Christine de Pizan
+	0
+	1
+	BOOK_3
+	Hitchhiker's Guide to the Galaxy
+	Douglas Adams
+	1
+	0
+
+It might not be pretty, but it's for the computer to read - not the humans. :)
 
 ---
 
+# Iteration 5: Loading book data from text file
+
+Next, when our program starts up, we will be loading in the book data
+from the text file, so that each time we run it, we don't have to add
+books manually.
+
+## LoadList
+
+* Return type: void
+* Parameters:
+	* Book array, size 100
+	* bookCount, an integer passed by reference
+
+Do the following...
+
+1. Create an **ifstream** object called input.
+2. Use the open() function on input to load in the "booklist.txt" file.
+3. Initialize **bookCount** to 0.
+3. Create four temporary string variables: **title**, **status**, **author**, and **buffer**.
+4. Create two temporary integer variables: **rstatus**, **pstatus**.
+5. Create a while loop that will continue looping while we are able to get text from **input** and store it into the **buffer**...:
+
+	while ( input >> buffer )
+	{
+	}
+
+Within the while loop, it will need to load everything in a specific order.
+
+1. Use **input.ignore();** to flush the buffer.
+2. Use **getline** on the input, store the line of text in title.
+	getline( input, title );
+3. Use **getline** on the input, store the line of text in the author.
+4. Use **input >>** to store the next value in the pstatus.
+5. Use **input >>** to store the next value in the rstatus.
+
+
+This is loading each line of text from the file. After we've read in
+the data into *temporary variables*, we need to set up the data
+in the actual Book element.
+
+We will be accessing one book at a time through the book array.
+You can access the current book with:
+
+	books[ bookCount ]
+
+and after you're done adding one book, you will increment the bookCount:
+
+	bookCount++;
+
+This will all go within the while loop.
+
+* At the current book (books[ bookCount]), set its title to the temporary **title** variable.
+* At the current book, set its author to the temporary **author** variable.
+* At the current book, set its **purchaseStatus** equal to the **pstatus** variable - you will have to cast it to a PurchaseStatus. See below.
+* At the current book, set its **readingStatus** equal to **rstatus**, cast to a ReadingStatus.
+* Increment bookCount by 1.
+
+To cast an integer variable (such as pstatus) to an enum, you will use the
+enum's name within parenthesis before the integer variable.
+
+To store the book's purchaseStatus, it would look like this:
+
+	books[ bookCount ].purchaseStatus = (PurchaseStatus)pstatus;
+
+Outside of the while loop, at the end of the **LoadList** function, make sure to close the input.
+
+Call the function in main(), before you call the MainMenu function. 
+
+## Test and backup
+
+Build and test the program. Make sure that the books you added *last time* you ran the program have been loaded in and are available to view and update.
+
+Add several books, save and quit, then open the program again to make sure all your changes were saved.
+
 ---
 
-# Iteration 5: CSV files
+# Iteration 6: CSV files
+
+Finally, we're going to create some functions to output book data to a CSV file. .csv files can be opened in Excel, and are presented in a spreadsheet format, but are just stored as plain text.
+
+## ExportCsv
+
+* Return type: void
+* Parameters:
+	* Book array, size 100
+	* bookCount, integer
+
+
+Here, you will create an **ofstream** file and open the file "booklist.csv".
+
+The first line of this CSV file should be the header of each column:
+TITLE, then AUTHOR, then READING?, then OWNED?
+
+All lines after the first line will contain the data - one row per book.
+
+Your function will look like this:
+
+	void ExportCsv( Book books[100], int & bookCount )
+	{
+		ofstream output( "booklist.csv" );
+	
+		output << "TITLE,AUTHOR,READING?,OWNED?" << endl;
+	
+		for ( int i = 0; i < bookCount; i++ )
+		{
+			output << books[i].title << ","
+	            << books[i].author << ","
+	            << books[i].readingStatus << ","
+	            << books[i].purchaseStatus << ","
+	            << endl;
+		}
+	
+		output.close();
+	}
+
+## ExportUnfinishedBooks
+
+* Return type: void
+* Parameters:
+	* Book array, size 100
+	* bookCount, integer
+
+Similar to the other CSV file, this will also output the same data, but **only if the book is set as NOT_STARTED or READING**.
+
+Using the functionality from the **ExportCsv** function, create this new function, but modify it.
+
+While looping through all the books, check the readingStatus of the book:
+If it is NOT_STARTED or READING, output the book information to the file.
+Otherwise, skip that book.
+
+Make sure to add function calls to both of these functions from your MainMenu.
+
+## Test and backup
+
+Open the program, and call both export functions. Check the directory that your code is in to make sure the .csv files are generated. Open each of them to make sure they appear correct.  
 
 ---
 
 # Grading Rubric
-
-<table>
-	<tr>
-		<th>Percentage</th>
-		<th>Feature</th>
-		<th>Description</th>
-	</tr>
-	
-	<tr>
-		<td> 5% </td>
-		<td> Code compiles </td>
-		<td> Code should build! How are you even testing if you can't build it? </td>
-	</tr>
-	
-	<tr>
-		<td> 5% </td>
-		<td> Clean code </td>
-		<td> Code is easy to read, consistently indented, descriptive variable names used. </td>
-	</tr>
-	
-	<tr>
-		<td> 15% </td>
-		<td> HP array is being declared and initialized correctly </td>
-		<td> Declaring the array, initializing each element of the array to 100 </td>
-	</tr>
-	
-	<tr>
-		<td> 10% </td>
-		<td> Game loop (while loop) implemented and will eventually end </td>
-		<td> Creating a game loop so the game continues until the player either wins or loses </td>
-	</tr>
-	
-	<tr>
-		<td> 10% </td>
-		<td> Correct if statement check to see if player wins </td>
-		<td> Properly checking to see if the player has won </td>
-	</tr>
-	
-	<tr>
-		<td> 10% </td>
-		<td> "Correct if statement check to see if player loses
-(requires using &&)"
- </td>
-		<td> Proper logic to see if player has lost </td>
-	</tr>
-	
-	<tr>
-		<td> 5% </td>
-		<td> Displays the round menu and options menu for player
- </td>
-		<td> Display the main menu each cycle of the game loop </td>
-	</tr>
-	
-	<tr>
-		<td> 5% </td>
-		<td> Gets the user’s input properly
- </td>
-		<td> Get the user's input </td>
-	</tr>
-	
-	<tr>
-		<td> 10% </td>
-		<td> Character is attacked based on player’s input
- </td>
-		<td> Accessing the appropriate element of the array and updating it, based on the user's input. </td>
-	</tr>
-	
-	<tr>
-		<td> 15% </td>
-		<td> For-loop iterates through all NPCs properly (not the player)
- </td>
-		<td> Access each element of the array, except for the player character. </td>
-	</tr>
-	
-	<tr>
-		<td> 10% </td>
-		<td> Each NPC is able to attack correctly
- </td>
-		<td> Attacks are done correctly - accessing the correct element. </td>
-	</tr>
-	
-
-</table>
