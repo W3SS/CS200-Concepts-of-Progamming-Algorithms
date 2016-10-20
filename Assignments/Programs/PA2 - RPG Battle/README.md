@@ -31,6 +31,13 @@ The game will keep going, until either the player's HP is 0, or until everybody 
 
 ---
 
+# Terminology
+
+* HP - Hit Points (such as 0 to 100% healthy)
+* NPC - Non-player Character (basically, the computer players)
+
+---
+
 # Random numbers
 
 You will want to include the cstdlib library in order to use random numbers.
