@@ -137,7 +137,7 @@ Next, let's create a function that handles adding a room to the building.
 This function will have the following **input**:
 
 * What is the width of the new room?
-* What is the height of the new room?
+* What is the length of the new room?
 * What is the name of the new room?
 
 This function will set up a new room in the array, and then add one to **totalRooms**, so we know
@@ -149,13 +149,13 @@ Start by creating a function **within the Building struct** that meets these spe
 * Parameters:
 	* newName, a string
 	* newWidth, a float
-	* newHeight, a float
+	* newLength, a float
 	
 Within the method, we will be working with a new room. There are a few ways we can do this.
 
 1. Create a new Room variable named **newRoom**.
 2. Assign **newRoom.width** the value of newWidth.
-3. Assign **newRoom.height** the value of newHeight.
+3. Assign **newRoom.length** the value of newLength.
 4. Assign **newRoom.name** the value of newName.
 
 Note that this variable is only a **temporary variable** -- it will be destroyed
