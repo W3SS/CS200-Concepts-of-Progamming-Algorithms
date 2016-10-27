@@ -164,11 +164,11 @@ into, but now we need to add it to the array of **rooms** that belongs to the Bu
 
 You will copy over the contents of newRoom to the rooms array like this:
 
-	rooms[ roomCount ] = newRoom;
-	roomCount++;
+	rooms[ totalRooms ] = newRoom;
+	totalRooms++;
 	
-Remember that roomCount begins at 0, so the first room we're adding will be added to *rooms[0]*.
-After that, we add 1 to roomCount, and the next room will be at *rooms[1]*, then *rooms[2]*, and so on.
+Remember that totalRooms begins at 0, so the first room we're adding will be added to *rooms[0]*.
+After that, we add 1 to totalRooms, and the next room will be at *rooms[1]*, then *rooms[2]*, and so on.
 
 ## Testing
 
