@@ -277,11 +277,11 @@ For choice #3, you are going to display the following:
 
 The building's address is easy: **bldg.address**.
 
-The amount of rooms that the building has is also stored in a simple variable: **bldg.roomCount**.
+The amount of rooms that the building has is also stored in a simple variable: **bldg.totalRooms**.
 
 To display all the information about the rooms of the building, you will need a for-loop.
 
-	for ( int i = 0; i < bldg.roomCount; i++ )
+	for ( int i = 0; i < bldg.totalRooms; i++ )
 	{
 	}
 	
