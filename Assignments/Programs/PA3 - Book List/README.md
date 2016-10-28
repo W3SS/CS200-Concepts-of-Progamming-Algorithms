@@ -352,6 +352,11 @@ which is essentially one variable.
 
 ### UpdateBookMenu
 
+* Return type: void
+* Parameters:
+	* Array of Books
+	* Book count (int), passed by reference
+
 This menu allows the user to choose which Book field to update (so they don't have to re-enter *all* the
 information every time they want to make an update). It will store these values in temp variables,
 then call **SetBook** to update the book chosen.
