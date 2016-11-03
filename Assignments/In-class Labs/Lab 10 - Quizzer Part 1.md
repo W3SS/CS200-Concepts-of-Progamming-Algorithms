@@ -1,4 +1,4 @@
-# CS 200 Lab 10: Classes and Inheritance
+# CS 200 Lab 10: Classes
 
 Please read this document in Chrome. :)
 
