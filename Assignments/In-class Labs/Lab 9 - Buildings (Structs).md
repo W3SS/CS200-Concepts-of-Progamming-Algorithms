@@ -137,7 +137,7 @@ Next, let's create a function that handles adding a room to the building.
 This function will have the following **input**:
 
 * What is the width of the new room?
-* What is the height of the new room?
+* What is the length of the new room?
 * What is the name of the new room?
 
 This function will set up a new room in the array, and then add one to **totalRooms**, so we know
@@ -149,13 +149,13 @@ Start by creating a function **within the Building struct** that meets these spe
 * Parameters:
 	* newName, a string
 	* newWidth, a float
-	* newHeight, a float
+	* newLength, a float
 	
 Within the method, we will be working with a new room. There are a few ways we can do this.
 
 1. Create a new Room variable named **newRoom**.
 2. Assign **newRoom.width** the value of newWidth.
-3. Assign **newRoom.height** the value of newHeight.
+3. Assign **newRoom.length** the value of newLength.
 4. Assign **newRoom.name** the value of newName.
 
 Note that this variable is only a **temporary variable** -- it will be destroyed
@@ -164,11 +164,11 @@ into, but now we need to add it to the array of **rooms** that belongs to the Bu
 
 You will copy over the contents of newRoom to the rooms array like this:
 
-	rooms[ roomCount ] = newRoom;
-	roomCount++;
+	rooms[ totalRooms ] = newRoom;
+	totalRooms++;
 	
-Remember that roomCount begins at 0, so the first room we're adding will be added to *rooms[0]*.
-After that, we add 1 to roomCount, and the next room will be at *rooms[1]*, then *rooms[2]*, and so on.
+Remember that totalRooms begins at 0, so the first room we're adding will be added to *rooms[0]*.
+After that, we add 1 to totalRooms, and the next room will be at *rooms[1]*, then *rooms[2]*, and so on.
 
 ## Testing
 
@@ -277,11 +277,11 @@ For choice #3, you are going to display the following:
 
 The building's address is easy: **bldg.address**.
 
-The amount of rooms that the building has is also stored in a simple variable: **bldg.roomCount**.
+The amount of rooms that the building has is also stored in a simple variable: **bldg.totalRooms**.
 
 To display all the information about the rooms of the building, you will need a for-loop.
 
-	for ( int i = 0; i < bldg.roomCount; i++ )
+	for ( int i = 0; i < bldg.totalRooms; i++ )
 	{
 	}
 	
