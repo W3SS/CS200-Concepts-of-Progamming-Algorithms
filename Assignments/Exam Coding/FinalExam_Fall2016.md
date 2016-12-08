@@ -296,10 +296,15 @@ Also sets the size to 6.
 
 <tr>
 <td>cat</td><td>billee</td>
+</tr><tr>
 <td>dog</td><td>kuttaa</td>
+</tr><tr>
 <td>mouse</td><td>kuhaa</td>
+</tr><tr>
 <td>rabbit</td><td>khargosh</td>
+</tr><tr>
 <td>frog</td><td>mendak</td>
+</tr><tr>
 <td>sheep</td><td>bhed</td>
 </tr>
 </table>
