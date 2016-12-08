@@ -1,5 +1,11 @@
+.vs/
 Debug/
 bin/
 x64/
 *.suo
 *.db
+*.VC.db
+*.filters
+*.vcxproj.filters
+*.suo
+

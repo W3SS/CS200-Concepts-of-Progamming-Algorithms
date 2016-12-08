@@ -116,11 +116,13 @@
     <ClInclude Include="StudentClass.hpp" />
     <ClInclude Include="StudentFunctions.hpp" />
     <ClInclude Include="StudentInheritance.hpp" />
+    <ClInclude Include="StudentPointers.hpp" />
     <ClInclude Include="StudentStructs.hpp" />
     <ClInclude Include="Tester_Class.hpp" />
     <ClInclude Include="Tester_ForLoops.hpp" />
     <ClInclude Include="Tester_IfStatements.hpp" />
     <ClInclude Include="Tester_Inheritance.hpp" />
+    <ClInclude Include="Tester_Pointers.hpp" />
     <ClInclude Include="Tester_Struct.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

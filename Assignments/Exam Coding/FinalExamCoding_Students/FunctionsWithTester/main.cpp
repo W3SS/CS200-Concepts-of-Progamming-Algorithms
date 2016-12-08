@@ -7,6 +7,7 @@ using namespace std;
 //#include "Tester_Struct.hpp"
 //#include "Tester_Class.hpp"
 //#include "Tester_Inheritance.hpp"
+//#include "Tester_Pointers.hpp"
 
 int main()
 {
@@ -20,6 +21,7 @@ int main()
 
 	//InheritanceTester::Start();
 
+	//PointerTester::Start();
 
 	cout << "End of program" << endl;
 	while (true) {}

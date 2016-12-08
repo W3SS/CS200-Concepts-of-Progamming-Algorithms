@@ -24,6 +24,7 @@ By default, your main.cpp file looks like this:
 	//#include "Tester_Struct.hpp"
 	//#include "Tester_Class.hpp"
 	//#include "Tester_Inheritance.hpp"
+	//#include "Tester_Pointers.hpp" 
 
 	int main()
 	{
@@ -36,6 +37,8 @@ By default, your main.cpp file looks like this:
 		//ClassTester::Start();
 
 		//InheritanceTester::Start();
+
+		//PointerTester::Start();
 
 
 		cout << "End of program" << endl;
@@ -446,4 +449,66 @@ This function inherits from Shape and should match its input/output.
 Returns the circle's circumference (2 x PI x radius)
 
 ---
+
+## Part 6: Pointers
+
+**Code for this portion will go in the StudentPointers.hpp file.**
+
+To test these functions, uncomment out
+
+	#include "Tester_Pointers.hpp" 
+
+and 
+
+	PointerTester::Start();
+
+### GetAddress
+
+* Input: An integer reference
+* Output: An integer pointer
+
+Return the address of the input variable.
+
+
+
+### GetValue
+
+* Input: An integer pointer
+* Output: An integer
+
+Return the value that the pointer is pointing at.
+
+
+
+### CheckifNull
+
+* Input: An integer pointer
+* Output: boolean (if it is null)
+
+If the pointer is null, return true.
+Otherwise, return false.
+
+
+
+### CompareAddresses
+
+* Input: Two integer pointers
+* Output: boolean (if it is null)
+
+If the two pointers are pointing to the same
+address, return true. Otherwise, return false.
+
+
+
+### CompareValues
+
+* Input: Two integer pointers
+* Output: boolean (if it is null)
+
+For both pointers, look at their values
+that they are pointing to. If the values
+are equal, return true. Otherwise,
+return false.
+
+
 
