@@ -68,7 +68,13 @@ that you're following the spec in order to get full credit!
 
 You will implement two functions that utilize if statements.
 
-To test these functions, uncomment out #include "Tester_IfStatements.hpp" and IfStatementTester::Start();
+To test these functions, uncomment out 
+
+	#include "Tester_IfStatements.hpp" 
+
+and 
+
+	IfStatementTester::Start();
 
 ### GetMeal
 
@@ -137,8 +143,12 @@ the cheaper senior price.
 **Code for this portion will go in the StudentFunctions.hpp file.**
 
 To test these functions, uncomment out
-#include "Tester_ForLoops.hpp" and 
-ForLoopTester::Start();
+
+	#include "Tester_ForLoops.hpp" 
+
+and 
+
+	ForLoopTester::Start();
 
 ### ReverseString
 
@@ -169,8 +179,12 @@ array, and return the sum as the output.
 **Code for this portion will go in the StudentStructs.hpp file.**
 
 To test these functions, uncomment out
-#include "Tester_Struct.hpp" and 
-StructTester::Start();
+
+	#include "Tester_Struct.hpp" 
+
+and 
+
+	StructTester::Start();
 
 ### CoordinatePair
 
@@ -251,8 +265,12 @@ You might need to include the <cmath> library.
 **Code for this portion will go in the StudentClass.hpp file.**
 
 To test these functions, uncomment out
-#include "Tester_Class.hpp" and 
-ClassTester::Start();
+
+	#include "Tester_Class.hpp" 
+
+and 
+
+	ClassTester::Start();
 
 ### DictionaryEntry
 
@@ -319,8 +337,12 @@ then return that entry's english string as the output.
 **Code for this portion will go in the StudentInheritance.hpp file.**
 
 To test these functions, uncomment out
-#include "Tester_Inheritance.hpp" and 
-InheritanceTester::Start();
+
+	#include "Tester_Inheritance.hpp" 
+
+and 
+
+	InheritanceTester::Start();
 
 ### Shape class
 
