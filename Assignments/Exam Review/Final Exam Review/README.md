@@ -317,7 +317,7 @@ and
 
 ### Cipher class
 
-This is the base class. It is an abstract base class.
+This is the base class
 
 #### Methods:
 
@@ -325,13 +325,13 @@ This is the base class. It is an abstract base class.
 
 * Input: text, a string
 * Output: The encrypted text, a string
-* Other: This is a pure virtual function. (No definition)
+* Other: Just have the function body be empty.
 
 ##### Decrypt
 
 * Input: text, a string
 * Output: The decrypted text, a string
-* Other: This is a pure virtual function. (No definition)
+* Other: Just have the function body be empty.
 
 ### CaesarCipher class
 
