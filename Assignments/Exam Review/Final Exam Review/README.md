@@ -86,7 +86,6 @@ There are the following types of foods available:
 
 	<tr>
 		<td>mayo</td><td>57</td><td>15</td>
-	</tr>ies</th>
 	</tr>
 
 	<tr>
@@ -97,6 +96,8 @@ There are the following types of foods available:
 The user will pass in a food name ("mayo" or "ice cream") and whether it's the low-fat version.
 
 Utilize nested if statements to return the appropriate calorie amount.
+
+If an invalid food is entered, return 0.
 
 ### GetLetterGrade
 
