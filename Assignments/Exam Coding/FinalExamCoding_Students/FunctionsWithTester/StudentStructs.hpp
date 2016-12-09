@@ -52,6 +52,38 @@
 *	it to work with your code.
 */
 
+struct CoordinatePair
+{
+private:
+	float x, y;
 
+public:
+	void Setup(float x, float y)
+	{
+	}
+
+	void SetX(float x)
+	{
+	}
+
+	void SetY(float y)
+	{
+	}
+
+	float GetX()
+	{
+		return -100; // This is a temporary value - remove it and add your logic!
+	}
+
+	float GetY()
+	{
+		return -100; // This is a temporary value - remove it and add your logic!
+	}
+
+	float GetDistance(CoordinatePair coord2)
+	{
+		return -100; // This is a temporary value - remove it and add your logic!
+	}
+};
 
 #endif

@@ -33,7 +33,10 @@ using namespace std;
 *	salad		2.00		Yes				
 */
 
-
+string GetMeal(float maxPrice, bool isVegetarian)
+{
+	return "nothing"; // This is a temporary value - remove it and add your logic!
+}
 
 /*
 * Function: TicketPrice
@@ -61,7 +64,10 @@ using namespace std;
 *	the cheaper senior price.
 */
 
-
+float TicketPrice(int age, bool isVet)
+{
+	return -100; // This is a temporary value - remove it and add your logic!
+}
 
 /* ************************************************ For Loops */
 
@@ -79,7 +85,10 @@ using namespace std;
 *	and "fdsa" would be the output.
 */
 
-
+string ReverseString(string orig)
+{
+	return "nothing"; // This is a temporary value - remove it and add your logic!
+}
 
 /*
 * Function: SumArray
@@ -93,6 +102,9 @@ using namespace std;
 *	array, and return the sum as the output.
 */
 
-
+int SumArray(int arr[], int length)
+{
+	return -100; // This is a temporary value - remove it and add your logic!
+}
 
 #endif
