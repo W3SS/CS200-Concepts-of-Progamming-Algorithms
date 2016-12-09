@@ -98,7 +98,7 @@ private:
 		bool passed = true;
 		cout << endl << "TEST: CountLetter" << endl;
 
-		int testCount = 6;
+		int testCount = 3;
 		string inputsA[] = { "cats", "aardvark", "potato" };
 		char inputsB[] = { 'c', 'a', 'b' };
 		int outputs[] = { 1, 3, 0 };
