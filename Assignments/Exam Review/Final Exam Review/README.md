@@ -317,7 +317,7 @@ and
 
 ### Cipher class
 
-This is the base class. It is an abstract base class.
+This is the base class
 
 #### Methods:
 
@@ -325,13 +325,13 @@ This is the base class. It is an abstract base class.
 
 * Input: text, a string
 * Output: The encrypted text, a string
-* Other: This is a pure virtual function. (No definition)
+* Other: Just have the function body be empty.
 
 ##### Decrypt
 
 * Input: text, a string
 * Output: The decrypted text, a string
-* Other: This is a pure virtual function. (No definition)
+* Other: Just have the function body be empty.
 
 ### CaesarCipher class
 
@@ -343,7 +343,7 @@ CaesarCipher inherits from **Cipher**.
 
 Use the following function as part of this class:
 
-	char SwapForward(char letter)
+	char StepForward(char letter)
 	{
 		if (letter == 'A') { return 'B'; }
 		if (letter == 'B') { return 'C'; }
@@ -377,7 +377,7 @@ Use the following function as part of this class:
 
 Use the following function as part of this class:
 
-	char SwapBackward(char letter)
+	char StepBackward(char letter)
 	{
 		if (letter == 'A') { return 'Z'; }
 		if (letter == 'B') { return 'A'; }
