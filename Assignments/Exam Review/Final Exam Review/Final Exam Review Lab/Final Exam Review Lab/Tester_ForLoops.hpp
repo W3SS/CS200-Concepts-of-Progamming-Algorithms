@@ -95,17 +95,17 @@ private:
 
 	static void CountLetterTest()
 	{
-		/*bool passed = true;
+		bool passed = true;
 		cout << endl << "TEST: CountLetter" << endl;
 
 		int testCount = 6;
-		float inputsA[] = { 100, 9, 89, 7.9, 69, 1, };
-		float inputsB[] = { 100, 10, 100, 10, 100, 5 };
-		string outputs[] = { "A", "A", "B", "C", "D", "F" };
+		string inputsA[] = { "cats", "aardvark", "potato" };
+		char inputsB[] = { 'c', 'a', 'b' };
+		int outputs[] = { 1, 3, 0 };
 
 		for (int i = 0; i < testCount; i++)
 		{
-			string actualOutput = CountLetter(inputsA[i], inputsB[i]);
+			int actualOutput = CountLetter(inputsA[i], inputsB[i]);
 
 			if (actualOutput != outputs[i])
 			{
@@ -121,7 +121,7 @@ private:
 		if (passed)
 		{
 			cout << "\t PASSED" << endl;
-		}*/
+		}
 	}
 
 
