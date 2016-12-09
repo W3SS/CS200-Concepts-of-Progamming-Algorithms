@@ -343,7 +343,7 @@ CaesarCipher inherits from **Cipher**.
 
 Use the following function as part of this class:
 
-	char SwapForward(char letter)
+	char StepForward(char letter)
 	{
 		if (letter == 'A') { return 'B'; }
 		if (letter == 'B') { return 'C'; }
@@ -377,7 +377,7 @@ Use the following function as part of this class:
 
 Use the following function as part of this class:
 
-	char SwapBackward(char letter)
+	char StepBackward(char letter)
 	{
 		if (letter == 'A') { return 'Z'; }
 		if (letter == 'B') { return 'A'; }
