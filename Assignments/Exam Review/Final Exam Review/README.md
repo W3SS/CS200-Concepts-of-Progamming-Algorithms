@@ -554,7 +554,7 @@ Return the value that the pointer is pointing at.
 
 
 
-### CheckifNull
+### CheckIfNull
 
 * Input: An integer pointer
 * Output: boolean (if it is null)
