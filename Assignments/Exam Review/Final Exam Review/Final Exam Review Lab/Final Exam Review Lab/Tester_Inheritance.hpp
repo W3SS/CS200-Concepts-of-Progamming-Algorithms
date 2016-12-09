@@ -34,7 +34,7 @@ private:
 			{
 				passed = false;
 				cout << endl
-					<< "x FAILED TEST " << i << " (CaesarCiper Encrypt): " << endl
+					<< "x FAILED TEST " << i << " (CaesarCiper ENCRYPT): " << endl
 					<< "\t Input:           " << inputs1[i] << endl
 					<< "\t Expected output: " << outputs1[i] << endl
 					<< "\t Actual output:   " << actualOutput << endl;
@@ -52,7 +52,7 @@ private:
 			{
 				passed = false;
 				cout << endl
-					<< "x FAILED TEST " << i << " (CaesarCiper Decrypt): " << endl
+					<< "x FAILED TEST " << i << " (CaesarCiper DECRYPT): " << endl
 					<< "\t Input:           " << inputs2[i] << endl
 					<< "\t Expected output: " << outputs2[i] << endl
 					<< "\t Actual output:   " << actualOutput << endl;
@@ -72,7 +72,7 @@ private:
 			{
 				passed = false;
 				cout << endl
-					<< "x FAILED TEST " << i << " (SubCipher Encrypt): " << endl
+					<< "x FAILED TEST " << i << " (SubCipher ENCRYPT): " << endl
 					<< "\t Input:           " << inputs3[i] << endl
 					<< "\t Expected output: " << outputs3[i] << endl
 					<< "\t Actual output:   " << actualOutput << endl;
@@ -90,7 +90,7 @@ private:
 			{
 				passed = false;
 				cout << endl
-					<< "x FAILED TEST " << i << " (SubCipher Decrypt): " << endl
+					<< "x FAILED TEST " << i << " (SubCipher DECRYPT): " << endl
 					<< "\t Input:           " << inputs4[i] << endl
 					<< "\t Expected output: " << outputs4[i] << endl
 					<< "\t Actual output:   " << actualOutput << endl;
