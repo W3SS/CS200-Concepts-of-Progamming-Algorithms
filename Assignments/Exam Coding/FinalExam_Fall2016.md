@@ -354,7 +354,7 @@ and
 
 ### Shape class
 
-This is the base class. It is an abstract base class.
+This is the base class.
 
 #### Member methods:
 
@@ -362,14 +362,15 @@ This is the base class. It is an abstract base class.
 
 * Output: A float (the area)
 * Input: None
-* Other: Is pure virtual (no definition)
+
+Just make the function body return -1.
 
 ##### GetPerimeter
 
 * Output: A float (the perimeter)
 * Input: None
-* Other: Is pure virtual (no definition)
 
+Just make the function body return -1.
 
 ### Rectangle class
 
@@ -415,6 +416,8 @@ Returns the rectangle's perimeter. (2 x width + 2 x height )
 
 
 ### Circle class
+
+Circle class inherits from **Shape**.
 
 #### Private member variables:
 
