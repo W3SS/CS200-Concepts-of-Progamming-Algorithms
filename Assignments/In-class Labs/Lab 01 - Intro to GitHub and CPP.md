@@ -13,7 +13,7 @@ No downloads
 
 ---
 
-## Part 1: Registering a GitHub account
+## Project 1: Creating a GitHub account
 
 First, you will register an account on GitHub.
 Accounts and using the service is free, so long as your code is
@@ -30,7 +30,9 @@ Confirm your email address and we should be ready to go!
 
 ---
 
-## Part 2: Fork an existing repository
+## Project 1: Fork an existing repository
+
+### Fork an existing repository
 
 To "fork" a repository means to create a copy of someone else's repo.
 
@@ -87,7 +89,7 @@ Open up the project folder (either the .cbp for Code::Blocks, or .sln Solution f
 
 ---
 
-## Part 3: Making changes
+### Making changes
 
 Once the project is downloaded, **Build and Run** the program.
 
@@ -106,7 +108,7 @@ Using the code that's already written, make the following changes:
 
 ---
 
-## Part 4: Updating GitHub
+### Updating GitHub
 
 Normally, you would interface with GitHub through a program called **Git**, which makes
 uploading your changes pretty easy.
@@ -136,7 +138,7 @@ Now, the web interface will show your new version.
 
 ---
 
-## Part 5: Exploring history
+### Exploring history
 
 If you click on **History**, you will see a list of all changes to your file.
 The messages displayed here are the same as the commit message you made when
@@ -156,8 +158,126 @@ Using this, if you commit often you can see your changes over time.
 
 ---
 
-## Submit your work
+### Submit your work
 
 Once you're finished with all the steps, zip up your entire project folder and upload it to the dropbox in D2L.
 
 In the **comments** field, paste in the **URL of your repository**.
+
+--- 
+
+## Project 3: Create a repository for class
+
+Now you will create an original repository in your own profile. You will use this repository
+to store your class projects during the semester.
+
+Go to your profile page on GitHub. It will be something like github.com/YOURUSERNAME.
+
+Click on the **Repositories** tab.
+
+![Repositories tab](images/github-repositories.png)
+
+Then, click on the green **New** button.
+
+![New repository button](images/github-newrepo.png)
+
+### Creating the repository
+
+**MAKE SURE YOU SELECT INITIALIZE WITH README BEFORE CREATING THE REPOSITORY!**
+
+![New repository setup](images/github-newrepo2.png)
+
+Set up the following information in the repository:
+
+1. **Repository name** - CS200 or something similar
+2. **Description** - Optional
+3. **Public**
+4. **Initialize this repository with a README**
+
+After you're done, click **Create repository**.
+
+It will open the repo, and it will just have one file in it.
+
+### Adding folders and files
+
+Normally, we would use the **Git** program on our desktop to work with our repository
+on our local machine. However, we're keeping it simple at first, so we are just using 
+the web interface.
+
+Creating folders within the repository is kind of a "hidden feature",
+but it is good to utilize folders to keep everything separate and organized.
+
+Let's go ahead and create a folder for your CS 200 labs.
+
+Click on **Create new file**.
+
+![Create new file button](images/github-createnewfile.png)
+
+In the **Name your file...** textbox, you can enter a file name -
+but you can also specify a folder before your filename.
+
+Type in
+
+    Labs/Readme.txt
+    
+When you hit the slash button / , it will automatically turn **Labs** into a folder.
+
+![Adding a file](images/github-folderadding.png)
+
+The readme we're creating really is just a placeholder; Git won't store
+empty folders, so we have to put a readme in it so that the folder sticks around.
+
+At the bottom of the page, click **Commit new file**.
+
+After you commit, whatever you typed into your readme will be displayed when
+you go into your Labs folder:
+
+![Readme display](images/github-readme.png)
+
+You can go into **Readme.txt** and edit it if you want to use this as a place
+for notes or something.
+
+### Add folders for all assignment types
+
+To go back to the root directory of your repository, click on the repository name.
+
+![Go back to root](images/github-goback.png)
+
+Now, follow the previous steps to make folders for **Exercises** and **Projects** as well.
+
+### Upload files
+
+You can also use the web interface to upload files as well. Let's try it out
+by uploading the code we did earlier into the **Labs** folder.
+
+Click on **Labs**, and create a folder for **Lab1**:
+
+![GitHub Lab 1 folder](images/github-lab1files.png)
+
+Then, click on the **Upload files** button:
+
+![Upload files button](images/github-uploadfiles.png)
+
+There will be a big gray box to drag your files to. You can either upload
+files individually, or move the whole folder over.
+
+![Moving a folder](images/github-clickanddrag.png)
+
+It will display a list of all the files it wants to add, and you can remove
+any unneeded files.
+
+For example, you will never need these in a repository:
+
+* .o files
+* .exe files
+* anything in a bin, Debug, or Release folder
+
+Go ahead and use "x" to remove those.
+
+Then click **Commit changes** to finish the upload.
+
+![Uploaded folder](images/github-uploadedfolder.png)
+
+If you dragged a folder over, it will create that folder in the repository as well.
+
+
