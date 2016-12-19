@@ -7,7 +7,7 @@ Visual Studio or Code::Blocks project (based on what you're using
 at home or at school).
 
 * [Visual Studio project]()
-* [Code::Blocks project]()
+* [Code::Blocks project](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/Homework%20Exercises/HWEX1%20-%20Exploring%20CPP/starter/HWEX1_CodeBlocks.zip?raw=true)
 
 ## Rules
 
