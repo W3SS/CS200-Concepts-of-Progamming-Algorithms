@@ -108,5 +108,21 @@ Sample output:
 
 ## Submit your work
 
+### GitHub
+
+Upload your project to GitHub in your CS200 repository:
+
+Go to your CS200 repository page from the GitHub website. The URL to get to your profile page
+should be github.com/YOURUSERNAME.
+
+Click on the **Exercises** folder that you should have created during Lab 1.
+
+Use the [upload files instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
+from Lab 1 to upload your **folder for this exercise** to GitHub.
+
+### D2L
+
 Once you're finished with all the steps, zip up your entire project folder
 and upload it to the dropbox in D2L.
+
+In the comments, paste the URL of your CS 200 repository.
