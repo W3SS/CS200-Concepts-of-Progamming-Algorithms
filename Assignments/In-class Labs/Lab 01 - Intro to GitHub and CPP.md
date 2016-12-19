@@ -6,8 +6,9 @@ No downloads
 
 ## Rules
 
-* Team size: **1 to 3 people**
-    * If you work with a teammate, **make sure to upload your files with both your names.**
+* Team size: **1 person**
+    * This is a simple lab, and everybody needs a GitHub account,
+    so work on these separately.
 * Following along with the steps!
 
 ---
