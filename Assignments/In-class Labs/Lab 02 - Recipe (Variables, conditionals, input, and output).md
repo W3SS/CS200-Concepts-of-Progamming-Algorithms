@@ -3,7 +3,6 @@
 ## Introduction
 
 Follow along step-by-step to work on this program. 
-Turn in the source files (.cpp, .hpp) once finished.
 
 ## Review
 
