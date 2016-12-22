@@ -8,7 +8,6 @@ Turn in the source files (.cpp, .hpp) once finished.
 ## Review
 
 * Variables, Data Types
-* If statements
 * Output (cout)
 * Input (cin)
 
