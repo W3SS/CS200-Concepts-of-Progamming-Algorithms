@@ -1,4 +1,4 @@
-# CS 200 Lab 2: Recipe
+# CS 200 Lab 2: Recipe (Variables, Input, and Output)
 
 ## Introduction
 
