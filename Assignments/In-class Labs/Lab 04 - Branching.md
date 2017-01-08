@@ -459,7 +459,137 @@ and then combine it with an and statement:
 
 ---
 
+## Tiny App 6: 
 
+### Summary
+
+Write a program that asks the user to enter two numbers. Then, ask them
+whether they want to add, subtract, multiply, or divide.
+
+Use a switch statement to decide what kind of operation to do, and display the result.
+
+### Knowledge
+
+A switch statement does not use a boolean expression - instead,
+it can operate on **integers**, **characters**, and **booleans**.
+
+Each **case** in a switch statement is essentially asking, "is the value of the switch variable this?",
+and the lines of code after the case statement are what gets executed.
+
+The case statement ends at a **break** statement.
+
+The **default** case is used like an "else".
+
+Example:
+
+    switch( letter )
+    {
+        case 'a':
+            cout << "ABC!" << endl;
+        break;
+        
+        case 'z':
+            cout << "XYZ!" << endl;
+        break;
+        
+        
+        default:
+            cout << "I don't like that letter." << endl;
+    }
+
+### Steps
+
+1. Create two float variables: **a** and **b**.
+2. Ask the user to enter a value for a, and store it in the **a** variable.
+2. Ask the user to enter a value for b, and store it in the **b** variable.
+3. Display a menu for the user to select what kind of operation:
+    * 1. Add
+    * 2. Subtract
+    * 3. Multiply
+    * 4. Divide
+4. Ask the user for their selection.
+5. Create a new variable, an integer called **choice**. Store the user's selection in this variable.
+6. Use a switch statement to check the value of **choice**.
+    * If choice is 1, show the result of a + b.
+    * If choice is 2, show the result of a - b.
+    * If choice is 3, show the result of a * b.
+    * If choice is 4, show the result of a / b.
+    * Otherwise, display an error: "Invalid choice."
+
+### Example output
+
+**Add:**
+
+![Program 6 example](images/201701_lab4_program6a.png)
+
+**Subtract:**
+
+![Program 6 example](images/201701_lab4_program6b.png)
+
+**Multiply:**
+
+![Program 6 example](images/201701_lab4_program6c.png)
+
+**Divide:**
+
+![Program 6 example](images/201701_lab4_program6d.png)
+
+**Invalid:**
+
+![Program 6 example](images/201701_lab4_program6e.png)
+
+### Solution
+
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+    
+    #include <iostream>
+    using namespace std;
+        
+    int main()
+    {
+        float a, b;
+        
+        cout << "Enter a: ";
+        cin >> a;
+        cout << "Enter b: ";
+        cin >> b;
+        
+        cout << endl << "What kind of operation? (1) Add, (2) Subtract, (3) Multiply, (4) Divide" << endl;
+        
+        int choice;
+        cout << "Choice: ";
+        cin >> choice;
+        
+        switch( choice )
+        {
+            case 1:
+            cout << a + b << endl;
+            break;
+            
+            case 2:
+            cout << a - b << endl;
+            break;
+            
+            case 3:
+            cout << a * b << endl;
+            break;
+            
+            case 4:
+            cout << a / b << endl;
+            break;
+            
+            default:
+            cout << "Invalid choice" << endl;
+        }
+        
+        return 0;
+    }
+
+    
+</details>
 
 ---
 
