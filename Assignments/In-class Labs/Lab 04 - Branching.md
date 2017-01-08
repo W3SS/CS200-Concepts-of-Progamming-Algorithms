@@ -1,4 +1,4 @@
-# CS 200 Lab 3: Branching
+# CS 200 Lab 4: Branching
 
 ## Chrome!
 
