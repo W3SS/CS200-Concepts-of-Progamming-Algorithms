@@ -6,13 +6,17 @@ There are five problems to solve that use while loops below.
 You can either implement these all in the same file,
 or separate source files.
 
-## Review
+## Topics
 
 * While Loops
 * If Statements
 * Input (cin) and Output (cout)
 
 ---
+
+# Assignments
+
+## Review A: Conditionals
 
 ## Problem 1: 1 through 10
 
