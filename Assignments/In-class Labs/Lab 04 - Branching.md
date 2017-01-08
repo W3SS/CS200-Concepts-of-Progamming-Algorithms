@@ -16,6 +16,13 @@ Follow along step-by-step to work on this program.
 * If Statements
 * Switch Statements
 
+## Turn In
+
+Make sure to zip your entire project folder and upload it in the dropbox on D2L.
+
+Also upload the .cpp file(s) to your class repository. 
+[See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
+
 ---
 
 ## Setting up your project
@@ -62,7 +69,9 @@ Paste the following into your .cpp file to start with:
     
 ---
 
-## Tiny App 1: Hometown
+# Assignments
+
+## Project 1: Hometown
 
 ### Summary
 
@@ -147,7 +156,7 @@ Finally, it will display "Hello, (NAME) from (LOCATION)"
 
 ---
 
-## Tiny App 2: Pass/Fail
+## Project 2: Pass/Fail
 
 ### Summary
 
@@ -227,7 +236,7 @@ the assignment is 70% or higher (for pass), or less than 70% (for fail)
 
 ---
 
-## Tiny App 3: Battery charge
+## Project 3: Battery charge
 
 ### Summary
 
@@ -303,7 +312,7 @@ Then, draw a picture for an estimate of whether it's 1/4 charge, 1/2 charge, 3/4
 
 ---
 
-## Tiny App 4: Input validation
+## Project 4: Input validation
 
 ### Summary
 
@@ -379,7 +388,7 @@ When checking for valid input, it should be all in one statement! Use a logical 
 
 ---
 
-## Tiny App 5: Range
+## Project 5: Range
 
 ### Summary
 
@@ -459,7 +468,7 @@ and then combine it with an and statement:
 
 ---
 
-## Tiny App 6: 
+## Project 6: 
 
 ### Summary
 
@@ -590,11 +599,3 @@ Example:
 
     
 </details>
-
----
-
-# Turn In
-
-Make sure to zip your entire project folder and upload it in the dropbox on D2L.
-
-Also upload the .cpp file(s) to your class repository. [See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)

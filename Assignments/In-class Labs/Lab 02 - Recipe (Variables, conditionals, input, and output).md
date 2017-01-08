@@ -56,6 +56,8 @@ Paste the following into your .cpp file to start with:
     
 ---
 
+# Assignments
+
 ## Cookies
 
 Here are the ingredients for sugar cookies:

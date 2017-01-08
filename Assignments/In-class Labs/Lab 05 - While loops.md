@@ -1,10 +1,8 @@
-# CS 200 Lab 3: While Loops
+# CS 200 Lab 5: While Loops
 
-## Introduction
+## Chrome!
 
-There are five problems to solve that use while loops below.
-You can either implement these all in the same file,
-or separate source files.
+Please read this in chrome so that the solutions are collapsed by default!
 
 ## Topics
 
@@ -12,13 +10,19 @@ or separate source files.
 * If Statements
 * Input (cin) and Output (cout)
 
+## Turn In
+
+Make sure to zip your entire project folder and upload it in the dropbox on D2L.
+
+Also upload the .cpp file(s) to your class repository. 
+[See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
+
+
 ---
 
 # Assignments
 
-## Review A: Conditionals
-
-## Problem 1: 1 through 10
+## Project 1: 1 through 10
 
 You will use a while loop to display a list of numbers between 1 and 10, increasing.
 
@@ -33,12 +37,49 @@ Inside the while loop...
 	
 3. Once the loop has completed, display the message "done!" with cout.
 
-### Sample Output
+### Knowledge
+
+You can increment variables in a few different ways:
+
+	++countUp; 					// Increment countUp by 1, ++ can only be used for + 1
+	countUp++; 					// Increment countUp by 1, ++ can only be used for + 1
+	countUp += 1; 				// Increment countUp by 1
+	countUp = countUp + 1;		// Increment countUp by 1
+
+### Example output
 
 ![Screenshot](images/cl3-00.png)
 
+### Solution
 
-## Problem 2: 10 through 1
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+	#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+		int countUp = 1;
+		
+		while ( countUp < 11 )
+		{
+			cout << countUp << " ";
+			countUp++;
+		}
+		
+		cout << endl << endl << "Done!" << endl;
+		
+		return 0;
+	}
+
+</details>
+
+---
+
+## Project 2: 10 through 1
 
 You will use a while loop to display a list of numbers between 10 and 1, decreasing.
 
@@ -53,12 +94,41 @@ Inside the while loop...
 	
 3. One the loop has completed, display the message "done!" with cout.
 
-### Sample Output
+### Example output
 
 ![Screenshot](images/cl3-01.png)
 
+### Solution
 
-## Problem 3
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+	#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+		int countDown = 10;
+		
+		while ( countDown > 0 )
+		{
+			cout << countDown << " ";
+			countDown--;
+		}
+		
+		cout << endl << endl << "Done!" << endl;
+		
+		return 0;
+	}
+
+    
+</details>
+
+---
+
+## Project 3: Count by 5's
 
 You will use a while loop to display a list of numbers between 0 and 20,
 increasing by 5 each time.
@@ -74,12 +144,41 @@ Within the while loop...
 
 3. Once the loop has completed, display the message "done!" with cout.
 
-### Sample Output
+### Example output
 
 ![Screenshot](images/cl3-02.png)
 
+### Solution
 
-## Problem 4
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+	#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+		int counter = 0;
+		
+		while ( counter <= 20 )
+		{
+			cout << counter << " ";
+			counter += 5;
+		}
+		
+		cout << endl << endl << "Done!" << endl;
+		
+		return 0;
+	}
+
+    
+</details>
+
+---
+
+## Project 4: Number guesser
 
 Write a number-guesser game. The user will continue to guess numbers
 until they get it right.
@@ -119,12 +218,52 @@ Make the condition: while playerGuess is not equal to secretNumber.
 once the loop is "escaped", which only happens once the player has 
 correctly guessed the number.
 
-### Sample Output
+### Example output
 
 ![Screenshot](images/cl3-03.png)
 
+### Solution
 
-## Problem 5
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+	#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+		int secretNumber = 7;
+		int playerGuess;
+		
+		do
+		{
+			cout << "Enter your guess: ";
+			cin >> playerGuess;
+			
+			if ( playerGuess < secretNumber )
+			{
+				cout << "Too low!" << endl;
+			}
+			else if ( playerGuess > secretNumber )
+			{
+				cout << "Too high!" << endl;
+			}
+			
+		} while ( playerGuess != secretNumber );
+		
+		cout << "You win!" << endl;
+		
+		return 0;
+	}
+
+    
+</details>
+
+---
+
+## Project 5: Input validator
 
 Write a program that will act as an "input validator" for user input.
 Basically, it expects the input to be between a certain range,
@@ -145,9 +284,40 @@ less than 0 or greater than 5...
 
 5. Outside of the loop, display the message "Thank you".
 
-### Sample Output
+### Example output
 
 ![Screenshot](images/cl3-04.png)
+
+### Solution
+
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+	#include <iostream>
+	using namespace std;
+
+	int main()
+	{
+
+		cout << "Please enter a number between 0 and 5: ";
+		
+		int choice;
+		cin >> choice;
+		
+		while ( choice < 0 || choice > 5 )
+		{
+			cout << "Invalid entry. Try again: ";
+			cin >> choice;
+		}
+		
+		cout << "Thank you." << endl;
+		
+		return 0;
+	}
+
+</details>
 
 
 
