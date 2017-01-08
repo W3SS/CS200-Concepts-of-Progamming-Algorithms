@@ -106,11 +106,11 @@ Finally, it will display "Hello, (NAME) from (LOCATION)"
 
 **Long town name:**
 
-![Program 1 example](images/201701_lab3_program1.png)
+![Program 1 example](images/201701_lab4_program1.png)
 
 **Short town name:**
 
-![Program 1 example](images/201701_lab3_program1b.png)
+![Program 1 example](images/201701_lab4_program1b.png)
 
 ### Solution
 
