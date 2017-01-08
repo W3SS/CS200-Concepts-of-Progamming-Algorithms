@@ -142,8 +142,88 @@ Finally, it will display "Hello, (NAME) from (LOCATION)"
         
         return 0;
     }
+    
+</details>
 
-</details>	
+---
+
+## Tiny App 2
+
+### Summary
+
+Write a program that will ask the user for their score on an assignment,
+and the maximum points of the assignment.
+
+It will check the ratio, and either display "Pass" or "Fail" based on whether
+the assignment is 70% or higher (for pass), or less than 70% (for fail)
+
+### Knowledge
+
+* The logical opposite of ( percent > 50 ) is ( percent <= 50 )
+* The logical opposite of ( percent >= 50 ) is ( percent < 50 )
+* Note the different relational operators!
+* By utilizing **else**, we don't need to specify that failing is less than 70, 
+    if we've already specified that passing is 70 or greater.
+
+### Steps
+
+1. Create two float variables: **studentPoints** and **totalPoints**.
+2. Ask the user to enter their score. Store their score in the **studentPoints** variable.
+3. Ask the user to enter the total points. Store the total points in the **totalPoints** variable.
+4. Create another float variable called **percent**. Assign it to **( studentPoints / totalPoints ) * 100**.
+5. Display the score, displaying the **percent** variable.
+6. Create an if statement. If **percent** is greater than or equal to 70%, display "Pass".
+7. Otherwise, display "Fail".
+
+### Example output
+
+**Pass:**
+
+![Program 1 example](images/201701_lab4_program2.png)
+
+**Fail:**
+
+![Program 1 example](images/201701_lab4_program2b.png)
+
+### Solution
+
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+    #include <iostream>
+    #include <string>
+    using namespace std;
+        
+    int main()
+    {
+        float studentPoints, totalPoints;
+        
+        cout << "What was your score? ";
+        cin >> studentPoints;
+        
+        cout << "What was the total points? ";
+        cin >> totalPoints;
+        
+        float percent = ( studentPoints / totalPoints ) * 100;
+        
+        cout << "Score: " << percent << "% \t";
+        
+        if ( percent >= 70 )
+        {
+            cout << "Pass" << endl;
+        }
+        else
+        {
+            cout << "Fail" << endl;
+        }
+        
+        return 0;
+    }
+
+    
+</details>
 
 ---
 
