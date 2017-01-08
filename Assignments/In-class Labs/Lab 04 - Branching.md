@@ -303,6 +303,162 @@ Then, draw a picture for an estimate of whether it's 1/4 charge, 1/2 charge, 3/4
 
 ---
 
+## Tiny App 4: Input validation
+
+### Summary
+
+Write a program that displays a list of fruits and asks the user to choose one.
+If the user selects an invalid input, display an error message. Otherwise, display "good choice!"
+
+### Knowledge
+
+Logical operators:
+
+* && AND
+* || OR
+* ! NOT
+
+### Steps
+
+* Display the following menu:
+
+    What is your favorite fruit?
+    1. Apple
+    2. Banana
+    3. Pear
+    4. Strawberry
+    
+* Create an integer variable called **choice**.
+* Get the user's selection and store it in **choice**.
+* If the user's selection is invalid (their choice is less than 1, or it is greater than 4), display an error message, "Invalid choice!"
+* Otherwise, display "Good choice!"
+
+When checking for valid input, it should be all in one statement! Use a logical operator to combine two boolean expressions into one.
+
+### Example output
+
+**Valid input:**
+
+![Program 4 example](images/201701_lab4_program4a.png)
+
+**Invalid input:**
+
+![Program 4 example](images/201701_lab4_program4b.png)
+![Program 4 example](images/201701_lab4_program4c.png)
+
+### Solution
+
+    #include <iostream>
+    using namespace std;
+        
+    int main()
+    {    
+        cout << "What is your favorite fruit?" << endl;
+        cout << "1. Apple" << endl;
+        cout << "2. Banana" << endl;
+        cout << "3. Pear" << endl;
+        cout << "4. Strawberry" << endl;
+        
+        cout << endl << "Your selection: ";
+        
+        int choice;
+        cin >> choice;
+        
+        if ( choice < 1 || choice > 4 )
+        {
+            cout << "Invalid choice!" << endl;
+        }
+        else
+        {
+            cout << "Good choice!" << endl;
+        }
+        
+        return 0;
+    }
+
+
+---
+
+## Tiny App 5: Range
+
+### Summary
+
+Write a program that tells whether the point x2 is within 5 units from point x1.
+
+### Knowledge
+
+If you have a range, a < x < b, which means that x is between a and b, we
+cannot write a boolean expression that looks exactly the same.
+
+Instead, you have to split it up into two different expressions:
+
+* a < x
+* x < b
+
+and then combine it with an and statement:
+
+* ( a < x && x < b )
+
+### Steps
+
+1. Create two variables, both floats: **x1** and **x2**.
+2. Assign x1 the value of 5.00.
+3. Display the label "x1" and the value of the variable **x1**.
+4. Ask the user, "Where is x2?". Get their input and store it in **x2**.
+5. Create an if statement to check if x2 is within the range:
+    1. (x1 - 5) <= x2 <= (x1 + 5)
+6. If x2 is within the range, display the message "Within 5 units from x1!"
+7. Otherwise, display the message "Too far away...".
+
+### Example output
+
+**Within range:**
+
+![Program 5 example](images/201701_lab4_program5a.png)
+
+![Program 5 example](images/201701_lab4_program5b.png)
+
+**Outside of range:**
+
+![Program 5 example](images/201701_lab4_program5c.png)
+
+### Solution
+
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+    #include <iostream>
+    using namespace std;
+        
+    int main()
+    {
+        float x1 = 5.00;
+        float x2;
+        
+        cout << "x1 = " << x1 << endl;
+        
+        cout << endl << "Where is x2? ";
+        cin >> x2;
+        
+        if ( x1 - 5 <= x2 && x2 <= x1 + 5 )
+        {
+            cout << "Within 5 units from x1!" << endl;
+        }
+        else
+        {
+            cout << "Too far away..." << endl;
+        }
+        
+        return 0;
+    }
+
+    
+</details>
+
+---
+
 
 
 ---
