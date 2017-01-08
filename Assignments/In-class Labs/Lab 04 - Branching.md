@@ -62,7 +62,7 @@ Paste the following into your .cpp file to start with:
     
 ---
 
-## Tiny App 1
+## Tiny App 1: Hometown
 
 ### Summary
 
@@ -147,7 +147,7 @@ Finally, it will display "Hello, (NAME) from (LOCATION)"
 
 ---
 
-## Tiny App 2
+## Tiny App 2: Pass/Fail
 
 ### Summary
 
@@ -179,11 +179,11 @@ the assignment is 70% or higher (for pass), or less than 70% (for fail)
 
 **Pass:**
 
-![Program 1 example](images/201701_lab4_program2.png)
+![Program 2 example](images/201701_lab4_program2.png)
 
 **Fail:**
 
-![Program 1 example](images/201701_lab4_program2b.png)
+![Program 2 example](images/201701_lab4_program2b.png)
 
 ### Solution
 
@@ -224,6 +224,86 @@ the assignment is 70% or higher (for pass), or less than 70% (for fail)
 
     
 </details>
+
+---
+
+## Tiny App 3: Battery charge
+
+### Summary
+
+Write a program that will ask the user to enter the amount of charge of their phone battery.
+Then, draw a picture for an estimate of whether it's 1/4 charge, 1/2 charge, 3/4 charge, or full charge.
+
+### Steps
+
+1. Create a float variable called **battery**.
+2. Ask the user what their current battery charge is. Store their response in **battery**.
+3. If battery is 75% or greater, display the drawing: ![full battery](images/201701_lab4_program3a2.png)
+3. If battery is 50% or greater, display the drawing: ![3/4 battery](images/201701_lab4_program3b2.png)
+3. If battery is 25% or greater, display the drawing: ![half battery](images/201701_lab4_program3c2.png)
+3. Otherwise, display the drawing: ![low battery](images/201701_lab4_program3d2.png)
+
+### Example output
+
+**Full charge:**
+
+![Program 3 example](images/201701_lab4_program3a.png)
+
+**3/4ths charge:**
+
+![Program 3 example](images/201701_lab4_program3b.png)
+
+**1/2 charge:**
+
+![Program 3 example](images/201701_lab4_program3c.png)
+
+**1/4th charge:**
+
+![Program 3 example](images/201701_lab4_program3d.png)
+
+### Solution
+
+<details>
+	<summary><strong><em>
+		View the solution
+	</em></strong></summary>
+
+    #include <iostream>
+    using namespace std;
+        
+    int main()
+    {
+        float battery;
+        
+        cout << "What is your current battery charge? %";
+        cin >> battery;
+        
+        if ( battery >= 75 )
+        {
+            cout << "[****]" << endl;
+        }
+        else if ( battery >= 50 )
+        {
+            cout << "[*** ]" << endl;
+        }
+        else if ( battery >= 25 )
+        {
+            cout << "[**  ]" << endl;
+        }
+        else
+        {
+            cout << "[*   ]" << endl;
+        }
+        
+        return 0;
+    }
+
+    
+</details>
+
+---
+
+
 
 ---
 
