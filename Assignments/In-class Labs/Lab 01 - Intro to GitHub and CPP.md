@@ -30,7 +30,7 @@ Confirm your email address and we should be ready to go!
 
 ---
 
-## Project 1: Fork an existing repository
+## Project 2: Fork an existing repository
 
 ### Fork an existing repository
 
