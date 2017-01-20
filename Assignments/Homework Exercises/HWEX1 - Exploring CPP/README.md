@@ -49,6 +49,7 @@ with the program's name. The entire program run should look like this:
 
     Area: 25
 
+*Hint: You will need a cout statement for this.*
 
 ### B. Calculate the perimeter
 
