@@ -78,6 +78,24 @@ Test the program.
 
 ![Screenshot](images/cl2-00.png)
 
+### Solution
+
+        #include <iostream>
+        #include <string>
+        using namespace std;
+
+        int main()
+        {
+            cout << "1 tsp baking soda" << endl;
+            cout << "1/2 tsp baking powder" << endl;
+            cout << "1 c butter" << endl;
+            cout << "1 1/2 c white sugar" << endl;
+            cout << "1 egg" << endl;
+
+            while (true); // kludgey fix
+            return 0;
+        }
+
 ---
 
 ## Step 2: Store amounts in variables
