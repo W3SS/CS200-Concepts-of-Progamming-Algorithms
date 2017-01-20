@@ -91,20 +91,13 @@ Open up the project folder (either the .cbp for Code::Blocks, or .sln Solution f
 
 ### Making changes
 
-Once the project is downloaded, **Build and Run** the program.
+Open up the
 
-It will ask for your name and favorite color, and respond with a question:
+   Example Program/example.cpp
+   
+file and make some changes - they don't have to be changes that will run or compile, we're just doing some basics.
 
-![Sample program running](images/codeblocks-sample.png)
-
-Using the code that's already written, make the following changes:
-
-1. Change the text output to be all CAPITAL LETTERS.
-2. Change the **name** variable to be called **firstName** instead. Update all locations that use **name**.
-3. Using the current Variable declarations for reference, create another new string variable named **adjective**.
-4. Using the current Output and input for reference, have the program output the message, "ENTER AN ADJECTIVE: "
-5. Using the current Output and input for reference, have the program get the user's input and store it in your **adjective** variable.
-6. Using the current "So can I call you" output for reference, change it so that it will suggest ADJECTIVE + COLOR + NAME as the name to call the user.
+Make some changes and save the file, then continue on.
 
 ---
 
