@@ -116,6 +116,29 @@ so that they can be tweaked and the program will update the amounts.
 
 4. Test the program to make sure it still works.
 
+
+        #include <iostream>
+        #include <string>
+        using namespace std;
+
+        int main()
+        {
+            float tspBakingSoda = 2;
+            float tspBakingPowder = 0.5;
+            float cupsOfButter = 1;
+            float cupsOfSugar = 1.5;
+            float eggs = 1;
+
+            cout << tspBakingSoda << " tsp baking soda" << endl;
+            cout << tspBakingPowder << " tsp baking powder" << endl;
+            cout << cupsOfButter << " c butter" << endl;
+            cout << cupsOfSugar << " c white sugar" << endl;
+            cout << eggs << " egg" << endl;
+
+            while (true); // kludgey fix
+            return 0;
+        }
+
 ---
 
 ## Step 3: Allow ratios
