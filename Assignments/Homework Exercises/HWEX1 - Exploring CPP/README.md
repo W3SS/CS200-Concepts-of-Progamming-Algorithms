@@ -6,8 +6,12 @@ Before you get started, make sure to download a .zip file of the
 Visual Studio or Code::Blocks project (based on what you're using
 at home or at school).
 
-* [Visual Studio project]()
+* [Visual Studio project](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/Homework%20Exercises/HWEX1%20-%20Exploring%20CPP/starter/HWEX1_VisualStudio.zip?raw=true)
 * [Code::Blocks project](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/Homework%20Exercises/HWEX1%20-%20Exploring%20CPP/starter/HWEX1_CodeBlocks.zip?raw=true)
+
+Extract the zip file to your hard drive and open the project. You will want to locate and open the **Solution** file (.sln)
+
+![open the solution](images/solution.png)
 
 ## Rules
 
@@ -49,6 +53,7 @@ with the program's name. The entire program run should look like this:
 
     Area: 25
 
+*Hint: You will need a cout statement for this.*
 
 ### B. Calculate the perimeter
 
