@@ -98,7 +98,7 @@ Assign the following values to the variables, then output their values:
 
 ### Example output
 
-![Screenshot](images/cl4-00.png)
+![Screenshot](images/lab7_00.png)
 
 ### Solution
 
@@ -174,14 +174,77 @@ Once you've written it, the program should build and look similar to below.
 
 ### Example output
 
-![Screenshot](images/cl4-01.png)
+![Screenshot](images/lab7_01.png)
 
 ### No solution
 
 Solve on your own, or work with classmates to solve.
 
+--- 
+
+## Project 3: Adding change
+
+Start off with the following code:
+
+	#include <iostream>
+	#include <string>
+	using namespace std;
+	
+	// Declare function here
+
+	int main()
+	{	
+		while ( true )
+		{
+			int quarters, dimes, nickels, pennies;
+			
+			cout << "How many quarters? ";
+			cin >> quarters;
+			
+			cout << "How many dimes? ";
+			cin >> dimes;
+			
+			cout << "How many nickels? ";
+			cin >> nickels;
+			
+			cout << "How many pennies? ";
+			cin >> pennies;
+			
+			float money = CountChange( quarters, dimes, nickels, pennies );	
+			cout << "Money: $" << money << endl;
+			
+			cout << endl << endl;
+		}
+		
+		return 0;
+	}
 
 
+
+This program needs a function called **CountChange**. You will declare it.
+
+Its inputs will be, in order:
+
+* quarterCount, an integer
+* dimeCount, an integer
+* nickelCount, an integer
+* pennyCount, an integer
+
+And its output will be a float. The output will be the money value
+calculated from the change.
+
+For example, if quarterCount is 4, then the resulting money
+would be 4 * 0.25, or 1.00.
+
+Return the calculated money value.
+
+### Example output
+
+![Screenshot](images/lab7_03.png)
+
+### No solution
+
+Solve on your own, or work with classmates to solve.
 
 
 
