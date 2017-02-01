@@ -1,4 +1,4 @@
-# CS 200 Lab 5: While Loops
+# CS 200 Lab 7: Functions
 
 ## Chrome!
 
@@ -17,38 +17,88 @@ Make sure to zip your entire project folder and upload it in the dropbox on D2L.
 Also upload the .cpp file(s) to your class repository. 
 [See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
 
+---
+
+# Review
+
+In algebra, we have functions like this:
+
+	f(x) = 2x + 1
+	
+This is a function.
+
+The general idea behind a function is that it takes **input**, does some
+calculation, and returns an **output**.
+
+We can do the same thing in programming - though, we're not necessarily restricted to numbers.
+
+Functions all have **inputs** and **outputs** - though, sometimes,
+the inputs and/or the outputs might be empty, or return nothing.
+
+A basic function declaration looks like this:
+
+	float DoubleMe( float number )
+	{
+		return 2 * number;
+	}
+	
+The function **declaration** begins by specifying the **return type** - a float.
+This means that the function will return a float value as its **OUTPUT**.
+
+Second, **DoubleMe**, is the function name.
+
+Third, within parenthesis, are the **function parameters**. This function only 
+has one parameter - a number. The parameters are the **INPUTS** of the function.
+
+Finally, within the curly braces { and } is the **function body**. This is where
+you define your calculations and your logic that get executed.
+
+The function body works with the **input** to generate some **output**.
 
 ---
 
 # Assignments
 
-## Project 1: 1 through 10
+## Project 1: Calling a function
 
-You will use a while loop to display a list of numbers between 1 and 10, increasing.
+Start off with the following code:
 
-1. Create an integer variable called **countUp** and initialize it to 1.
+	#include <iostream>
+	using namespace std;
 
-2. Create a while loop. It should loop while **countUp** is less than 11.
-Inside the while loop...
+	// Input: A percent value (0% - 100%, no percent sign though)
+	// Output: The decimal equivalent (0.0 - 1.0)
+	float PercentToDecimal( float percent )
+	{
+		float decimal = percent / 100;
+		return decimal;
+	}
 
-	1. Display the current value of **countUp** with a cout statement.
+	int main()
+	{
+		return 0;
+	}
+
+This code has a function called **PercentToDecimal**.
+
+Within **main()**, you'll make several calls to this function.
+
+First, create the following variables. All of these are floats. **a**, **b**, and **c** are OK for now.
+
+Since our function returns a value, we can store its return value in a variable. To do this, 
+we assign the variable to the function **call**:
+
+	a = PercentToDecimal( 100 );
 	
-	2. Increment the value of **countUp** by one.
-	
-3. Once the loop has completed, display the message "done!" with cout.
+Assign the following values to the variables, then output their values:
 
-### Knowledge
-
-You can increment variables in a few different ways:
-
-	++countUp; 					// Increment countUp by 1, ++ can only be used for + 1
-	countUp++; 					// Increment countUp by 1, ++ can only be used for + 1
-	countUp += 1; 				// Increment countUp by 1
-	countUp = countUp + 1;		// Increment countUp by 1
+* a: 50 percent converted to 0.5 via the PercentToDecimal function.
+* b: 12.5 percent converted to 0.125 via the PercentToDecimal function.
+* c: 99.99 percent converted to 0.9999 via the PercentToDecimal function.
 
 ### Example output
 
-![Screenshot](images/cl3-00.png)
+![Screenshot](images/cl4-00.png)
 
 ### Solution
 
@@ -60,264 +110,79 @@ You can increment variables in a few different ways:
 	#include <iostream>
 	using namespace std;
 
+	// Input: A percent value (0% - 100%, no percent sign though)
+	// Output: The decimal equivalent (0.0 - 1.0)
+	float PercentToDecimal( float percent )
+	{
+		float decimal = percent / 100;
+		return decimal;
+	}
+
 	int main()
 	{
-		int countUp = 1;
+		float a, b, c;
 		
-		while ( countUp < 11 )
-		{
-			cout << countUp << " ";
-			countUp++;
-		}
+		a = PercentToDecimal( 50 );
+		b = PercentToDecimal( 12.5 );
+		c = PercentToDecimal( 99.99 );
 		
-		cout << endl << endl << "Done!" << endl;
+		cout << "a: " << a << endl;
+		cout << "b: " << b << endl;
+		cout << "c: " << c << endl;
 		
 		return 0;
 	}
+
 
 </details>
 
 ---
 
-## Project 2: 10 through 1
+## Project 2: Price and tax
 
-You will use a while loop to display a list of numbers between 10 and 1, decreasing.
-
-1. Create a variable called **countDown** and initialize it to 10.
-
-2. Create a while loop. It should loop while **countDown** is greater than 0.
-Inside the while loop...
-
-	1. Display the current value of **countDown** with a cout statement.
-	
-	2. Increment the value of **countDown** by one.
-	
-3. One the loop has completed, display the message "done!" with cout.
-
-### Example output
-
-![Screenshot](images/cl3-01.png)
-
-### Solution
-
-<details>
-	<summary><strong><em>
-		View the solution
-	</em></strong></summary>
+Start off with the following code:
 
 	#include <iostream>
 	using namespace std;
+	
+	// Declare function here
 
 	int main()
 	{
-		int countDown = 10;
-		
-		while ( countDown > 0 )
-		{
-			cout << countDown << " ";
-			countDown--;
-		}
-		
-		cout << endl << endl << "Done!" << endl;
+		cout << "Price: $" << 9.99 << " \t with tax: $" << AddTax( 9.99 ) << endl;
+		cout << "Price: $" << 19.95 << " \t with tax: $" << AddTax( 19.95 ) << endl;
+		cout << "Price: $" << 10.00 << " \t with tax: $" << AddTax( 10.00 ) << endl;
 		
 		return 0;
 	}
 
-    
-</details>
 
----
+This program initially won't build; notice that it is expecting an **AddTax** function.
+You will have to implement this.
 
-## Project 3: Count by 5's
+For the **AddTax** function, it should return a **float** type as its output,
+and its input will be a **float** named **dollar**.
 
-You will use a while loop to display a list of numbers between 0 and 20,
-increasing by 5 each time.
+Within the function, calculate the price plus tax and return that value.
 
-1. Create a variable called **counter** and initialize it to 0.
+First, to get the additional tax amount, you will multiply *dollar* by 0.12 (12% tax).
+Then, add this value to the original *dollar* amount.
+This is the value you will return as the function's output.
 
-2. Create a while loop. It should loop while **counter** is less than or equal to 20.
-Within the while loop...
+Once you've written it, the program should build and look similar to below.
 
-	1. Display the current value of **counter** with a cout statement.
-	
-	2. Increment the value of **counter** by 5. (Add 5 to it).
-
-3. Once the loop has completed, display the message "done!" with cout.
 
 ### Example output
 
-![Screenshot](images/cl3-02.png)
+![Screenshot](images/cl4-01.png)
 
-### Solution
+### No solution
 
-<details>
-	<summary><strong><em>
-		View the solution
-	</em></strong></summary>
+Solve on your own, or work with classmates to solve.
 
-	#include <iostream>
-	using namespace std;
 
-	int main()
-	{
-		int counter = 0;
-		
-		while ( counter <= 20 )
-		{
-			cout << counter << " ";
-			counter += 5;
-		}
-		
-		cout << endl << endl << "Done!" << endl;
-		
-		return 0;
-	}
 
-    
-</details>
 
----
-
-## Project 4: Number guesser
-
-Write a number-guesser game. The user will continue to guess numbers
-until they get it right.
-We will use a while loop to have the program keep asking the player for a guess,
-until they finally get it right.
-
-For this one, you will need a do-while loop. These look like:
-
-	do
-	{
-		// code to execute
-	} while ( condition );
-	
-And they are guaranteed to run the internal code *at least once*.
-
-1. Create an integer variable called **secretNumber**, and set it to
-your favorite number.
-
-2. Create another integer variable called **playerGuess**. It does not need to be initialized.
-
-3. Create a **do-while** loop. Inside the loop:
-	
-	1. Display a message to the user, asking them to enter a number guess. (cout)
-	
-	2. Get the player's guess and store it in the **playerGuess** variable. (cin)
-	
-	3. Compare the **playerGuess** value to the **secretNumber** value...
-	
-		1. If playerGuess is less than secretNumber, display the message "too low!"
-		
-		2. Otherwise, if playerGuess is greater than secretNumber, display the message "too high!"
-		
-4. At the end of the do-while loop you will put the condition for looping.
-Make the condition: while playerGuess is not equal to secretNumber.
-
-5. Outside the do-while loop, display the message "You win!" - this is displayed
-once the loop is "escaped", which only happens once the player has 
-correctly guessed the number.
-
-### Example output
-
-![Screenshot](images/cl3-03.png)
-
-### Solution
-
-<details>
-	<summary><strong><em>
-		View the solution
-	</em></strong></summary>
-
-	#include <iostream>
-	using namespace std;
-
-	int main()
-	{
-		int secretNumber = 7;
-		int playerGuess;
-		
-		do
-		{
-			cout << "Enter your guess: ";
-			cin >> playerGuess;
-			
-			if ( playerGuess < secretNumber )
-			{
-				cout << "Too low!" << endl;
-			}
-			else if ( playerGuess > secretNumber )
-			{
-				cout << "Too high!" << endl;
-			}
-			
-		} while ( playerGuess != secretNumber );
-		
-		cout << "You win!" << endl;
-		
-		return 0;
-	}
-
-    
-</details>
-
----
-
-## Project 5: Input validator
-
-Write a program that will act as an "input validator" for user input.
-Basically, it expects the input to be between a certain range,
-and if it is not, it requires the user to re-enter their choice.
-
-1. Display a message that says "Please enter a number between 0 and 5."
-
-2. Create a variable called **choice**, which is an integer.
-
-3. Use cin to get the user's input and store it in **choice**.
-
-4. Create a while loop. While **choice** is either
-less than 0 or greater than 5...
-
-	1. Display the message "invalid entry. Try again:"
-	
-	2. Get the user's input again (with cin) and store it in **choice**.
-
-5. Outside of the loop, display the message "Thank you".
-
-### Example output
-
-![Screenshot](images/cl3-04.png)
-
-### Solution
-
-<details>
-	<summary><strong><em>
-		View the solution
-	</em></strong></summary>
-
-	#include <iostream>
-	using namespace std;
-
-	int main()
-	{
-
-		cout << "Please enter a number between 0 and 5: ";
-		
-		int choice;
-		cin >> choice;
-		
-		while ( choice < 0 || choice > 5 )
-		{
-			cout << "Invalid entry. Try again: ";
-			cin >> choice;
-		}
-		
-		cout << "Thank you." << endl;
-		
-		return 0;
-	}
-
-</details>
 
 
 
