@@ -10,6 +10,17 @@ Follow along step-by-step to work on this program.
 * Output (cout)
 * Input (cin)
 
+## Rules
+
+* Finishing the lab after class:
+   * If you are not able to complete the lab during the class period, please finish it up outside of class and turn it in as soon as you can. The lab dropbox will be open for 1 week after the class session.
+
+* Group work:
+   * You may work with other students on labs:
+   * All people working together must turn in code in their own dropboxes, and upload the code to their own GitHub repositories.
+   * All group work must be noted as such - either put a comment in the code file or in the dropbox upload.
+   * If you turn in duplicate works without noting that you worked together, you may get a 0% grade.
+
 ---
 
 ## Setting up your project
