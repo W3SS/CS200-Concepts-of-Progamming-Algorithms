@@ -23,6 +23,19 @@ Make sure to zip your entire project folder and upload it in the dropbox on D2L.
 Also upload the .cpp file(s) to your class repository. 
 [See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
 
+
+
+## Rules
+
+* Finishing the lab after class:
+   * If you are not able to complete the lab during the class period, please finish it up outside of class and turn it in as soon as you can. The lab dropbox will be open for 1 week after the class session.
+
+* Group work:
+   * You may work with other students on labs:
+   * All people working together must turn in code in their own dropboxes, and upload the code to their own GitHub repositories.
+   * All group work must be noted as such - either put a comment in the code file or in the dropbox upload.
+   * If you turn in duplicate works without noting that you worked together, you may get a 0% grade.
+
 ---
 
 ## Setting up your project
