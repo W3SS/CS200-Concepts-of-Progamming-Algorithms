@@ -246,6 +246,83 @@ Return the calculated money value.
 
 Solve on your own, or work with classmates to solve.
 
+---
+
+## Project 4: Calculate distance
+
+Start off with the following code:
+
+	#include <iostream>
+	#include <string>
+	#include <cmath> // needed for square root
+	using namespace std;
+
+
+	int main()
+	{	
+		while ( true )
+		{
+			float x1, y1, x2, y2;
+			
+			cout << "First coordinate pair, enter x and y: ";
+			cin >> x1 >> y1;
+			
+			cout << "Second coordinate pair, enter x and y: ";
+			cin >> x2 >> y2;
+			
+			float distance = GetDistance( x1, y1, x2, y2 );
+			cout << "Distance: " << distance << endl;
+			
+			cout << endl << endl;
+		}
+		
+		return 0;
+	}
+
+
+
+
+This program needs a function called **GetDistance**. You will declare it.
+
+Its inputs will be, in order:
+
+* x1, a float
+* y1, a float
+* x2, a float
+* y2, a float
+
+And its output will be a float. The output will be the distance between
+the two points.
+
+Within the function, you will need to use the distance formula...:
+
+![Distance formula](images/lab7_03b.png)
+
+But you will have to translate it into programming code!
+
+To calculate a square root, we call the square root function...:
+
+	float a = sqrt( 4 ); // a = 2 now
+
+And if you want to calculate an exponent you can use the pow function:
+
+	float b = pow( 5, 2 ); // 5 to the 2nd power
+	
+Or simply multiple something by itself:
+
+	float c = 5 * 5; // Also basically 5 to the 2nd power.
+	
+
+
+### Example output
+
+![Screenshot](images/lab7_04.png)
+
+### No solution
+
+Solve on your own, or work with classmates to solve.
+
+
 
 
 
