@@ -25,3 +25,4 @@ Make sure you have your MPL questions done before the exam!
 
 * [CS 200 Spring 2016 review guide](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Review/Old-Review%20Guides/Exam%201%20Review%20Guide.pdf) - We are not covering arrays, so ignore that part
 
+* [Common programming errors](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Review/Common-errors.md) - will help with debugging portion
