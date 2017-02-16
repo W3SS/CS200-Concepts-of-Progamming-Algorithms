@@ -235,6 +235,27 @@ Then, adjust the food count with the formula:
 
 After the calculation, update the food count using SetFoodCount(int).
 
+## AdjustWaste()
+
+Inputs: None
+
+Outputs: None
+
+This function deals with the following functions:
+
+- GetWasteCount()		
+- GetWasteCreated_PerPersonPerDay()
+- GetTeamSize()			
+- GetCleanup_PerPersonPerDay()
+
+Create a temporary variable and assign it the value of GetWasteCount().
+
+Calculate the new waste count with the formula:
+
+	new waste count = old waste count + (waste created per person per day * team size) - (cleanup per person per day * team size)
+
+After the calculation, update the waste count using SetWasteCount(int).
+
 ## AdjustOxygen()
 
 Inputs: None
