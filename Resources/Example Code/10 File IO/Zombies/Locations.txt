@@ -1,8 +1,0 @@
-Marcho Marsh    10  5   2
-Venta Mountain  4   3   6
-Ligna Forest    5   6   3
-Sablo Beach     6   10  5
-Purpura Sea     0   5   2
-Kampo Fields    6   3   4
-Lilio Garden    6   2   3
-Roza Grassland  5   5   10

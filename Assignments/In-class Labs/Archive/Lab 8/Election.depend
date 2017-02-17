@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1476933768 source:/home/rejcx/TEACHING/CS200-Concepts-of-Progamming-Algorithms/Assignments/In-class Labs/Lab 8/main.cpp
-	<iostream>
-	<ctime>
-	<cstdlib>
-	<string>
-

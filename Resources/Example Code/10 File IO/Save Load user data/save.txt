@@ -1,7 +1,0 @@
-USERNAME_COUNT: 6
-red
-orange
-yellow
-green
-blue
-purple

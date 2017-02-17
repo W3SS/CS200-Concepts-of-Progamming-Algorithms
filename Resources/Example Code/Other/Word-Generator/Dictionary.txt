@@ -1,9 +1,0 @@
-ENGLISH, GENERATED
-are, letuti
-goodbye, setulunod
-hello, yisolu
-how, lir
-pizza, soyoliyen
-today, neno
-welcome, latiled
-you, tunor

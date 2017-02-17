@@ -1,4 +1,0 @@
-0:	"HELLO WORLD!" by Moosie
-1:	"This is a post" by Moosie
-2:	"I'm hungry" by Cheeseburger
-3:	"=^o.o^= Meow!" by Cat

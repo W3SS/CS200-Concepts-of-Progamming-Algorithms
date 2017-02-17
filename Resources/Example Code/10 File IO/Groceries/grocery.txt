@@ -1,6 +1,0 @@
-Item 	 Price 	 Quantity
-Potatoes	0.59	30
-Salad	1.99	20
-Pizza	10.99	30
-Orange	2.39	100
-Cake	2.39	300

@@ -1,7 +1,0 @@
-COUNT 5
-
-0 Action
-1 Adventure
-2 FPS
-3 Puzzle
-4 RPG

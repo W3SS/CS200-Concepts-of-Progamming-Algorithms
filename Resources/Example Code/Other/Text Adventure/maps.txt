@@ -1,9 +1,0 @@
-ROOM 0
-Forest Clearing
-You are standing in the clearing of a forest.
-NORTH
-SOUTH
-EAST
-WEST
-
-ROOM 1
