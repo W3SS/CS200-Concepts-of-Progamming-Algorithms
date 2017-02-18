@@ -10,12 +10,32 @@ Please read this in chrome so that the solutions are collapsed by default!
 * If Statements
 * Input (cin) and Output (cout)
 
-## Turn In
+## Turn in
 
-Make sure to zip your entire project folder and upload it in the dropbox on D2L.
+**You will need to upload your code both to the class D2L Dropbox, and to your CS 200 GitHub repository!**
 
-Also upload the .cpp file(s) to your class repository. 
-[See Lab 1 for instructions](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/master/Assignments/In-class%20Labs/Lab%2001%20-%20Intro%20to%20GitHub%20and%20CPP.md#upload-files)
+Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
+
+[Windows, you're annoying.](images/sourcefiles.png)
+
+**These are the only files you need** - You do not need to upload any Visual Studio files.
+
+Upload these source files to your GitHub repository and to the Dropbox.
+
+See also: 
+[TURNING IN SOURCE CODE instructions](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/Turning%20in%20source%20code.md)
+
+
+## Rules
+
+* Finishing the lab after class:
+   * If you are not able to complete the lab during the class period, please finish it up outside of class and turn it in as soon as you can. The lab dropbox will be open for 1 week after the class session.
+
+* Group work:
+   * You may work with other students on labs:
+   * All people working together must turn in code in their own dropboxes, and upload the code to their own GitHub repositories.
+   * All group work must be noted as such - either put a comment in the code file or in the dropbox upload.
+   * If you turn in duplicate works without noting that you worked together, you may get a 0% grade.
 
 
 ---

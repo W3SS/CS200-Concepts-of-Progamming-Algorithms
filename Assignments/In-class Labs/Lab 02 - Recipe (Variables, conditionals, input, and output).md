@@ -10,6 +10,23 @@ Follow along step-by-step to work on this program.
 * Output (cout)
 * Input (cin)
 
+  
+## Turn in
+
+**You will need to upload your code both to the class D2L Dropbox, and to your CS 200 GitHub repository!**
+
+Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
+
+[Windows, you're annoying.](images/sourcefiles.png)
+
+**These are the only files you need** - You do not need to upload any Visual Studio files.
+
+Upload these source files to your GitHub repository and to the Dropbox.
+
+See also: 
+[TURNING IN SOURCE CODE instructions](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/Turning%20in%20source%20code.md)
+
+
 ## Rules
 
 * Finishing the lab after class:
@@ -20,20 +37,6 @@ Follow along step-by-step to work on this program.
    * All people working together must turn in code in their own dropboxes, and upload the code to their own GitHub repositories.
    * All group work must be noted as such - either put a comment in the code file or in the dropbox upload.
    * If you turn in duplicate works without noting that you worked together, you may get a 0% grade.
-   
-## Turn in
-
-**You will need to upload your code both to the class D2L Dropbox, and to your CS 200 GitHub repository!**
-
-Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
-
-[Windows, you're annoying.](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/images/sourcefiles.png?raw=true)
-
-**These are the only files you need** - You do not need to upload any Visual Studio files.
-
-Upload these source files to your GitHub repository and to the Dropbox.
-
-See also: [TURNING IN SOURCE CODE instructions](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/Turning%20in%20source%20code.md)
 
 ---
 
