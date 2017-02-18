@@ -16,7 +16,8 @@ Please read this in chrome so that the solutions are collapsed by default!
 
 Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
 
-[Windows, you're annoying.](images/sourcefiles.png)
+
+![Windows, you're annoying.](images/sourcefiles.png)
 
 **These are the only files you need** - You do not need to upload any Visual Studio files.
 
