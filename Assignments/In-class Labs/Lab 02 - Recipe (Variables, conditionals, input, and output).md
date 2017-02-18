@@ -17,7 +17,7 @@ Follow along step-by-step to work on this program.
 
 Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
 
-[Windows, you're annoying.](images/sourcefiles.png)
+[Why](images/sourcefiles.png)
 
 **These are the only files you need** - You do not need to upload any Visual Studio files.
 
