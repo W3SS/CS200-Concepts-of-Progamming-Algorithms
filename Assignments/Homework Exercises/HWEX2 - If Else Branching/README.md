@@ -9,46 +9,23 @@
     If a copy is found, both people will receive a 0 on the assignment.
 * Open book / open note - do research as-needed.
 
-## Reference: Creating a project in Visual Studio
+## Turn in
 
-When  you first open Visual Studio, the home screen has the option to create a **New Project**:
+**You will need to upload your code both to the class D2L Dropbox, and to your CS 200 GitHub repository!**
 
-![New project view](images/visualstudio-start.png)
+Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
 
-Select that.
+![Windows, you're annoying.](https://github.com/Rachels-Courses/Course-Common-Files/raw/master/How-to/images/sourcefiles.png)
 
-From the left-hand menu, select **Visual C++**. Note: If you installed Visual Studio community edition on your machine, it may not automatically come with C++ and you'll have to download it.
+**These are the only files you need** - You do not need to upload any Visual Studio files.
 
-![New project](images/visualstudio-newproject.png)
+Upload these source files to your GitHub repository and to the Dropbox.
 
-Select **Empty Project** (make sure you select this one!), and give your project a **Name** and a **Location** on your hard drive. Then click **OK**.
+## Reference Information
 
-Your project will be created without any files in it, so you will have to create one.
-
-From the **Solution Explorer**, right-click your project, go to **Add**, and select **New Item...**:
-
-![New item](images/vs-solutionexplorer.png)
-
-(If you accidentally closed Solution Manager, reopen it through View > Solution Explorer)
-
-Select **C++ File (.cpp)** and give it a name, like "Exercise2.cpp", or "YOURNAME.cpp", then click **Add**.
-
-![Adding a file](images/vs-addfile.png)
-
-Then you will start off your program with the bare minimum code:
-
-	int main()
-	{
-		return 0;
-	}
-
-And include the following libraries as-needed:
-
-	// For displaying text with cout and getting input with cin.
-	#include <iostream>
- 
-	// For making string variables
-	#include <string> 
+* [How to turn in your source code](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/Turning%20in%20source%20code.md)
+* [Visual Studio - How to create a new project](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/New%20project%20-%20Visual%20Studio.md)
+* [Common programming errors](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Review/Common-errors.md)
 
 ---
 
