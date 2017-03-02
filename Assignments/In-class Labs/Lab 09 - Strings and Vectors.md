@@ -1,4 +1,4 @@
-# CS 200 Lab 8: Strings and Vectors
+# CS 200 Lab 9: Strings and Vectors
 
 ## Chrome!
 
