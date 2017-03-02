@@ -40,7 +40,7 @@ See also:
 
 ---
 
-## Part 2: Arrays
+## Part 1: Arrays
 
 An array is a list of items - it can be any data-type, but an array must only contain one data-type (e.g., an array of ints can only contain ints).
 
@@ -67,7 +67,9 @@ But **prices[3]** is **NOT VALID**! If the size of your array is 3 and you try t
 These *static* arrays cannot be resized, either, so we need to know
 what their size will be when we're writing the code. (There are *data structures* that exist to alleviate this problem further down the road!)
 
-### Practice 1A. Create an array of names
+---
+
+### Practice A. Create an array of names
 
 1. Declare an array. Its data type is **string**, the name of the variable is **names**, and it is of size 5.
 2. Assign the first element of the array (at index 0) the value of "Xia".
@@ -123,7 +125,9 @@ We can also use a variable to get an element of the list, rather than using hard
 	cout << names[ current ] << endl;
 	// This displays item at index 2.
 
-### Practice 1B. Keeping track of the amount of items in the list
+### Practice B. Keeping track of the amount of items in the list
+
+---
 
 Modify 1A to do the following:
 
@@ -201,7 +205,9 @@ Here is some sample code:
 
 It might take some practice to get used to, so let's get to it!
 
-### Practice 1C: Two arrays
+---
+
+### Practice C: Two arrays
 
 1. Declare an array of strings. Its name is **items** and its size is 3.
 2. Declare an array of floats. Its name is **prices** and its size is 3.
@@ -277,8 +283,10 @@ Sample output:
 
 </details>
 
+---
 
-### Practice 1D. Using a for-loop with an array
+
+### Practice D. Using a for-loop with an array
 
 For the following code:
 
@@ -318,8 +326,10 @@ and displays it to the screen.
 	}
 </details>
 
+---
 
-### Practice 1E. More for loops with an array
+
+### Practice E. More for loops with an array
 
 Modify 1C to use two for-loops instead of two while-loops
 
@@ -360,7 +370,9 @@ Modify 1C to use two for-loops instead of two while-loops
 	}
 </details>
 
-### Practice 1F. More loops with an array!
+---
+
+### Practice F. More loops with an array!
 
 For the following code:
 
