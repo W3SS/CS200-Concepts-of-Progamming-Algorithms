@@ -216,8 +216,8 @@ It might take some practice to get used to, so let's get to it!
 5. Create a while loop... while the itemCount is less than the arraySize:
 	1. Display a message to the user: "Enter item name: " (cout)
 	2. Get the user's input and store it in **items** at the position **itemCount**. (cin)
-	3. Display a message to the user: "Ener price: "
-	4. Get the user's input ands tore it in the **prices** array at the position **itemCount**
+	3. Display a message to the user: "Enter price: "
+	4. Get the user's input and store it in the **prices** array at the position **itemCount**
 	5. Add 1 to **itemCount**
 6. Once that while loop is finished, declare a new integer variable named **counter** and initialize it to 0.
 7. Create a second while loop... while the counter is less than itemCount:
