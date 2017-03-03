@@ -67,6 +67,25 @@ Upload these source files to your GitHub repository and to the Dropbox.
 
 ---
 
+# Note: Change in grading!
+
+![grading note](images/gradingnote.png)
+
+If your program does not build, 
+you will get 0% for the assignment.
+
+Make sure your program builds 
+and runs above all else.
+If it doesn't run, 
+you cannot run the unit tests!
+
+Work on one feature at a time, test, and
+BACKUP to your GitHub account after
+each feature! Then you can view
+the history over time.
+
+---
+
 # Introduction
 
 ## Review
