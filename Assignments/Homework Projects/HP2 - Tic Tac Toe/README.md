@@ -71,7 +71,18 @@ Upload these source files to your GitHub repository and to the Dropbox.
 
 ## Review
 
+* 2D arrays
+
 ## Files
+
+* hp2_program.hpp
+* hp2_program.cpp
+* hp2_tester.hpp
+* hp2_tester.cpp
+* Menu.hpp
+* StringUtil.hpp
+* TesterBase.hpp
+* TesterBase.cpp
 
 ## Unit tests
 
@@ -83,4 +94,52 @@ Don't write a ton of code all at once - write a small feature, then COMPILE to m
 
 ---
 
+# Private member variables
+
+These variables are part of the **Program** class and you will use them throughout the functions.
+
+    char gameBoard[3][3];
+    int turn;
+    int playerWins[PLAYER_COUNT];
+    int playerMarker[PLAYER_COUNT];
+
+* gameBoard - A 2D array that stores **characters** - either empty (' '), or a player piece 'x' or 'o'.
+* playerMarker - A 1D array with 2 elements. playerMarker 0 should be 'x', and playerMarker 1 should be 'o'.
+* turn - An integer to mark whose turn it is; this should correspond to the playerMarker (turn can be 0 or 1.)
+* playerWins - A 1D array. Count the amount of times that player 0 has won, and player 1 has won, in this array.
+
+---
+
 # Function Specifications
+
+## void Main()
+
+## void Setup()
+
+## void GameLoop()
+
+## void DrawBoard()
+
+## void DrawStats()
+
+## int GetValidInput( int min, int max )
+
+## int GetCurrentPlayerTurn()
+
+## void SwapTurn()
+
+## bool PlaceMarker( int x, int y, char marker )
+
+## int CheckForWinner
+
+---
+
+# Extra Credit
+
+## Option 1: CheckForWinner
+
+Update CheckForWinner to be more generic, using loops to check all the cells for "3-in-a-row", instead of a big series of for-loops.
+
+## Option 2: Add a third player
+
+Update the program to work with three players!!11
