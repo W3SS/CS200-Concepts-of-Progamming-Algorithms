@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="HP2 - CodeBlocks" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/HP2 - CodeBlocks" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/HP2 - CodeBlocks" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../cuTEST/Menu.hpp" />
+		<Unit filename="../cuTEST/StringUtil.hpp" />
+		<Unit filename="../cuTEST/TestTemplate.hpp" />
+		<Unit filename="../cuTEST/TesterBase.cpp" />
+		<Unit filename="../cuTEST/TesterBase.hpp" />
+		<Unit filename="../cuTEST/example.cpp" />
+		<Unit filename="../hp2_main.cpp" />
+		<Unit filename="../hp2_program.cpp" />
+		<Unit filename="../hp2_program.hpp" />
+		<Unit filename="../hp2_tester.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
