@@ -114,23 +114,93 @@ These variables are part of the **Program** class and you will use them througho
 
 ## void Main()
 
+Program entry point. Sets up the program and begins the game loop.
+
 ## void Setup()
+
+* Should initialize all ELEMENTS of the gameBoard to a space character: ' '
+* Set the turn marker to 0
+* Set playerWins for both players to 0
+* Set playerMarker for each player: 'x' and 'o'.
+
+## void ClearBoard() - Done
+
+Clear the game board of all pieces
 
 ## void GameLoop()
 
-## void DrawBoard()
+Create a game loop that will keep running until the user quits.
+Each cycle of the loop, call DrawStats() and DrawBoard(),
+then have the player choose an x, y coordinate.
 
-## void DrawStats()
+Use the *PlaceMarker* function to attempt to place the player's
+marker at the given x, y. If successful, then go to the other
+player's turn. (Otherwise, they will have to select again.)
+
+Use the *CheckForWinner* function to see if there is a winner yet.
+If there is a winner, increment the *playerWins* array for the
+appropriate player (add 1 to the player's wins), then 
+leave the game loop and return to Main.
 
 ## int GetValidInput( int min, int max )
 
+**INPUT:** A minimum numeric value (int min), and a maximum numeric value (int max),
+corresponding to a number menu, or positions on the Tic Tac Toe board.
+
+**OUTPUT:** The user's input, but only input that is *min <= input <= max*.
+
+* Get user to enter their decision.
+* While their input is invalid (< min or > max), have them re-enter their selection.
+* Return the user's input once valid input has been provided.
+
+## void DrawBoard() - DONE
+
+This draws the 2D game board.
+
+This function is already implemented.
+
+## void DrawStats()
+
+Display game stats, such as how many wins per player, and whose turn it is.
+
 ## int GetCurrentPlayerTurn()
+
+**OUTPUT:** The value of the *turn* variable.
 
 ## void SwapTurn()
 
+Change to the other player's turn. (Modify the *turn* variable.)
+
 ## bool PlaceMarker( int x, int y, char marker )
 
-## int CheckForWinner
+**INPUT:** A position on the game board (x, y coordinates), and
+the marker (game piece) of one of the players.
+
+**OUTPUT:** A boolean - whether the player's move was successful or not.
+
+Set the location on
+the game board to a specific marker (will be player's 'x' or 'o'...)
+However, you need to check to see if that spot on the board is available.
+If it is available, place the marker there, and return true.
+Otherwise, if it is unavailable ('x' or 'o' is already there), return false.
+
+## int CheckForWinner()
+
+Check the gameBoard for various win-scenarios.
+* Return -1 if nobody has a winning move, otherwise
+* return 0 for player 0 win, and return 1 for player 1 win.
+	( Player 0 should have 'x', Player 1 should have 'o'. )
+
+OPTIONS: You can either use if-statements to make an exhaustive 
+list of all possible win combinations (normal points).
+There should be 8 possible winning moves, per player.
+(See documentation)
+
+OR:
+
+Use a more generic approach, where you can use for-loop(s) to iterate
+through the game board positions and figure out if there is a winner
+or not. **(Extra credit)**
 
 ---
 
@@ -143,3 +213,23 @@ Update CheckForWinner to be more generic, using loops to check all the cells for
 ## Option 2: Add a third player
 
 Update the program to work with three players!!11
+
+---
+
+# Sample output 
+
+![game start](images/game1.png)
+
+![enter x y coordinate](images/game2.png)
+
+![x marker placed](images/game3.png)
+
+![enter x y coordinate](images/game4.png)
+
+![o marker placed](images/game5.png)
+
+![player wins](images/game6.png)
+
+---
+
+# Grading rubric
