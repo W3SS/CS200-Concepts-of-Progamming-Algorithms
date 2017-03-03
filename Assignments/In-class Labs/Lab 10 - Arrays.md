@@ -355,7 +355,6 @@ Modify 1C to use two for-loops instead of two while-loops
 			cin >> items[itemCount];
 			cout << "Enter price: ";
 			cin >> prices[itemCount];
-			itemCount++;
 		}
 		
 		cout << endl;
@@ -363,7 +362,6 @@ Modify 1C to use two for-loops instead of two while-loops
 		for ( int counter = 0; counter < itemCount; counter++ )
 		{
 			cout << "Item #" << counter << ": " << items[counter] << ", $" << prices[counter] << endl;
-			counter++;
 		}
 		
 		return 0;
