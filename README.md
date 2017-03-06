@@ -1,5 +1,7 @@
 # CS200: Concepts of Progamming Algorithms
 
+Spring 2017
+
 [Catalog description](http://catalog.jccc.edu/coursedescriptions/cs/#CS_200)
 
 ## Objectives
