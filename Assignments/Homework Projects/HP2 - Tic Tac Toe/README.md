@@ -159,6 +159,10 @@ Use the *PlaceMarker* function to attempt to place the player's
 marker at the given x, y. If successful, then go to the other
 player's turn. (Otherwise, they will have to select again.)
 
+When calling *PlaceMarker*, it takes three inputs: **x**, **y**, and **marker**. For the marker, pass in the appropriate **playerMarker** for whoever's turn it is... in other words...:
+
+	playerMarker[turn]
+
 Use the *CheckForWinner* function to see if there is a winner yet.
 If there is a winner, increment the *playerWins* array for the
 appropriate player (add 1 to the player's wins), then 
@@ -169,7 +173,7 @@ leave the game loop and return to Main.
 **INPUT:** A minimum numeric value (int min), and a maximum numeric value (int max),
 corresponding to a number menu, or positions on the Tic Tac Toe board.
 
-**OUTPUT:** The user's input, but only input that is *min <= input <= max*.
+**OUTPUT:** Returns the user's input, but only input that is *min <= input <= max*.
 
 * Get user to enter their decision via a **cin** command.
 * While their input is invalid (input < min or input > max), have them re-enter their selection.
@@ -192,7 +196,7 @@ Display game stats:
 
 ## int GetCurrentPlayerTurn()
 
-**OUTPUT:** The value of the *turn* variable.
+**OUTPUT:** Return the value of the *turn* variable.
 
 This only returns your **turn** variable.
 
@@ -207,7 +211,7 @@ In other words, if the **turn** variable is 0, change it to 1. If it is 1, chang
 **INPUT:** A position on the game board (x, y coordinates), and
 the marker (game piece) of one of the players.
 
-**OUTPUT:** A boolean - whether the player's move was successful or not.
+**OUTPUT:** Returns a boolean - whether the player's move was successful or not.
 
 The **marker** variable stores either an 'x' or an 'o'; use this to set the board cell, *not* the playerMarker array.
 
@@ -220,8 +224,8 @@ If it is not empty, you CANNOT place the marker here. Don't change anything and 
 ## int CheckForWinner()
 
 Check the gameBoard for various win-scenarios.
-* Return -1 if nobody has a winning move, otherwise
-* return 0 for player 0 win, and return 1 for player 1 win.
+* Returns -1 if nobody has a winning move, otherwise
+* returns 0 for player 0 win, and return 1 for player 1 win.
 	( Player 0 should have 'x', Player 1 should have 'o'. )
 
 OPTIONS: You can either use if-statements to make an exhaustive 
