@@ -152,6 +152,9 @@ Create a game loop that will keep running until the user quits.
 Each cycle of the loop, call DrawStats() and DrawBoard(),
 then have the player choose an x, y coordinate.
 
+The **turn** variable can be utilized to keep track of whether it is player 0's turn, or player 1's turn.
+**turn** will store either 0 or 1 as a value.
+
 Use the *PlaceMarker* function to attempt to place the player's
 marker at the given x, y. If successful, then go to the other
 player's turn. (Otherwise, they will have to select again.)
@@ -182,7 +185,10 @@ This function is already implemented.
 
 ## void DrawStats()
 
-Display game stats, such as how many wins per player, and whose turn it is.
+Display game stats:
+
+* Display how many wins each player has had - **playerWins** array
+* Display whose turn it is - **turn** variable
 
 ## int GetCurrentPlayerTurn()
 
