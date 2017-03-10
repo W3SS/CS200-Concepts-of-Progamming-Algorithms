@@ -120,7 +120,7 @@ These variables are part of the **Program** class and you will use them througho
     char gameBoard[3][3];
     int turn;
     int playerWins[PLAYER_COUNT];
-    int playerMarker[PLAYER_COUNT];
+    char playerMarker[PLAYER_COUNT];
 
 * gameBoard - A 2D array that stores **characters** - either empty (' '), or a player piece 'x' or 'o'.
 * playerMarker - A 1D array with 2 elements. playerMarker 0 should be 'x', and playerMarker 1 should be 'o'.
@@ -193,6 +193,11 @@ Display game stats:
 
 * Display how many wins each player has had - **playerWins** array
 * Display whose turn it is - **turn** variable
+
+	// Display...
+	playerWins[0]
+	playerWins[1]
+	turn
 
 ## int GetCurrentPlayerTurn()
 
