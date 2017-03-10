@@ -194,10 +194,12 @@ Display game stats:
 * Display how many wins each player has had - **playerWins** array
 * Display whose turn it is - **turn** variable
 
-	// Display...
-	playerWins[0]
-	playerWins[1]
-	turn
+
+		// Display...
+		playerWins[0]
+		playerWins[1]
+		turn
+
 
 ## int GetCurrentPlayerTurn()
 
