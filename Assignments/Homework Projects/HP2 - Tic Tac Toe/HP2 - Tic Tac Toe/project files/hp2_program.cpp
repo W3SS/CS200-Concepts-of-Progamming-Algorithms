@@ -116,7 +116,7 @@ void Program::DrawBoard() // Done
 
 /* GetCurrentPlayerTurn() - Return the value of the *turn* variable.
  * */
-int Program::GetCurrentPlayerTurn()
+int Program::GetCurrentPlayerTurn() const
 {
     return -1; // temp
 }

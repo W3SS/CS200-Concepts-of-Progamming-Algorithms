@@ -23,7 +23,7 @@ public:
     void DrawStats();
     int GetValidInput( int min, int max );
 
-    int GetCurrentPlayerTurn();
+    int GetCurrentPlayerTurn() const;
     void SwapTurn();
 
     bool PlaceMarker( int x, int y, char marker );
