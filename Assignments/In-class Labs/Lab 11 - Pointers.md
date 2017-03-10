@@ -222,20 +222,25 @@ You can pass any variable name into the sizeof function to get its size. For exa
 
 
 <table>
-<tr><th>C++</th><th>Output</th></tr>
+<tr>
+  <th>C++</th>
+  <th>Output</th>
+</tr>
 
-<tr><td>
-<pre>
+<tr>
+  <td>
+    <pre>
 char choice;
 cout << sizeof( choice ) << endl;
-</pre>
-</td></tr>
+    </pre>
+  </td>
 
-<tr><td>
-<pre>
+  <td>
+    <pre>
 1
-</pre>
-</td></tr>
+    </pre>
+  </td>
+</tr>
 </table>
 
 **Sample Output:**
