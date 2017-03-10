@@ -168,9 +168,11 @@ corresponding to a number menu, or positions on the Tic Tac Toe board.
 
 **OUTPUT:** The user's input, but only input that is *min <= input <= max*.
 
-* Get user to enter their decision.
-* While their input is invalid (< min or > max), have them re-enter their selection.
+* Get user to enter their decision via a **cin** command.
+* While their input is invalid (input < min or input > max), have them re-enter their selection.
 * Return the user's input once valid input has been provided.
+
+This function is meant to be generic so that *anything* can call it to get validated input; not just x, y coordinates of the board.
 
 ## void DrawBoard() - DONE
 
@@ -186,9 +188,13 @@ Display game stats, such as how many wins per player, and whose turn it is.
 
 **OUTPUT:** The value of the *turn* variable.
 
+This only returns your **turn** variable.
+
 ## void SwapTurn()
 
 Change to the other player's turn. (Modify the *turn* variable.)
+
+In other words, if the **turn** variable is 0, change it to 1. If it is 1, change it to 0.
 
 ## bool PlaceMarker( int x, int y, char marker )
 
@@ -197,11 +203,13 @@ the marker (game piece) of one of the players.
 
 **OUTPUT:** A boolean - whether the player's move was successful or not.
 
-Set the location on
-the game board to a specific marker (will be player's 'x' or 'o'...)
-However, you need to check to see if that spot on the board is available.
-If it is available, place the marker there, and return true.
-Otherwise, if it is unavailable ('x' or 'o' is already there), return false.
+The **marker** variable stores either an 'x' or an 'o'; use this to set the board cell, *not* the playerMarker array.
+
+First, check to see if the **gameBoard** at position **x, y** is empty. 
+
+If it is empty, you can place the marker here. Update the **gameBoard** with your **marker** and return true.
+
+If it is not empty, you CANNOT place the marker here. Don't change anything and return false.
 
 ## int CheckForWinner()
 
