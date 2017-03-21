@@ -90,6 +90,7 @@ the history over time.
 
 ## Review
 
+* 1D arrays
 * 2D arrays
 
 ## Files
