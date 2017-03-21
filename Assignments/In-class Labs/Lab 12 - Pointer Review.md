@@ -59,57 +59,57 @@ See also:
 <table>
 
 <tr>
-        <td>Address-of operator</td>
-        <td>&</td>
-        <td><pre>
+<td>Address-of operator</td>
+<td>&</td>
+<td><pre>
 cout << &cost << endl;
-        </pre></td>
-        <td></td>
+</pre></td>
+<td></td>
 </tr>
 
 <tr>
-        <td>Dereference operator</td>
-        <td>*</td>
-        <td><pre>
+<td>Dereference operator</td>
+<td>*</td>
+<td><pre>
 cout << *ptrPrice << endl;
-        </pre></td>
-        <td></td>
+</pre></td>
+<td></td>
 </tr>
 
 <tr>
-        <td>Member-of operator</td>
-        <td>-></td>
-        <td><pre>
+<td>Member-of operator</td>
+<td>-></td>
+<td><pre>
 cout << ptrStudent->name << endl;
-        </pre></td>
-        <td>The member-of operator is used for classes, where with a non-pointer it would be student.name</td>
+</pre></td>
+<td>The member-of operator is used for classes, where with a non-pointer it would be student.name</td>
 </tr>
 
 <tr>
-        <td>Declaring a pointer</td>
-        <td></td>
-        <td><pre>
+<td>Declaring a pointer</td>
+<td></td>
+<td><pre>
 string* ptrStringVal;
-        </pre></td>
-        <td></td>
+</pre></td>
+<td></td>
 </tr>
 
 <tr>
-        <td>Getting the address of a variable</td>
-        <td></td>
-        <td><pre>
+<td>Getting the address of a variable</td>
+<td></td>
+<td><pre>
 &variableName
-        </pre></td>
-        <td></td>
+</pre></td>
+<td></td>
 </tr>
 
 <tr>
-        <td>Assigning an address to a pointer</td>
-        <td></td>
-        <td><pre>
+<td>Assigning an address to a pointer</td>
+<td></td>
+<td><pre>
 *ptrCurrent
-        </pre></td>
-        <td>Use this to get the value, or set the value at that address.</td>
+</pre></td>
+<td>Use this to get the value, or set the value at that address.</td>
 </tr>
 
 </table>
@@ -139,25 +139,25 @@ declared as: **College* ptrSchool;**
 Create an array of 3 colleges and fill in the information:
 
 <table>
-        <tr>
-                <th>Name</th>
-                <th>State</th>
-        </tr>
-        
-        <tr>
-                <td>JCCC</td>
-                <td>KS</td>
-        </tr>
-        
-        <tr>
-                <td>MCCKC</td>
-                <td>MO</td>
-        </tr>
-        
-        <tr>
-                <td>KCKCC</td>
-                <td>KS</td>
-        </tr>
+<tr>
+<th>Name</th>
+<th>State</th>
+</tr>
+
+<tr>
+<td>JCCC</td>
+<td>KS</td>
+</tr>
+
+<tr>
+<td>MCCKC</td>
+<td>MO</td>
+</tr>
+
+<tr>
+<td>KCKCC</td>
+<td>KS</td>
+</tr>
 </table>
 
 Then you will create an array of 5 students.

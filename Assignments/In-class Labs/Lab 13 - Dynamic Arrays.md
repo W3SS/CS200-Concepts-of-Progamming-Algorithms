@@ -66,62 +66,62 @@ problems – you can't get that memory back until the user resets their computer
 Here are the steps to creating a new dynamic variable:
 
 <table>
-        <tr>
-                <th>Code</th>
-                <th>Description</th>
-        </tr>
-        
-        <tr>
-                <td><pre>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><pre>
 string* dynamicString;
-                </pre></td>
-                
-                <td>
-                Create a pointer variable.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Create a pointer variable.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 dynamicString = new string;
-                </pre></td>
-                
-                <td>
-                Create a new string with the pointer.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Create a new string with the pointer.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 *dynamicString = "Hello!";
-                </pre></td>
-                
-                <td>
-                        Assign a value to our new variable.
-                        (must go through the pointer – use the
-                        de-reference operator)
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Assign a value to our new variable.
+(must go through the pointer – use the
+de-reference operator)
+</td>
+</tr>
+
+<tr>
+<td><pre>
 cout << *dynamicString << endl;
-                </pre></td>
-                
-                <td>
-                        Display the value of the variable.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Display the value of the variable.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 delete dynamicString;
-                </pre></td>
-                
-                <td>
-                        Free up the memory when done.
-                </td>
-        </tr>
+</pre></td>
+
+<td>
+Free up the memory when done.
+</td>
+</tr>
 </table>
 
 ---
@@ -185,19 +185,19 @@ member in one of two ways, when using pointers:
 Set up your person variables' names. For example:
 
 <table>
-        <tr><td>PersonA</td><td>PersonB</td><td>PersonC</td></tr>
-        
-        <tr>
-                <td>
-                        Harry
-                </td>
-                <td>
-                        Ron
-                </td>
-                <td>
-                        Hermione
-                </td>
-        </tr>
+<tr><td>PersonA</td><td>PersonB</td><td>PersonC</td></tr>
+
+<tr>
+<td>
+Harry
+</td>
+<td>
+Ron
+</td>
+<td>
+Hermione
+</td>
+</tr>
 </table>
 
 Set each person's ptrFriend pointer to point to the address of another Person. You
@@ -238,54 +238,54 @@ delete whatever you create with new!
 
 
 <table>
-        <tr>
-                <th>Code</th>
-                <th>Description</th>
-        </tr>
-        
-        <tr>
-                <td><pre>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td><pre>
 float* prices;
-                </pre></td>
-                
-                <td>
-                Create a pointer variable.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Create a pointer variable.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 prices = new float[ 5 ];
-                </pre></td>
-                
-                <td>
-                Allocate memory as an array.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Allocate memory as an array.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 for ( int i = 0; i < 5; i++ )
 {
         prices[i] = i * 2;
         cout << prices[i] << endl;
 }
-                </pre></td>
-                
-                <td>
-                Assign values and display the values.
-                </td>
-        </tr>
-        
-        <tr>
-                <td><pre>
+</pre></td>
+
+<td>
+Assign values and display the values.
+</td>
+</tr>
+
+<tr>
+<td><pre>
 delete [] prices;
-                </pre></td>
-                
-                <td>
-                Free the memory up afterward.
-                </td>
-        </tr>
+</pre></td>
+
+<td>
+Free the memory up afterward.
+</td>
+</tr>
 </table>
 
 Note that with dynamic arrays, you don't need to use the de-reference operator when
