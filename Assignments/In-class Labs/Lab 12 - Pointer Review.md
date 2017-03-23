@@ -205,10 +205,19 @@ Use another for-loop to iterate through all students.
 
 1. Display the student's name.
 2. Display the student's ID (the index from the for-loop)
-3. Display the student's college via the ptrSchool pointer. You will need to either dereference
-the ptrSchool pointer, or use the member-of operator.
-4. Display the student's state via the ptrSchool pointer. You will need to either dereference
-the ptrSchool pointer, or use the member-of operator.
+3. Display the student's college via the ptrSchool pointer.
+4. Display the student's state via the ptrSchool pointer.
+
+Note that *ptrSchool* is a pointer. To access an item's member variables through a pointer,
+you need the ```->``` operator:
+
+```c++
+Student student;
+// stuff
+
+// Display the school's name
+cout << student.ptrSchool->name;
+```
 
 ### Example output
 
