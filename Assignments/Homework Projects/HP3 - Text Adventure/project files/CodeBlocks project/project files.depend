@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1490303577 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP3 - Text Adventure/project files/hp3_main.cpp
+	"hp3_program.hpp"
+
+1490304265 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP3 - Text Adventure/project files/hp3_program.hpp
+	"hp3_location.hpp"
+	<iostream>
+	<string>
+
+1490304374 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP3 - Text Adventure/project files/hp3_location.hpp
+	<iostream>
+	<string>
+
+1490305280 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP3 - Text Adventure/project files/hp3_program.cpp
+	"hp3_program.hpp"
+	<iostream>
+
+1490303577 source:/home/rayechell/TEACHING/cs200/CS200-Concepts-of-Progamming-Algorithms/Assignments/Homework Projects/HP3 - Text Adventure/project files/hp3_main.cpp
+	"hp3_program.hpp"
+
+1490306474 /home/rayechell/TEACHING/cs200/CS200-Concepts-of-Progamming-Algorithms/Assignments/Homework Projects/HP3 - Text Adventure/project files/hp3_program.hpp
+	"hp3_location.hpp"
+	<iostream>
+	<string>
+
+1490304374 /home/rayechell/TEACHING/cs200/CS200-Concepts-of-Progamming-Algorithms/Assignments/Homework Projects/HP3 - Text Adventure/project files/hp3_location.hpp
+	<iostream>
+	<string>
+
+1490306073 source:/home/rayechell/TEACHING/cs200/CS200-Concepts-of-Progamming-Algorithms/Assignments/Homework Projects/HP3 - Text Adventure/project files/hp3_program.cpp
+	"hp3_program.hpp"
+	<iostream>
+
