@@ -134,6 +134,8 @@ struct College
 };
 ```
 
+(paste this code above main, outside of all functions.)
+
 ## Student struct
 
 * name, a string (public)
@@ -146,6 +148,8 @@ struct Student
   College* ptrSchool;
 };
 ```
+
+(paste this code above main, outside of all functions.)
 
 For the “ptrSchool” pointer, you will create a pointer that will point to a College object. It would be
 declared as: **College* ptrSchool;**
