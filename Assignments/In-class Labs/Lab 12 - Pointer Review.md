@@ -126,10 +126,26 @@ the simplest.
 * name, a string (public)
 * state, a string (public)
 
+```c++
+struct College
+{
+  string name;
+  string state;
+};
+```
+
 ## Student struct
 
 * name, a string (public)
 * ptrSchool, a College pointer (public)
+
+```c++
+struct Student
+{
+  string name;
+  College* ptrSchool;
+};
+```
 
 For the “ptrSchool” pointer, you will create a pointer that will point to a College object. It would be
 declared as: **College* ptrSchool;**
