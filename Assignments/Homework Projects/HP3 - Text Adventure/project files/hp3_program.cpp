@@ -52,6 +52,7 @@ void Program::DisplayCurrentLocation()
  * */
 string Program::GetUserInput()
 {
+	return ""; // temp - replace me
 }
 
 
