@@ -40,85 +40,86 @@ Upload these source files to your GitHub repository and to the Dropbox.
 
 You can use this code as your starting point:
 
-	#include <iostream>
-	#include <string>
-	using namespace std;
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-	// A person struct - by making a struct, we can then
-	// declare a variable whose data-type is Person.
-	// The Person data-type contains two internal variables:
-	// name, a string	&	home, a string pointer
-	struct Person
+// A person struct - by making a struct, we can then
+// declare a variable whose data-type is Person.
+// The Person data-type contains two internal variables:
+// name, a string	&	home, a string pointer
+struct Person
+{
+	string name;
+	string* home;
+};
+
+void SetupLocations( string* locationList );
+void SetupPeople( Person* personList, int personCount, string* locationList, int locationCount );
+
+int main()
+{
+	string* locationList;							// Create a string* pointer
+	locationList = new string[5];					// Use the pointer to create a dynamic array
+	SetupLocations( locationList );					// Call function to set up data
+
+
+	Person* personList;								// Create a Person* pointer
+	personList = new Person[4];						// Use the pointer to create a dynamic array
+	SetupPeople( personList, 4, locationList, 5 );	// Call function to set up data
+
+
+	// Display all people info
+	for ( int p = 0; p < 4; p++ )
 	{
-		string name;
-		string* home;
-	};
+		// Display each person's name and their home location's name.
+		// Note that Person.home is a POINTER. You have to dereference
+		// the pointer to get its value, otherwise it will just
+		// give you a memory address.
 
-	void SetupLocations( string* locationList );
-	void SetupPeople( Person* personList, int personCount, string* locationList, int locationCount );
+		cout << personList[p].name << "\t" << *personList[p].home << endl;
+	}
 
-	int main()
+
+	// Make sure to free up the memory afterward!
+	delete [] locationList;
+	delete [] personList;
+
+	return 0;
+}
+
+void SetupLocations( string* locationList )
+{
+	locationList[0] = "Raytown";
+	locationList[1] = "Grandview";
+	locationList[2] = "Independence";
+	locationList[3] = "Liberty";
+	locationList[4] = "Belton";
+}
+
+void SetupPeople( Person* personList, int personCount, string* locationList, int locationCount )
+{
+	for ( int p = 0; p < personCount; p++ )
 	{
-		string* locationList;							// Create a string* pointer
-		locationList = new string[5];					// Use the pointer to create a dynamic array
-		SetupLocations( locationList );					// Call function to set up data
-		
-		
-		Person* personList;								// Create a Person* pointer
-		personList = new Person[4];						// Use the pointer to create a dynamic array
-		SetupPeople( personList, 4, locationList, 5 );	// Call function to set up data
-		
-		
-		// Display all people info
-		for ( int p = 0; p < 4; p++ )
+		cout << "Person " << p << "'s name: ";
+
+		cin >> personList[p].name;
+
+		cout << endl << "Locations:" << endl;
+		for ( int c = 0; c < locationCount; c++ )
 		{
-			// Display each person's name and their home location's name.
-			// Note that Person.home is a POINTER. You have to dereference
-			// the pointer to get its value, otherwise it will just
-			// give you a memory address.
-			
-			cout << personList[p].name << "\t" << *personList[p].home << endl;
+			cout << c << ". " << locationList[c] << endl;
 		}
-		
-		
-		// Make sure to free up the memory afterward!
-		delete [] locationList;
-		delete [] personList;
-		
-		return 0;
-	}
+		cout << personList[p].name << "'s home: ";
 
-	void SetupLocations( string* locationList )
-	{
-		locationList[0] = "Raytown";
-		locationList[1] = "Grandview";
-		locationList[2] = "Independence";
-		locationList[3] = "Liberty";
-		locationList[4] = "Belton";
-	}
+		int index;
+		cin >> index;
 
-	void SetupPeople( Person* personList, int personCount, string* locationList, int locationCount )
-	{
-		for ( int p = 0; p < personCount; p++ )
-		{
-			cout << "Person " << p << "'s name: ";
-			
-			cin >> personList[p].name;
-			
-			cout << endl << "Locations:" << endl;
-			for ( int c = 0; c < locationCount; c++ )
-			{
-				cout << c << ". " << locationList[c] << endl;
-			}
-			cout << personList[p].name << "'s home: ";
-			
-			int index;
-			cin >> index;
-			
-			personList[p].home = &locationList[index];
-		}
+		personList[p].home = &locationList[index];
 	}
-
+}
+```
 
 
 
