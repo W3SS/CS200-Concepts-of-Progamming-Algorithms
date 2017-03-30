@@ -132,7 +132,6 @@ to the instructions.
 ## Location struct
 
 Change around the program so that *location* isn't just a string anymore.
-
 Create a struct called **Location**, and within the struct store:
 
 * city (string)
@@ -149,6 +148,14 @@ Update the parameter list in the prototype on line 15, as well
 as the actual function definition that is below main().
 Set up each locations' city, state, and zip.
 
+```c++
+void SetupLocations( Location locArr[] )
+{
+	// Set each location's city, state, and zip.
+	// Locations 0 through 5
+}
+```
+
 Note: To access a *member variable* of a struct, you will use the
 dot operator: . Pay attention to how we access items from the personList:
 
@@ -161,6 +168,13 @@ its prototype.
 
 Within this function, make sure that the locationList only displays
 the *city* and *state*; you don't need to display the zip code here.
+
+After the person enters the *INDEX* of the location they want,
+you're going to update the person's **home** pointer to the location.
+
+```c++
+personList[p].home = (Put the address of the element of the locationList array)
+```
 
 ### main() function
 
