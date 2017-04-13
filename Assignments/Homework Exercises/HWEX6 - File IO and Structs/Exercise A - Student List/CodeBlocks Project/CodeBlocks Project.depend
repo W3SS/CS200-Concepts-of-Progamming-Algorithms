@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1492102007 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HWEX6 - File IO/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+
