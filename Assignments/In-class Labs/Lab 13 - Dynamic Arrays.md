@@ -1,4 +1,4 @@
-# CS 200 Lab 14: Dynamic variables and arrays
+# CS 200 Lab 13: Dynamic variables and arrays
 
 ## Chrome!
 
