@@ -126,10 +126,30 @@ the simplest.
 * name, a string (public)
 * state, a string (public)
 
+```c++
+struct College
+{
+  string name;
+  string state;
+};
+```
+
+(paste this code above main, outside of all functions.)
+
 ## Student struct
 
 * name, a string (public)
 * ptrSchool, a College pointer (public)
+
+```c++
+struct Student
+{
+  string name;
+  College* ptrSchool;
+};
+```
+
+(paste this code above main, outside of all functions.)
 
 For the “ptrSchool” pointer, you will create a pointer that will point to a College object. It would be
 declared as: **College* ptrSchool;**
@@ -185,7 +205,47 @@ Use another for-loop to iterate through all students.
 
 1. Display the student's name.
 2. Display the student's ID (the index from the for-loop)
-3. Display the student's college via the ptrSchool pointer. You will need to either dereference
-the ptrSchool pointer, or use the member-of operator.
-4. Display the student's state via the ptrSchool pointer. You will need to either dereference
-the ptrSchool pointer, or use the member-of operator.
+3. Display the student's college via the ptrSchool pointer.
+4. Display the student's state via the ptrSchool pointer.
+
+Note that *ptrSchool* is a pointer. To access an item's member variables through a pointer,
+you need the ```->``` operator:
+
+```c++
+Student student;
+// stuff
+
+// Display the school's name
+cout << student.ptrSchool->name;
+```
+
+### Example output
+
+    Enter name for student 1: Acantha
+    Which college for Acantha?
+    
+    1. JCCC
+    2. MCCKC
+    3. KCKCC
+ 
+    >> 1
+    
+    Enter name for student 2: Isaak 
+    Which college for Isaak?
+    
+    1. JCCC
+    2. MCCKC
+    3. KCKCC
+    
+    >> 2
+    
+    (etc)
+    
+    All students:
+    
+    1. Acantha    JCCC    KS
+    2. Isaak      MCCKC   MO
+    3. Vilim      KCKCC   KS
+    4. Faelan     JCCC    KS
+    5. Branca     MCCKC   MO
+    

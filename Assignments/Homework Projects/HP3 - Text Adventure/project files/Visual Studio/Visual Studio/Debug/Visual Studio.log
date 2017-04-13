@@ -1,0 +1,4 @@
+﻿  hp3_program.cpp
+  hp3_main.cpp
+  Generating Code...
+c:\jccc\cs 200 files\cs200-concepts-of-progamming-algorithms\assignments\homework projects\hp3 - text adventure\project files\hp3_program.cpp(55): error C4716: 'Program::GetUserInput': must return a value
