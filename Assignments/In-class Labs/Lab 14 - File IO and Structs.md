@@ -418,18 +418,204 @@ Finally, make sure to close the file once you're done:
 output.close();
 ```
 
-# Program 2
+# Program 2: Word swap
 
-# Program 3
+Create a text file that your program will read:
 
-# Program 4
+		The Fox and the Grapes - An Aesop's Fable
 
+		One hot summer's day a Fox was strolling through an orchard till he came to a bunch of Grapes just ripening on a vine which had been trained over a lofty branch.
 
+		"Just the thing to quench my thirst," quoth he.
 
+		Drawing back a few paces, he took a run and a jump, and just missed the bunch.
 
+		Turning round again with a One, Two, Three, he jumped up, but with no greater success.
 
+		Again and again he tried after the tempting morsel, but at last had to give it up, and walked away with his nose in the air, saying:
 
+		"I am sure they are sour."
 
+The program you write will read in this story, and swap out certain words.
 
+## main()
 
+First, ask the user what word to search for. Store this in a string.
 
+Then, ask the user what to replace that word with. Store this in a string as well.
+
+Create a third string variable, and name it "buffer". This is what we will
+use to store the text in as we are reading the file.
+
+Next, you will need to create an **ifstream** object as the input,
+and an **ofstream** object as the output.
+
+For example:
+
+```c++
+ifstream input( "story_original.txt" );
+ofstream output( "story_modified.txt" );
+```
+
+You can use a *while loop* to keep reading this text file, until the end
+of the file is hit:
+
+```c++
+while ( input >> buffer )
+{
+	// Write this text back out to the output
+	output << buffer << " ";
+}
+```
+
+At the moment, this will just read in the text file, then dump it
+back out to the output file with all the same words. Let's modify
+it to do the substitution.
+
+Within your loop, look at the value of **buffer**. If the **buffer**
+matches the **search-for-word**, then instead of outputting the *buffer* 
+value, output the **replace-value** instead. Otherwise, just output the
+original word.
+
+```c++
+if ( buffer == searchFor )
+{
+	output << replaceWith << " ";
+}
+else
+{
+	output << buffer << " ";
+}
+```
+
+Once the loop has finished, make sure to close both the files:
+
+```c++
+input.close();
+output.close();
+```
+
+Test the program by running it, and checking the output text file
+to make sure the changes were made by the program!
+
+# Program 3: Randomly generated poetry
+
+First, create three text files that will be the input of the program:
+nouns.txt and adjectives.txt.
+
+Popuplate them with a list of each type of word. For example:
+
+*nouns.txt:*
+
+roses 	violets 	sugar 		cats 		dogs 
+pizzas 	robots 		dinosaurs 	geese 		squid
+
+*adjectives.txt:*
+
+red 	blue 		sweet 	gigantic 	electronic 
+tasty 	friendly 	cute	smelly 		annoying
+
+## includes
+
+Make sure to include the following, at the top of your source file:
+
+```c++
+#include <iostream>
+#include <fstream>      // file input/output
+#include <string>
+#include <cstdlib>      // has functions for random #s
+#include <ctime>        // for seeding the random # generator
+using namespace std;
+```
+
+## Struct: PoemMaker
+
+Create a struct called **PoemMaker**. This struct will contain
+the list of nouns and adjectives that can be used in a poem,
+but will also contain functions to make it easy to generate poems.
+
+**Member variables:**
+
+* nouns, an array of strings
+* adjectives, an array of strings
+
+These arrays can be size 10 each, if you're using the example
+text files above.
+
+**Member functions:**
+
+* void LoadNouns( string filename )
+* void LoadAdjectives( string filename )
+* string GetRandomNoun()
+* string GetRandomAdjective()
+* string GeneratePoem( int lines )
+
+### void LoadNouns( string filename )
+
+* In this function, create an **ifstream** object.
+* Open the file specified by *filename*.
+* Load in all 10 nouns into the **nouns** array. (Use a loop)
+* Close the input file.
+
+### void LoadAdjectives( string filename )
+
+* In this function, create an **ifstream** object.
+* Open the file specified by *filename*.
+* Load in all 10 adjectives into the **adjectives** array. (Use a loop)
+* Close the input file.
+
+### string GetRandomNoun()
+
+* Get a random number between 0 and 9 with the rand() function.
+* Return a noun from the **nouns** array at the generated random index.
+
+Note: If you want to generate a random number between 0 and 9, use:
+
+```c++
+int randomNumber = rand() % 10;
+```
+
+### string GetRandomAdjective()
+
+* Get a random number between 0 and 9 with the rand() function.
+* Return a adjective from the **adjectives** array at the generated random index.
+
+### string GeneratePoem( int lines )
+
+* Create an string named **poem**, initialize it to an empty string.
+* The parameter *lines* specifies how many lines the poem should have.
+* Create a for-loop to go from 0 until the amount of *lines*...:
+	* Add a new line to the **poem** string, using GetRandomNoun()
+	and GetRandomAdjective()
+* return the **poem** variable once done.
+
+## main()
+
+To seed the random number generator, make sure to do this
+at the beginning of main:
+
+```c++
+srand( time( NULL ) );
+```
+
+Then, create a new PoemMaker variable:
+
+```c++
+PoemMaker poemMaker;
+```
+
+Call the **LoadNouns** and **LoadAdjectives** functions of the PoemMaker
+so that it will load in your *nouns.txt* and *adjectives.txt* files.
+
+Then, create a string variable to store your poem. Set this variable
+equal to the return value of the **GeneratePoem** function of the PoemMaker...:
+
+```c++
+string poem = poemMaker.GeneratePoem( 5 );
+```
+
+Use **cout** to display the poem afterward.
+
+## Screenshot
+
+![screenshot](images/lab14_prog3.png)
