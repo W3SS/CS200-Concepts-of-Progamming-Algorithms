@@ -162,16 +162,16 @@ This should only return the value of the *m_length* private member variable.
 This function should calculate the area of the room (width x length) and
 return that value.
 
-## string GetTitle()
+### string GetTitle()
 
 This should only return the value of the *m_title* private member variable.
 
-## void SetTitle( string newTitle )
+### void SetTitle( string newTitle )
 
 This should set the private member variable *m_title*'s value to the
 value of the parameter *newTitle*.
 
-## void SetDimensions( int newWidth, int newLength )
+### void SetDimensions( int newWidth, int newLength )
 
 This should check to make sure *newWidth* and *newLength* are positive
 numbers. If either of them are 0 or negative, then don't update the
@@ -180,7 +180,7 @@ corresponding width or height value.
 This function should set the private member variable *m_width*'s new
 value to the *width* parameter, and *m_height* to *height*.
 
-## Testing
+### Testing
 
 Uncomment out the contents of the **RoomProgram** function and run
 the program to see if the room is working.
@@ -243,7 +243,7 @@ Building building( 5 );
 We can overload constructors as well (write multiple constructors with
 different parameter lists). If we only have one constructor, and it takes
 a parameter, then it will be impossible to create a variable without
-passing in this argument, like ```Building building;```.
+passing in this argument, like ```Building building;```
 
 Within the constructor, do the following:
 
@@ -268,6 +268,113 @@ You will need to do the following:
 
 * Check if the *m_rooms* pointer is *nullptr*. If it is NOT nullptr...
 	* Free up the memory allocated for the dynamic array using the **delete []** keyword.
+
+### void SetRoomTitle( int room, string title )
+
+First check to make sure that the *room* passed in is valid - this is
+supposed to be an index to access an element of the *m_rooms* array.
+If it is negative, or equal to or greater than the room count, then it is invalid.
+
+If it is invalid, don't change anything.
+
+Otherwise, use the **SetTitle** function of the Room class to set
+*m_rooms[ room ]*'s title.
+
+
+### void SetRoomDimensions( int room, int newWidth, int newLength )
+
+First check to make sure that the *room* passed in is valid - this is
+supposed to be an index to access an element of the *m_rooms* array.
+If it is negative, or equal to or greater than the room count, then it is invalid.
+
+If it is invalid, don't change anything.
+
+Otherwise, use the **SetDimensions** function of the Room class to set
+*m_rooms[ room ]*'s width and length.
+
+
+### int GetTotalArea()
+
+This function should sum all of the areas of the rooms that belong
+to the building. Create a variable to store the sum of areas,
+then iterate through all the elements of *m_rooms* and use the
+*GetArea()* function to add on to your sum. Return the sum once finished.
+
+### void PrintBuildingInformation( string filename )
+
+Copy the following for this function:
+
+```c++
+void PrintBuildingInformation( string filename )
+{
+	ofstream output( filename );
+
+	output << "BUILDING Dimensions: " << GetTotalArea() << " sqft" << endl << endl;
+
+	for ( int i = 0; i < m_roomCount; i++ )
+	{
+		output << endl << "ROOM " << (i+1) << " ("
+			<< m_rooms[i].GetTitle() << "):"
+			<< "\n\t * Dimensions: " << m_rooms[i].GetWidth() << " x " << m_rooms[i].GetLength()
+			<< "\n\t * Area:       " << m_rooms[i].GetArea() << " sqft" << endl;
+	}
+
+	output.close();
+}
+```
+
+### Testing
+
+Test the building by uncommenting out the BuildingProgram function:
+
+```c++
+void BuildingProgram()
+{
+    // This function works with the Building object
+
+    Building building( 5 );
+
+    building.SetRoomTitle( 0, "Entryway" );
+    building.SetRoomTitle( 1, "Living Room" );
+    building.SetRoomTitle( 2, "Kitchen" );
+    building.SetRoomTitle( 3, "Bedroom" );
+    building.SetRoomTitle( 4, "Bathroom" );
+
+    building.SetRoomDimensions( 0, 5, 10 );
+    building.SetRoomDimensions( 1, 5, 10 );
+    building.SetRoomDimensions( 2, 5, 10 );
+    building.SetRoomDimensions( 3, 5, 10 );
+    building.SetRoomDimensions( 4, 5, 10 );
+
+    building.PrintBuildingInformation( "building.txt" );
+}
+```
+
+Run the program, and locate the output text file. It should have
+information like this:
+
+BUILDING Dimensions: 250 sqft
+
+
+		ROOM 1 (Entryway):
+			 * Dimensions: 5 x 10
+			 * Area:       50 sqft
+
+		ROOM 2 (Living Room):
+			 * Dimensions: 5 x 10
+			 * Area:       50 sqft
+
+		ROOM 3 (Kitchen):
+			 * Dimensions: 5 x 10
+			 * Area:       50 sqft
+
+		ROOM 4 (Bedroom):
+			 * Dimensions: 5 x 10
+			 * Area:       50 sqft
+
+		ROOM 5 (Bathroom):
+			 * Dimensions: 5 x 10
+			 * Area:       50 sqft
 
 
 

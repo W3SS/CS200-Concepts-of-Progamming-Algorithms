@@ -11,8 +11,27 @@ class Building
 {
 };
 
-int main()
+void RoomProgram()
 {
+	/*
+    // This function works with the Room object
+
+    Room room;
+    room.SetDimensions( 5, 4 );
+
+    cout << "Room area is: " << room.GetArea() << endl;
+
+    room.SetTitle( "closet" );
+
+    cout << "Room name is: " << room.GetTitle() << endl;
+    */
+}
+
+void BuildingProgram()
+{
+	/*
+    // This function works with the Building object
+
     Building building( 5 );
 
     building.SetRoomTitle( 0, "Entryway" );
@@ -28,6 +47,13 @@ int main()
     building.SetRoomDimensions( 4, 5, 10 );
 
     building.PrintBuildingInformation( "building.txt" );
+    */
+}
+
+int main()
+{
+    RoomProgram();
+    BuildingProgram();
 
     return 0;
 }
