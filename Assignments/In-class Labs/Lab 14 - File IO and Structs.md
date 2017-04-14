@@ -500,7 +500,7 @@ to make sure the changes were made by the program!
 
 # Program 3: Randomly generated poetry
 
-First, create three text files that will be the input of the program:
+First, create two text files that will be the input of the program:
 nouns.txt and adjectives.txt.
 
 Popuplate them with a list of each type of word. For example:
