@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1492721931 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	"hp4_program.hpp"
+
+1492725565 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/hp4_program.hpp
+	<iostream>
+	<string>
+	"Base.hpp"
+	"Person.hpp"
+	"Location.hpp"
+
+1492724927 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Base.hpp
+	<string>
+
+1492725206 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Person.hpp
+	<string>
+	<fstream>
+
+1492722055 /home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Location.hpp
+	<string>
+
+1492726263 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/hp4_program.cpp
+	"hp4_program.hpp"
+	<iostream>
+	<fstream>
+	<string>
+	<cstdlib>
+	<ctime>
+
+1492726388 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Location.cpp
+	"Location.hpp"
+
+1492724975 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Base.cpp
+	"Base.hpp"
+
+1492726019 source:/home/rayechell/TEACHING/cs200/cs-200-private-files/Project solutions 2017-01/HP4 - Zombie Survival/Person.cpp
+	"Person.hpp"
+	<iostream>
+	<iomanip>
+
