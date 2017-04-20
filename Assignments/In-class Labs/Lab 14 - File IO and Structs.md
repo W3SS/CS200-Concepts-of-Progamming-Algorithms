@@ -498,9 +498,14 @@ output.close();
 Test the program by running it, and checking the output text file
 to make sure the changes were made by the program!
 
+## Text output
+
+Note that your output file will display the entire story all on one line, unless you
+program in *endl* statements in your program.
+
 # Program 3: Randomly generated poetry
 
-First, create three text files that will be the input of the program:
+First, create two text files that will be the input of the program:
 nouns.txt and adjectives.txt.
 
 Popuplate them with a list of each type of word. For example:
