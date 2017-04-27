@@ -482,12 +482,22 @@ the index as well as the value.
 
 ![screenshot](images/201701_lab16_a.png)
 
+---
+
 
 # Item 2: Static Members
 
+---
+
 # Item 3: Const Functions
+
+
+---
 
 # Item 4: Namespaces
 
+----
+
 # Item 5: Operator Overloading
 
+---
