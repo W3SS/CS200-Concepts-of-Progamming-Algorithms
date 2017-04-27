@@ -62,12 +62,107 @@ into ```main.cpp```, to let it know that it can use your class.
 
 Name your new files as specified in each *lab item*.
 
+# Multiple files
 
-# Item 1: Constructors and Destructors
+Once your programs are growing and containing multiple classes, it is
+standard to put these classes in their own source files.
 
-## Introduction
+In C++, there are two types of source files: 
 
-### Terminology - Objects, Instances, Instantiation
+* Header Files
+	* Saved as ```.h``` or ```.hpp```
+	* Stores class and function **declarations** (prototypes)
+* Source Files
+	* Saved as ```.cpp```
+	* Stores function **definitions**
+
+So, say that we're going to create a ```Square``` class.
+The class declaration and its function declarations would go in a .hpp file:
+
+```c++
+// Square.hpp
+#ifndef _SQUARE_HPP
+#define _SQUARE_HPP
+
+class Square
+{
+	public:
+	void SetWidth( float value );
+	void SetLength( float value );
+	float GetWidth();
+	float GetLength();
+	float GetArea();
+	
+	private:
+	float m_width, m_length;
+};
+
+#endif
+```
+
+And then our function definitions would go in the .cpp file:
+
+```c++
+// Square.cpp
+#include "Square.hpp"
+
+void Square::SetWidth( float value )
+{
+	m_width = value;
+}
+
+void Square::SetLength( float value )
+{
+	m_length = value;
+}
+
+float Square::GetWidth()
+{
+	return m_width;
+}
+
+float Square::GetLength()
+{
+	return m_length;
+}
+
+float Square::GetArea()
+{
+	return m_width * m_length;
+}
+```
+
+**Scope resolution operator ::**
+
+When a member function is *defined* outside of the class declaration,
+it must be prefixed with the class name and the *scope resolution operator*, 
+like ```Square::```.
+
+**ifndef preprocessors**
+
+In our header files, we need to tell the compiler to not allow the file
+to be included multiple times. 
+
+If we didn't, then the compiler would get
+confused if we have multiple source files including the same header file.
+The compiler would complain about *multiple definitions* of the same
+classes and functions, because it is essentially "copy-and-paste"ing
+the source from the headers into each source file that ```#include```s it.
+
+So, we put the following in every header:
+
+```c++
+#ifndef _UNIQUE_NAME
+#define _UNIQUE_NAME
+
+#endif
+```
+
+This prevents this duplication error.
+
+# Constructors and Destructors Introduction
+
+## Terminology - Objects, Instances, Instantiation
 
 When you declare a class, you're essentially creating a new *data-type*.
 
@@ -91,7 +186,7 @@ int main()
 }
 ```
 
-### Constructors
+## Constructors
 
 When a new object is created, a **constructor function** is called.
 If you don't define your own constructor, C++ will make one *implicitly*.
@@ -120,7 +215,7 @@ public:
 }
 ```
 
-### Constructor Overloading
+## Constructor Overloading
 
 You can also **overload** your constructors and have more than one.
 To overload a constructor, each subsequent constructor must have a
@@ -192,7 +287,46 @@ int main()
 }
 ```
 
-### Destructors
+## Destructors
+
+**Destructors** are also functions that are automatically called
+given some circumstances. Whereas constructors are called when an
+object is created, a destructor is called when **the object is destroyed.**
+
+This can be when the **delete** command is used on a dynamic variable,
+or when a local variable loses scope (e.g., function ends).
+
+**You cannot overload destructors** - you can only have one, and it has
+no parameters. Usually, destructors are used to clean up data.
+
+```c++
+class FileWriter
+{
+	FileWriter( string filename )
+	{
+		// Open file when the writer is created
+		m_file.open( filename );
+	}
+	
+	~FileWriter()
+	{
+		// Close the file when the writer is destroyed
+		m_file.close();
+	}
+	
+	void Write( string text )
+	{
+		m_file << text << endl;
+	}
+	
+private:
+	ofstream m_file;
+};
+```
+
+# Item 1: Constructor/Destructor project
+
+
 
 
 # Item 2: Static Members
