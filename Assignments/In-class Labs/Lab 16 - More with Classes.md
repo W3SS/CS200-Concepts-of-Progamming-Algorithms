@@ -740,9 +740,34 @@ When the function is run, it will look like:
 
 # Friend introduction
 
----
+When we declare member variables and functions as **private** within a class,
+only that class itself can access those members.
 
-# Item 4: Friends
+If we want something accessible to anything, we use **public**.
+
+However, there are some design cases where you may want to give a certain
+function or other class special access to the private member variables of
+another class.
+
+This is where **friends** come in handy. By declaring a class or function
+as a *friend* within a class' definition, the other class will be able to access
+private member variables...
+
+```c++
+class Book
+{
+public:
+	friend class Librarian; // The librarian has special access to private members.
+
+private:
+	string m_title;
+};
+
+class Librarian
+{
+	// ... stuff goes here ...
+};
+```
 
 ---
 
@@ -885,7 +910,7 @@ Class declaration:
 class MyClass
 {
 public:
-	MyClass& operator=( const MyClass& rhs );
+	MyClass& operator=( const MyClass& rhs ); // "rhs" stands for "right-hand side", i.e., a = b, b is on rhs.
 	private:
 	int variable1;
 	float variable2;
@@ -909,14 +934,131 @@ MyClass&  MyClass ::operator=( const MyClass& rhs )
 
 ---
 
-# Item 5: Operator Overloading
+# Item 4: Operator Overloading
+
+Create two new files: ```Fraction.hpp``` and ```Fraction.cpp```.
+
+Paste in this class declaration into *Fraction.hpp*:
+
+```c++
+#ifndef _FRACTION_HPP
+#define _FRACTION_HPP
+
+#include <ostream>
+using namespace std;
+
+class Fraction
+{
+public:
+    void Setup( int n, int d );
+
+    // assignment operator
+    Fraction& operator=( const Fraction& rhs );
+
+    // multiplication operator
+    friend Fraction operator*( const Fraction& a, const Fraction& b );
+
+    // equality operator
+    friend bool operator==( Fraction& a, Fraction& b );
+
+    // output stream operator
+    friend ostream& operator<<( ostream& out, Fraction& a );
+
+private:
+    int m_n;
+    int m_d;
+};
+
+#endif
+```
+
+We are going to overload ```=```, ```*```, ```==```, and ```<<```.
+Notice that ```=``` is the only member function, and the other three are friend functions.
+
+Start out *Fraction.cpp* with:
+
+```c++
+#include "Fraction.hpp"
+
+void Fraction::Setup( int n, int d )
+{
+}
+
+Fraction& Fraction::operator=( const Fraction& rhs )
+{
+}
+
+// Friend functions
+
+ostream& operator<<( ostream& out, Fraction& a )
+{
+}
+
+bool operator==( Fraction& a, Fraction& b )
+{
+}
+
+Fraction operator*( const Fraction& a, const Fraction& b )
+{
+}
+```
+
+### Setup
+
+This function should assign the private member variable ```m_n```
+to the value of the ```n``` parameter, and also set ```m_d``` to the
+```d``` parameter.
+
+### operator<<
+
+This function will be used to display a fraction.
+
+```c++
+Fraction f1;
+f1.Setup( 1, 3 );
+cout << f1 << endl;
+```
+
+We are overloading this function because, for a fraction, we would
+want to dispaly both the numerator AND the denominator.
+
+We can use the ```out``` parameter just like ```cout``` - because they're family!
+
+So, to output the fraction, you will output ```Fraction& a``` 's
+numerator (```a.m_n```), then a slash (```"/"```), then the denominator (```a.m_d```).
 
 
+### operator==
+
+### operator*
+
+### operator=
+
+The usage of this funtion will look like...:
+
+```c++
+Fraction f1, f2;
+f1.Setup( 1, 3 );
+f2 = f1;
+```
+
+Where we can assign one fraction to another fraction (f2 is assigned f1).
+
+In the function, there is a parameter: ```const Fraction& rhs```.
+This would be the item we're assigning our fraction *to*.
+
+To copy a fraction, you would have to copy both its numerator and its denominator.
+
+We can access the numerator and denominator for the "copy new values FROM" fraction with
+```rhs.m_d``` and ```rhs.m_n```, and we can access the "copy new values TO" fraction with
+```m_d``` and ```m_n```.
+
+So, copy over the new values to the old values.
 
 
+### Example output
 
-
-
+![Fraction program](images/201701_lab16_Fraction.png)
 
 
 
