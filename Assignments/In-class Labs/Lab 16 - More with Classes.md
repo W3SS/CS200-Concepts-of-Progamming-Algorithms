@@ -8,7 +8,6 @@
 * Static Members
 * Const functions
 * Multiple files
-* Namespaces
 
 ## Turn in
 
