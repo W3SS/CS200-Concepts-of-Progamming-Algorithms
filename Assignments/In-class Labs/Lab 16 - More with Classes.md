@@ -703,6 +703,38 @@ float CoordPair::GetX() const
 
 # Item 3: Const Functions
 
+Create two new files: ```Button.hpp``` and ```Button.cpp```
+
+Create your button class according to this diagram:
+
+![Button diagram](images/201701_lab16_Button.png)
+
+The *SetText* function will take the parameter ```text``` and assign its value
+to the private member variable ```m_text```.
+
+The *Draw* function is const, but will display the button as a frame
+plus the text:
+
+```c++
+	int len = m_text.size() + 4;
+
+	for ( int i = 0; i < len; i++ )
+	{
+		cout << "*";
+	}
+	cout << endl;
+	cout << "* " << m_text << " *" << endl;
+
+	for ( int i = 0; i < len; i++ )
+	{
+		cout << "*";
+	}
+	cout << endl;
+```
+
+When the function is run, it will look like:
+
+![Button program screenshot](images/201701_lab16_ButtonProgram.png)
 
 ---
 
