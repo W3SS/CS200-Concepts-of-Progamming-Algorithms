@@ -738,16 +738,185 @@ When the function is run, it will look like:
 
 ---
 
-# Namespace introduction
+# Friend introduction
 
 ---
 
-# Item 4: Namespaces
+# Item 4: Friends
 
-----
+---
+
+# Operator Overloading introduction
+
+An interesting feature of C++ is that we can **overload** operators such as
+
+```+```, ```-```, ```*```, ```/```, ```=```, ```==```, ```!=```
+
+and more!
+
+For example, we can concatenate ```string``` objects with the + sign:
+
+```c++
+string last = "Morris";
+string first = "Rachel";
+string format = last + ", " + first;
+```
+
+In any of our classes we're writing, we can also overload these operators.
+Some operators are stored **within the class**, and some operators are
+**external to the class**.
+
+When we're overloading these operators, it is **up to us** to decide
+what the + operator (or any other) means for our object. Do we have
+any private member variables to combine?
+
+Use the following code snippets for reference on how to overload each...
+
+## Operator Overloading reference
+
+### Arithmetic operators
+
+In the class declaration:
+
+```c++
+class MyClass
+{
+public:
+	friend MyClass operator+( const MyClass& item1, const MyClass& item2 );
+	friend MyClass operator­( const MyClass& item1, const MyClass& item2 );
+	friend MyClass operator*( const MyClass& item1, const MyClass& item2 );
+	friend MyClass operator/( const MyClass& item1, const MyClass& item2 );
+};
+```
+
+Implementation:
+
+```c++
+MyClass operator+( const MyClass& item1, const MyClass& item2 )
+{
+	// ...
+}
+```
+
+### Comparison operators
+
+Class declaration:
+
+```c++
+class MyClass
+{
+public:
+	friend bool operator==( MyClass& item1, MyClass& item2 );
+	friend bool operator!=( MyClass& item1, MyClass& item2 );
+	friend bool operator<( MyClass& item1, MyClass& item2 );
+	friend bool operator>( MyClass& item1, MyClass& item2 );
+	friend bool operator<=( MyClass& item1, MyClass& item2 );
+	friend bool operator>=( MyClass& item1, MyClass& item2 );
+};
+```
+
+Implementation:
+
+```c++
+bool operator==( MyClass& item1, MyClass& item2 )
+{
+	// ...
+}
+```
+
+### Stream operators
+
+Class declaration:
+
+```c++
+#include <fstream>
+class MyClass
+{
+public:
+	friend ostream& operator<<( ostream& out, MyClass& item );
+	friend istream& operator>>( istream& in, MyClass& item );
+};
+```
+
+Implementation:
+
+```c++
+ostream& operator<<( ostream& out, MyClass& item )
+{
+	out << item.textField << endl;
+	return out;
+}
+
+istream& operator>>( istream& in, MyClass& item )
+{
+	in >> item.loadedField;
+}
+```
+
+### Subscript operator
+
+Class declaration:
+
+```c++
+class MyClass
+{
+public:
+	int& operator[]( const int index );
+	private:
+	int m_data[];
+};
+```
+
+Implementation:
+
+```c++
+int&  MyClass ::operator[]( const int index )
+{
+	return m_data[ index ];
+}
+```
+
+### Assignment operator
+
+
+Class declaration:
+
+```c++
+class MyClass
+{
+public:
+	MyClass& operator=( const MyClass& rhs );
+	private:
+	int variable1;
+	float variable2;
+};
+```
+
+Implementation:
+
+```c++
+MyClass&  MyClass ::operator=( const MyClass& rhs )
+{
+	if ( this == &rhs )	// REQUIRED: Must check for self-assignment!
+		return *this;
+		
+	variable1 = rhs.variable1;
+	variable2 = rhs.variable2;
+	return *this; 
+}
+```
+
+
+---
 
 # Item 5: Operator Overloading
 
----
 
-# Item 6: Friends
+
+
+
+
+
+
+
+
