@@ -48,8 +48,12 @@ First, create a ```main.cpp``` file. This will be the file that contains
 our main function...:
 
 ```c++
+
 #include <iostream>
 using namespace std;
+
+#include "DynamicArray.hpp"
+#include "Kitten.hpp"
 
 const string TEST_DATA[] = {
     "Aardvark", "Albatross", "Alligator",
@@ -65,14 +69,43 @@ const string TEST_DATA[] = {
 
 void DynamicArrayProgram()
 {
+    /*
+    DynamicArray arr( 5 );
+
+    for ( int i = 0; i < arr.GetSize(); i++ )
+    {
+        arr.Set( i, TEST_DATA[i] );
+    }
+
+    arr.Display();
+    */
+}
+
+void KittenProgram()
+{
+    /*
+    Kitten happyCat( TEST_DATA[2] );
+    happyCat.Display();
+
+    Kitten angryCat( TEST_DATA[4] );
+    angryCat.Display();
+
+    Kitten sadCat( TEST_DATA[6] );
+    sadCat.Display();
+
+    Kitten curiousCat( TEST_DATA[8] );
+    curiousCat.Display();
+    */
 }
 
 int main()
 {
     DynamicArrayProgram();
+    KittenProgram();
 
     return 0;
 }
+
 
 ```
 
@@ -486,8 +519,65 @@ the index as well as the value.
 
 ---
 
-# Static Introductions
+# Static Member Introductions
 
+We can use the keyword **static** with a member variable of a class
+in order to create a variable that is shared by all *instantiations*
+of that class.
+
+So, let's say we have a class like *Student*, and we can make
+many Students. Each Student will have names, grades, classes, etc.
+
+But, we can also embed a *static* variable in the Student class,
+which will be shared by *all students* - if the value changes
+through StudentA, then that value is also the same for StudentB,
+StudentC, and so on. With our normal variables, if we change
+StudentA's name, it only updates StudentA and none of the others.
+
+We can declare a static member like this:
+
+```c++
+class Counter
+{
+	public:
+	static int sharedCounter;
+	int individualCounter;
+};
+```
+
+Within the corresponding .cpp file, we would have to also add
+a *definition* for our static member, outside of any functions...
+
+```c++
+int Counter::sharedCounter = 0;
+```
+
+Elseware in the program, we can create some counters. We can
+update the *sharedCounter* through an *instance* (a variable whose
+data-type is *Counter*), or directly via the Counter class...
+
+```c++
+int main()
+{
+	Counter count_a;
+	Counter count_b;
+	
+	count_a.sharedCounter++;	// sharedCounter is now 1
+	count_b.sharedCounter++;	// sharedCounter is now 2
+	Counter::sharedCounter++;	// sharedCounter is now 3
+}
+```
+
+We can also write static member functions as well as static member variables,
+and sometimes writing a class with static members can be useful if
+we have one class that is going to only need *one instantiation*.
+
+For example: An image manager in a program might be responsible for
+loading and freeing images as they're loaded in to display. We wouldn't need
+multiple versions of an image manager, because the one manager would
+handle all that is relevant.
+
+---
 
 
 # Item 2: Static Members
@@ -509,6 +599,10 @@ using namespace std;
 #endif
 ```
 
+Declare the Kitten class according to this diagram:
+
+![Kitten diagram](images/201701_lab16_Kitten.png)
+
 Kitten.cpp:
 
 ```c++
@@ -519,19 +613,25 @@ int Kitten::m_kittenCount = 0;
 
 Kitten::Kitten( string name )
 {
-    m_name = name;
-    m_kittenCount++;
 }
 
 void Kitten::Display()
 {
-    cout << "Kitten: " << m_name << ", Kitten count: " << m_kittenCount << endl;
 }
 ```
 
-![Kitten diagram](images/201701_lab16_Kitten.png)
+## Kitten functions
 
+### Kitten constructor
 
+In this function, set the kitten's ```m_name``` member variable to 
+the passed in parameter.
+
+Also increment the static ```m_kittenCount``` by one.
+
+### Display
+
+Use ```cout``` to display the kitten's name and the kitten count.
 
 ---
 
@@ -547,3 +647,5 @@ void Kitten::Display()
 # Item 5: Operator Overloading
 
 ---
+
+# Item 6: Friends
