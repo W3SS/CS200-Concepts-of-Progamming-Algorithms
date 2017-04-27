@@ -375,9 +375,110 @@ are member functions.
 
 Items prefixed with - are private, and items prefixed with + are public.
 
+After you're done with the declarations in DynamicArray.hpp, fill out
+the function definitions in DynamicArray.cpp:
 
+## DynamicArray functions
 
+Use this starter code to fill in:
 
+```c++
+#include "DynamicArray.hpp"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+DynamicArray::DynamicArray( int size )
+{
+    cout << "DynamicArray constructor" << endl;
+}
+
+DynamicArray::~DynamicArray()
+{
+    cout << "DynamicArray destructor" << endl;
+}
+
+void DynamicArray::Set( int index, string value )
+{
+}
+
+string DynamicArray::Get( int index )
+{
+}
+
+int DynamicArray::GetSize()
+{
+}
+
+void DynamicArray::Display()
+{
+}
+```
+
+### DynamicArray Constructor
+
+* Input parameters: 
+	* ```int size```
+
+Within the constructor, first initialize our ```m_arr``` pointer
+to *nullptr*.
+
+Check to make sure that ```size``` is valid:
+a size of 0 or smaller is invalid, and we're not going to allocate
+memory for the array then.
+
+But if size is valid, then set the member variable ```m_size```
+equal to the parameter size.
+
+Then, using the ```m_arr``` pointer, allocate memory - create
+a dynamic array with the given *size*.
+
+### DynamicArray Destructor
+
+Within the destructor, we need to check and see if the ```m_arr``` pointer
+is *nullptr*. If it is nullptr, then we don't need to free it.
+
+However, if m_arr is **not** *nullptr*, then free the memory allocated
+via the *m_arr* pointer.
+
+### Set
+
+* Input parameters: 
+	* ```int index```
+	* ```string value```
+
+Check to see if the *index* passed in is valid. An invalid index is
+less than 0, or equal to or greater than ```m_size```.
+
+If the index is invalid, don't make any changes!
+
+Otherwise, if we have a valid *index*, then set the element of ```m_arr```
+at the given index to the value passed in.
+
+### Get
+
+* Input parameters:
+	* ```int index```
+* Return type: ```string```
+
+Check to see if the *index* passed in is valid. If it is invalid,
+return an empty string ```""```.
+
+Otherwise, return the element at the given *index*.
+
+### GetSize
+
+* Return type: ```int```
+
+Return the value of the ```m_size``` member.
+
+### Display
+
+Use a for loop and display every element of the ```m_arr```, including
+the index as well as the value.
+
+### Example output
 
 ![screenshot](images/201701_lab16_a.png)
 
