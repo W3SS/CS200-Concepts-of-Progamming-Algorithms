@@ -633,6 +633,10 @@ Also increment the static ```m_kittenCount``` by one.
 
 Use ```cout``` to display the kitten's name and the kitten count.
 
+### Example output
+
+![Kitten screenshot](images/201701_lab16_KittenProg.png)
+
 ---
 
 # Item 3: Const Functions
