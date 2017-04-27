@@ -51,10 +51,29 @@ our main function...:
 #include <iostream>
 using namespace std;
 
+const string TEST_DATA[] = {
+    "Aardvark", "Albatross", "Alligator",
+    "Bandicoot", "Bird", "Bison",
+    "Cheetah", "Chipmunk", "Cow",
+    "Elephant", "Emu", "Echidna",
+    "Falcon", "Fox", "Fish",
+    "Gecko", "Goat", "Goose",
+    "Heron", "Horse", "Hyena",
+    "Iguana", "Insect", "Impala",
+    "Jackal", "Jellyfish", "Jaguar"
+};
+
+void DynamicArrayProgram()
+{
+}
+
 int main()
 {
+    DynamicArrayProgram();
+
     return 0;
 }
+
 ```
 
 As you add each class, you will have to ```#include``` your new file
@@ -326,7 +345,41 @@ private:
 
 # Item 1: Constructor/Destructor project
 
+Create two new files: ```DynamicArray.hpp``` and ```DynamicArray.cpp```.
 
+Start off the DynamicArray.hpp file with:
+
+```c++
+#ifndef _DYNAMIC_ARRAY_HPP
+#define _DYNAMIC_ARRAY_HPP
+
+#endif
+```
+
+and the DynamicArray.cpp with:
+
+```c++
+#include "DynamicArray.hpp"
+```
+
+Note: You will also need to make sure to ```#include "DynamicArray.hpp"```
+in main.cpp as well!
+
+Here is the **UML (Unified Modeling Language) Diagram** of the DynamicArray class.
+Use this to create the class declaration in your .hpp file:
+
+![DynamicArray diagram](images/201701_lab16_DynamicArray.png)
+
+The top portion of the diagram are member variables, and the bottom portion
+are member functions.
+
+Items prefixed with - are private, and items prefixed with + are public.
+
+
+
+
+
+![screenshot](images/201701_lab16_a.png)
 
 
 # Item 2: Static Members
