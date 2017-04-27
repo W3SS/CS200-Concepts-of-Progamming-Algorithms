@@ -52,8 +52,11 @@ our main function...:
 #include <iostream>
 using namespace std;
 
-#include "DynamicArray.hpp"
-#include "Kitten.hpp"
+// UNCOMMENT THESE OUT AS YOU ADD THE FILES
+//#include "DynamicArray.hpp"
+//#include "Kitten.hpp"
+//#include "Button.hpp"
+//#include "Fraction.hpp"
 
 const string TEST_DATA[] = {
     "Aardvark", "Albatross", "Alligator",
@@ -66,6 +69,8 @@ const string TEST_DATA[] = {
     "Iguana", "Insect", "Impala",
     "Jackal", "Jellyfish", "Jaguar"
 };
+
+// UNCOMMENT THSE OUT AS YOU IMPLEMENT THE CLASSES!
 
 void DynamicArrayProgram()
 {
@@ -98,13 +103,42 @@ void KittenProgram()
     */
 }
 
+void ButtonProgram()
+{
+    /*
+    Button btn;
+    btn.SetText( "Button!" );
+    btn.Draw();
+
+    btn.SetText( "Another Button!" );
+    btn.Draw();
+    */
+}
+
+void FractionProgram()
+{
+    /*
+    Fraction f1, f2, f3;
+
+    f1.Setup( 1, 3 );
+    f2.Setup( 2, 5 );
+
+    f3 = f1 * f2;
+
+    cout << f1 << " * " << f2 << " = " << f3 << endl;
+    */
+}
+
 int main()
 {
     DynamicArrayProgram();
     KittenProgram();
+    ButtonProgram();
+    FractionProgram();
 
     return 0;
 }
+
 
 
 ```
@@ -1030,7 +1064,47 @@ numerator (```a.m_n```), then a slash (```"/"```), then the denominator (```a.m_
 
 ### operator==
 
+This function's purpose is to return *true* or *false* based on whether the
+two fractions passed in, ```Fraction& a``` and ```Fraction& b```, are the same.
+
+Note that we are NOT going to worry about reducing fractions here! For
+this function, we are going to say that they're the same only if
+both the numerators and both the denominators match.
+
+So, accessing each fraction's data...
+
+* ```a.m_n```
+* ```a.m_d```
+* ```b.m_n```
+* ```b.m_d```
+
+... use ```==``` operators to check if these two fractions are equivalent,
+and either return true or false.
+
 ### operator*
+
+This function is going to multiply the two fractions, ```const Fraction& a```
+and ```const Fraction& b```, and return the result.
+
+Remember that when multiplying fractions, we go straight across:
+
+![1/3 x 2/5 = 2/15](images/201701_lab16_FractionMultiply.png)
+
+It is simpler than addition!
+
+So within this function, we will need to create a new Fraction object,
+then multiply ```a``` and ```b```'s numerators and denominators,
+and then assign the new values to the product,
+and finally return the product.
+
+```c++
+Fraction operator*( const Fraction& a, const Fraction& b )
+{
+    Fraction product;
+    // Do math 
+    return product;
+}
+```
 
 ### operator=
 
