@@ -1019,6 +1019,8 @@ void Fraction::Setup( int n, int d )
 
 Fraction& Fraction::operator=( const Fraction& rhs )
 {
+	// do stuff
+	return *this;
 }
 
 // Friend functions
