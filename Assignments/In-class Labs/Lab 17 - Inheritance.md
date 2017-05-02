@@ -51,6 +51,6 @@ The rest of the code is already finished.
 
 # The Question family
 
-![Question class diagrams](image/201701_lab17_diagrams.png)
+![Question class diagrams](images/201701_lab17_diagrams.png)
 
 
