@@ -3,6 +3,11 @@
 
 #include "Question.hpp"
 
+#define QUESTIONS_IMPLEMENTED 0 // Set this to 1 once you've implemented the questions classes
+
+class TrueFalseQuestion;
+class MultipleChoiceQuestion;
+
 class Quizzer
 {
 public:

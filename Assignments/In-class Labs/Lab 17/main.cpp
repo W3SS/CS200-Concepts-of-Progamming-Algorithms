@@ -3,10 +3,14 @@ using namespace std;
 
 #include "Quizzer.hpp"
 
+// In Quizzer, set QUESTIONS_IMPLEMENTED to 1
+// once you're done implementing the Questions classes.
+
 int main()
 {
     Quizzer quizzer;
 
+	#if QUESTIONS_IMPLEMENTED
     TrueFalseQuestion tf1, tf2, tf3;
     tf1.SetQuestionText( "Static arrays can be resized at run-time." );
     tf1.SetCorrectAnswer( "false" );
@@ -37,6 +41,7 @@ int main()
     quizzer.AddMultipleChoiceQuestion( &mc3 );
 
     quizzer.Run();
+	#endif
 
     return 0;
 }

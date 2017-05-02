@@ -24,49 +24,51 @@ void Quizzer::AddMultipleChoiceQuestion( MultipleChoiceQuestion* q )
 
 void Quizzer::Run()
 {
-    int totalQuestions = m_count_tfQuestions + m_count_mcQuestions;
-    int totalRight = 0;
+	#if QUESTIONS_IMPLEMENTED
+	int totalQuestions = m_count_tfQuestions + m_count_mcQuestions;
+	int totalRight = 0;
 
-    for ( int i = 0; i < m_count_tfQuestions; i++ )
-    {
-        m_tfQuestions[ i ]->Display();
+	for ( int i = 0; i < m_count_tfQuestions; i++ )
+	{
+		m_tfQuestions[ i ]->Display();
 
-        string answer;
-        cin >> answer;
+		string answer;
+		cin >> answer;
 
-        bool correct = m_tfQuestions[i]->CheckAnswer( answer );
+		bool correct = m_tfQuestions[i]->CheckAnswer( answer );
 
-        if ( correct )
-        {
-            cout << "CORRECT!" << endl;
-            totalRight++;
-        }
-        else
-        {
-            cout << "INCORRECT!" << endl;
-        }
-    }
+		if ( correct )
+		{
+			cout << "CORRECT!" << endl;
+			totalRight++;
+		}
+		else
+		{
+			cout << "INCORRECT!" << endl;
+		}
+	}
 
-    for ( int i = 0; i < m_count_mcQuestions; i++ )
-    {
-        m_mcQuestions[ i ]->Display();
+	for ( int i = 0; i < m_count_mcQuestions; i++ )
+	{
+		m_mcQuestions[ i ]->Display();
 
-        int answer;
-        cin >> answer;
+		int answer;
+		cin >> answer;
 
-        bool correct = m_mcQuestions[i]->CheckAnswer( answer );
+		bool correct = m_mcQuestions[i]->CheckAnswer( answer );
 
-        if ( correct )
-        {
-            cout << "CORRECT!" << endl;
-            totalRight++;
-        }
-        else
-        {
-            cout << "INCORRECT!" << endl;
-        }
-    }
+		if ( correct )
+		{
+			cout << "CORRECT!" << endl;
+			totalRight++;
+		}
+		else
+		{
+			cout << "INCORRECT!" << endl;
+		}
+	}
 
-    cout << endl << endl;
-    cout << "Final Score: " << totalRight << " out of " << totalQuestions << endl;
+	cout << endl << endl;
+	cout << "Final Score: " << totalRight << " out of " << totalQuestions << endl;
+	#endif
 }
