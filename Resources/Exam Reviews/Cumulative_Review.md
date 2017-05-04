@@ -4,6 +4,102 @@
 
 # Functions
 
+## Terminology
+
+### Function declaration
+
+Ends with a semi-colon – no function body.
+
+```c++
+int Sum( int a, int b );
+```
+
+### Function definition
+
+Defines the functionality – includes function body
+
+```c++
+int Sum( int a, int b )
+{
+    return a + b;
+}
+```
+
+### Function body
+
+The part of a function within the curly braces
+
+### Function header (aka signature)
+
+The part of a function above the curly braces – the
+return type, name, and parameter list
+
+### Function name
+
+The name of the function. Should be descriptive.
+
+```int Sum( int a, int b );``` (the "Sum" part)
+
+### Return type
+
+The data-type to be returned from the function.
+
+```int Sum( int a, int b );``` (the "int" part)
+
+### Parameter list
+
+The list of variables that must be passed into the
+function from the caller.
+
+```int Sum( int a, int b );``` ( "int a, int b". )
+
+### Function call
+
+Where the function is being called from, and will
+return to.
+
+```int total = Sum( 1, 3 );``` ("1, 3".)
+
+## Declaration (aka prototype) vs. definition
+
+The declaration is the function header with a semi-colon at the end. Can be declared above main, so
+that it can be defined below main.
+
+The definition contains the actual inner code (the function body).
+
+## Parameters vs. arguments
+
+The parameters are the variables that the function expects to be passed in. These are in the function
+header, in the parameter list.
+
+The arguments are the variables that are passed into a function call. These are outside of the function
+definition, and are whatever variables or values are passed in on call.
+
+```c++
+// parameters: a, b
+int Sum( int a, int b );
+```
+
+```c++
+// arguments: 1, 3
+int total = Sum( 1, 3 );
+```
+
+## Return types
+
+A function can return any data-type, but also void. The void return-type is used when the function does
+not return any values.
+
+## Pass by value vs. pass by reference
+
+All variables, besides arrays, are passed by value by default. This means that the argument variable is
+copied, and the function works with a copy. If any changes are made to the copy, it does not affect the
+original argument variable after the function ends.
+
+A variable can be passed by reference by adding on the & operator after the data-type. If a variable is
+passed by reference, its value can change within the function. You can use this technique to return
+multiple values, as you can only return one item via the return statement.
+
 # Const
 
 # Arrays
