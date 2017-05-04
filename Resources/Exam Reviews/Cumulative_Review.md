@@ -1,6 +1,10 @@
 # C++ Basics
 
+---
+
 # Control Flow
+
+---
 
 # Functions
 
@@ -100,9 +104,78 @@ A variable can be passed by reference by adding on the & operator after the data
 passed by reference, its value can change within the function. You can use this technique to return
 multiple values, as you can only return one item via the return statement.
 
+---
+
 # Const
 
+---
+
 # Arrays
+
+## Declaring a static array
+
+To declare an array, you must specify the data-type of its elements, the array name, and its size.
+
+```c++
+string names[10]; // an array of strings
+```
+
+## Accessing elements of the array
+
+For an array of size *5*, its valid indices are *0, 1, 2, 3, and 4*.
+This is 5 total items, where index *5* would actually be the 6th item.
+If you try to access an item outside the bounds of an array, your program will crash.
+
+```c++
+string months[3];
+months[0] = "January";      // 1st item at index 0
+months[1] = "February";     // 2nd item at index 1
+months[2] = "March";        // 3rd item at index 2
+```
+
+### COMMON ERROR:
+
+## Initializer list
+
+You can initialize an array with an initializer list.
+
+```c++
+string names[] = { "Yakko", "Wakko", "Dot" };
+```
+
+## Must know size at compile-time
+
+For these types of arrays, the size of the array must be known at compile time. Therefore, you either
+need to declare an array with a size (like in 24), or immediately initialize it with an initializer list (like
+in 25).
+
+## Track max size and current size
+
+An array won't automatically track its maximum size or the current amount of objects it contains. You
+will need to keep track of these yourself, usually with variables.
+
+```c++
+string students[30];
+int maxStudents = 30;
+int currentStudents = 0;
+students[ currentStudents ] = "Bob";
+currentStudents++;
+```
+
+## Passed by reference by default
+
+Arrays, by default, are passed-by-reference in C++, because arrays may be large, and very costly to
+copy over. You can make sure values do not change in the array by passing it as a const.
+
+```c++
+void DisplayList( const string names[], int size );
+```
+
+---
+
+# Pointers, dynamic variables, and memory management
+
+---
 
 # Structs and Classes
 
