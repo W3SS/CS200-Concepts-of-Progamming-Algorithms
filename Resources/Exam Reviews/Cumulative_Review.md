@@ -876,7 +876,37 @@ are allocated *on the stack*.
 
 ## Dynamic variables
 
+Dynamic variables must be created via pointers, and using the ```new``` and ```delete``` keywords.
+
+These dynamic variables still must be dereferenced to access their values.
+
+```c++
+string* dynamicString = new string;
+
+*dynamicString = "Hello";
+cout << *dynamicString << endl;
+
+delete dynamicString;
+```
+
 ## Dynamic arrays
+
+Dynamic arrays must be created via pointers, and using the ```new``` and ```delete``` keywords.
+
+Dynamic arrays will be used like the static arrays you're used to; that is, you don't need to
+dereference the array to access an element.
+
+```c++
+int* numberList = new int[ 100 ];
+
+for ( int i = 0; i < 100; i++ )
+{
+   numberList[i] = i * 2;
+   cout << numberList[i] << endl;
+}
+
+delete [] numberList;
+```
 
 ---
 
