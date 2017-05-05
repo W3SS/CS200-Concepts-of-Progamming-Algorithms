@@ -37,7 +37,7 @@ Arithmetic operators are operators that allow us to perform math operations.
 <th> Addition </th> <th> Subtraction </th> <th> Multiplication </th> <th> Division </th><th> Modulus </th>
 </tr>
 <tr>
-<td> ```+``` </td><td> ```-```</td> <td> ```*``` </td><td> ```/``` </td><td> ```%``` </td>
+<td> <pre>+</pre> </td><td> <pre>-</pre></td> <td> <pre>*</pre> </td><td> <pre>/</pre> </td><td> <pre>%</pre> </td>
 </tr>
 </table>
 
@@ -51,17 +51,17 @@ a variable and a number.
 <tr>
 <th> Equivalent </th> <th> Not-equal </th> 
 </tr>
-<tr><td> ```==``` </td><td> ```!=```</td> </tr>
+<tr><td> <pre>==</pre> </td><td> <pre>!=</pre></td> </tr>
 
 <tr>
 <th> Less-than </th> <th> Less-than-or-equal-to </th>
 </tr>
-<tr><td> ```<``` </td><td> ```<=```</td> </tr>
+<tr><td> <pre>&lt;</pre> </td><td> <pre>&lt;=</pre></td> </tr>
 
 <tr>
 <th> Greater-than </th> <th> Greater-than-or-equal-to </th>
 </tr>
-<tr><td> ```>``` </td><td> ```>=```</td> </tr>
+<tr><td> <pre>&gt;</pre> </td><td> <pre>&gt;=</pre></td> </tr>
 
 </table>
 
@@ -75,7 +75,7 @@ Logic operators allow us to string together multiple expressions together.
 <th> Addition </th> <th> Subtraction </th> <th> Multiplication </th> <th> Division </th><th> Modulus </th>
 </tr>
 <tr>
-<td> ```+``` </td><td> ```-```</td> <td> ```*``` </td><td> ```/``` </td><td> ```%``` </td>
+<td> <pre>+</pre> </td><td> <pre>-</pre></td> <td> <pre>*</pre> </td><td> <pre>/</pre> </td><td> <pre>%</pre> </td>
 </tr>
 </table>
 
