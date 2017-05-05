@@ -50,32 +50,26 @@ a variable and a number.
 <table>
 <tr>
 <th> Equivalent </th> <th> Not-equal </th> 
-</tr>
-<tr><td> <pre>==</pre> </td><td> <pre>!=</pre></td> </tr>
-
-<tr>
 <th> Less-than </th> <th> Less-than-or-equal-to </th>
-</tr>
-<tr><td> <pre>&lt;</pre> </td><td> <pre>&lt;=</pre></td> </tr>
-
-<tr>
 <th> Greater-than </th> <th> Greater-than-or-equal-to </th>
 </tr>
-<tr><td> <pre>&gt;</pre> </td><td> <pre>&gt;=</pre></td> </tr>
-
+<tr>
+<td> <pre>==</pre> </td><td> <pre>!=</pre></td>
+<td> <pre>&lt;</pre> </td><td> <pre>&lt;=</pre></td> 
+<td> <pre>&gt;</pre> </td><td> <pre>&gt;=</pre></td>
+</tr>
 </table>
 
 ### Logic operators
 
 Logic operators allow us to string together multiple expressions together.
 
-
 <table>
 <tr>
-<th> Addition </th> <th> Subtraction </th> <th> Multiplication </th> <th> Division </th><th> Modulus </th>
+<th> And </th> <th> Or </th> <th> Not </th>
 </tr>
 <tr>
-<td> <pre>+</pre> </td><td> <pre>-</pre></td> <td> <pre>*</pre> </td><td> <pre>/</pre> </td><td> <pre>%</pre> </td>
+<td> <pre>&amp;&amp;</pre> </td><td> <pre>||</pre></td> <td> <pre>!</pre> </td>
 </tr>
 </table>
 
@@ -174,6 +168,240 @@ getline( inputFile, lineOfText );
 ---
 
 # Control Flow
+
+## Boolean expressions
+
+Be familiar with types of boolean expressions. Realize that all of these are questions that return either
+true or false, which can be used with if statements and loops.
+
+<table>
+<tr>
+<th> Is equal to </th>
+<th><pre> var1 == var2 </pre></th>
+</tr>
+
+<tr>
+<th> Is equal to </th>
+<td><pre> var1 == var2 </pre></td>
+</tr>
+
+<tr>
+<th> Is not equal to </th>
+<td><pre> var1 != var2 </pre></td>
+</tr>
+
+<tr>
+<th> Less than </th>
+<td><pre> var1 &lt; var2 </pre></td>
+</tr>
+
+<tr>
+<th> Less than or equal to </th>
+<td><pre> var1 &lt;= var2 </pre></td>
+</tr>
+
+<tr>
+<th> Greater than </th>
+<td><pre> var1 &gt; var2 </pre></td>
+</tr>
+
+<tr>
+<th> Greater than or equal to </th>
+<td><pre> var1 &gt;= var2 </pre></td>
+</tr>
+
+<tr>
+<th> Is true </th>
+<td><pre> var1 == true </pre></td>
+<td><pre> var1 != false </pre></td>
+<td><pre> var1 </pre></td>
+</tr>
+<tr>
+<th> Is false </th>
+<td><pre> var1 == false </pre></td>
+<td><pre> var1 != true </pre></td>
+<td><pre> !var1 </pre></td>
+</tr>
+
+
+</table>
+
+Note that you can check if something is true or false with the shorthand:
+
+```c++
+if ( var1 ) // if true
+if ( !var1 ) // if false
+```
+
+## And, or
+
+You can chain together boolean expressions in a single If Statement or Loop to check for multiple
+conditions.
+
+```c++
+if ( var1 < 0 || var1 > 10 ) // between 0 and 10
+if ( var1 >= 0 && var1 <= 10 ) // between 0 and 10
+if ( var1 >= 0 && var1 <= 10 )
+```
+
+## How to write if statments
+
+The if statement will stop checking additional conditions (the other if / else ifs) once it finds a match.
+The else statement is executed if all prior checks were all false.
+
+```c++
+if      ( choice == 'a' ) { /* ... */ }
+else if ( choice == 'b' ) { /* ... */ }
+else if ( choice == 'c' ) { /* ... */ }
+else                      { /* ... */ }
+if ( var1 < 0 ) { cout << "var less than 0"; }
+else { cout << "var greater than or equal to 0"; }
+```
+
+## Break and continue
+
+You can use a **break** statement to break out of a loop. You can use **continue** to skip the rest of the code
+within a loop, but continue the loop, such as if there is an error.
+
+```c++
+while ( true )
+{
+    cin >> choice;
+    if ( choice == 'q' ) { break; } // break out of the loop
+}
+
+while ( true )
+{
+    cin >> choice;
+    if ( choice == 'a' ) { continue; } // skip "Hello" and start next cycle of loop
+    cout << "Hello" << endl;
+}
+```
+
+## Switch statements
+
+You can use a switch statement to check the value of an integer or character variable. Be aware that
+each case statement needs to end with a break; - if it does not, it the program will execute the case
+statement directly afterwards as well. default: is used like the “else” statement.
+
+If choice = 'b', the output will be BC , since the 'b' case does not have a break;
+
+```c++
+switch( choice )
+{
+    case 'a':
+    cout << "A";
+    break;
+    
+    case 'b':
+    cout << "B";
+    
+    case 'c':
+    cout << "C";
+    break;
+    
+    default:
+    cout << "D";
+}
+```
+
+## How to write a while loop
+
+Think of a while loop like an if statement, except it will keep looping until the condition is false. You
+can also use && and || to add additional conditions.
+
+```c++
+int count = 0;
+while ( count < 100 )
+{
+    count++;
+}
+```
+
+## How to write a do-while loop
+
+With do-while loops, the inner contents will always be run at least once. Then, if the condition is false,
+the loop will stop. Otherwise, if the condition is true, it will keep looping.
+
+```c++
+do {
+    cout << "Enter a #: ";
+    cin >> choice;
+} while ( choice < 0 || choice > 10 );
+```
+
+## How to write a for loop
+
+For Loops are good for counting. Note that the first part is creating and/or initializing a variable, the
+second part is the condition, and the third part is a command that will be done each time through the
+loop.
+
+```c++
+for ( int i = 0; i < 10; i++ )
+{
+    cout << i;
+}
+for ( int j = 100; j > 0; j­­ )
+{
+    cout << j;
+}
+```
+
+## Nested statements
+
+Once inside a loop or an if statement, you can continue adding if statements and loops within.
+
+A nested if statement can also be written with a single if statement and &&.
+
+```c++
+// This:
+if ( var1 > 0 )
+{
+  if ( var < 10 )
+  {
+    cout << "0 < x < 10”;
+  }
+}
+
+// and this are equivalent:
+if ( var1 > 0 && var1 < 10 )
+{
+  cout << "0 < x < 10";
+}
+```
+
+When nesting for-loops, the external loop will begin its first cycle,
+the internal loop will complete all its cycles, then the external cycle will end
+and it will begin its second cycle, then the internal loop will complete all its cycles again,
+and so on...
+
+```c++
+for ( int y = 0; y < 5; y++ )
+{
+   for ( int x = 0; x < 3; x++ )
+   {
+      cout << x << ", " << y << endl;
+   }
+}
+```
+
+Will display:
+
+      0, 0
+      1, 0
+      2, 0
+      0, 1
+      1, 1
+      2, 1
+      0, 2
+      1, 2
+      2, 2
+      0, 3
+      1, 3
+      2, 3
+      0, 4
+      1, 4
+      2, 4
 
 ---
 
