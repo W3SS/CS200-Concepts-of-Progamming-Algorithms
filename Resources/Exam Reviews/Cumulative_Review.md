@@ -668,7 +668,7 @@ Make sure you're never accessing that *nth* element!
 
 ---
 
-# Pointers, dynamic variables, and memory management
+# Pointers
 
 ## Operators
 
@@ -785,6 +785,98 @@ string* ptrCurrent = &student1;
 
 cout << *ptrCurrent << endl;
 ```
+
+---
+
+# Dynamic variables and memory management
+
+## Types of memory errors
+
+### Invalid memory access
+
+This usually happens when trying to access unallocated (or already freed) memory.
+
+For example:
+
+```c++
+char* nothin; // not pointing to anything but garbage
+cout << *nothin; // de-referencing a pointer pointing to garbage will crash your program.
+```
+
+Or:
+
+```c++
+cout << "List of numbers" << endl;
+int* listOfNumbers = new int[5];
+
+// (Doing stuff with number array here)
+
+delete [] listOfNumbers;
+
+listOfNumbers[3] = 300; // trying to assign a value to something that has already been freed.
+```
+
+### Memory leak
+
+A memory leak occurs when new memory is *allocated* (via ```new```),
+but it is never *deallocated* (via ```delete```).
+
+```c++
+int main()
+{
+   int studentSize;
+   cin >> studentSize;
+   string* studentList = new string[ studentSize ];
+   
+   // delete your dynamic variables! :(
+   
+   return 0;
+}
+```
+
+Here the studentList is never deallocated so you lose that memory!
+
+### Missing allocation
+
+This occurs when you try to free memory that has already been freed.
+
+```c++
+int main()
+{
+   int* myArray = new int[50];
+   delete [] myArray;
+   
+   // later...
+   
+   delete [] myArray;      // This will cause a problem!
+
+   return 0;
+}
+```
+
+### Uninitialized memory access
+
+This happens when you try to read the value of an uninitialized variable.
+
+```c++
+int* ptrNumber;
+cout << *ptrNumber << endl;
+```
+
+## The Stack and the Heap
+
+* Non-dynamic variables declared within functions or as function parameters
+are allocated *on the stack*.
+* Dynamic variables declared and accessed via pointers are allocated
+*on the heap*.
+* Variables declared on the stack will automatically be freed.
+* Memory on the heap doesn't get freed automatically.
+* There is a size restriction on the stack.
+* There is no size restriction on the heap.
+
+## Dynamic variables
+
+## Dynamic arrays
 
 ---
 
