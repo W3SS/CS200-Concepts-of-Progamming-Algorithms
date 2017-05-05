@@ -1,3 +1,11 @@
+# Tools
+
+* Debugger - A debugger generally contains a set of tools to help you debug your program. For example: Breakppoints, a *locals* window to view variable values, a *stack trace* to see functions called.
+* Compiler - The compiler is the program that converts source code into a *binary executable*. On Windows, these are .exe files.
+* Source control - A source control program will keep track of changes to your code made over time, as well as offer features to help you maintain the code, such as automatic merging.
+
+---
+
 # C++ Basics
 
 ## Declaring and initializing variables
