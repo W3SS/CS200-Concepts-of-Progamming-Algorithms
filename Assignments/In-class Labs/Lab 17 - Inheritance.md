@@ -150,7 +150,7 @@ You can use a for-loop to iterate over ```m_answers``` to display them all.
 ### SetCorrectAnswer
 
 The correct answer (one of the indexes: 0, 1, 2, or 3) will be passed in
-as the parameter. Set the private member variable ```m_questionText```
+as the parameter. Set the private member variable ```m_correctAnswer```
 to the passed-in value.
 
 ### CheckAnswer
