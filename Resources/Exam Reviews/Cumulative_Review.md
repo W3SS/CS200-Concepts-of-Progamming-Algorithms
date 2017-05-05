@@ -133,8 +133,6 @@ months[1] = "February";     // 2nd item at index 1
 months[2] = "March";        // 3rd item at index 2
 ```
 
-### COMMON ERROR:
-
 ## Initializer list
 
 You can initialize an array with an initializer list.
@@ -170,6 +168,28 @@ copy over. You can make sure values do not change in the array by passing it as 
 ```c++
 void DisplayList( const string names[], int size );
 ```
+
+## COMMON ERROR: Going outside the bounds of an array
+
+If you have an array of size 5...
+
+        int myNumbers[5];
+        
+then the valid indices are 0, 1, 2, 3, and 4. **5 is not a valid index in C++ / Java**.
+
+Your array has 5 items, so you still have 5 items between 0 and 4, and the item at index 5 would actually be the *6th* item.
+
+In general terms, *if your array is of size n, then the valid indices for the array are [0] through [n-1].*
+
+It is common to go outside the bounds of an array, especially when trying to iterate over everything in a for loop:
+
+        for ( int i = 0; i <= arrSize; i++ )
+        {
+                // This is going to crash when i = arrSize!
+                cout << arr[ i ] << endl;
+        }
+        
+Make sure you're never accessing that *nth* element!
 
 ---
 
