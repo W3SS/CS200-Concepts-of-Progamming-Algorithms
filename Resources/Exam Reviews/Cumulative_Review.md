@@ -26,6 +26,59 @@ string word = "Hello!";
 * Character
     * Single-character values are stored within single-quotes.
 
+## Operators
+
+### Arithmetic operators
+
+Arithmetic operators are operators that allow us to perform math operations.
+
+<table>
+<tr>
+<th> Addition </th> <th> Subtraction </th> <th> Multiplication </th> <th> Division </th><th> Modulus </th>
+</tr>
+<tr>
+<td> ```+``` </td><td> ```-```</td> <td> ```*``` </td><td> ```/``` </td><td> ```%``` </td>
+</tr>
+</table>
+
+### Relational operators
+
+Relational operators allow us to compare values between two items, such as two variables or
+a variable and a number.
+
+
+<table>
+<tr>
+<th> Equivalent </th> <th> Not-equal </th> 
+</tr>
+<tr><td> ```==``` </td><td> ```!=```</td> </tr>
+
+<tr>
+<th> Less-than </th> <th> Less-than-or-equal-to </th>
+</tr>
+<tr><td> ```<``` </td><td> ```<=```</td> </tr>
+
+<tr>
+<th> Greater-than </th> <th> Greater-than-or-equal-to </th>
+</tr>
+<tr><td> ```>``` </td><td> ```>=```</td> </tr>
+
+</table>
+
+### Logic operators
+
+Logic operators allow us to string together multiple expressions together.
+
+
+<table>
+<tr>
+<th> Addition </th> <th> Subtraction </th> <th> Multiplication </th> <th> Division </th><th> Modulus </th>
+</tr>
+<tr>
+<td> ```+``` </td><td> ```-```</td> <td> ```*``` </td><td> ```/``` </td><td> ```%``` </td>
+</tr>
+</table>
+
 ## Input and output
 
 Remember that ```<<``` and ```>>``` are called **stream operators**. Remember which direction they point for each
