@@ -1,5 +1,123 @@
 # C++ Basics
 
+## Declaring and initializing variables
+
+Know that, without initializing a variable, it will contain garbage.
+
+```c++
+int number;
+int count = 2;
+float cost = 2.39;
+char letter = 'A';
+string word = "Hello!";
+```
+
+## Data types and values they can contain
+
+* Integer
+    * Whole numbers
+* Float, Double
+    * Numbers that may have a decimal point
+* Boolean
+    * ```true``` or ```false```.
+    * Can be assigned int; 0 = false, any other number = true.
+* String
+    * Values are stored within double-quotes.
+* Character
+    * Single-character values are stored within single-quotes.
+
+## Input and output
+
+Remember that ```<<``` and ```>>``` are called **stream operators**. Remember which direction they point for each
+item. Also note that you can chain together string literals (within double-quotes) and variable values.
+
+```c++
+cin >> amount;
+cout << "Amount: " << amount << endl;
+cout << "\n New Line" << endl;
+cout << "\t Tab" << endl;
+```
+
+To get a full line of text (including spaces), you need to use the ```getline``` function:
+
+```c++
+string name;
+getline( cin, name );
+```
+
+However, if you're mixing between ```cin >> ...``` and ```getline( cin, ... )```, you will need to put
+a ```cin.ignore()``` after your ```cin >> ...``` commands, otherwise the program will skip over your getlines.
+
+```c++
+int time;
+string todo;
+
+cout << "Enter time: ";
+cin >> time;
+cin.ignore();
+
+cout << "Enter to-do item: ";
+getline( cin, todo );
+```
+
+## Types of errors
+
+* Syntax error
+    * Syntax errors are due to typos of misspellings, and violate the rules of the C++ language.
+    * The compiler catches tehse.
+* Runtime error
+    * A runtime error is not caught by the compiler. The error occurs when a program hits bad code
+    and will cause the program to crash.
+* Logic error
+    * A logic error won't necessarily cause a runtime error (it might, it might not).
+    * Logic errors could be incorrect formulas, incorrect program flow, or general
+    incorrect logic that can cause calculations to be off or functionality to behave
+    in an unintended manner.
+
+---
+
+# File I/O
+
+## fstream library
+
+To use file input and output, you need to include the fstream library in your program:
+
+```c++
+#include <fstream>
+```
+
+## Creating, opening, and closing files.
+
+To create an *input-stream object* (to read info from a file), you will declare an **ifstream** variable:
+
+```c++
+ifstream input;
+input.open( "data.txt" );
+// ...
+input.close();
+```
+
+To create an *output-stream object* (to write data from the program into a text file),
+you will declare an **ofstream** variable:
+
+```c++
+ofstream output;
+output.open( "savegame.txt" );
+// ...
+output.close();
+```
+
+File input and output work very similarly to your *cin* and *cout* statements, but you have to use
+a variable instead of just the *cin* and *cout* commands...
+
+```c++
+outputFile << "Once upon a time..." << endl;
+
+inputFile >> name1 >> name2 >> name3;
+
+getline( inputFile, lineOfText );
+```
+
 ---
 
 # Control Flow
