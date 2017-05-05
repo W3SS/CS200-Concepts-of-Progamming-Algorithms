@@ -670,6 +670,122 @@ Make sure you're never accessing that *nth* element!
 
 # Pointers, dynamic variables, and memory management
 
+## Operators
+
+When working with pointers, you will need to know these operators.
+
+<table>
+<tr>
+<th> Address-of </th> <th> Dereference </th> 
+<th> Arrow operator </th> 
+</tr>
+<tr>
+<td> <pre>&amp;</pre> </td><td> <pre>*</pre></td>
+<td> <pre>-&gt;</pre> </td>
+</tr>
+</table>
+
+To get the address of a variable, you prepend the ```&``` operator to
+the variable's name:
+
+```c++
+int myVar;
+
+cout << &myVar << endl; // displays address
+```
+
+To dereference a pointer variable to get the value of the item that the pointer is pointing at,
+prepend the ```*``` operator to the pointer name:
+
+```c++
+string myName = "Not-bob";
+
+string * ptrName = &myName;
+
+cout << *ptrName << endl; // Displays "Not-bob"
+```
+
+If you have a pointer to an object (a variable whose type is a class),
+before you access its member variables you will have to de-reference the class-pointer
+first. 
+
+However, the order-of-operations in C++ will go to the dot operator ```.``` before
+the dereference operator ```*```, so you would have to write it this way:
+
+```c++
+(*ptrPerson).GetName();
+```
+
+A shortcut is to use the arrow operator ```->``` instead of the dot operator:
+
+```c++
+ptrPerson->GetName();
+```
+
+## Declaring a pointer
+
+To declare a pointer, you need to specify the data-type that your pointer will point to.
+You also need to use the ```*``` symbol after this data-type to show that it is a pointer:
+
+```c++
+int* intPointer; // ok
+string * stringPointer; // ok
+float *floatPointer; // ok
+```
+
+The asterisk can be attached to the variable name, the data type, or to neither - doesn't matter.
+
+It is **good programming practice** to set a pointer to ```nullptr``` when it is not in use.
+
+```c++
+string* ptrCurrent = nullptr;
+```
+
+## Assigning an address to a pointer
+
+To assign an address to a pointer, you need the address-of operator:
+
+```c++
+string* ptrString;
+string text = "BLAH";
+ptrString = &text;
+```
+
+## Pointing multiple things to one place
+
+You can have one item being pointed to by multiple pointers:
+
+```c++
+string student1 = "rjm";
+
+string* ptrBestStudent = &student1;
+string* ptrCoolestStudent = &student1;
+```
+
+If you use the assignment operator ```=``` between two pointers,
+the left-hand pointer will be set to point to whatever the
+right-hand pointer is pointing to.
+
+
+```c++
+string student1 = "rjm";
+
+string* ptrBestStudent = &student1;
+string* ptrCoolestStudent = ptrBestStudent;
+```
+
+## Getting the value that a pointer is pointing at
+
+To get the *value* of the item that a pointer is pointing to,
+you need to dereference your pointer.
+
+```c++
+string student1 = "rjm", student2 = "ram", student3 = "jam";
+string* ptrCurrent = &student1;
+
+cout << *ptrCurrent << endl;
+```
+
 ---
 
 # Structs and Classes
