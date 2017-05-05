@@ -177,37 +177,37 @@ true or false, which can be used with if statements and loops.
 <table>
 <tr>
 <th> Is equal to </th>
-<th><pre> var1 == var2 </pre></th>
+<td colspan="3"><pre> var1 == var2 </pre></td>
 </tr>
 
 <tr>
 <th> Is equal to </th>
-<td><pre> var1 == var2 </pre></td>
+<td colspan="3"><pre> var1 == var2 </pre></td>
 </tr>
 
 <tr>
 <th> Is not equal to </th>
-<td><pre> var1 != var2 </pre></td>
+<td colspan="3"><pre> var1 != var2 </pre></td>
 </tr>
 
 <tr>
 <th> Less than </th>
-<td><pre> var1 &lt; var2 </pre></td>
+<td colspan="3"><pre> var1 &lt; var2 </pre></td>
 </tr>
 
 <tr>
 <th> Less than or equal to </th>
-<td><pre> var1 &lt;= var2 </pre></td>
+<td colspan="3"><pre> var1 &lt;= var2 </pre></td>
 </tr>
 
 <tr>
 <th> Greater than </th>
-<td><pre> var1 &gt; var2 </pre></td>
+<td colspan="3"><pre> var1 &gt; var2 </pre></td>
 </tr>
 
 <tr>
 <th> Greater than or equal to </th>
-<td><pre> var1 &gt;= var2 </pre></td>
+<td colspan="3"><pre> var1 &gt;= var2 </pre></td>
 </tr>
 
 <tr>
