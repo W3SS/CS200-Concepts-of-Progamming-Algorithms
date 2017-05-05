@@ -507,6 +507,82 @@ multiple values, as you can only return one item via the return statement.
 
 # Const
 
+Const can be used in several different ways throughout our programs.
+
+## Named constants
+
+It is bad programming practice to use "magic numbers"...
+
+```c++
+DoAThing( 5 ); // WHY 5? WHAT DOES THAT MEAN?!
+```
+
+Instead of hard-coding numeric values in our programs, we can give them "labels" by
+creating named-constants instead.
+
+Named constants are essentially variables but they can't be changed... therefore, they're called *named constants*.
+
+```c++
+const int MAX_STUDENT_COUNT = 18;
+```
+
+With a named constant, it is standard to give them ALL_UPPERCASE_NAMES, and you will also need to assign its value immediately.
+
+```c++
+int main()
+{
+   const int MAX_STUDENT_COUNT = 10;
+   
+   string studentList[ MAX_STUDENT_COUNT ];
+   
+   FailStudents( studentList, MAX_STUDENT_COUNT );
+};
+```
+
+## Constant pass-by-reference
+
+When an object (or an array) being passed to a function might be large and costly to copy over (with pass-by-value),
+it is common to do a pass-by-const-reference instead of pass-by-value or pass-by-reference.
+
+```c++
+void Display( const string& name );
+```
+
+This way, we have the benefit of the efficiency of pass-by-reference, without the danger of the function
+potentially changing the value of our parameter.
+
+## Constant return types
+
+Likewise, sometimes you want to return the reference to an object from your function, but you want to make sure
+that the object isn't changed by whatever *called* the function. In this case, you can make the return-type const.
+
+```c++
+const string& GetStudentName( int index, const Database& db )
+{
+   // code goes here to get student name
+   return studentName;
+}
+```
+
+## Constant functions
+
+With classes, you might want to write a function that will display some information,
+but not change any of the member variables. In this case, you can declare the member function
+as *const*.
+
+```c++
+class Vector
+{
+   private:
+   float x, y;
+   
+   void Display() const
+   {
+      cout << x << ", " << y << endl;
+   }
+};
+```
+
 ---
 
 # Arrays
