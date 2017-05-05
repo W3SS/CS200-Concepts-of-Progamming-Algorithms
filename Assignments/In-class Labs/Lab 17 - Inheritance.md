@@ -114,7 +114,7 @@ that they can enter *true* or *false* as an answer.
 ### SetCorrectAnswer
 
 The correct answer (either "true" or "false") will be passed in
-as the parameter. Set the private member variable ```m_questionText```
+as the parameter. Set the private member variable ```m_correctAnswer```
 to the passed-in value.
 
 ### CheckAnswer
