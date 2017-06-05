@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1486000854 source:/home/rayechell/TEACHING/cuTEST/example.cpp
+	<iostream>
+	"TestTemplate.hpp"
+
+1486002226 source:/home/rayechell/TEACHING/cuTEST/TesterBase.cpp
+	"TesterBase.hpp"
+	"Menu.hpp"
+
+1486002134 /home/rayechell/TEACHING/cuTEST/TesterBase.hpp
+	<string>
+	<list>
+	<functional>
+
+1486002251 /home/rayechell/TEACHING/cuTEST/Menu.hpp
+	<iostream>
+	<vector>
+	<string>
+	<limits>
+
+1486002026 /home/rayechell/TEACHING/cuTEST/TestTemplate.hpp
+	"TesterBase.hpp"
+
