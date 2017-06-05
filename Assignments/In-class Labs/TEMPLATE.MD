@@ -39,6 +39,9 @@
 Once you are finished with a project, zip up the entire folder that contains
 all source files and project/solution files. Turn in this zip file to **Desire2Learn**.
 
+Also make sure to turn in a text file with your answers to the [question](#questions) section.
+
+
 ### Starter code
 
 Paste the following into your .cpp file to start with:
