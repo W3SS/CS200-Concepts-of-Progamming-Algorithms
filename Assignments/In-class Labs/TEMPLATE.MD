@@ -2,13 +2,13 @@
 
 ---
 
-[Information](#information) | [Lab](#lab) | [Questions](#questions)
+[Information](#information) | [Introduction](#introduction) | [Lab](#lab) | [Questions](#questions)
 
 ---
 
 ## Information
 
-### Topics
+### Lab topics
 
 * A
 * B
@@ -53,6 +53,10 @@ int main()
     return 0;
 }
 ```
+
+---
+
+## Introduction
 
 ---
 
