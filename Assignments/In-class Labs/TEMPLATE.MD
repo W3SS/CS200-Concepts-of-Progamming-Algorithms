@@ -54,17 +54,45 @@ int main()
 }
 ```
 
----
+
+
+
+
+
+
+
+
+![horizontal rule](images/hr.png)
 
 ## Introduction
 
----
+
+
+
+
+
+
+
+
+
+![horizontal rule](images/hr.png)
 
 ## Lab
 
 
 
----
+
+
+
+
+
+
+
+
+
+
+
+![horizontal rule](images/hr.png)
 
 ## Questions
 
