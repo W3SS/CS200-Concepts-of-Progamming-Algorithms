@@ -73,14 +73,16 @@ See also:
 
 Paste the following into your .cpp file to start with:
 
-    #include <iostream>
-    #include <string>
-    using namespace std;
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-    int main()
-    {
-        return 0;
-    }
+int main()
+{
+    return 0;
+}
+```
     
 ---
 
@@ -108,21 +110,23 @@ Test the program.
 
 ### Solution
 
-        #include <iostream>
-        #include <string>
-        using namespace std;
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-        int main()
-        {
-            cout << "1 tsp baking soda" << endl;
-            cout << "1/2 tsp baking powder" << endl;
-            cout << "1 c butter" << endl;
-            cout << "1 1/2 c white sugar" << endl;
-            cout << "1 egg" << endl;
+int main()
+{
+    cout << "1 tsp baking soda" << endl;
+    cout << "1/2 tsp baking powder" << endl;
+    cout << "1 c butter" << endl;
+    cout << "1 1/2 c white sugar" << endl;
+    cout << "1 egg" << endl;
 
-            while (true); // kludgey fix
-            return 0;
-        }
+    while (true); // kludgey fix
+    return 0;
+}
+```
 
 ---
 
@@ -144,28 +148,29 @@ so that they can be tweaked and the program will update the amounts.
 
 4. Test the program to make sure it still works.
 
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-        #include <iostream>
-        #include <string>
-        using namespace std;
+int main()
+{
+    float tspBakingSoda = 2;
+    float tspBakingPowder = 0.5;
+    float cupsOfButter = 1;
+    float cupsOfSugar = 1.5;
+    float eggs = 1;
 
-        int main()
-        {
-            float tspBakingSoda = 2;
-            float tspBakingPowder = 0.5;
-            float cupsOfButter = 1;
-            float cupsOfSugar = 1.5;
-            float eggs = 1;
+    cout << tspBakingSoda << " tsp baking soda" << endl;
+    cout << tspBakingPowder << " tsp baking powder" << endl;
+    cout << cupsOfButter << " c butter" << endl;
+    cout << cupsOfSugar << " c white sugar" << endl;
+    cout << eggs << " egg" << endl;
 
-            cout << tspBakingSoda << " tsp baking soda" << endl;
-            cout << tspBakingPowder << " tsp baking powder" << endl;
-            cout << cupsOfButter << " c butter" << endl;
-            cout << cupsOfSugar << " c white sugar" << endl;
-            cout << eggs << " egg" << endl;
-
-            while (true); // kludgey fix
-            return 0;
-        }
+    while (true); // kludgey fix
+    return 0;
+}
+```
 
 ---
 
@@ -184,30 +189,32 @@ so that they can be tweaked and the program will update the amounts.
 
 ![Screenshot](images/cl2-02.png)
 
-            #include <iostream>
-            #include <string>
-            using namespace std;
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-            int main()
-            {
-                float ratio;
-                cout << "How many batches do you want to make? ";
-                cin >> ratio;
+int main()
+{
+    float ratio;
+    cout << "How many batches do you want to make? ";
+    cin >> ratio;
 
-                float tspBakingSoda = 1 * ratio;
-                float tspBakingPowder = 0.5 * ratio;
-                float cupsOfButter = 1 * ratio;
-                float cupsOfSugar = 1.5 * ratio;
-                float eggs = 1 * ratio;
+    float tspBakingSoda = 1 * ratio;
+    float tspBakingPowder = 0.5 * ratio;
+    float cupsOfButter = 1 * ratio;
+    float cupsOfSugar = 1.5 * ratio;
+    float eggs = 1 * ratio;
 
-                cout << tspBakingSoda << " tsp baking soda" << endl;
-                cout << tspBakingPowder << " tsp baking powder" << endl;
-                cout << cupsOfButter << " c butter" << endl;
-                cout << cupsOfSugar << " c white sugar" << endl;
-                cout << eggs << " egg" << endl;
+    cout << tspBakingSoda << " tsp baking soda" << endl;
+    cout << tspBakingPowder << " tsp baking powder" << endl;
+    cout << cupsOfButter << " c butter" << endl;
+    cout << cupsOfSugar << " c white sugar" << endl;
+    cout << eggs << " egg" << endl;
 
-                while (true); // kludgey fix
-                return 0;
-            }
+    while (true); // kludgey fix
+    return 0;
+}
+```
 
 ---
