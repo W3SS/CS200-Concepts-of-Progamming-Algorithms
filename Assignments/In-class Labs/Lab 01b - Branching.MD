@@ -225,11 +225,203 @@ if ( name == "admin" || name == "administrator" ) { ... }
 
 ### If statements
 
+If statements are one way we can "branch" the flow of our program by
+asking questions. Usually these questions are things like,
+"Is the printer ready?", "Is balance greater than 0?", "Is locationA
+the same as locationB?" and so on.
+
+If statements are built like this:
+
+```c++
+if ( CONDITION )
+{
+    // This executes if true
+}
+```
+
+
+#### Solo if statement
+
+With an if statement on its own, the code within the statement's
+**code block** (code within curly braces ```{ }```) is only executed
+if our **condition** is **true**. Once we're done with the code within
+the if statement code-block, we exit the code block and return to the
+normal execution of the program.
+
+If the condition ended up being *false*, then we skip that internal code block
+and continue on with the program.
+
+**Example:**
+
+```c++
+string order = "burger";
+
+string addCheese;
+cout << "Do you want cheese on that? (yes/no): ";
+cin >> addCheese;
+
+if ( addCheese == "yes" )
+{
+    order += " with cheese";
+}
+
+cout << "Your order: " << order << endl;
+```
+
+For this code, the order is displayed either way - whether the user
+wants cheese or not. However, if they want cheese, *only then* is
+the "with cheese" added onto the order.
+
+So...
+
+With cheese output: ```Your order: burger with cheese```
+
+Without cheese output: ```Your order: burger```
+
+
+
+#### If / else statements
+
+With an if/else statement, the *if* code block is executed when the
+condition is *true*, and the *else* code block is executed when the
+condition is *false*.
+
+```c++
+if ( CONDITION )
+{
+    // Condition was true!
+}
+else
+{
+    // Condition was false!
+}
+```
+
+This way, both options have their own special code associated with it,
+and after that internal block is executed, the program continues its flow.
+
+```c++
+float price;
+bool haveCoupon = false;
+
+if ( haveCoupon )
+{
+    price = 5.99;
+}
+else
+{
+    price = 7.99;
+}
+
+cout << "Price: $" << price << endl;
+```
+
+
+**Common error:** Note that the *else* statement doesn't have a conditional!
+The else is a catch-all that will be executed if no other if (or else-if) statements
+were true.
+
+
+
+
+#### If / else if / else statements
+
+Perhaps there are several scenarios that you want to check for.
+Instead of having multiple *if* statements, you can add any amount of
+*else if* statements to cover more options.
+
+```c++
+if ( CONDITION_A )
+{
+    // Condition A is true
+}
+else if ( CONDITION_B )
+{
+    // Condition B is true, but Condition A was false
+}
+else if ( CONDITION_C )
+{
+    // Condition C is true, but Condition A and Condition B were false
+}
+else
+{
+    // Default if none of the above was true
+}
+```
+
+Note that when we have else if statements, those *else if* statements are
+only executed if the **if or else if statement above it was false!**.
+
+```c++
+float price;
+int age;
+cout << "Enter your age: ";
+cin >> age;
+
+if ( age < 12 )
+{
+    // Kid price
+    price = 5.00;
+}
+else if ( age < 18 )
+{
+    // Teen price
+    price = 6.00;
+}
+else if ( age >= 60 )
+{
+    // Senior price
+    price = 4.00;
+}
+else
+{
+    // Normal price
+    price = 8.00;
+}
+
+cout << "Price: $" << price << endl;
+```
+
+In this case, if the user entered 14 as their age, the first if statement,
+```if ( age < 12 )``` is false, so it goes to the next *else if* statement.
+This one ends up being true, so ```price = 6.00;``` is executed. It doesn't
+matter that this condition didn't ask if ```age >= 12```, because we already
+know this is true, since ```age < 12``` failed.
+
+
+
 ---
 
 ### Switch statements
 
+A switch statement does not use a boolean expression - instead,
+it can operate on **integers**, **characters**, and **booleans**.
 
+Each **case** in a switch statement is essentially asking, "is the value of the switch variable this?",
+and the lines of code after the case statement are what gets executed.
+
+The case statement ends at a **break** statement.
+
+The **default** case is used like an "else".
+
+Example:
+
+```c++
+switch( letter )
+{
+    case 'a':
+        cout << "ABC!" << endl;
+    break;
+    
+    case 'z':
+        cout << "XYZ!" << endl;
+    break;
+    
+    
+    default:
+        cout << "I don't like that letter." << endl;
+}
+```
 
 
 
@@ -463,35 +655,6 @@ Write a program that displays a list of fruits and asks the user to choose one. 
 Write a program that asks the user to enter two numbers. Then, ask them whether they want to add, subtract, multiply, or divide.
 
 Use a switch statement to decide what kind of operation to do, and display the result.
-
-A switch statement does not use a boolean expression - instead,
-it can operate on **integers**, **characters**, and **booleans**.
-
-Each **case** in a switch statement is essentially asking, "is the value of the switch variable this?",
-and the lines of code after the case statement are what gets executed.
-
-The case statement ends at a **break** statement.
-
-The **default** case is used like an "else".
-
-Example:
-
-```c++
-switch( letter )
-{
-    case 'a':
-        cout << "ABC!" << endl;
-    break;
-    
-    case 'z':
-        cout << "XYZ!" << endl;
-    break;
-    
-    
-    default:
-        cout << "I don't like that letter." << endl;
-}
-```
 
 #### Steps
 
