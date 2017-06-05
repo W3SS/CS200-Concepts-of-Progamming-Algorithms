@@ -28,6 +28,8 @@ all source files and project/solution files. Turn in this zip file to **Desire2L
 
 ---
 
+![horizontal rule](images/hr.png)
+
 ## Introduction
 
 *This is an introduction to the topics covered in this lab. Scroll down
@@ -208,11 +210,15 @@ cout << "Goodbye";
 
 ---
 
+![horizontal rule](images/hr.png)
+
 ## Lab
 
 
 
 ---
+
+![horizontal rule](images/hr.png)
 
 ## Questions
 
