@@ -726,6 +726,8 @@ A-4. Is **age** less than 21, and is **age** also greater than 18?
 
 A-5. Is **x** between 5 and 10? *(Hint: You need to phrase this as two separate boolean expressions and combine them with a logical operator!)*
 
+---
+
 ### B. Boolean expressions
 
 Figure out whether the following expressions will evaluate to **true** or **false**,
@@ -740,6 +742,8 @@ B-3. ```( age >= 18 && age < 21 )```, age is 20.
 B-4. ```( x > 0 && x < 10 )```, x is 0.
 
 B-5. ```( color != "green" )```, color is "cyan".
+
+---
 
 ### C. Coin flip
 
@@ -770,19 +774,19 @@ be **false**. List four combinations.
 
 ```( pennyHeads && dimeHeads && nickelHeads )```
 
-1. Combination 1
+* Combination 1
     * ```pennyHeads =```
     * ```dimeHeads =```
     * ```nickelHeads =```
-1. Combination 2
+* Combination 2
     * ```pennyHeads =```
     * ```dimeHeads =```
     * ```nickelHeads =```
-1. Combination 3
+* Combination 3
     * ```pennyHeads =```
     * ```dimeHeads =```
     * ```nickelHeads =```
-1. Combination 4
+* Combination 4
     * ```pennyHeads =```
     * ```dimeHeads =```
     * ```nickelHeads =```
@@ -791,13 +795,13 @@ C-6: Given the following boolean expression, there are three ways we can get a r
 
 ```( pennyHeads || dimeHeads )```
 
-1. Combination 1
+* Combination 1
     * ```pennyHeads =```
     * ```dimeHeads =```
-1. Combination 2
+* Combination 2
     * ```pennyHeads =```
     * ```dimeHeads =```
-1. Combination 3
+* Combination 3
     * ```pennyHeads =```
     * ```dimeHeads =```
 
