@@ -541,7 +541,11 @@ we could do this!
 
 **Approach 3: Calculate *during* cout** ```cout << ( cups_of_butter * ratio ) << " cups of butter" << endl;```
 
-Do this for all of the ingredients.
+Here, the ```*``` sign is known as the **multiplication operator**.
+
+Do this math for all of the ingredients.
+
+
 
 **Half batch:**
 
