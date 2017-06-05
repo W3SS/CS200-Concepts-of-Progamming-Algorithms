@@ -2,7 +2,7 @@
 
 ---
 
-[Information](#Information) | [Lab](#Lab) | [Questions](#Questions)
+[Information](#information) | [Lab](#lab) | [Questions](#questions)
 
 ---
 
