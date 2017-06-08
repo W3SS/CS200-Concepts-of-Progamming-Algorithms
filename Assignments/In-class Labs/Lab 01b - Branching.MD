@@ -566,6 +566,13 @@ Write a program that will ask the user to enter the amount of charge of their ph
 
 #### Example output
 
+Note that this % here is just because I output the prompt like this:
+
+```c++
+cout << "What is your current battery charge? %";
+cin >> charge;
+```
+
 **Full charge:**
 
 ![Screenshot with full charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program3a.png)
