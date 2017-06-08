@@ -28,11 +28,11 @@
 1. Create a new project. *File > New > Project...*
     1. Select **Visual C++** from the left category list.
     2. Select **Empty Project** from the template list.
-    3. Set the project **Name** to "CL2 Branching".
+    3. Set the project **Name** to "Lab 01b Branching".
     4. Set the project **Location**.
     5. Click **OK**.
 2. Create your source file. In the **Solution Explorer**, right-click your project file. *Add > New Item...*
-    1. Select **C++ File (.cpp)** and name it **CL2.cpp**.
+    1. Select **C++ File (.cpp)** and name it **lab01b.cpp**.
     2. Click **Add**.
 
 ### Turn in
