@@ -1,4 +1,4 @@
-# CS 200 Lab 1a: Recipes
+# CS 200 Lab 1a: Recipes - Instructions
 
 ---
 
