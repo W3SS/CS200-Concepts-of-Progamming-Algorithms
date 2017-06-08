@@ -2,7 +2,7 @@
 
 ---
 
-[Information](#information) | [Introduction](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001a%20-%20Recipes%20-%20Introduction.MD) | [Lab](#lab) | [Questions](#questions)
+[Information](#information) | [Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001a%20-%20Recipes%20-%20Helper.MD) | [Lab](#lab) | [Questions](#questions)
 
 ---
 
