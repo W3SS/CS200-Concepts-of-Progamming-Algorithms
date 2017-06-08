@@ -1,4 +1,4 @@
-# Introduction
+CS 200 Lab 1a: Recipes - Helper
 
 *This is an introduction to the topics covered in this lab. 
 Go to the  [*Lab*](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001a%20-%20Recipes.MD) 
