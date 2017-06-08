@@ -1,9 +1,10 @@
-## Introduction
+# Introduction
 
-*This is an introduction to the topics covered in this lab. Scroll down
-to the [*Lab*](#lab) section if you want to get started.*
+*This is an introduction to the topics covered in this lab. 
+Go to the  [*Lab*](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001a%20-%20Recipes.MD) 
+document for the program instructions.*
 
-### Creating a program
+## Creating a program
 
 When we create a C++ project, generally it will begin empty. All programs
 need *at least one* source file, but for more sophisticated programs,
@@ -28,7 +29,7 @@ And to add your lab source file in Visual Studio:
     1. Select **C++ File (.cpp)** and name it **main.cpp**.
     2. Click **Add**.
 
-#### Bare-minimum program
+### Bare-minimum program
 
 Your source file will also start out blank. The bare-minimum code you need
 for a C++ program is:
@@ -48,7 +49,7 @@ Within the ```main()``` function, we have ```return 0;``` - this marks
 the **end of our program**. We will be adding code within the curly braces ```{ }```,
 and before ```return 0;```.
 
-#### Adding libraries
+### Adding libraries
 
 C++ has multiple **libraries** included with it. A **library** is a set of code
 that has been pre-written, and packaged so that it is reusable across many projects.
@@ -68,7 +69,7 @@ int main()
 }
 ```
 
-#### Comments
+### Comments
 
 In C++, you can add comments to the code in two ways:
 
@@ -86,7 +87,7 @@ In C++, you can add comments to the code in two ways:
 
 The program doesn't do anything with comments; they are for programmer-use!
 
-#### Stopping the program
+### Stopping the program
 
 In Visual Studio, if you run your program in debug mode, it will begin running at ```main()```,
 execute its code, and once it hits ```return 0;``` the program will end and the
@@ -110,7 +111,9 @@ int main()
 }
 ```
 
-### Displaying output
+---
+
+## Displaying output
 
 Once you have the *iostream* library included in your program, you can
 display text output to the screen, as well as get input from the user.
@@ -172,7 +175,9 @@ cout << "Goodbye";
 
 ![Hello World and Goodbye on separate lines.](images/lab01a_cout2.png)
 
-### Variables
+---
+
+## Variables
 
 Variables are a location where you store data. This data can be numbers, strings, boolean values, memory addresses, and many other things. Eventually, we will be creating our own data types and store data in our own custom variables.
 
@@ -340,8 +345,9 @@ You can generally name your variable anything that you'd like, but there are a f
 4.    You can use upper-case and lower-case letters in your variable names, but there is a naming convention that you should try to follow. Also, remember that variable names are case-sensitive.
 5.    Reserved keywords (such as "if", "int", "public") cannot be used as variable names.
 
+---
 
-### Getting user input
+## Getting user input
 
 In our programs, we may want to ask the user a question, which may affect
 the calculations done, or the program flow, or other behavior.
