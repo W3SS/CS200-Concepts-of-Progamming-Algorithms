@@ -136,26 +136,26 @@ and running the program to check how it looks.)
 
 #### Using cout to display text to the screen
 
-Once you have the *iostream* library included in your program, you can
+> Once you have the *iostream* library included in your program, you can
 display text output to the screen, as well as get input from the user.
 
-To display output, you use the ```cout``` command, as well as the stream
+> To display output, you use the ```cout``` command, as well as the stream
 operator ```<<```. A simple output will look like:
 
 ```c++
 cout << "Hello, world!";
 ```
 
-Any time you add text to the program, such as during a *cout*, the
+> Any time you add text to the program, such as during a *cout*, the
 text within the double-quotes is known as a **string literal**.
 
-You can also display values of variables with a *cout* statement:
+> You can also display values of variables with a *cout* statement:
 
 ```c++
 cout << cups_of_butter;
 ```
 
-If you want to add a line break to the text output (that is, put text on
+> If you want to add a line break to the text output (that is, put text on
 the next line down), we can use the ```endl``` command with ```cout```:
 
 ```c++
