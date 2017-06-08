@@ -69,46 +69,6 @@ int main()
 }
 ```
 
-#### About main()
-
-Every program needs an **entry point** -- a place to begin -- and for C++
-it is always in the ```main()``` **function**. We will learn more about
-functions later.
-
-Within the ```main()``` function, we have ```return 0;``` - this marks
-the **end of our program**. We will be adding code within the curly braces ```{ }```,
-and before ```return 0;```.
-
-#### About #include <iostream>
-
-C++ has multiple **libraries** included with it. A **library** is a set of code
-that has been pre-written, and packaged so that it is reusable across many projects.
-
-For example, C++ has an **input-output** library called *iostream* that allows
-us to write text to the screen, and get user input from the keyboard.
-
-To add this functionality to our program, we need to use an ```#include``` statement.
-
-#### About comments
-
-In C++, you can add comments to the code in two ways:
-
-```c++
-// Single-line comment!
-```
-
-```c++
-/*
-    Multi-
-    line
-    comment!
-*/
-```
-
-The program doesn't do anything with comments; they are for programmer-use!
-
----
-
 For this lab, we will write a program that will display a list of ingredients for
 sugar cookies. We will add several features, so that eventually the user (the person
 who is using your program) will be able to enter the amount of batches of cookies
@@ -132,34 +92,6 @@ Your first task is to *display* all of the ingredients to the
 screen using the ```cout``` command. Try to experiment so that
 things are spaced nicely (hint: I am just manually adding spaces here
 and running the program to check how it looks.)
-
-#### Using cout to display text to the screen
-
-> Once you have the *iostream* library included in your program, you can
-display text output to the screen, as well as get input from the user.
-
-> To display output, you use the ```cout``` command, as well as the stream
-operator ```<<```. A simple output will look like:
-
-```c++
-cout << "Hello, world!";
-```
-
-> Any time you add text to the program, such as during a *cout*, the
-text within the double-quotes is known as a **string literal**.
-
-> You can also display values of variables with a *cout* statement:
-
-```c++
-cout << cups_of_butter;
-```
-
-> If you want to add a line break to the text output (that is, put text on
-the next line down), we can use the ```endl``` command with ```cout```:
-
-```c++
-cout << "Butter: " << cups_of_butter << " cups" << endl;
-```
 
 
 ![The simple program with all the ingredients displayed](images/lab01a_recipe1.png)
@@ -185,37 +117,6 @@ to store each of the following:
 5. amount_eggs
 
 Each of these should be **float** or **double** variables.
-
-#### About variables
-
-Variables are a location where you store data. This data can be numbers, strings, boolean values, memory addresses, and many other things. Eventually, we will be creating our own data types and store data in our own custom variables.
-
-In C++, you must **declare** a variable before you can use it. When you
-declare a variable, you let the program know what kind of data that the
-variable will store: integers? numbers with decimals? symbols? a string of letters? etc.
-
-A **variable declaration** must contain the **data-type** and the **variable name**:
-
-```c++
-int amountOfKittens;
-double pricePerSandwich;
-bool isSaved;
-string username;
-```
-
-Once a variable has been declared, its type cannot change.
-
-**Declare once, use multiple times:** Once you declare a variable,
-you do not need to keep adding the data-type to the variable name whenever you use it;
-this is only for the declaration!
-
-```c++
-int amountOfKittens; // declaration
-
-amountOfKittens = 20; // assigning a value
-
-amountOfKittens = amountOfKittens + 5; // adding 5 to the existing value
-```
 
 
 **Variable naming:** Your variable names *cannot* contain spaces. Your
@@ -256,35 +157,47 @@ This is ugly! Don't do it!
 
 ---
 
-### Part 3: Ratios
+### Part 3: How many batches?
 
 Sometimes, we want to make double the cookies, or only a half-batch.
 Let's allow the user to adjust the batch size and display the correct
 ingredient amount for each.
 
-Create a variable called ```ratio```; it should be either a float or a double.
+Declare a variable called ```batch```; it should be either a float or a double.
 
 Before getting the user's input, **prompt them!** - Use ```cout``` to ask
 the user how many batches they want to make.
 
-Get the user's input with the ```cin``` command, and store it in the ```ratio``` variable.
+```cout << "How many batches? ";```
+
+Get the user's input with the ```cin``` command, and store it in the ```batch``` variable.
 1.0 would be a normal batch, 0.5 would be a half batch, and 2.0 would be
 a double batch.
 
-Then, we will re-calculate the ingredient amounts. There are a few ways
-we could do this!
+```cin >> batch;```
 
-**Approach 1: Calculate during declaration** ```float cups_of_butter = 1.0 * ratio;```
+Then, using the *batch* variable, modify your existing 5 ingredient variables, multiplying
+their original values by the *batch* size.
 
-**Approach 2: Calculate *after* declaration** ```cups_of_butter = cups_of_butter * ratio;```
+1. tsp_baking_soda
+2. tsp_baking_powder
+3. cups_butter
+4. cups_sugar
+5. amount_eggs
 
-**Approach 3: Calculate *during* cout** ```cout << ( cups_of_butter * ratio ) << " cups of butter" << endl;```
+For example,
+
+```c++
+cups_butter = 1.0 * ratio;
+```
 
 Here, the ```*``` sign is known as the **multiplication operator**.
 
 Do this math for all of the ingredients.
 
+---
 
+Test your program by plugging in 0.5, 1.0, and 2.0 for batches to make sure the math is correct.
 
 **Half batch:**
 
