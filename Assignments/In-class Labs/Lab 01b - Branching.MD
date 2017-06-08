@@ -728,6 +728,8 @@ Use a switch statement to decide what kind of operation to do, and display the r
 
 ## Questions
 
+Use the [Introduction](#introduction) portion of this document to help answer these problems.
+
 *Answer these questions in a text editor and turn them in with your project.
 Valid file formats are: .txt, .rtf, .docx, .odt, .pdf*
 
