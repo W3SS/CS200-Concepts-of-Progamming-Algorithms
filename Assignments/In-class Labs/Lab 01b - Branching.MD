@@ -467,6 +467,10 @@ string hometown;
 
 You can use ```cin``` as normal, and store the result into ```hometown```.
 
+```c++
+cin >> hometown;
+```
+
 To get the length of a string (The # of letters), you can use:
 
 ```c++
@@ -474,9 +478,17 @@ hometown.size()
 ```
 
 You can use this with your if statement, to see if ```hometown.size()``` is greater
-than 6.
+than 6. The conditional will look like:
+
+```c++
+(hometown.size() > 6)
+```
 
 #### Example output
+
+Note: Using ```cin >>``` will only allow us to retrieve **single words** at a time from the user.
+There is a different method to get a whole line of text from the user, which we will cover later on.
+For now, keep your town names all one word, like ```kansascity```.
 
 **Long town name:**
 
