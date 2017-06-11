@@ -2,7 +2,10 @@
 
 ---
 
-[Information](#information) | [Introduction](#introduction) | [Lab](#lab) | [Questions](#questions)
+[Information](#information) |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001c%20-%20Loops%20-%20Helper.MD) |
+[Lab](#lab) | [
+Questions](#questions)
 
 ---
 
