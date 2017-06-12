@@ -1,4 +1,4 @@
-# CS 200 Lab 02a: File I/O - Helper
+# CS 200 Lab 02a: File I/O
 
 ---
 
