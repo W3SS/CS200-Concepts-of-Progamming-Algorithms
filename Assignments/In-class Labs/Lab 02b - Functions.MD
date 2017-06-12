@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper]() |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002b%20-%20Functions%20-%20Helper.MD) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -48,7 +48,7 @@ Make sure that, for each program, you **create a new Visual Studio project**.
 When you're turning them in, you can select all program folders and zip
 them all together.
 
-**Make sure to open the [HELPER](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002a%20-%20File%20IO%20-%20Helper.MD) file for info on how to use file streams**
+**Make sure to open the [HELPER](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002b%20-%20Functions%20-%20Helper.MD) file for some info on functions**
 
 ---
 
