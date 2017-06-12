@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001c%20-%20Loops%20-%20Helper.MD) |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002a%20-%20File%20IO%20-%20Helper.MD) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -45,7 +45,7 @@ Make sure that, for each program, you **create a new Visual Studio project**.
 When you're turning them in, you can select all program folders and zip
 them all together.
 
-**Make sure to open the [HELPER]() file for info on how to use file streams**
+**Make sure to open the [HELPER](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002a%20-%20File%20IO%20-%20Helper.MD) file for info on how to use file streams**
 
 ---
 
@@ -90,6 +90,11 @@ int main()
 }
 ```
 
+Make sure to open up your project directory to find the **todo.txt** file
+that should be output by the program. You might have to go several
+folders deep to find the file.
+
+#### Screenshots
 
 ![screenshot of program running](images/lab02a_program1_run.png)
 
@@ -172,9 +177,70 @@ close the test file.
     
 </details>
 
+#### Screenshots
+
 ![screenshot of program running](images/lab02a_program2_run.png)
 
 ![screenshot of program output file](images/lab02a_program2_text.png)
+
+---
+
+### Program 3: Storybook
+
+Make sure to create a new **Visual Studio project!**
+
+For this program, you will read in a story from a text file and
+display it to the screen.
+
+In your project folder (the same directory as your source files),
+create a new file ```story.txt``` and add the following:
+
+        The Fox and the Grapes - An Aesop's Fable
+
+        One hot summer's day a Fox was strolling through an orchard till he came to a bunch of Grapes just ripening on a vine which had been trained over a lofty branch.
+
+        "Just the thing to quench my thirst," quoth he.
+
+        Drawing back a few paces, he took a run and a jump, and just missed the bunch.
+
+        Turning round again with a One, Two, Three, he jumped up, but with no greater success.
+
+        Again and again he tried after the tempting morsel, but at last had to give it up, and walked away with his nose in the air, saying:
+
+        "I am sure they are sour."
+
+
+And start with the following code:
+
+```c++
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    // TODO: Create an ifstream variable named "input"
+    
+    // TODO: Open the story.txt file
+
+    string line;
+
+    while ( getline( input, line ) )    // Keep reading in lines of text
+    {
+        cout << line << endl;   // Display text to the screen
+    }
+
+    // TODO: Close the input file
+
+    return 0;
+}
+```
+
+Once it's finished, running the program should just display the story to the screen.
+
+#### Screenshots
+
+![screenshot of story program](images/lab02a_program3_output.png)
 
 
 
