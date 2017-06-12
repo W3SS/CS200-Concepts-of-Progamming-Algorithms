@@ -248,4 +248,6 @@ Once it's finished, running the program should just display the story to the scr
 
 ## Questions
 
-1. 
+1. Which **data-type** is used for a variable that can read text from a file, ifstream or ofstream?
+1. Which **data-type** is used for a variable that can write text to a file, ifstream or ofstream?
+1. What library is required to ```#include``` in order to use file input and output?
