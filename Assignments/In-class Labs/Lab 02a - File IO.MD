@@ -56,6 +56,7 @@ Start with the following code:
 ```c++
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main()

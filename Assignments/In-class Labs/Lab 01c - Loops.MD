@@ -266,7 +266,7 @@ Make the condition: while playerGuess is not equal to secretNumber.
 once the loop is "escaped", which only happens once the player has 
 correctly guessed the number.
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/cl3-03.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png)
 
 ---
 
@@ -293,7 +293,7 @@ less than 0 or greater than 5...
 
 5. Outside of the loop, display the message "Thank you".
 
-![Screenshot](images/https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/cl3-04.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png)
 
 ---
 
@@ -339,7 +339,7 @@ You can use this table to check your math, assuming the raise per year is 5%.
 
 Finally, after the for loop, display the new current wage.
 
-![Screenshot](images/https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/lab6_04.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_04.png)
 
 ---
 
@@ -354,7 +354,7 @@ You will need to declare a "sum" variable, whose type should be a float.
 Your program should display the sum at the end. (You don't have to list out
 all the numbers like in the example output, just the sum.)
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/lab6_05.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_05.png)
 
 
 
