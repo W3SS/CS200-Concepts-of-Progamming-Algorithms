@@ -266,7 +266,7 @@ Make the condition: while playerGuess is not equal to secretNumber.
 once the loop is "escaped", which only happens once the player has 
 correctly guessed the number.
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png?raw=true)
 
 ---
 
@@ -293,7 +293,7 @@ less than 0 or greater than 5...
 
 5. Outside of the loop, display the message "Thank you".
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png?raw=true)
 
 ---
 
@@ -331,15 +331,15 @@ You can use this table to check your math, assuming the raise per year is 5%.
 
 <table>
 <tr> <th> Years completed </th><th> Salary </th><th> Notes </th> </tr>
-<tr> <td> 0 </td><td> $100,000 </td><td> Starting salary would be ```100000```. </td> </tr>
-<tr> <td> 1 </td><td> $105,000 </td><td> Raise is ```(0.05 * 100000)```, or $5,000. </td> </tr>
-<tr> <td> 2 </td><td> $110,250 </td><td> Raise is ```(0.05 * 105000)```, or $5,250. </td> </tr>
-<tr> <td> 3 </td><td> $115,762.50 </td><td> Raise is ```(0.05 * 110250)```, or $5,512.50. </td> </tr>
+<tr> <td> 0 </td><td> $100,000 </td><td> Starting salary would be 100000. </td> </tr>
+<tr> <td> 1 </td><td> $105,000 </td><td> Raise is (0.05 * 100000), or $5,000. </td> </tr>
+<tr> <td> 2 </td><td> $110,250 </td><td> Raise is (0.05 * 105000), or $5,250. </td> </tr>
+<tr> <td> 3 </td><td> $115,762.50 </td><td> Raise is (0.05 * 110250), or $5,512.50. </td> </tr>
 </table>
 
 Finally, after the for loop, display the new current wage.
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_04.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_04.png?raw=true)
 
 ---
 
