@@ -339,6 +339,27 @@ You can use this table to check your math, assuming the raise per year is 5%.
 
 Finally, after the for loop, display the new current wage.
 
+<details>
+	<summary><strong><em>
+		View hints on calculating the new salary
+	</em></strong></summary>
+
+```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```
+
+</details>
+
+
+<details>
+	<summary><strong><em>
+		View hints on the for loop
+	</em></strong></summary>
+
+```java
+for ( int years = 1; years < yearsWorked; years++ )
+```
+
+</details>
+
 ![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_04.png?raw=true)
 
 ---
