@@ -60,6 +60,7 @@ Copy in the following code as your starting point:*
 
 ```c++
 #include <iostream>
+#include <string>
 using namespace std;
 
 // Function 1
@@ -317,11 +318,25 @@ recalculate the wage amount by multiplying the raise % by the current year's sal
 So in other words - before the for loop, set the *adjustedWage* to the *startingWage*.
 
 So, use a for loop to iterate *yearsWorked* amount of times, recalculating
-the new wage:
+the new wage.
 
-	Add (adjustedWage x percentRaisePerYear) to the adjustedWage
-	each cycle of the for loop
-	
+The equation to calculate the new wage is
+
+*n = (ar) + a*
+
+where *n* is the new wage, *a* is the adjusted wage's current value, and *r* is the raise % per year (as a decimal value.)
+This new wage value should overwrite the ```adjustedWage``` value each time in the loop.
+
+You can use this table to check your math, assuming the raise per year is 5%.
+
+<table>
+<tr> <th> Years completed </th><th> Salary </th><th> Notes </th> </tr>
+<tr> <td> 0 </td><td> $100,000 </td><td> Starting salary would be ```100000```. </td> </tr>
+<tr> <td> 1 </td><td> $105,000 </td><td> Raise is ```(0.05 * 100000)```, or $5,000. </td> </tr>
+<tr> <td> 2 </td><td> $110,250 </td><td> Raise is ```(0.05 * 105000)```, or $5,250. </td> </tr>
+<tr> <td> 3 </td><td> $115,762.50 </td><td> Raise is ```(0.05 * 110250)```, or $5,512.50. </td> </tr>
+</table>
+
 Finally, after the for loop, display the new current wage.
 
 ![Screenshot](images/https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/lab6_04.png)
