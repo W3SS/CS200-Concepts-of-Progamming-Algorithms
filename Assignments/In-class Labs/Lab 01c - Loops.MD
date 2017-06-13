@@ -266,7 +266,7 @@ Make the condition: while playerGuess is not equal to secretNumber.
 once the loop is "escaped", which only happens once the player has 
 correctly guessed the number.
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png?raw=true)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png?raw=true)
 
 ---
 
@@ -293,7 +293,7 @@ less than 0 or greater than 5...
 
 5. Outside of the loop, display the message "Thank you".
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png?raw=true)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png?raw=true)
 
 ---
 
