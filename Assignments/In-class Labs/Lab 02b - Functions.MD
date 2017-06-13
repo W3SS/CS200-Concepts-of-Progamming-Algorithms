@@ -324,6 +324,4 @@ float c = 5 * 5; // Also basically 5 to the 2nd power.
 
 ## Questions
 
-1. Which **data-type** is used for a variable that can read text from a file, ifstream or ofstream?
-1. Which **data-type** is used for a variable that can write text to a file, ifstream or ofstream?
-1. What library is required to ```#include``` in order to use file input and output?
+No questions this time!
