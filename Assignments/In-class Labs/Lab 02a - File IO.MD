@@ -234,6 +234,7 @@ And start with the following code:
 
 ```c++
 #include <iostream>
+#include <string>
 #include <fstream>
 using namespace std;
 
