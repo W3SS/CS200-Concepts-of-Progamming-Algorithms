@@ -492,11 +492,11 @@ For now, keep your town names all one word, like ```kansascity```.
 
 **Long town name:**
 
-![When the town name is long, it displays "That's a long name!"](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program1.png)
+![When the town name is long, it displays "That's a long name!"](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program1.png?raw=true)
 
 **Short town name:**
 
-![No special message is displayed if the town name is short.](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program1b.png)
+![No special message is displayed if the town name is short.](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program1b.png?raw=true)
 
 #### Additional hints
 
@@ -541,11 +541,11 @@ the assignment is 70% or higher (for pass), or less than 70% (for fail)
 
 **Pass:**
 
-![A score of 70% or more passes](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program2.png)
+![A score of 70% or more passes](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program2.png?raw=true)
 
 **Fail:**
 
-![A score of 69% or below fails](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program2b.png)
+![A score of 69% or below fails](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program2b.png?raw=true)
 
 #### Additional hints
 
@@ -587,19 +587,19 @@ cin >> charge;
 
 **Full charge:**
 
-![Screenshot with full charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program3a.png)
+![Screenshot with full charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program3a.png?raw=true)
 
 **3/4ths charge:**
 
-![Screenshot with 3/4 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program3b.png)
+![Screenshot with 3/4 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program3b.png?raw=true)
 
 **1/2 charge:**
 
-![Screenshot with 1/2 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program3c.png)
+![Screenshot with 1/2 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program3c.png?raw=true)
 
 **1/4th charge:**
 
-![Screenshot with 1/4 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program3d.png)
+![Screenshot with 1/4 charge](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program3d.png?raw=true)
 
 #### Additional hints
 
@@ -633,15 +633,15 @@ Write a program that displays a list of fruits and asks the user to choose one. 
 
 **Valid input:**
 
-![Valid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program4a.png)
+![Valid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program4a.png?raw=true)
 
 **Invalid input 1:**
 
-![Invalid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program4b.png)
+![Invalid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program4b.png?raw=true)
 
 **Invalid input 2:**
 
-![Invalid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program4c.png)
+![Invalid input screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program4c.png?raw=true)
 
 #### Additional hints
 
@@ -698,26 +698,26 @@ Use a switch statement to decide what kind of operation to do, and display the r
 
 **Add:**
 
-![Add screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program6a.png)
+![Add screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program6a.png?raw=true)
 
 **Subtract:**
 
-![Subtract screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program6b.png)
+![Subtract screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program6b.png?raw=true)
 
 
 **Multiply:**
 
-![Multiply screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program6c.png)
+![Multiply screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program6c.png?raw=true)
 
 
 **Divide:**
 
-![Divide screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program6d.png)
+![Divide screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program6d.png?raw=true)
 
 
 **Invalid:**
 
-![Invalid screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/raw/2017-06-Summer/Assignments/In-class%20Labs/2017-01%20Spring/images/201701_lab4_program6e.png)
+![Invalid screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/201701_lab4_program6e.png?raw=true)
 
 
 
