@@ -375,7 +375,7 @@ You will need to declare a "sum" variable, whose type should be a float.
 Your program should display the sum at the end. (You don't have to list out
 all the numbers like in the example output, just the sum.)
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/tree/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_05.png)
+![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_05.png?raw=true)
 
 
 
