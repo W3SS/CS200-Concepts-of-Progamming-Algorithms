@@ -47,6 +47,25 @@ them all together.
 
 **Make sure to open the [HELPER](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2002a%20-%20File%20IO%20-%20Helper.MD) file for info on how to use file streams**
 
+### Text files as input and output
+
+For these projects, you will be working with text files. 
+
+When you run a program that uses ```ofstream```, it will generate an output file in the directory where your source files are at.
+
+When you run a program that uses ```ifstream```, it is expecting to read a text file in the directory where your source files are at.
+
+To get to this directory, right-click on your project in the Solution Explorer and select **Open Folder in File Explorer**
+
+![Open folder in file explorer](images/lab02a_openfolder.png)
+
+And your text file will go in this directory.
+
+![Text file in directory](images/lab02a_textfile.png)
+
+* FOR OFSTREAM: The text file will be created by the program and put in this directory
+* FOR IFSTREAM: You will need to **create** the text file in this directory, which your program will read.
+
 ---
 
 ### Program 1: To Do List
