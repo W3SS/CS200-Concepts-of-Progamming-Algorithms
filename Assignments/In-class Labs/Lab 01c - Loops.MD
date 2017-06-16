@@ -360,7 +360,7 @@ for ( int years = 1; years < yearsWorked; years++ )
 
 </details>
 
-![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_04.png?raw=true)
+![Screenshot](images/lab01c_raises.png)
 
 ---
 
