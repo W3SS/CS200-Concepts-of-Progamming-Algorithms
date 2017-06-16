@@ -144,7 +144,11 @@ Here you will be working within the function ```F1_CountingUp```.
 You will use both a **while loop** and a **for loop** and a **counter variable**
 to display numbers from 0 to 9, like this:
 
-![Screenshot of count up program](images/lab01c_count_up.png)
+	WHILE LOOP
+	0	1	2	3	4	5	6	7	8	9
+	FOR LOOP
+	0	1	2	3	4	5	6	7	8	9
+
 
 Note that you can use the escape character ```\t``` to add a tab with in a ```cout`` statement...
 
@@ -158,6 +162,10 @@ countUp++; 					// Increment countUp by 1, ++ can only be used for + 1
 countUp += 1; 				// Increment countUp by 1
 countUp = countUp + 1;		// Increment countUp by 1
 ```
+
+
+
+#### Hints
 
 <details>
 	<summary><strong><em>
@@ -179,6 +187,10 @@ Inside the while loop...
 
 </details>
 
+#### Screenshot
+
+![Screenshot of count up program](images/lab01c_count_up.png)
+
 ---
 
 ### Function 2: Multiply Up
@@ -193,16 +205,20 @@ For both loops:
 * Every time the loop completes one cycle, the counter should be multiplied by 2.
 * The loops will keep looping while the counter is less than 200.
 
-![Multiply up](images/lab01c_multiply_up.png)
 
 You can multiply the variable in the following ways:
 
 * ```counter = counter * 2;```
 * ```counter *= 2;```
 
+
+
+
+#### Hints
+
 <details>
 	<summary><strong><em>
-		View hints
+		Step-by-step
 	</em></strong></summary>
 
 1. Create an integer variable called **counter** and initialize it to 1.
@@ -219,6 +235,11 @@ Inside the while loop...
 1. Within the for loop, just display the value of counter each time.
 
 </details>
+
+
+#### Screenshot
+
+![Multiply up](images/lab01c_multiply_up.png)
 
 ---
 
@@ -266,6 +287,9 @@ Make the condition: while playerGuess is not equal to secretNumber.
 once the loop is "escaped", which only happens once the player has 
 correctly guessed the number.
 
+
+#### Screenshot
+
 ![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-03.png?raw=true)
 
 ---
@@ -292,6 +316,9 @@ less than 0 or greater than 5...
 	2. Get the user's input again (with cin) and store it in **choice**.
 
 5. Outside of the loop, display the message "Thank you".
+
+
+#### Screenshot
 
 ![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/cl3-04.png?raw=true)
 
@@ -339,7 +366,15 @@ You can use this table to check your math, assuming the raise per year is 5%.
 
 Finally, after the for loop, display the new current wage.
 
-### Hints
+
+</details>
+
+#### Screenshot
+
+![Screenshot](images/lab01c_raises.png)
+
+
+#### Hints
 
 First, try to write code that will calculate the raises for each year, outside of the for loop.
 
@@ -380,10 +415,6 @@ for ( int years = 1; years < yearsWorked; years++ )
 }
 ```
 
-</details>
-
-![Screenshot](images/lab01c_raises.png)
-
 ---
 
 ### Function 6: Summation
@@ -403,7 +434,7 @@ all the numbers like in the example output, just the sum.)
 3. Within the loop, add the current value of your loop's counter variable to the sum.
 
 
-
+#### Screenshot
 
 
 ![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_05.png?raw=true)
