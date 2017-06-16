@@ -339,14 +339,33 @@ You can use this table to check your math, assuming the raise per year is 5%.
 
 Finally, after the for loop, display the new current wage.
 
-<details>
-	<summary><strong><em>
-		View hints on calculating the new salary
-	</em></strong></summary>
+### Hints
 
-```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```
+First, try to write code that will calculate the raises for each year, outside of the for loop.
 
-</details>
+*firstYearSalary = ( percentRaisePerYear * startingSalary ) + startingSalary*
+
+*secondYearSalary = ( percentRaisePerYear * firstYearSalary ) + firstYearSalary*
+
+*thirdYearSalary = ( percentRaisePerYear * thirdYearSalary ) + thirdYearSalary*
+
+Do you see the pattern? 
+
+The challenge is to figure out how to write a loop to do this same thing.
+
+Instead of having variables like ```firstYearSalary```, ```secondYearSalary```, ```thirdYearSalary```, we aren't going to use those. We have one variable that will store the new salary every year, we just keep overwriting it: ```adjustedWage```.
+
+Year 1: ```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```
+
+Year 2: ```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```
+
+Year 3: ```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```
+
+And so on.
+
+Now do you see how we might turn this into a loop?
+
+If the employee has worked for *n* years, then we want to loop from year 1 to year *n*. Each time through the loop, we will recompute the latest salary with ```adjustedWage = ( adjustedWage * percentRaisePerYear ) + adjustedWage```.
 
 
 <details>
@@ -356,6 +375,9 @@ Finally, after the for loop, display the new current wage.
 
 ```java
 for ( int years = 1; years < yearsWorked; years++ )
+{
+	// Calculation goes in here
+}
 ```
 
 </details>
