@@ -414,6 +414,7 @@ for ( int years = 1; years < yearsWorked; years++ )
 	// Calculation goes in here
 }
 ```
+</details>
 
 ---
 
