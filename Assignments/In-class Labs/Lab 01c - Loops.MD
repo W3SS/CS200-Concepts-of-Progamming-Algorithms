@@ -392,10 +392,19 @@ Here you will be working within the function ```F6_Summation```.
 
 Write a program that will sum the numbers from 1 to 10 by using a for loop.
 
-You will need to declare a "sum" variable, whose type should be a float.
+You will need to declare a "sum" variable. It can be an int or a float.
 
 Your program should display the sum at the end. (You don't have to list out
 all the numbers like in the example output, just the sum.)
+
+
+1. Declare the ```sum``` variable and **initialize it to 0**! This is important!
+2. Create a for loop to go from 1 to 10, going up by 1 each time.
+3. Within the loop, add the current value of your loop's counter variable to the sum.
+
+
+
+
 
 ![Screenshot](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/Archive/Labs/2017-01%20Spring/images/lab6_05.png?raw=true)
 
