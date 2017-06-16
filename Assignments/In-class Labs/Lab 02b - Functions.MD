@@ -233,6 +233,8 @@ Return the calculated money value.
 
 ---
 
+## Program 3: Get Distance
+
 Start off with the following code:
 
 ```c++
