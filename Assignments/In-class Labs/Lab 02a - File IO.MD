@@ -66,6 +66,8 @@ And your text file will go in this directory.
 * FOR OFSTREAM: The text file will be created by the program and put in this directory
 * FOR IFSTREAM: You will need to **create** the text file in this directory, which your program will read.
 
+(booklist is just an example file - I'm just showing you where the text files go for this lab.)
+
 ---
 
 ### Program 1: To Do List
