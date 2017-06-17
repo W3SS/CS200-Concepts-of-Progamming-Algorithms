@@ -191,9 +191,11 @@ After the user selects option ```5``` to quit, outside of the while loop
 you will open a text file, write the results to the text file, and then
 close the test file.
 
+#### Hints
+
 <details>
 	<summary><strong><em>
-		View more hints
+		Steps
 	</em></strong></summary>
 
 1. Declare a variable whose **type** is ```ofstream``` and **name** is ```file```
@@ -264,6 +266,8 @@ int main()
     return 0;
 }
 ```
+
+Fill in the parts of code labelled with ```// TODO:```, with the instructions given.
 
 Once it's finished, running the program should just display the story to the screen.
 

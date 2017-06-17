@@ -56,21 +56,23 @@ them all together.
 
 Start off with the following code:
 
-	#include <iostream>
-	using namespace std;
+```c++
+#include <iostream>
+using namespace std;
 
-	// Input: A percent value (0% - 100%, no percent sign though)
-	// Output: The decimal equivalent (0.0 - 1.0)
-	float PercentToDecimal( float percent )
-	{
-		float decimal = percent / 100;
-		return decimal;
-	}
+// Input: A percent value (0% - 100%, no percent sign though)
+// Output: The decimal equivalent (0.0 - 1.0)
+float PercentToDecimal( float percent )
+{
+	float decimal = percent / 100;
+	return decimal;
+}
 
-	int main()
-	{
-		return 0;
-	}
+int main()
+{
+	return 0;
+}
+```
 
 This code has a function called **PercentToDecimal**.
 
@@ -81,8 +83,10 @@ First, create the following variables. All of these are floats. **a**, **b**, an
 Since our function returns a value, we can store its return value in a variable. To do this, 
 we assign the variable to the function **call**:
 
-	a = PercentToDecimal( 100 );
-	
+```c++
+a = PercentToDecimal( 100 );
+```
+
 Assign the following values to the variables, then output their values:
 
 * a: 50 percent converted to 0.5 via the PercentToDecimal function.
@@ -127,7 +131,6 @@ int main()
     return 0;
 }
 ```
-
 </details>
 
 ---
@@ -286,7 +289,9 @@ But you will have to translate it into programming code!
 
 To calculate a square root, we call the square root function...:
 
-	float a = sqrt( 4 ); // a = 2 now
+```c++
+float a = sqrt( 4 ); // a = 2 now
+```
 
 And if you want to calculate an exponent you can use the pow function:
 
@@ -300,8 +305,41 @@ Or simply multiple something by itself:
 float c = 5 * 5; // Also basically 5 to the 2nd power.
 ```
 
+#### Hints
 
-### Example output
+<details>
+	<summary><strong><em>
+		Calculating the distance
+	</em></strong></summary>
+You could do this in multiple steps:
+
+```c++
+float xDiff = x2 - x1;
+float yDiff = y2 - y1;
+
+float xDiffSq = xDiff * xDiff;
+float yDiffSq = yDiff * yDiff;
+
+float distance = sqrt( xDiffSq + yDiffSq );
+```
+
+Or all at once:
+
+```c++
+float distance = sqrt(
+	( x2 - x1 ) * ( x2 - x1 )
+	+
+	( y2 - y1 ) * ( y2 - y1 )
+    );
+```
+
+(Yes, you can expand a C++ statement over several lines.)
+
+</details>
+
+
+
+#### Example output
 
 ![Screenshot](images/lab7_04.png)
 
