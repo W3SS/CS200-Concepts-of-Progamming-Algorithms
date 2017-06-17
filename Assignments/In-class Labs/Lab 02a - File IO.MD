@@ -112,6 +112,12 @@ int main()
 }
 ```
 
+Here, you will fill in the code at the line that has the comment: ```// TODO: Output the "toDoItem" variable to the text file```
+
+The output file has already been opened (```file.open( "todo.txt" );```), and some text has already been written out to it (```file << "to do list" << endl;```).
+
+At the given step in the program, you will output the variable ```toDoItem``` to the text file. Use the ```file << "to do list" << endl;``` code for reference.
+
 Make sure to open up your project directory to find the **todo.txt** file
 that should be output by the program. You might have to go several
 folders deep to find the file.
