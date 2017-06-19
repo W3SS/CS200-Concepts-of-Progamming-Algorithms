@@ -148,6 +148,7 @@ cout << names[ current ] << endl;
 	<summary><strong>
 		Program solution
 	</strong></summary>
+	
 ```c++
 void Program1()
 {
@@ -165,6 +166,7 @@ void Program1()
 		<< names[4] << endl;
 }
 ```
+
 </details>
 
 
@@ -292,10 +294,12 @@ adding things by hard-coding them.
 <summary><strong>
 	Declaring the arrays
 </strong></summary>
+
 ```c++
 string items[3];
 float prices[3];
 ```
+
 </details>
 
 
@@ -303,6 +307,7 @@ float prices[3];
 <summary><strong>
 	While loop to fill the arrays
 </strong></summary>
+
 ```c++
 while ( itemCount < arraySize )
 {
@@ -313,6 +318,7 @@ while ( itemCount < arraySize )
 	itemCount++;
 }
 ```
+
 </details>
 
 
@@ -358,12 +364,14 @@ and displays it to the screen.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int i = 0; i < 5; i++ )
 {
 	cout << letters[i] << endl;
 }
 ```
+
 </details>
 
 
@@ -382,9 +390,11 @@ Make sure to put this code in the Program5() function.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int counter = 0; counter < itemCount; counter++ )
 ```
+
 </details>
 
 ---
@@ -418,9 +428,11 @@ displaying the value of each element.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int i = 0; i < itemCount; i++ )
 ```
+
 </details>
 
 
