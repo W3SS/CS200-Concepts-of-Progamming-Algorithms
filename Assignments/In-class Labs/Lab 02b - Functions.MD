@@ -9,13 +9,13 @@ Questions](#questions)
 
 ---
 
-## Information
+# Information
 
-### Lab topics
+## Lab topics
 
 * Functions
 
-### Rules
+## Rules
 
 * For **in-class labs**, collaboration is allowed.
     * If you work with another student on an assignment, make sure that you both
@@ -23,11 +23,11 @@ Questions](#questions)
     * You can also ask classmates questions if you're unsure on something.
     * You can ask the instructor for help at any time.
 
-### Reference
+## Reference
 
 * [Creating a new project in Visual Studio](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Visual-Studio/New%20project%20howto.md)
 
-### Turn in
+## Turn in
 
 Once you are finished with a project, zip up the entire folder that contains
 all source files and project/solution files. Turn in this zip file to **Desire2Learn**.
@@ -40,7 +40,7 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 ![horizontal rule](images/hr.png)
 
 
-## Lab
+# Lab
 
 Each of these programs will require their own projects and source files.
 Make sure that, for each program, you **create a new Visual Studio project**.
@@ -52,7 +52,7 @@ them all together.
 
 ---
 
-### Program 1: Calling a function
+## Program 1: Calling a function
 
 Start off with the following code:
 
@@ -362,6 +362,6 @@ float distance = sqrt(
 
 ![horizontal rule](images/hr.png)
 
-## Questions
+# Questions
 
 No questions this time!
