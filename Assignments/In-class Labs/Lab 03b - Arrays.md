@@ -320,6 +320,7 @@ while ( itemCount < arraySize )
 <summary><strong>
 	Displaying the array contents
 </strong></summary>
+
 ```c++
 int counter = 0;
 while ( counter < itemCount )
@@ -329,6 +330,7 @@ while ( counter < itemCount )
 }
 
 ```
+
 </details>
 
 ---
