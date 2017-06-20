@@ -438,3 +438,14 @@ for ( int i = 0; i < itemCount; i++ )
 
 
 
+
+
+
+![horizontal rule](images/hr.png)
+
+
+# Questions
+
+1. What is an array index?
+2. What is an array element?
+3. What happens if we [go outside the bounds of the array?](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/REVIEW/Common_errors.md)
