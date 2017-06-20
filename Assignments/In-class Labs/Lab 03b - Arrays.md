@@ -148,6 +148,7 @@ cout << names[ current ] << endl;
 	<summary><strong>
 		Program solution
 	</strong></summary>
+	
 ```c++
 void Program1()
 {
@@ -165,6 +166,7 @@ void Program1()
 		<< names[4] << endl;
 }
 ```
+
 </details>
 
 
@@ -172,7 +174,7 @@ void Program1()
 
 ## Program 2: Keeping track of the amount of items in the list
 
-Modify 1A to do the following (but put this program in the ```Program2()``` function)
+Modify Program 1 to do the following (but put this program in the ```Program2()``` function)
 
 1. Erase the cout with all the elements - we are going to do this with a loop.
 2. Create a variable called **index**, and assign it to 0.
@@ -292,10 +294,12 @@ adding things by hard-coding them.
 <summary><strong>
 	Declaring the arrays
 </strong></summary>
+
 ```c++
 string items[3];
 float prices[3];
 ```
+
 </details>
 
 
@@ -303,6 +307,7 @@ float prices[3];
 <summary><strong>
 	While loop to fill the arrays
 </strong></summary>
+
 ```c++
 while ( itemCount < arraySize )
 {
@@ -313,6 +318,7 @@ while ( itemCount < arraySize )
 	itemCount++;
 }
 ```
+
 </details>
 
 
@@ -358,12 +364,14 @@ and displays it to the screen.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int i = 0; i < 5; i++ )
 {
 	cout << letters[i] << endl;
 }
 ```
+
 </details>
 
 
@@ -372,7 +380,7 @@ for ( int i = 0; i < 5; i++ )
 
 ### Program 5: More for loops with an array
 
-Modify 1C to use two for-loops instead of two while-loops.
+Modify Program 3 to use two for-loops instead of two while-loops.
 
 Make sure to put this code in the Program5() function.
 
@@ -382,9 +390,11 @@ Make sure to put this code in the Program5() function.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int counter = 0; counter < itemCount; counter++ )
 ```
+
 </details>
 
 ---
@@ -418,11 +428,25 @@ displaying the value of each element.
 <summary><strong>
 	The for loop
 </strong></summary>
+
 ```c++
 for ( int i = 0; i < itemCount; i++ )
 ```
+
 </details>
 
 
 
 
+
+
+
+![horizontal rule](images/hr.png)
+
+
+# Questions
+
+1. What is an array index?
+2. What is an array element?
+3. If we have an array of size 5, what are the valid indices of the array?
+4. What happens if we [go outside the bounds of the array?](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/REVIEW/Common_errors.md)
