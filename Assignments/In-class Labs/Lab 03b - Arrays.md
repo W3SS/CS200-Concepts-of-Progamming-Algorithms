@@ -448,4 +448,5 @@ for ( int i = 0; i < itemCount; i++ )
 
 1. What is an array index?
 2. What is an array element?
-3. What happens if we [go outside the bounds of the array?](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/REVIEW/Common_errors.md)
+3. If we have an array of size 5, what are the valid indices of the array?
+4. What happens if we [go outside the bounds of the array?](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/REVIEW/Common_errors.md)
