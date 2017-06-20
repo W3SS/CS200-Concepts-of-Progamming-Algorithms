@@ -176,6 +176,8 @@ Once you've written it, the program should build and look similar to below.
 
 ---
 
+## Program 3: Calculate money
+
 Start off with the following code:
 
 ```c++
@@ -236,7 +238,7 @@ Return the calculated money value.
 
 ---
 
-## Program 3: Get Distance
+## Program 4: Get Distance
 
 Start off with the following code:
 
