@@ -174,7 +174,7 @@ void Program1()
 
 ## Program 2: Keeping track of the amount of items in the list
 
-Modify 1A to do the following (but put this program in the ```Program2()``` function)
+Modify Program 1 to do the following (but put this program in the ```Program2()``` function)
 
 1. Erase the cout with all the elements - we are going to do this with a loop.
 2. Create a variable called **index**, and assign it to 0.
@@ -380,7 +380,7 @@ for ( int i = 0; i < 5; i++ )
 
 ### Program 5: More for loops with an array
 
-Modify 1C to use two for-loops instead of two while-loops.
+Modify Program 3 to use two for-loops instead of two while-loops.
 
 Make sure to put this code in the Program5() function.
 
