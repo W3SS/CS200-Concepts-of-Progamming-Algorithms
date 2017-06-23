@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper]() |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2004b%20-%20Dynamic%20arrays%20-%20Helper.md) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -79,21 +79,21 @@ Finally, free the memory for each pointer using the delete keyword.
 
 <details>
 <summary><strong>
-        Using the new command
+        Using the new command for a dynamic variable
 </strong></summary>
 
 ```c++
 int * myInt = new int;
 ```
 
-Make sure to open the [helper doc]()
+Make sure to open the [helper doc](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2004b%20-%20Dynamic%20arrays%20-%20Helper.md)
 for help.
 
 </details>
 
 <details>
 <summary><strong>
-        Using the delete command
+        Using the delete command for a dynamic variable
 </strong></summary>
 
 ```c++
@@ -107,93 +107,28 @@ Note that this is how you delete a dynamic variable, **not** a dynamic array.
 
 ---
 
-## Program 2: 
-
-Add the following struct to the top of your source file (it can go in the same file as
-main()):
-
-        struct Person
-        {
-            string name;
-            Person* ptrFriend;
-        };
-
-The Person class has a name, and a pointer to their friend. Their friend must also be a
-Person type.
-
-Within main, do the following:
-
-Create three Person pointers: personA, personB, and personC. Allocate memory for
-each of them – you will need to create new Person for each.
-
-Set up names for personA, personB, and personC. You can set the value of a class
-member in one of two ways, when using pointers:
-
-        (*personA).name = "Bob";        // Using the de-reference operator
-        
-        personA->name = "Bob";          // Using the member-of operator
-        
-Set up your person variables' names. For example:
-
-<table>
-<tr><td>PersonA</td><td>PersonB</td><td>PersonC</td></tr>
-
-<tr>
-<td>
-Harry
-</td>
-<td>
-Ron
-</td>
-<td>
-Hermione
-</td>
-</tr>
-</table>
-
-Set each person's ptrFriend pointer to point to the address of another Person. You
-won't need the address-of operator, since personA, B, and C are already pointers, so you
-can set one pointer to another pointer!
-
-        personA->ptrFriend = personB;
-        
-Set friendships as following:
-
-* Person A's friend is Person B
-* Person B's friend is Person C
-* Person C's friend is Person A
-
-Display each person's name and the name of their friend. You can access
-members through the friend pointer:
-
-        personA->ptrFriend->name
-        
-**Sample Output:**
-
-        Person A: Joe, friend: Austin
-        Person B: Austin, friend: Elly
-        Person C: Elly, friend: Joe
-
-
----
-
-## Exercise 3
+## Program 2:  Lotto numbers
 
 You will use a random number generator for this program, so you will need the
 following libraries:
 
-        #include <cstdlib>      // to use rand()
-        #include <ctime>        // to use time()
+```c++
+#include <cstdlib>      // to use rand()
+#include <ctime>        // to use time()
+```
         
 Seed the random number generator with:
 
-        srand( time( NULL ) ); // (At the beginning of main())
+```c++
+srand( time( NULL ) ); // (At the beginning of main())
+```
 
-Then, ask the user to enter the amount of lotto balls there will be. Store the value in a **size**
-variable.
+You only need to seed the generator **once** -- at the beginning of the program.
 
-Create a dynamic array called **lottoNumbers**. It will be the size that the user
-specified.
+Then, ask the user to enter the amount of lotto balls there will be.
+Store the value in an integer variable.
+
+Create a dynamic array called **lottoNumbers**. It will be the size that the user specified.
 
 For each element of the array, from 0 to size, set the element's value to a random
 number between 0 and 100.
@@ -207,92 +142,227 @@ At the end of the program, delete the dynamic array before the program ends. (Be
         Lotto number count: 5
         57      11      74      91      35
 
+
+
+### Hints
+
+<details>
+<summary><strong>
+        Using the new command for a dynamic array
+</strong></summary>
+
+```c++
+int numberCount = 10;
+int* numberList = new int[ numberCount ];
+```
+
+</details>
+
+<details>
+<summary><strong>
+        Using the delete command for a dynamic array
+</strong></summary>
+
+```c++
+delete [] numberList;
+```
+
+</details>
+
+<details>
+<summary><strong>
+        Iterating through each element of the dynamic array
+</strong></summary>
+
+Use your variable that stores the size of the array to use in your for loop.
+
+```c++
+for ( int i = 0; i < numberCount; i++ )
+{
+        cout << numberList[i] << "\t";
+}
+```
+
+</details>
+
+
 ---
 
-## Exercise 4
+## Program 3:
 
-Create the following structs at the top of the source file:
+---
 
-        struct Employee
-        {
-            string name;
-        };
-        struct Manager
-        {
-            string name;
-            Employee* employees;
-            int employeeCount;
-        };
+## Program 4:
 
-Create an array of strings, that contain a list of names. This can be a normal
-static array with a set size. For example:
+---
 
-        string names[ 16 ] = { 
-            "Koios", "Julianna", "Agata", "Arundhati",
-            "Zemfira", "Fedya", "Kim", "Ashok",
-            "Jouni", "Blandina", "Ampelio", "Rosmunda",
-            "Breeshey", "Ferdinand", "Gertrude", "Sarit"
-            };
+## Program 5: Array of pointers
 
-Ask the user how many managers there should be. Store this value in an integer called **managerCount**.
+An array can also store pointers. Just like we can have a single
+pointer variable that points to the address of another variable,
+we can also have an array of pointers which each point to different
+(or the same) addresses.
 
-Create a Manager pointer called **managers**, and dynamically allocate an array
-of the size of **managerCount**.
+For this program, start with the following code:
 
-Then, create a for-loop that will go from 0 to **managerCount**. For each manager...:
+```c++
+#include <iostream>
+#include <string>
+#include <cstdlib>      // for srand and rand
+#include <ctime>        // for time
+using namespace std;
 
-* Assign the manager a random name from the names list:
+const int MANAGER_COUNT = 2;
+const int EMPLOYEE_COUNT = 5;
 
-        managers[i].name = names[ rand() % 16 ];
-        
-* Randomly set this manager's **employeeCount** to a value between 0 and 3.
+void AssignManagers( string managerNames[ MANAGER_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
+{
+}
 
-* Use the employees pointer in the Manager class to create a dynamic array of employees,
-if employeeCount is above 0.
+void DisplayEmployees( string employeeNames[ EMPLOYEE_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
+{
+}
 
-* Create a second for-loop that will set up each of the employees. Iterate from 0 to
-        **managers[i].employeeCount**:
-        * Assign the employee a random name from the names list:
-        
-        managers[i].employees[j].name = names[ rand() % 16 ];
+int main()
+{
+    srand( time( NULL ) );
 
 
-After all the managers and employees are set up, display a list of managers and their
-employees to the screen with another set of for-loops.
-
-        for ( int m = 0; m < managerCount; m++ )
-        {
-            cout << endl;
-            cout << "Manager:           " 
-                << managers[m].name << endl;
-            cout << "Underling Count:   " 
-                << managers[m].employeeCount << endl;
-            
-            for ( int e = 0; e < managers[m].employeeCount; e++ )
-            {
-                cout << "\t" << e+1 << ". " 
-                    << managers[m].employees[e].name << endl;
-            }
-        }
 
 
-**Sample Output:**
+    while ( true );
+    return 0;
+}
 
-        How many managers? 5
-        Manager:           Ashok
-        Underling Count:   1
-                1. Blandina
-        Manager:           Arundhati
-        Underling Count:   2
-                1. Sarit
-                2. Ampelio
-        Manager:           Breeshey
-        Underling Count:   0
-        Manager:           Ferdinand
-        Underling Count:   2
-                1. Rosmunda
-                2. Agata
-        Manager:           Rosmunda
-        Underling Count:   2
-                1. Kim
-                2. Breeshey
+```
+
+#### main()
+
+We will have three arrays in this program:
+
+* managerNames, a string array of managers' names
+* employeeNames, a string array of employees' names
+* employeeManagers, a string-pointer array, one for each employee, that is meant to point to a manager.
+
+Declare the ```managerNames``` string array - its size should be the ```MANAGER_COUNT```. Then initialize the two manager names in this array.
+
+Declare the ```employeeNames``` string array - its size should be the ```EMPLOYEE_COUNT```. Initialize five employee names in this array.
+
+Declare the ```employeeManagers``` string-pointer array - its size should be ```EMPLOYEE_COUNT```. Do not initialize this array.
+
+Afterward, call the two functions:
+
+* AssignManagers - pass in ```managerNames``` and ```meployeeManagers```.
+* DisplayEmployees - pass in ```employeeNames``` and ```meployeeManagers```.
+
+
+
+***Example output:***
+
+        Employee 0	Serena	 Manager: Artemis
+        Employee 1	Amy	 Manager: Artemis
+        Employee 2	Raye	 Manager: Luna
+        Employee 3	Lita	 Manager: Artemis
+        Employee 4	Mina	 Manager: Artemis
+
+
+#### AssignManagers()
+
+We will use a random number generator to randomly select managers for each employee.
+
+To get a number between 0 and 9, we would do ```int number = rand() % 10```.
+
+Create a for-loop to iterate from 0 to ```EMPLOYEE_COUNT```:
+
+* Create a variable called ```index```. Assign it the value of ```rand() % MANAGER_COUNT```.
+* Get the **address** of ```managerNames[ index ]``` and assign it to the ```employeeManagers[i]``` item (if *i* is your for-loop counter.)
+
+#### DisplayEmployees()
+
+Use another for-loop, going over all the employees (use ```EMPLOYEE_COUNT``` again).
+
+Each cycle of the loop, you will display:
+
+* The value of the counter
+* The employee name at this index (via ```employeeNames```)
+* The manager for this employee (via ```employeeManagers```)
+
+Note that you have to **de-reference** the employeeManagers element in order
+to get the actual manager's name instead of the address of that variable.
+
+### Hints
+
+<details>
+<summary><strong>
+        Creating non-pointer arrays and initializing them
+</strong></summary>
+
+```c++
+string managerNames[ MANAGER_COUNT ] = { "Artemis", "Luna" };
+string employeeNames[ EMPLOYEE_COUNT ] = { "Serena", "Amy", "Raye", "Lita", "Mina" };
+```
+
+</details>
+
+<details>
+<summary><strong>
+        Creating an array of pointers
+</strong></summary>
+
+```c++
+string * employeeManagers[ EMPLOYEE_COUNT ];
+```
+
+</details>
+
+
+<details>
+<summary><strong>
+        AssignManagers
+</strong></summary>
+
+```c++
+void AssignManagers( string managerNames[ MANAGER_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
+{
+    for ( int i = 0; i < EMPLOYEE_COUNT; i++ )
+    {
+        int index = rand() % MANAGER_COUNT;
+        employeeManagers[i] = &managerNames[ index ];
+    }
+}
+```
+
+</details>
+
+
+<details>
+<summary><strong>
+        DisplayEmployees
+</strong></summary>
+
+```c++
+void DisplayEmployees( string employeeNames[ EMPLOYEE_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
+{
+    for ( int i = 0; i < EMPLOYEE_COUNT; i++ )
+    {
+        cout << "Employee " << i << "\t" << employeeNames[i] << "\t Manager: " << *employeeManagers[i] << endl;
+    }
+}
+```
+
+</details>
+
+
+
+
+
+![horizontal rule](images/hr.png)
+
+
+# Questions
+
+1. Using a pointer, how do you allocate memory for a new dynamic variable?
+1. Using a pointer, how do you allocate memory for a new dynamic array?
+1. How do you deallocate memory for a dynamic variable?
+1. How do you deallocate memory for a dynamic array?
+
