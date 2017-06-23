@@ -1,4 +1,4 @@
-# CS 200 Lab 04b: Dynamic variables and arrays
+# CS 200 Lab 04b: Pointers and dynamic variables and arrays 
 
 ---
 
@@ -188,11 +188,207 @@ for ( int i = 0; i < numberCount; i++ )
 
 ---
 
-## Program 3:
+## Program 3: Build a buddy
+
+Start with the following code:
+
+```c++
+string ears[3]      = { "   ^ ^   ",   "  n   n ",     "  *   *  " };
+string heads[3]     = { " ( o_o ) ",   " ( x_x )" ,    " ( >_< ) " };
+string bodies[3]    = { "/(     )\\",  "\\(     )/",   "o(     )o" };
+string feet[3]      = { "  d   b   ",  "  @   @ ",     "  () () "  };
+
+string * ptrEars;
+string * ptrHead;
+string * ptrBody;
+string * ptrFeet;
+```
+
+For each body part, ask the user to enter a choice between 0 and 2.
+With this index, assign the corresponding **pointer** to the address of the
+**body part element chosen from the array**.
+
+Once the user has chosen all parts, de-reference and output each pointer.
+
+**Example output:**
+
+        Enter ears (0 - 2): 0
+        Enter head (0 - 2): 1
+        Enter body (0 - 2): 2
+        Enter feet (0 - 2): 1
+
+           ^ ^   
+         ( x_x )
+        o(     )o
+          @   @ 
+
+        Again? (y/n):
+
+### Hints
+
+
+<details>
+<summary><strong>
+        Assigning the pointers
+</strong></summary>
+
+```c++
+cin >> index;
+ptrEars = &ears[ index ];
+```
+
+</details>
+
+
+<details>
+<summary><strong>
+        Outputting the dereferenced pointers
+</strong></summary>
+
+```c++
+cout << endl << *ptrEars << endl << *ptrHead << endl << *ptrBody << endl << *ptrFeet << endl;
+```
+
+</details>
 
 ---
 
-## Program 4:
+## Program 4: Reading in data from a text file
+
+Sometimes you will need to read in data, and you can't know how much data
+there is at compile-time (that is, *while* you're writing the program.)
+Dynamic arrays can come in handy here.
+
+In your project folder, create two text files.
+
+**from_kc.txt:**
+
+                7
+                Omaha           189
+                St_Louis        248
+                Wichita         200
+                Oklahoma_City   353
+                Branson         209
+                Columbia        127
+                Des_Moines      193
+
+**from_seattle.txt:**
+
+                5
+                Portland        174
+                Olympia         60
+                Eugene          283
+                Vancouver       143
+                Sacramento      752
+
+And begin your program with the following:
+
+```c++
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    cout << "Choose a starting point:" << endl
+        << "1. Kansas City" << endl
+        << "2. Seattle" << endl;
+
+    int city;
+    cin >> city;
+
+    ifstream input;
+
+    if ( city == 1 )
+    {
+        input.open( "from_kc.txt" );
+    }
+    else
+    {
+        input.open( "from_seattle.txt" );
+    }
+
+    int locationCount = 0;
+    string * locations;
+    int * distances;
+
+    input.close();
+
+
+    
+    return 0;
+}
+
+```
+
+The first item in each file is the **amount of cities** from the starting point (Kansas City or Seattle).
+Each file has a different maount of locations, so you'll have to read in the first number
+**before** you create your ```locations``` and ```distances``` arrays.
+
+Read in the first number of the text file into ```locationCount```.
+
+After you've read in the size, set up your two dynamic arrays with the size stored in locationCount.
+
+The rest of the data in the file is in the format:
+
+        CITY_NAME       DISTANCE
+
+Use the following code to load in the city data:
+
+```c++
+for ( int i = 0; i < locationCount; i++ )
+{
+        input >> locations[i] >> distances[i];
+}
+```
+
+Finally, once everything has been loaded in, display all the locations
+and distances in a nice format.
+
+**Example output:**
+
+        Choose a starting point:
+        1. Kansas City
+        2. Seattle
+        1
+
+        DISTANCE FROM KANSAS CITY TO...
+        * 189 miles - Distance from Kansas City to Omaha
+        * 248 miles - Distance from Kansas City to St_Louis
+        * 200 miles - Distance from Kansas City to Wichita
+        * 353 miles - Distance from Kansas City to Oklahoma_City
+        * 209 miles - Distance from Kansas City to Branson
+        * 127 miles - Distance from Kansas City to Columbia
+        * 193 miles - Distance from Kansas City to Des_Moines
+
+
+### Hints
+
+
+<details>
+<summary><strong>
+        Reading the amount of locations from the text file
+</strong></summary>
+
+```c++
+input >> locationCount;
+```
+
+</details>
+
+
+<details>
+<summary><strong>
+        Creating the dynamic arrays
+</strong></summary>
+
+```c++
+locations = new string[ locationCount ];
+distances = new int[ locationCount ];
+```
+
+</details>
 
 ---
 
