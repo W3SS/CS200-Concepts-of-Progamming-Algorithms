@@ -1,132 +1,52 @@
-# CS 200 Lab 13: Dynamic variables and arrays
+# CS 200 Lab 04b: Dynamic variables and arrays
 
-## Chrome!
+---
 
-Please read this in chrome so that the solutions are collapsed by default!
+[Information](#information) |
+[Helper]() |
+[Lab](#lab) | [
+Questions](#questions)
 
-## Topics
+---
+
+# Information
+
+## Lab topics
 
 * Pointers
-* Memory management
-
-## Turn in
-
-**You will need to upload your code both to the class D2L Dropbox, and to your CS 200 GitHub repository!**
-
-Locate your source files for this project. They should have the extentions .cpp, .hpp, and/or .h. In Windows, they are labelled as "C++ source file" and/or "Header file". 
-
-
-![Windows, you're annoying.](images/sourcefiles.png)
-
-**These are the only files you need** - You do not need to upload any Visual Studio files.
-
-Upload these source files to your GitHub repository and to the Dropbox.
-
-See also: 
-[TURNING IN SOURCE CODE instructions](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/How-to/Turning%20in%20source%20code.md)
-
-
 
 ## Rules
 
-* Finishing the lab after class:
-   * If you are not able to complete the lab during the class period, please finish it up outside of class and turn it in as soon as you can. The lab dropbox will be open for 1 week after the class session.
+* For **in-class labs**, collaboration is allowed.
+    * If you work with another student on an assignment, make sure that you both
+    turn in a copy of the work, and also mention in the D2L comments who you worked with.
+    * You can also ask classmates questions if you're unsure on something.
+    * You can ask the instructor for help at any time.
 
-* Group work:
-   * You may work with other students on labs:
-   * All people working together must turn in code in their own dropboxes, and upload the code to their own GitHub repositories.
-   * All group work must be noted as such - either put a comment in the code file or in the dropbox upload.
-   * If you turn in duplicate works without noting that you worked together, you may get a 0% grade.
+## Reference
 
----
+* [Creating a new project in Visual Studio](https://github.com/Rachels-Courses/Course-Common-Files/blob/master/Visual-Studio/New%20project%20howto.md)
 
-# Dynamic Variables
+## Turn in
 
-We can create new variables and arrays dynamically. With arrays, we no longer need to
-know the size of the array at compile-time, but we can decide that at run-time. For
-example, we could ask the user for the amount of items, and then create an array of that
-size.
+Once you are finished with a project, zip up the entire folder that contains
+all source files and project/solution files. Turn in this zip file to **Desire2Learn**.
 
-To create dynamic variables and arrays, we need to use pointers. Remember that a
-pointer points to a memory address. By using the **new** keyword, we can allocate memory
-through a pointer – it will point to a new address, and have that memory address
-prepared for whatever we've created.
+Also make sure to turn in a text file with your answers to the [question](#questions) section.
 
-But, unlike our normal variables, dynamic variables do not free their memory
-automatically. This means, we have to manually free that memory with the delete
-keyword. So, a good practice to start with is, any time we write a **new** keyword, we also
-need a **delete** somewhere.
 
-If you don't free your allocated memory, you will get a memory leak. If your program
-allocates a lot of memory and never frees it, it will eat up RAM and cause system
-problems – you can't get that memory back until the user resets their computer.
 
-## Dynamic Variable Reference
 
-Here are the steps to creating a new dynamic variable:
 
-<table>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
 
-<tr>
-<td><pre>
-string* dynamicString;
-</pre></td>
 
-<td>
-Create a pointer variable.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-dynamicString = new string;
-</pre></td>
-
-<td>
-Create a new string with the pointer.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-*dynamicString = "Hello!";
-</pre></td>
-
-<td>
-Assign a value to our new variable.
-(must go through the pointer – use the
-de-reference operator)
-</td>
-</tr>
-
-<tr>
-<td><pre>
-cout << *dynamicString << endl;
-</pre></td>
-
-<td>
-Display the value of the variable.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-delete dynamicString;
-</pre></td>
-
-<td>
-Free up the memory when done.
-</td>
-</tr>
-</table>
+![horizontal rule](images/hr.png)
 
 ---
 
-## Exercise 1
+# Lab
+
+## Program 1: Dynamic variables
 
 In your program, create three pointers:
 
@@ -154,9 +74,40 @@ Finally, free the memory for each pointer using the delete keyword.
 
         20        yourname      199.99
 
+
+### Hints
+
+<details>
+<summary><strong>
+        Using the new command
+</strong></summary>
+
+```c++
+int * myInt = new int;
+```
+
+Make sure to open the [helper doc]()
+for help.
+
+</details>
+
+<details>
+<summary><strong>
+        Using the delete command
+</strong></summary>
+
+```c++
+delete myInt;
+```
+
+Note that this is how you delete a dynamic variable, **not** a dynamic array.
+
+</details>
+
+
 ---
 
-## Exercise 2
+## Program 2: 
 
 Add the following struct to the top of your source file (it can go in the same file as
 main()):
@@ -222,88 +173,7 @@ members through the friend pointer:
         Person A: Joe, friend: Austin
         Person B: Austin, friend: Elly
         Person C: Elly, friend: Joe
-        
----
 
-# Dynamic Arrays
-
-The **new** and **delete** keywords can be used to make arrays, too. With dynamic arrays,
-you don't need to estimate the size of an array – which wastes memory, and could have
-problems if you run out of array space!
-
-You also create dynamic arrays through pointers. Remember that you will still need to
-delete whatever you create with new!
-
-## Dynamic Array Reference
-
-
-<table>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-
-<tr>
-<td><pre>
-float* prices;
-</pre></td>
-
-<td>
-Create a pointer variable.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-prices = new float[ 5 ];
-</pre></td>
-
-<td>
-Allocate memory as an array.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-for ( int i = 0; i < 5; i++ )
-{
-        prices[i] = i * 2;
-        cout << prices[i] << endl;
-}
-</pre></td>
-
-<td>
-Assign values and display the values.
-</td>
-</tr>
-
-<tr>
-<td><pre>
-delete [] prices;
-</pre></td>
-
-<td>
-Free the memory up afterward.
-</td>
-</tr>
-</table>
-
-Note that with dynamic arrays, you don't need to use the de-reference operator when
-accessing elements of the array – just treat it like a normal array!
-
-You can also set a dynamic array's size based on a variable value:
-
-        int size;
-        cout << "Size: ";
-        cin >> size;
-        
-        float* prices;
-        prices = new float[ size ];
-        // ...
-        
-        delete [] prices;
-
-So they are very useful for all sorts of applications!
 
 ---
 
