@@ -346,6 +346,8 @@ for ( int i = 0; i < locationCount; i++ )
 Finally, once everything has been loaded in, display all the locations
 and distances in a nice format.
 
+**Make sure to delete your dynamic arrays at the end of the program!**
+
 **Example output:**
 
         Choose a starting point:
