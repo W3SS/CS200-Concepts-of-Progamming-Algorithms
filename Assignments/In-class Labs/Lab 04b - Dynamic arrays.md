@@ -133,6 +133,10 @@ Create a dynamic array called **lottoNumbers**. It will be the size that the use
 For each element of the array, from 0 to size, set the element's value to a random
 number between 0 and 100.
 
+* To generate a random number, you need to use the rand() function: ```rand()```.
+* To generate a number between 0 and 9, you will use: ```rand() % 10;```
+* Make sure you're assigning it to a variable...  ```int example = rand() % 10;```
+
 Display the value of each lotto ball while generating.
 
 At the end of the program, delete the dynamic array before the program ends. (Before the return 0;)
