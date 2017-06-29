@@ -575,9 +575,15 @@ Sometimes you will need to read in data, and you can't know how much data
 there is at compile-time (that is, *while* you're writing the program.)
 Dynamic arrays can come in handy here.
 
-In your project folder, create two text files.
 
-**from_kc.txt:**
+### A. Create text files to read from
+
+Open up your project folder. By default, this is the location where your
+source files (*.cpp files*) are located in.
+
+Create two new **text files**: *from_kc.txt* and *from_seattle.txt*.
+
+Open up *from_kc.txt* in a text editor like Notepad, and paste in the following:
 
                 7
                 Omaha           189
@@ -588,7 +594,8 @@ In your project folder, create two text files.
                 Columbia        127
                 Des_Moines      193
 
-**from_seattle.txt:**
+
+Open up *from_seattle.txt* in a text editor like Notepad, and paste in the following:
 
                 5
                 Portland        174
@@ -596,6 +603,8 @@ In your project folder, create two text files.
                 Eugene          283
                 Vancouver       143
                 Sacramento      752
+
+### B. Starter code
 
 And begin your program with the following:
 
@@ -614,20 +623,34 @@ int main()
     int city;
     cin >> city;
 
+    string cityName;
+
     ifstream input;
 
     if ( city == 1 )
     {
         input.open( "from_kc.txt" );
+        cityName = "Kansas City";
     }
     else
     {
         input.open( "from_seattle.txt" );
+        cityName = "Seattle";
     }
 
     int locationCount = 0;
     string * locations;
     int * distances;
+
+    // Load in amount of locations
+
+    // Allocate memory for locations and distances
+
+    // Use a for loop to load in all the data from text files
+
+    // Display all the data to the screen with cout
+
+    // After the for loop, free the memory of locations and distances.
 
     input.close();
 
@@ -638,33 +661,111 @@ int main()
 
 ```
 
-The first item in each file is the **amount of cities** from the starting point (Kansas City or Seattle).
-Each file has a different maount of locations, so you'll have to read in the first number
-**before** you create your ```locations``` and ```distances``` arrays.
+### C. Loading in the amount of cities
 
-Read in the first number of the text file into ```locationCount```.
+In each text file, *from_kc.txt* and *from_seattle.txt*,
+the very first item written in each file is an integer.
 
-After you've read in the size, set up your two dynamic arrays with the size stored in locationCount.
+This integer is the **amount of cities listed in the text file.**
 
-The rest of the data in the file is in the format:
+Using the ```input``` ifstream object, read in only one value and store it in the ```locationCount``` variable.
 
-        CITY_NAME       DISTANCE
 
-Use the following code to load in the city data:
+<details><summary><strong> More help </strong></summary>
 
 ```c++
-for ( int i = 0; i < locationCount; i++ )
-{
-        input >> locations[i] >> distances[i];
-}
+input >> locationCount;
 ```
 
-Finally, once everything has been loaded in, display all the locations
-and distances in a nice format.
+</details>
 
-**Make sure to delete your dynamic arrays at the end of the program!**
 
-**Example output:**
+### D. Allocate memory for locations and distances
+
+The rest of the text files contain location and distance information.
+However, we cannot store this information yet, because we have no where to store the data.
+
+Next, we need to create two dynamic arrays to store our location and distance data.
+
+* With the ```locations``` pointer, allocate memory for a new **dynamic array**.
+It is a string array, and its size is the ```locationCount```.
+
+* With the ```distances``` pointer, allocate memory for a new **dynamic array**.
+It is an integer array, and its size is the ```locationCount```.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+locations = new string[ locationCount ];
+distances = new int[ locationCount ];
+```
+
+</details>
+
+
+### E. Read in all the data from the file
+
+Next, we will need a **for loop** to read data for the *locationCount* amount of cities.
+
+First, create an integer counter variable called ```i```.
+
+Then, create a **for loop**:
+
+1. First parameter: Initialize ```i``` to ```0```.
+2. Second parameter: Loop while ```i``` is less than ```locationCount```.
+3. Third parameter: Increment ```i``` by one each time.
+
+
+Inside the for loop, you will read in data from the ```input``` ifstream.
+Each line contains the name of a city and that city's distance.
+
+Load in the information using:
+
+```c++
+input >> locations[i] >> distances[i];
+```
+
+### F. Display all the city information
+
+After all the data is loaded, display the message "Distance from CITY to...",
+replacing the text "CITY" with the name of the city we are dealing with.
+The city's name is stored in ```cityName```.
+
+Then, we will need another **for loop**, with the same parameters as before:
+
+1. First parameter: Initialize ```i``` to ```0```.
+2. Second parameter: Loop while ```i``` is less than ```locationCount```.
+3. Third parameter: Increment ```i``` by one each time.
+
+Within the for loop, display the ```distances``` element at position ```i```,
+and the ```locations``` element at position ```i```.
+
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+cout << "* " << distances[i] << " miles - Distance from " << cityName << " to " << locations[i] << endl;
+```
+
+</details>
+
+
+### G. Free the memory
+
+After the for loop is finished, make sure you free the memory
+for both the ```locations``` and ```distances``` dynamic arrays.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+delete [] locations;
+delete [] distances;
+```
+
+</details>
+
+
+### Example output
 
         Choose a starting point:
         1. Kansas City
@@ -681,32 +782,6 @@ and distances in a nice format.
         * 193 miles - Distance from Kansas City to Des_Moines
 
 
-### Hints
-
-
-<details>
-<summary><strong>
-        Reading the amount of locations from the text file
-</strong></summary>
-
-```c++
-input >> locationCount;
-```
-
-</details>
-
-
-<details>
-<summary><strong>
-        Creating the dynamic arrays
-</strong></summary>
-
-```c++
-locations = new string[ locationCount ];
-distances = new int[ locationCount ];
-```
-
-</details>
 
 ---
 

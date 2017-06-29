@@ -358,21 +358,35 @@ int main()
 
     int city;
     cin >> city;
+    
+    string cityName;
 
     ifstream input;
 
     if ( city == 1 )
     {
         input.open( "from_kc.txt" );
+        cityName = "Kansas City";
     }
     else
     {
         input.open( "from_seattle.txt" );
+        cityName = "Seattle";
     }
 
     int locationCount = 0;
     string * locations;
     int * distances;
+
+    // Load in amount of locations
+
+    // Allocate memory for locations and distances
+
+    // Use a for loop to load in all the data from text files
+
+    // Display all the data to the screen with cout
+
+    // After the for loop, free the memory of locations and distances.
 
     input.close();
 
