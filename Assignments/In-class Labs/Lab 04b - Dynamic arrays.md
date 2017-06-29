@@ -123,23 +123,31 @@ Seed the random number generator with:
 srand( time( NULL ) ); // (At the beginning of main())
 ```
 
+**Seed the random number generator:** 
 You only need to seed the generator **once** -- at the beginning of the program.
 
+**Get the *size* of the dynamic array:** 
 Then, ask the user to enter the amount of lotto balls there will be.
-Store the value in an integer variable.
+Store the value in an integer variable to keep track of the **size**.
 
-Create a dynamic array called **lottoNumbers**. It will be the size that the user specified.
+**Create the dynamic array:** 
+Create a dynamic array of **integers** called ```lottoNumbers```. It will be the **size** that the user specified above.
 
-For each element of the array, from 0 to size, set the element's value to a random
-number between 0 and 100.
+**Iterate through the array:**
+Create a for loop that goes from *0* to the size of your ```lottoNumbers``` array. Inside the loop...
 
-Display the value of each lotto ball while generating.
+* Set each element's value to a random number between 0 and 100.
+   * To generate a random number, you need to use the rand() function: ```rand()```.
+   * To generate a number between 0 and 9, you will use: ```rand() % 10;```
+   * Make sure you're assigning it to a variable...  ```int example = rand() % 10;```
+* Display the value of each lotto ball while generating.
 
 At the end of the program, delete the dynamic array before the program ends. (Before the return 0;)
 
 **Sample Output:**
 
-        Lotto number count: 5
+        How many lotto balls will there be? 
+        >> 5
         57      11      74      91      35
 
 
