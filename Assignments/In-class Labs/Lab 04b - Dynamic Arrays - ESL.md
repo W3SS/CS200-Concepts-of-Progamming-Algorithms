@@ -825,28 +825,119 @@ int main()
 
 ```
 
-#### main()
+### A. Create arrays for managers, employees, and linking employees-managers
 
-We will have three arrays in this program:
+This part goes within **main()**, after the **srand** function:
 
-* managerNames, a string array of managers' names
-* employeeNames, a string array of employees' names
-* employeeManagers, a string-pointer array, one for each employee, that is meant to point to a manager.
+Declare the following three arrays. Note that these are not dynamic arrays, just normal static arrays:
 
-Declare the ```managerNames``` string array - its size should be the ```MANAGER_COUNT```. Then initialize the two manager names in this array.
+* ```managerNames```, a string array of managers' names
+    * Declare the ```managerNames``` string array - its size should be the ```MANAGER_COUNT```.
+    Then initialize the two manager names in this array.
 
-Declare the ```employeeNames``` string array - its size should be the ```EMPLOYEE_COUNT```. Initialize five employee names in this array.
+* ```employeeNames```, a string array of employees' names
+    * Declare the ```employeeNames``` string array - its size should be the ```EMPLOYEE_COUNT```.
+    Initialize five employee names in this array.
 
-Declare the ```employeeManagers``` string-pointer array - its size should be ```EMPLOYEE_COUNT```. Do not initialize this array.
-
-Afterward, call the two functions:
-
-* AssignManagers - pass in ```managerNames``` and ```meployeeManagers```.
-* DisplayEmployees - pass in ```employeeNames``` and ```meployeeManagers```.
-
+* ```employeeManagers```, a string-pointer array, one for each employee, that is meant to point to a manager.
+    * Declare the ```employeeManagers``` string-pointer array - its size should be ```EMPLOYEE_COUNT```.
+    Do not initialize this array.
 
 
-***Example output:***
+### B. Initialize the arrays
+
+You will need to add data to these arrays. You can use my sample data, or you can use your own.
+
+* Manager names:
+    * Artemis
+    * Luna
+    
+* Employee names:
+    * Serena
+    * Amy
+    * Raye
+    * Lita
+    * Mina
+
+Leave ```employeeManagers``` uninitialized, we will deal with this later.
+
+
+### C. Call the Assign and Display functions
+
+This part goes within **main()**, after step (A):
+
+After you're done creating the arrays, call the following functions.
+
+* AssignManagers - pass in ```managerNames``` and ```employeeManagers```.
+* DisplayEmployees - pass in ```employeeNames``` and ```employeeManagers```.
+
+Next we will have to implement these functions.
+
+
+### AssignManagers()
+
+We will use a random number generator to randomly select managers for each employee.
+
+Create an integer counter variable called ```employeeIndex```.
+
+Create a **for loop**:
+
+1. First parameter: Initialize ```employeeIndex``` to ```0```.
+2. Second parameter: Loop while ```employeeIndex``` is less than ```EMPLOYEE_COUNT```.
+3. Third parameter: Increment ```employeeIndex``` by one each time.
+
+Within the for loop:
+
+* Create an integer variable called ```managerindex```. Assign it the value of ```rand() % MANAGER_COUNT```.
+* Get the **address** of ```managerNames[ managerIndex ]``` and assign it to the ```employeeManagers[employeeIndex]``` item.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+for ( int employeeIndex = 0; employeeIndex < EMPLOYEE_COUNT; employeeIndex++ )
+{
+    int managerIndex = rand() % MANAGER_COUNT;
+    employeeManagers[employeeIndex] = managerNames[ managerIndex ];
+}
+```
+
+</details>
+
+### DisplayEmployees()
+
+Within DisplayEmployees, we will use a for loop to display all of the employees and their managers.
+
+Create an integer counter called ```employeeIndex```.
+
+Create a **for loop**:
+
+1. First parameter: Initialize ```employeeIndex``` to ```0```.
+2. Second parameter: Loop while ```employeeIndex``` is less than ```EMPLOYEE_COUNT```.
+3. Third parameter: Increment ```employeeIndex``` by one each time.
+
+Within the for loop, display the following with ```cout```:
+
+* The value of the counter
+* The employee name at this index (via ```employeeNames```)
+* The manager for this employee (via ```employeeManagers```)
+    * This array stores pointers, so you will have to **de-reference** the element
+    with the ```*``` operator in order to display the value instead of the memory address.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+for ( int employeeIndex = 0; employeeIndex < EMPLOYEE_COUNT; employeeIndex++ )
+{
+    cout << "Employee " << employeeIndex << ": \t";
+    cout << employeeNames[ employeeIndex ] << "\t\t";
+    cout << "Manager: \t";
+    cout << *employeeManagers[ employeeIndex ] << endl;
+}
+```
+
+</details>
+
+### Example output
 
         Employee 0	Serena	 Manager: Artemis
         Employee 1	Amy	 Manager: Artemis
@@ -854,94 +945,7 @@ Afterward, call the two functions:
         Employee 3	Lita	 Manager: Artemis
         Employee 4	Mina	 Manager: Artemis
 
-
-#### AssignManagers()
-
-We will use a random number generator to randomly select managers for each employee.
-
-To get a number between 0 and 9, we would do ```int number = rand() % 10```.
-
-Create a for-loop to iterate from 0 to ```EMPLOYEE_COUNT```:
-
-* Create a variable called ```index```. Assign it the value of ```rand() % MANAGER_COUNT```.
-* Get the **address** of ```managerNames[ index ]``` and assign it to the ```employeeManagers[i]``` item (if *i* is your for-loop counter.)
-
-#### DisplayEmployees()
-
-Use another for-loop, going over all the employees (use ```EMPLOYEE_COUNT``` again).
-
-Each cycle of the loop, you will display:
-
-* The value of the counter
-* The employee name at this index (via ```employeeNames```)
-* The manager for this employee (via ```employeeManagers```)
-
-Note that you have to **de-reference** the employeeManagers element in order
-to get the actual manager's name instead of the address of that variable.
-
-### Hints
-
-<details>
-<summary><strong>
-        Creating non-pointer arrays and initializing them
-</strong></summary>
-
-```c++
-string managerNames[ MANAGER_COUNT ] = { "Artemis", "Luna" };
-string employeeNames[ EMPLOYEE_COUNT ] = { "Serena", "Amy", "Raye", "Lita", "Mina" };
-```
-
-</details>
-
-<details>
-<summary><strong>
-        Creating an array of pointers
-</strong></summary>
-
-```c++
-string * employeeManagers[ EMPLOYEE_COUNT ];
-```
-
-</details>
-
-
-<details>
-<summary><strong>
-        AssignManagers
-</strong></summary>
-
-```c++
-void AssignManagers( string managerNames[ MANAGER_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
-{
-    for ( int i = 0; i < EMPLOYEE_COUNT; i++ )
-    {
-        int index = rand() % MANAGER_COUNT;
-        employeeManagers[i] = &managerNames[ index ];
-    }
-}
-```
-
-</details>
-
-
-<details>
-<summary><strong>
-        DisplayEmployees
-</strong></summary>
-
-```c++
-void DisplayEmployees( string employeeNames[ EMPLOYEE_COUNT ], string * employeeManagers[ EMPLOYEE_COUNT ] )
-{
-    for ( int i = 0; i < EMPLOYEE_COUNT; i++ )
-    {
-        cout << "Employee " << i << "\t" << employeeNames[i] << "\t Manager: " << *employeeManagers[i] << endl;
-    }
-}
-```
-
-</details>
-
-
+        
 
 
 

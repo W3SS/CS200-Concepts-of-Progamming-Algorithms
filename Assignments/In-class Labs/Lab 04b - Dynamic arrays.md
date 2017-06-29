@@ -525,18 +525,10 @@ Declare the ```employeeManagers``` string-pointer array - its size should be ```
 
 Afterward, call the two functions:
 
-* AssignManagers - pass in ```managerNames``` and ```meployeeManagers```.
-* DisplayEmployees - pass in ```employeeNames``` and ```meployeeManagers```.
+* AssignManagers - pass in ```managerNames``` and ```employeeManagers```.
+* DisplayEmployees - pass in ```employeeNames``` and ```employeeManagers```.
 
 
-
-***Example output:***
-
-        Employee 0	Serena	 Manager: Artemis
-        Employee 1	Amy	 Manager: Artemis
-        Employee 2	Raye	 Manager: Luna
-        Employee 3	Lita	 Manager: Artemis
-        Employee 4	Mina	 Manager: Artemis
 
 
 #### AssignManagers()
@@ -550,6 +542,7 @@ Create a for-loop to iterate from 0 to ```EMPLOYEE_COUNT```:
 * Create a variable called ```index```. Assign it the value of ```rand() % MANAGER_COUNT```.
 * Get the **address** of ```managerNames[ index ]``` and assign it to the ```employeeManagers[i]``` item (if *i* is your for-loop counter.)
 
+
 #### DisplayEmployees()
 
 Use another for-loop, going over all the employees (use ```EMPLOYEE_COUNT``` again).
@@ -562,6 +555,16 @@ Each cycle of the loop, you will display:
 
 Note that you have to **de-reference** the employeeManagers element in order
 to get the actual manager's name instead of the address of that variable.
+
+
+
+### Example output
+
+        Employee 0	Serena	 Manager: Artemis
+        Employee 1	Amy	 Manager: Artemis
+        Employee 2	Raye	 Manager: Luna
+        Employee 3	Lita	 Manager: Artemis
+        Employee 4	Mina	 Manager: Artemis
 
 ### Hints
 
