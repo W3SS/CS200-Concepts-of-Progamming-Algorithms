@@ -112,7 +112,7 @@ Free the memory for all three variables: ```myInt```, ```myStr```, and ```myFloa
 
 
 
-### Sample Output:
+### Example output
 
         20        yourname      199.99
 
@@ -256,9 +256,30 @@ After the **for loop** has completed, you will free the memory of the three arra
 Free the memory for all three variables: ```myIntArr```, ```myStrArr```, and ```myFloatArr```
 
 
+### Example output
 
+        Enter array size:       3
 
+        i = 0
+                Enter int value:        2
+                Enter string value:     cheese
+                Enter float value       2.10
 
+        i = 1
+                Enter int value:        5
+                Enter string value:     horse
+                Enter float value:      9.92
+                
+        i = 2
+                Enter int value:        1
+                Enter string value:     cow
+                Enter float value:      10.2
+
+        Here is your data:
+
+        2       cheese          2.10
+        5       horse           9.92
+        1       cow             10.2
 
 
 
@@ -266,15 +287,26 @@ Free the memory for all three variables: ```myIntArr```, ```myStrArr```, and ```
 
 ## Program 2:  Lotto numbers
 
-You will use a random number generator for this program, so you will need the
-following libraries:
+![Lottery balls](images/lottoballs.png)
+
+Start out with the following code:
 
 ```c++
+#include <iostream>
 #include <cstdlib>      // to use rand()
 #include <ctime>        // to use time()
+
+int main()
+{
+    return 0;
+}
 ```
-        
-Seed the random number generator with:
+
+### A. Seed the random number generator
+
+We are going to be generating random numbers for this program.
+
+To seed the random number generator, use the following code:
 
 ```c++
 srand( time( NULL ) ); // (At the beginning of main())
@@ -282,65 +314,124 @@ srand( time( NULL ) ); // (At the beginning of main())
 
 You only need to seed the generator **once** -- at the beginning of the program.
 
-Then, ask the user to enter the amount of lotto balls there will be.
-Store the value in an integer variable.
+This makes it so that each time we run the program, we will get different random values.
 
-Create a dynamic array called **lottoNumbers**. It will be the size that the user specified.
 
-For each element of the array, from 0 to size, set the element's value to a random
-number between 0 and 100.
+### B. Ask for the amount of lotto balls
 
-Display the value of each lotto ball while generating.
+Each lotto ball will have its own number, between 0 and 99, but that is for a later step.
 
-At the end of the program, delete the dynamic array before the program ends. (Before the return 0;)
+Create an integer variable called ```size```.
 
-**Sample Output:**
+Ask the user how many lotto balls they want.
 
-        Lotto number count: 5
+Get the user's input with ```cin``` and store it in ```size```.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+int * lottoBalls;
+```
+
+</details>
+
+
+### C. Allocate memory for the dynamic array of lottery balls
+
+Create an integer pointer called ```lottoBalls```.
+
+Using the ```lottoBalls``` pointer, **allocate memory for a dynamic array**.
+Use the value of ```size``` as the array's size.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+lottoBalls = new int[ size ];
+```
+
+</details>
+
+
+### D. Iterate through the array of lotto balls
+
+Create a counter variable. It should be an integer, and its name should be ```i```.
+
+To iterate through all of the lotto balls, we need a **for loop**.
+
+1. First parameter: Initialize ```i``` to ```0```.
+2. Second parameter: Loop while ```i``` is less than ```size```.
+3. Third parameter: Increment ```i``` by one each time.
+
+
+### E. Assign random numbers to each lotto ball
+
+To generate a random number between *0* and *n*, we could use the following code:
+
+```c++
+// Random number example - generate a number between 0 and n-1.
+int randomNumber = rand() % n;
+```
+
+Inside the **for loop**, we are going to use an **assignment statement**
+to assign a random number to each lotto ball in the ```lottoBalls``` array.
+
+Generate a **random number** between **0 and 99**, and store that random number
+in ```lottoBalls``` at position ```i```.
+
+*In other words, you are writing an assignment statement. ```lottoBalls[i]``` goes
+on the Left Hand Side of the assignment statement, and the ```rand()``` call goes on the Right Hand Side.*
+
+
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+lottoBalls[i] = rand() % 100;
+```
+
+</details>
+
+
+
+### F. Display the value of each lotto ball
+
+This will also go in the for loop, after you've assigned a value to the lotto ball at position ```i```.
+
+After the assignment statement, use ```cout``` to display the value of ```lottoBall``` at position ```i```.
+
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+cout << lottoBall[i] << "\t";
+```
+
+</details>
+
+
+### G. Free the memory
+
+After the **for loop** is over, you will need to **free up the memory** through the ```lottoBalls``` pointer.
+
+This is a dynamic array, so make sure you use ```delete []``` when freeing its memory.
+
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+delete [] lottoBalls;
+```
+
+</details>
+
+
+### Example output
+
+        Enter the amount of lottery balls to use: 5
+        
         57      11      74      91      35
 
 
-
-### Hints
-
-<details>
-<summary><strong>
-        Using the new command for a dynamic array
-</strong></summary>
-
-```c++
-int numberCount = 10;
-int* numberList = new int[ numberCount ];
-```
-
-</details>
-
-<details>
-<summary><strong>
-        Using the delete command for a dynamic array
-</strong></summary>
-
-```c++
-delete [] numberList;
-```
-
-</details>
-
-<details>
-<summary><strong>
-        Iterating through each element of the dynamic array
-</strong></summary>
-
-Use your variable that stores the size of the array to use in your for loop.
-
-```c++
-for ( int i = 0; i < numberCount; i++ )
-{
-        cout << numberList[i] << "\t";
-}
-```
-
-</details>
 
 
 ---

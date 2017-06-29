@@ -158,6 +158,8 @@ Note that this is how you delete a dynamic variable, **not** a dynamic array.
 
 ## Program 2:  Lotto numbers
 
+![Lottery balls](images/lottoballs.png)
+
 You will use a random number generator for this program, so you will need the
 following libraries:
 
