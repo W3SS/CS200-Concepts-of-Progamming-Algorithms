@@ -143,7 +143,8 @@ At the end of the program, delete the dynamic array before the program ends. (Be
 
 **Sample Output:**
 
-        Lotto number count: 5
+        How many lotto balls will there be? 
+        >> 5
         57      11      74      91      35
 
 
