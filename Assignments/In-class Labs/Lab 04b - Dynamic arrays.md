@@ -46,7 +46,9 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 
 # Lab
 
-## Program 1: Dynamic variables
+## Program 1: Dynamic variables and arrays
+
+### Part 1: Variables
 
 In your program, create three pointers:
 
@@ -74,6 +76,53 @@ Finally, free the memory for each pointer using the delete keyword.
 
         20        yourname      199.99
 
+
+### Part 2: Arrays
+
+Next, create three additional pointer variables:
+
+* myIntArr, an integer pointer.
+* myStrArr, a string pointer.
+* myFloatArr, a float pointer.
+
+Also create an integer variable named **size**.
+
+Ask the use how big the arrays should be, and store their response in **size**.
+
+For each of these "my____Arr" pointers, create a new **dynamic array** and
+initialize its size to the value stored in the **size** variable.
+
+Use a for-loop to iterate from *0* to *size*, asking the user to enter
+a value for each element of myIntArr, myFloatArr, and myStrArr.
+
+After they enter values for these, display them back.
+
+Finally, after the for loop is finished, make sure to free the memory of all your dynamic arrays.
+
+**Sample Output:**
+
+        Enter array size:       3
+
+        i = 0
+                Enter int value:        2
+                Enter string value:     cheese
+                Enter float value       2.10
+
+        i = 1
+                Enter int value:        5
+                Enter string value:     horse
+                Enter float value:      9.92
+                
+        i = 2
+                Enter int value:        1
+                Enter string value:     cow
+                Enter float value:      10.2
+
+        Here is your data:
+
+        2       cheese          2.10
+        5       horse           9.92
+        1       cow             10.2
 
 ### Hints
 

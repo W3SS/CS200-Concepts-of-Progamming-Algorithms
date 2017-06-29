@@ -46,7 +46,16 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 
 # Lab
 
-## Program 1: Dynamic variables
+## Program 1a: Dynamic variables
+
+### A. Create three pointers
+
+Declaring a pointer works like this:
+
+```c++
+// Declaring an integer pointer
+int * myInt;
+```
 
 In your program, create three pointers:
 
@@ -54,55 +63,203 @@ In your program, create three pointers:
 * myStr, a string pointer.
 * myFloat, a float pointer.
 
-Afterward, you will allocate memory for each of these variables with the **new**
-keyword. Note that the data-type that goes after new must match the pointer type. (See
-the reference for sample code).
+### B. Allocate memory using each pointer
 
-Then, assign values to each of the variables. Make sure to use the de-reference
-operator!
+Allocating memory for a dynamic variable with a pointer works like this:
+
+```c++
+// Allocating memory for a dynamic variable
+myInt = new int;
+```
+
+Using ```myInt```, ```myStr```, and ```myFloat```, you will use the **new** keyword to allocate memory for each one.
+
+### C. Assign values to the variables
+
+To assign a value to an item via its pointer, you must de-reference it first:
+
+```c++
+// Assignment statement with a pointer variable:
+*myInt = 20;
+```
+
+For the three variables, ```myInt```, ```myStr```, and ```myFloat``` assign the following values:
 
 * myInt = 20
 * myStr = (your name)
 * myFloat = 199.99
 
-Display the value of each of the variables. You will also need a de-reference operator
-here.
+### D. Display the variable values
 
-Finally, free the memory for each pointer using the delete keyword.
-
-**Sample Output:**
-
-        20        yourname      199.99
-
-
-### Hints
-
-<details>
-<summary><strong>
-        Using the new command for a dynamic variable
-</strong></summary>
+To display the value stored at an address, you must de-reference the pointer:
 
 ```c++
-int * myInt = new int;
+cout << *myInt << endl;
 ```
 
-Make sure to open the [helper doc](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2004b%20-%20Dynamic%20arrays%20-%20Helper.md)
-for help.
+Display the values of each of the three variables, ```myInt```, ```myStr```, and ```myFloat```.
 
-</details>
+### E. Free the memory for the dynamic variables
 
-<details>
-<summary><strong>
-        Using the delete command for a dynamic variable
-</strong></summary>
+To free the memory of a dynamic variable, you need to use the **delete** keyword:
 
 ```c++
+// De-allocate (free) memory of a dynamic variable:
 delete myInt;
 ```
 
-Note that this is how you delete a dynamic variable, **not** a dynamic array.
+Free the memory for all three variables: ```myInt```, ```myStr```, and ```myFloat```
+
+
+
+### Sample Output:
+
+        20        yourname      199.99
+
+---
+
+## Program 1b: Dynamic arrays
+
+Declaring a pointer works like this:
+
+```c++
+// Declaring an integer pointer
+int * myInt;
+```
+
+In your program, create three pointers:
+
+* myIntArr, an integer pointer.
+* myStrArr, a string pointer.
+* myFloatArr, a float pointer.
+
+
+### B. Ask the user for the array size
+
+Using ```cout```, display a message asking the user to enter the size of the arrays.
+
+Create an **integer** variable named ```size```.
+
+Get the user's input with ```cin``` and store it in ```size```.
+
+
+### C. Allocate memory using each pointer
+
+Allocating memory for a dynamic array with a pointer works like this:
+
+```c++
+// Allocating memory for a dynamic array, with some size SIZE
+myInt = new int[ SIZE ];
+```
+
+Using ```myIntArr```, ```myStrArr```, and ```myFloatArr```, you will use the **new** keyword to allocate memory for each one.
+Their sizes should all be the value stored in ```size```.
+
+
+### D. Iterate through the arrays
+
+Since each of our arrays' sizes are specified by the ```size``` variable,
+we can use this in a **for loop** to iterate over each **element** of the arrays.
+
+First, declare a counter variable. It should be an **integer** named ```i```.
+
+Create a **for loop**.
+
+1. First parameter: Initialize ```i``` to ```0```.
+2. Second parameter: Loop while ```i``` is less than ```size```.
+3. Third parameter: Increment ```i``` by one each time.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+int i;
+for ( i = 0; i < size; i++ )
+{
+}
+```
 
 </details>
+
+### E. Assign values to the elements of the array
+
+You will do this step inside the **for loop**.
+
+Using ```cout```, display the following text:
+
+```c++
+// Display "i" and the value of i.
+cout << "i = " << i << endl;
+```
+
+* First, with ```cout```, you will ask the user to enter an integer value.
+
+* Use ```cin``` to get their integer input, and store it in ```myIntArr``` at position ```i```.
+
+* Second, with ```cout```, you will ask the user to enter a string value.
+
+* Use ```cin``` to get their string input, and store it in ```myStringArr``` at position ```i```.
+
+* Third, with ```cout```, you will ask the user to enter a float value.
+
+* Use ```cin``` to get their float input, and store it in ```myFloatArr``` at position ```i```.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+cout << "Enter an int value: ";
+cin >> myIntArr[i];
+```
+
+</details>
+
+
+
+### F. Iterate through the arrays again
+
+After the for loop is over, use ```cout``` to display a message, "Here is your data:".
+
+You will need to create **another for loop**, with the same values as in step (D):
+
+1. First parameter: Initialize ```i``` to ```0```.
+2. Second parameter: Loop while ```i``` is less than ```size```.
+3. Third parameter: Increment ```i``` by one each time.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+cout << myIntArr[i] << "\t" << myStringArr[i] << "\t" << myFloatArr[i] << endl;
+```
+
+</details>
+
+### G. Display the array elements
+
+Inside the **for loop**, you will display the elements of the arrays:
+
+* Using ```cout```, display the value of ```myIntArr``` at position ```i```.
+* Using ```cout```, display the value of ```myStringArr``` at position ```i```.
+* Using ```cout```, display the value of ```myFloatArr``` at position ```i```.
+
+
+
+### H. Free the memory for the dynamic variables
+
+To free the memory of a dynamic variable, you need to use the **delete** keyword:
+
+```c++
+// De-allocate (free) memory of a dynamic array:
+delete [] myInt;
+```
+
+After the **for loop** has completed, you will free the memory of the three arrays.
+
+Free the memory for all three variables: ```myIntArr```, ```myStrArr```, and ```myFloatArr```
+
+
+
+
+
+
 
 
 ---
