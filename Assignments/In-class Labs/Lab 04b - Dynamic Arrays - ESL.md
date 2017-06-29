@@ -14,6 +14,8 @@ Questions](#questions)
 ## Lab topics
 
 * Pointers
+* Dynamic variables
+* Dynamic arrays
 
 ## Rules
 
@@ -441,24 +443,117 @@ delete [] lottoBalls;
 Start with the following code:
 
 ```c++
-string ears[3]      = { "   ^ ^   ",   "  n   n ",     "  *   *  " };
-string heads[3]     = { " ( o_o ) ",   " ( x_x )" ,    " ( >_< ) " };
-string bodies[3]    = { "/(     )\\",  "\\(     )/",   "o(     )o" };
-string feet[3]      = { "  d   b   ",  "  @   @ ",     "  () () "  };
+#include <iostream>
+#include <string>
+using namespace std;
 
-string * ptrEars;
-string * ptrHead;
-string * ptrBody;
-string * ptrFeet;
+int main()
+{
+    string ears[3]      = { "   ^ ^   ",   "  n   n ",     "  *   *  " };
+    string heads[3]     = { " ( o_o ) ",   " ( x_x )" ,    " ( >_< ) " };
+    string bodies[3]    = { "/(     )\\",  "\\(     )/",   "o(     )o" };
+    string feet[3]      = { "  d   b   ",  "  @   @ ",     "  () () "  };
+
+    string * ptrEars;
+    string * ptrHead;
+    string * ptrBody;
+    string * ptrFeet;
+
+    // Add code here
+    
+    return 0;
+}
 ```
 
-For each body part, ask the user to enter a choice between 0 and 2.
-With this index, assign the corresponding **pointer** to the address of the
-**body part element chosen from the array**.
+This program will allow the user to select ears, a head, a body, and feet,
+and it will build a little graphic of a character.
 
-Once the user has chosen all parts, de-reference and output each pointer.
+### A. Ask the user to enter choices for each part
 
-**Example output:**
+Create four **integer** variables:
+
+* earIndex
+* headIndex
+* bodyIndex
+* feetIndex
+
+Then, we will have the user enter values for each of these:
+
+1. Using ```cout``` ask the user to enter a number between 0 and 2 for the ears.
+2. Using ```cin``` get the user's selection and store it in ```earIndex```.
+
+1. Using ```cout``` ask the user to enter a number between 0 and 2 for the head.
+2. Using ```cin``` get the user's selection and store it in ```headIndex```.
+
+1. Using ```cout``` ask the user to enter a number between 0 and 2 for the body.
+2. Using ```cin``` get the user's selection and store it in ```bodyIndex```.
+
+1. Using ```cout``` ask the user to enter a number between 0 and 2 for the feet.
+2. Using ```cin``` get the user's selection and store it in ```feetIndex```.
+
+When this portion of the program is running, it will look like:
+
+        Enter ears (0 - 2): 0
+        Enter head (0 - 2): 1
+        Enter body (0 - 2): 2
+        Enter feet (0 - 2): 1
+
+
+### B. Assign each of the pointers to addresses
+
+```earIndex```, ```headIndex```, ```bodyIndex```, and ```feetIndex``` all
+correspond to elements of the ```ears```, ```heads```, ```bodies```, and ```feet``` arrays.
+
+We have special pointers that will store the user's selection.
+
+Do the following:
+
+1. Write an **assignment statement**, which will assign ```ptrEars```
+the address of the ```ears``` element at position ```earIndex```.
+
+1. Write an **assignment statement**, which will assign ```ptrHead```
+the address of the ```heads``` element at position ```headIndex```.
+
+1. Write an **assignment statement**, which will assign ```ptrBody```
+the address of the ```bodies``` element at position ```bodyIndex```.
+
+1. Write an **assignment statement**, which will assign ```ptrFeet```
+the address of the ```feet``` element at position ```feetIndex```.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+ptrEars = &ears[ earIndex ];
+```
+
+</details>
+
+
+### C. Display the user's creature
+
+Then, display the ears, head, body, and feet that are being pointed to by our
+```ptrEars```, ```ptrHead```, ```ptrBody```, and ```ptrFeet``` pointers.
+
+You will use ```cout``` statements, and you will have to **de-reference** each
+of the pointers with the ```*``` operator in order to display its value.
+
+<details><summary><strong> More help </strong></summary>
+
+```c++
+cout << *ptrEars << endl;
+```
+
+</details>
+
+Once you display all the parts, it will look like this:
+
+           ^ ^   
+         ( x_x )
+        o(     )o
+          @   @ 
+
+
+### Example output
 
         Enter ears (0 - 2): 0
         Enter head (0 - 2): 1
@@ -470,34 +565,7 @@ Once the user has chosen all parts, de-reference and output each pointer.
         o(     )o
           @   @ 
 
-        Again? (y/n):
 
-### Hints
-
-
-<details>
-<summary><strong>
-        Assigning the pointers
-</strong></summary>
-
-```c++
-cin >> index;
-ptrEars = &ears[ index ];
-```
-
-</details>
-
-
-<details>
-<summary><strong>
-        Outputting the dereferenced pointers
-</strong></summary>
-
-```c++
-cout << endl << *ptrEars << endl << *ptrHead << endl << *ptrBody << endl << *ptrFeet << endl;
-```
-
-</details>
 
 ---
 

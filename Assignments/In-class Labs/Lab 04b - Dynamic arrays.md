@@ -14,6 +14,8 @@ Questions](#questions)
 ## Lab topics
 
 * Pointers
+* Dynamic variables
+* Dynamic arrays
 
 ## Rules
 
