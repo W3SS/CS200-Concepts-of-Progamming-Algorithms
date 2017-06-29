@@ -126,9 +126,9 @@ srand( time( NULL ) ); // (At the beginning of main())
 You only need to seed the generator **once** -- at the beginning of the program.
 
 Then, ask the user to enter the amount of lotto balls there will be.
-Store the value in an integer variable.
+Store the value in an integer variable to keep track of the **size**.
 
-Create a dynamic array called **lottoNumbers**. It will be the size that the user specified.
+Create a dynamic array of **integers** called ```lottoNumbers```. It will be the **size** that the user specified above.
 
 For each element of the array, from 0 to size, set the element's value to a random
 number between 0 and 100.
