@@ -179,32 +179,32 @@ cout << myClassObject.variable << endl;
 
 ### Hints
 
-<details>
-<summary><strong>
-        Using the new command for a dynamic variable
-</strong></summary>
+<details><summary><strong> Declaring a variable whose data type is a class </strong></summary>
 
 ```c++
-int * myInt = new int;
+Student newStudent;
 ```
-
-Make sure to open the [helper doc](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2004b%20-%20Dynamic%20arrays%20-%20Helper.md)
-for help.
 
 </details>
 
-<details>
-<summary><strong>
-        Using the delete command for a dynamic variable
-</strong></summary>
+<details><summary><strong> Assign values to the class' member variables </strong></summary>
 
 ```c++
-delete myInt;
+newStudent.name = "Bob";
+newStudent.degree = "English";
+newStudent.gpa = 2.8;
 ```
 
-Note that this is how you delete a dynamic variable, **not** a dynamic array.
+</details>
+
+<details><summary><strong> Display member variables </strong></summary>
+
+```c++
+cout << newStudent.name << "\n" << newStudent.degree << "\n" << newStudent.gpa << endl;
+```
 
 </details>
+
 
 
 ---
