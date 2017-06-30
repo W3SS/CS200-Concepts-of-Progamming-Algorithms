@@ -52,28 +52,80 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 Make sure to open up the [helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2004a%20-%20Pointers%20-%20Helper.md)
 document
 
-## Program 1: Accessing addresses
+
+Begin with the following code:
+
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+void Program1()
+{
+}
+
+void Program2()
+{
+}
+
+void Program3()
+{
+}
+
+void Program4()
+{
+}
+
+void Program5()
+{
+}
+
+void Program6()
+{
+}
+
+int main()
+{
+    bool done = false;
+    while ( !done )
+    {
+        cout << "1. Run Program1" << endl;
+        cout << "2. Run Program2" << endl;
+        cout << "3. Run Program3" << endl;
+        cout << "4. Run Program4" << endl;
+        cout << "5. Run Program5" << endl;
+        cout << "6. Run Program6" << endl;
+        cout << "7. Exit" << endl;
+
+        int choice;
+        cin >> choice;
+
+        switch( choice )
+        {
+            case 1:     Program1();     break;
+            case 2:     Program2();     break;
+            case 3:     Program3();     break;
+            case 4:     Program4();     break;
+            case 5:     Program5();     break;
+            case 6:     Program6();     break;
+            case 7:     done = true;     break;
+        }
+    }
+    
+    return 0;
+}
+```
+
+# Program 1: Accessing addresses
 
 Write a small program where you will create a series of variables, assign them values, 
 then output the address of that variable *and* its value.
 
 Variables to declare:
 
-* An integer
-* A float
-* A String
-
-**Sample Output:**
-
-        Address 0x69fee8 = 20
-        Address 0x69fee4 = 9.99
-        Address 0x69fee0 = Bob
-
-(Your memory addresses will be different)
-
-
-
-### Hints
+* An integer	```myInt```
+* A float	```myFloat```
+* A String	```myString```
 
 <details>
 <summary><strong>
@@ -91,9 +143,19 @@ for help.
 
 </details>
 
+## Example output:
+
+        Address 0x69fee8 = 20
+        Address 0x69fee4 = 9.99
+        Address 0x69fee0 = Bob
+
+(Your memory addresses will be different)
+
+
+
 ---
 
-## Program 2: Display addresses of array elements
+# Program 2: Display addresses of array elements
 
 Write a small program that will declare an array, initialize values for each element of the array, and then
 displays the address of the array and the address of each element of the array.
@@ -106,7 +168,25 @@ element #0, you would have to add the & before the array and subscript.
 
 Notice that the address of the array is the same address as the first element. This is not a coincidence!
 
-**Sample Output:**
+## Steps
+
+1. Declare an array of strings named ```schools```. Its size should be ```4```.
+
+2. For each element of ```schools```, set values:
+    * 0: JCCC
+    * 1: UMKC
+    * 2: KU
+    * 3: MS&T
+
+3. Display the address of ```schools``:
+    * ```cout << schools << endl;``` - if you output an array's name, it will just give you the address of the array.
+
+3. Create a **for loop** from ```i = 0``` to ```3```. Each time through the for loop:
+    * Output the current value of ```i```
+    * Output the address of element ```schools[i]``` using the address-of operator ```&```
+    * Output the value of element ```schools[i]```
+
+## Example output
 
         Array address: 0x69fec8
         Item 0 address: 0x69fec8        value: JCCC
@@ -114,7 +194,7 @@ Notice that the address of the array is the same address as the first element. T
         Item 2 address: 0x69fed0        value: KU
         Item 3 address: 0x69fed4        value: MS&T
 
-### Hints
+## Hints
 
 <details>
 <summary><strong>
@@ -138,24 +218,43 @@ cout << "Array address: " << schools << endl;
 cout << "Item 0 address: " << &schools[0] << endl;
 ```
 
+</details></details>
+
+<details>
+<summary><strong>
+	Displaying the value of an array element
+</strong></summary>
+
+```c++
+cout << "Item 0 value: " << schools[0] << endl;
+```
+
 </details>
 
         
 ---
 
-## Program 3: Using pointers
+# Program 3: Using pointers
 
-Update Exercise 1 (but save this as a separate file or function). Continue creating the int, string, 
+Update Exercise 1 (but save this as a separate function). Continue creating the int, string, 
 and float variables, but also make
 corresponding **pointer variables** that will point to each of their addresses. 
 Then, cout the pointers, rather
 than the addresses of the variables.
 
-**Sample Output:**
+## Steps
 
-        0x69fee8 = 20
-        0x69fee4 = 9.99
-        0x69fee0 = Bob
+**1.** Create the three variables:
+
+* An integer	```myInt```
+* A float	```myFloat```
+* A string	```myString```
+
+**2.** Create three pointers:
+
+* An integer pointer ```ptrInt```
+* A float pointer ```ptrFloat```
+* A string pointer ```ptrString```
 
 <details>
 <summary><strong>
@@ -168,6 +267,10 @@ int * ptrNumber;
 
 </details>
 
+**3.** Assign each pointer to the address of the corresponding variable
+
+Use the address-of operator to assign the address from ```myInt``` to the ```ptrInt``` pointer,
+and the same for ptrFloat and ptrString.
 
 <details>
 <summary><strong>
@@ -181,36 +284,68 @@ int * ptrNumber = &number;
 
 </details>
 
+**4.** Output the pointers to get the addresses
+
+Using ```cout```, you can get the addresses via the pointers:
+
+```c++
+cout << ptrInt << endl;	// outputs address
+```
 
 <details>
 <summary><strong>
-	Displaying an address via a pointer
+	Displaying address and value
 </strong></summary>
 
 ```c++
 int number;
 int * ptrNumber = &number;
-cout << ptrNumber << endl;
+cout << ptrNumber << endl;	// display address
+cout << *ptrNumber << endl;	// display value
 ```
 
 </details>
 
+
+## Example output
+
+        0x69fee8 = 20
+        0x69fee4 = 9.99
+        0x69fee0 = Bob
+
+
+
+
+
+
+
+
+
 ---
 
-## Program 4: Sizes of data types
+# Program 4: Sizes of data types
 
 Write a program that will ask the user whether they want to see information about integers, floats,
 booleans, or doubles.
 
 In order to get the amount of bytes that a data type uses, use the ```sizeof()``` function.
-For example:
+
+
+## Steps
+
+**1.** Ask the user if they want to see the size of integers, floats, booleans, or doubles.
+Display a menu and get their selection. For example:
+
+        [i]nt, [f]loat, [b]oolean, or [d]ouble?
+
+**2.** Based on the user's response, use the ```sizeof``` function to display the size of that data type:
+
 
 ```c++
 cout << sizeof( int ) << " bytes" << endl;
 ```
 
-
-**Sample Output:**
+## Example output
 
         How many bytes is it?
 
@@ -224,90 +359,76 @@ cout << sizeof( int ) << " bytes" << endl;
 
 ---
 
-## Program 5: Food
+# Program 5: Food
 
-Write a program that has 3 float variables:
+Write a program that will use a pointer to store the price of the current item
+
+**1.** Create four float variables and give them initial values:
 
 * priceHamburger
 * priceFries
 * priceSalad
-
-Assign some prices to each of these variables.
-
-Create a variable that is a float pointer, called ptrPrice. Start by assigning it to **nullptr**.
+* priceDefault = 0
 
 
+**2. Create a pointer for the price of the current item**
+
+Create a **float pointer** named ```ptrPrice```. Initialize it to ```nullptr```.
 
 It is good programming practice to use **nullptr* as the value for pointers not currently being
 used. Otherwise, like any other variable, their initial value is garbage.
 
 
+**3.** Ask the user if they want a hamburger, fries, or salad.
 
-Ask the user whether they want a hamburger, fries, or a salad. Based on what their answer is, assign
-ptrPrice the address of the corresponding price variable (priceHamburger, priceFries, or priceSalad).
+For example:
 
-The only thing that should go within the if statement is assigning an address to ```ptrPrice```.
+	Do you want [h]amburger, [f]ries, or [s]alad?
 
-Create another float called taxAmt. Figure out the tax by multiplying the value of ptrPrice by 0.065.
-Then, increase the price by the tax amount by adding the taxAmt to the value of ptrPrice.
+Get their choice and store it in a string variable named ```choice```.
 
-Finally, output the price-plus-tax, by outputting the value of ptrPrice.
+**4.** Use an if statement to check their selection. Based on their selection,
+assign ```ptrPrice``` to the corresponding price.
 
-**Sample Output:**
+If the user selects an invalid option, set ```ptrPrice``` to the address of ```priceDefault```.
+
+
+**5.** Calculate the price plus tax
+
+AFTER the if statement, create a float variable called ```taxRate``` and assign it to ```0.065```.
+
+Also declare another float called ```taxAmount```, and a final one called ```pricePlusTax```.
+
+Set ```taxAmount``` equal to the ```taxRate``` times the value pointed to by ```ptrPrice```.
+You will need to de-reference ```ptrPrice``` to get its value.
+
+<details><summary><strong> De-referencing a pointer </strong></summary>
+
+```c++
+*ptrPrice
+```
+
+</details>
+
+Finally, assign ```pricePlusTax``` the value of ```ptrPrice``` plus the ```taxAmount```.
+
+
+**6.** Display the results of the calculations
+
+Display the **original price** (via ```ptrPrice```), **tax amount**, and **price plus tax** to the user.
+
+
+## Example output
 
         [h]amburger, [f]ries, or [s]alad? h
         Original price: $3.99
+	Tax amount: $0.25935
         With tax price: $4.24935
 
-### hints
-
-<details>
-<summary><strong>
-	Declare a pointer and set it to nullptr
-</strong></summary>
-
-```c++
-float * ptrPrice = nullptr;
-```
-
-</details>
-
-<details>
-<summary><strong>
-	Assign the pointer to point at a price
-</strong></summary>
-
-```c++
-ptrPrice = &priceHamburger;
-```
-
-</details>
-
-<details>
-<summary><strong>
-	Calculate price plus tax using the pointer
-</strong></summary>
-
-```c++
-float taxAmt = ( *ptrPrice * 0.065 ) + *ptrPrice;
-```
-
-</details>
-
-<details>
-<summary><strong>
-	Display the price of the current item via the pointer
-</strong></summary>
-
-```c++
-cout << *ptrPrice << endl;
-```
-
-</details>
 
 ---
 
-## Program 6: Students
+# Program 6: Students
 
 Write a program that has an array of strings, called students. The array should be of size 3. Assign
 some values to these array elements.
