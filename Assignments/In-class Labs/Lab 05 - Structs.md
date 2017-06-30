@@ -120,7 +120,7 @@ int main()
 ---
 
 
-# Program 1: Student struct
+# Program 1: Student struct - just member variables
 
 Within **Student.hpp**, start with the following:
 
@@ -131,15 +131,14 @@ Within **Student.hpp**, start with the following:
 #include <string>
 using namespace std;
 
-class Student
+struct Student
 {
-public:
 };
 
 #endif
 ```
 
-Declare the following variables within this class, under the ```public:``` accessor.
+Declare the following variables within this struct:
 
 * name, a string
 * degree, a string
@@ -177,9 +176,9 @@ cout << myClassObject.variable << endl;
 
 
 
-### Hints
+## Hints
 
-<details><summary><strong> Declaring a variable whose data type is a class </strong></summary>
+<details><summary><strong> Declaring a variable whose data type is a struct/class </strong></summary>
 
 ```c++
 Student newStudent;
@@ -187,7 +186,7 @@ Student newStudent;
 
 </details>
 
-<details><summary><strong> Assign values to the class' member variables </strong></summary>
+<details><summary><strong> Assign values to the struct/class' member variables </strong></summary>
 
 ```c++
 newStudent.name = "Bob";
@@ -207,10 +206,140 @@ cout << newStudent.name << "\n" << newStudent.degree << "\n" << newStudent.gpa <
 
 
 
+
+
+
+
 ---
 
+# Program 2: Fraction - A struct with member variables and fractions
+
+In the **Fraction.hpp** file, begin with the following:
+
+```c++
+#ifndef _FRACTION_HPP
+#define _FRACTION_HPP
+
+struct Fraction
+{
+};
+
+#endif
+```
+
+Create two member variables:
+
+* numerator, an integer
+* denominator, an integer
+
+And create member functions:
+
+1. Setup
+        * return type: void
+        * parameters: ```int n, int d```
+1. Display
+        * return type: void
+        * parameters: none
+1. Add
+        * return type: Fraction
+        * parameters: ```Fraction other```
+1. Subtract 
+        * return type: Fraction
+        * parameters: ```Fraction other```
+1. Multiply
+        * return type: Fraction
+        * parameters: ```Fraction other```
+1. Divide
+        * return type: Fraction
+        * parameters: ```Fraction other```
 
 
+These functions will be created *inside* the struct. Include your
+opening and closing curly braces ```{``` and ```}```.
+
+If you have trouble writing the struct, expand the following hint:
+
+<details><summary><strong> Struct declaration </strong></summary>
+
+```c++
+#ifndef _FRACTION_HPP
+#define _FRACTION_HPP
+
+struct Fraction
+{
+    int numerator;
+    int denominator;
+
+    void Setup( int n, int d )
+    {
+    }
+
+    void Display()
+    {
+    }
+
+    Fraction Add( Fraction other )
+    {
+    }
+
+    Fraction Subtract( Fraction other )
+    {
+    }
+
+    Fraction Multiply( Fraction other )
+    {
+    }
+
+    Fraction Divide( Fraction other )
+    {
+    }
+};
+
+#endif
+
+
+```
+
+</details>
+
+
+Now it's time to define the functions.
+
+### Setup
+
+Here, the input parameter variables are ```n``` and ```d```.
+
+Set your member variable ```numerator``` to the value of ```n```,
+and set your member variable ```denominator``` to the value of ```d```.
+
+### Display
+
+Use ```cout``` to display the values of the two member variables
+```numerator``` and ```denominator```.
+
+For example, if numerator is 1 and denominator is 2:
+
+        1/2
+
+
+
+### Multiply
+
+![How to multiply fractions](images/fractions_multiply.png)
+
+To multiply two fractions, you multiply both numerators and denominators together.
+
+### Divide
+
+![How to divide fractions](images/fractions_divide.png)
+
+### Add
+
+![How to add fractions](images/fractions_add.png)
+
+### Subtract
+
+![How to subtract fractions](images/fractions_subtract.png)
 
 
 
@@ -222,8 +351,10 @@ cout << newStudent.name << "\n" << newStudent.degree << "\n" << newStudent.gpa <
 
 # Questions
 
-1. Using a pointer, how do you allocate memory for a new dynamic variable?
-1. Using a pointer, how do you allocate memory for a new dynamic array?
-1. How do you deallocate memory for a dynamic variable?
-1. How do you deallocate memory for a dynamic array?
+1. Can a struct contain variables?
+1. Can a struct contain functions?
+1. What does setting a member to private do?
+1. What does setting a member to public do?
+1. When declaring a variable whose data type is a class, you need to add what to the end?
+
 
