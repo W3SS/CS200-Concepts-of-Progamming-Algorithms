@@ -430,68 +430,29 @@ Display the **original price** (via ```ptrPrice```), **tax amount**, and **price
 
 # Program 6: Students
 
-Write a program that has an array of strings, called students. The array should be of size 3. Assign
-some values to these array elements.
+**1.** Declare an array of **strings** named ```students```. The array should be of size 3.
+Initialize this array with values for each element.
 
-Then, create a variable that is a string pointer, called ptrStudent.
+**2.** Create a string pointer named ```ptrStudent```. Initialize it to ```nullptr```.
 
-Ask the user to enter an index: 0, 1, or 2. Assign ptrStudent the address of the student at this index
-(e.g., ```student[1]``` ’s address).
+**3.** Ask the user to enter a student ID: 0, 1, or 2. Store it in an integer named ```id```.
 
-Then, ask the user to enter a new name for the student. Use cin and store the result to the appropriate
-element through the ptrStudent pointer – use the de-reference operator to assign a value to this item.
+**4.** Assign ptrStudent the address of the student at this index (e.g., ```student[id]``` ’s address).
 
-Finally, display the name of all students with a for-loop.
-
-
-**Sample Output:**
-
-        Enter 0, 1, or 2: 2
-        New name: Wrex
-        
-        student 0 = Ashley
-        student 1 = Kaidan
-        student 2 = Wrex
-
-### Hints
-
-<details>
-<summary><strong>
-	Creating the array
-</strong></summary>
+<details><summary><strong> Assigning a pointer to the address of an array element </strong></summary>
 
 ```c++
-string students[3] = { "Harry", "Ron", "Hermione" };
-```
-
-or
-
-```c++
-string students[3];
-students[0] = "Harry";
-students[1] = "Ron";
-students[2] = "Hermione";
+ptrStudent = &student[id];
 ```
 
 </details>
 
+**5.** Ask the user to enter a new name for the student.
 
-<details>
-<summary><strong>
-	Assign a pointer to an element of the array
-</strong></summary>
+Use the ```cin``` command, and store their selection directly to the appropriate element via the pointer.
+(You will have to de-reference the pointer).
 
-```c++
-string * ptrStudent = &students[0];
-```
-
-</details>
-
-
-<details>
-<summary><strong>
-	Using cin with a pointer
-</strong></summary>
+<details><summary><strong> Overwriting a value via a pointer </strong></summary>
 
 ```c++
 cin >> *ptrStudent;
@@ -499,21 +460,17 @@ cin >> *ptrStudent;
 
 </details>
 
+**6.** Display all the students with a for loop. Just display the elements of the array directly; you don't need to use a pointer here.
 
-<details>
-<summary><strong>
-	Displaying all elements of the array
-</strong></summary>
 
-```c++
-for ( int i = 0; i < 3; i++ )
-{
-        cout << "student " << i << " = " << students[i] << endl;
-}
-```
+## Example output
 
-</details>
-
+        Enter 0, 1, or 2: 2
+        New name: Wrex
+        
+        student 0 = Ashley
+        student 1 = Kaidan
+        student 2 = Wrex
 
 
 
