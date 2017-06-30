@@ -104,6 +104,8 @@ int main()
         int choice;
         cin >> choice;
 
+        cout << endl << endl;
+
         switch( choice )
         {
             case 1:     Program1();     break;
@@ -123,6 +125,8 @@ int main()
 
 
 # Program 1: Student struct - just member variables
+
+## Student.hpp
 
 Within **Student.hpp**, start with the following:
 
@@ -145,6 +149,8 @@ Declare the following variables within this struct:
 * name, a string
 * degree, a string
 * gpa, a double
+
+## Progam1() in main.cpp
 
 Back in **main.cpp**, in the **Program1()** function, do the following:
 
@@ -215,6 +221,8 @@ cout << newStudent.name << "\n" << newStudent.degree << "\n" << newStudent.gpa <
 ---
 
 # Program 2: Fraction - A struct with member variables and fractions
+
+## Fraction.hpp
 
 In the **Fraction.hpp** file, begin with the following:
 
@@ -414,6 +422,25 @@ To divide a fraction, we perform a multiplication, but we cross over:
         -   ÷   -   =   --
         b       d       bc
 
+1. Declare a **Fraction** variable named ```result```.
+2. For the ```result```'s ```numerator```, set it equal to ```this->numerator``` times ```second.denominator```.
+2. For the ```result```'s ```denominator```, set it equal to ```this->denominator``` times ```second.numerator```.
+2. Return ```result```.
+
+<details><summary><strong> Division </strong></summary>
+
+```c++
+    Fraction Divide( Fraction other )
+    {
+        Fraction result;
+        result.numerator = this->numerator * other.denominator;
+        result.denominator = this->denominator * other.numerator;
+        return result;
+    }
+```
+
+</details>
+
 #### Add
 
 ![How to add fractions](images/fractions_add.png)
@@ -434,6 +461,52 @@ get a common denominator just by multiplying both denominators together.
         =   -------
                db
 
+This one will be a little harder, because we need a common denominator first.
+
+1. Declare a **Fraction** variable named ```result```.
+
+2. Declare a **Fraction** variable named ```common1```.
+
+2. Declare a **Fraction** variable named ```common2```.
+
+3. For ```common1```, call the ```Setup``` function:
+    * for the first input, pass in ```this->numerator * other.denominator```
+    * For the second input, pass in ```this->denominator * other.denominator```
+
+3. For ```common2```, call the ```Setup``` function:
+    * for the first input, pass in ```other.numerator * this->denominator```
+    * For the second input, pass in ```other.denominator * this->denominator```
+
+4. Assign values to the ```result``` fraction:
+    * For the numerator, set it to ```common1.numerator + common2.numerator```.
+    * For the denominator, set it to ```common1.denominator```.
+
+5. Return the ```result```.
+
+
+<details><summary><strong> Addition </strong></summary>
+
+```c++
+    Fraction Add( Fraction other )
+    {
+        Fraction result;
+        Fraction common1;
+        Fraction common2;
+
+        common1.Setup( this->numerator * other.denominator, this->denominator * other.denominator );
+        common2.Setup( other.numerator * this->denominator, other.denominator * this->denominator );
+
+        result.numerator = common1.numerator + common2.numerator;
+        result.denominator = common1.denominator;
+
+        return result;
+    }
+```
+
+</details>
+
+
+
 #### Subtract
 
 ![How to subtract fractions](images/fractions_subtract.png)
@@ -452,6 +525,56 @@ For subtraction, we also need to find a common denominator:
             da - bc
         =   -------
                db
+
+
+The steps for this one are almost exactly like for addition, but instead you calculate the result's numerator with ```common1.numerator - common2.numerator```.
+
+
+<details><summary><strong> Subtraction </strong></summary>
+
+```c++
+    Fraction Add( Fraction other )
+    {
+        Fraction result;
+        Fraction common1;
+        Fraction common2;
+
+        common1.Setup( this->numerator * other.denominator, this->denominator * other.denominator );
+        common2.Setup( other.numerator * this->denominator, other.denominator * this->denominator );
+
+        result.numerator = common1.numerator - common2.numerator;
+        result.denominator = common1.denominator;
+
+        return result;
+    }
+```
+
+</details>
+
+
+## Program2() function in main.cpp
+
+Within the **Program2()** function, do the following:
+
+1. Create ```frac1```, a Fraction
+1. Create ```frac2```, a Fraction
+2. Set ```frac1``` to 2/3 with its ```Setup``` function.
+2. Set ```frac1``` to 3/4 with its ```Setup``` function.
+3. Create four additional Fractions: ```sum```, ```difference```, ```product```, and ```quotient```.
+
+4. Do math for each of the fractions:
+    4. Set ```sum```            equal to ```frac1``` plus   ```frac2``` using the ```Add```         function.
+    4. Set ```difference```     equal to ```frac1``` minus ```frac2```  using the ```Subtract```    function.
+    4. Set ```product```        equal to ```frac1``` times ```frac2```  using the ```Multiply```    function.
+    4. Set ```quotient```       equal to ```frac1``` divided by  ```frac2```  using the ```Divide```    function.
+
+5. Show the result for each fraction using the ```Display()``` function for sum, difference, product, and quotient.
+
+
+## Example output
+
+![Example output](images/lab05_fractions.png)
+
 
 
 
