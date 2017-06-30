@@ -56,12 +56,11 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 Start by creating a project. We will have separate source files for each struct,
 and the main source file will contain functions for each lab.
 
-Create five source files:
+Create these source files:
 
 * main.cpp
 * Student.hpp
 * Fraction.hpp
-* CoordinatePair.hpp
 * Scholarship.hpp
 
 Your **main.cpp** file should start out with the following:
@@ -73,7 +72,6 @@ using namespace std;
 
 #include "Student.hpp"
 #include "Fraction.hpp"
-#include "CoordinatePair.hpp"
 #include "Scholarship.hpp"
 
 void Program1()
@@ -88,10 +86,6 @@ void Program3()
 {
 }
 
-void Program4()
-{
-}
-
 int main()
 {
     while ( true )
@@ -99,7 +93,6 @@ int main()
         cout << "1. Program 1" << endl;
         cout << "2. Program 2" << endl;
         cout << "3. Program 3" << endl;
-        cout << "4. Program 4" << endl;
         cout << "Run which lab? ";
         int choice;
         cin >> choice;
@@ -111,7 +104,6 @@ int main()
             case 1:     Program1();     break;
             case 2:     Program2();     break;
             case 3:     Program3();     break;
-            case 4:     Program4();     break;
         }
 
         cout << endl << endl;
@@ -124,7 +116,9 @@ int main()
 ---
 
 
-# Program 1: Student struct - just member variables
+# Program 1: Student struct
+
+**Just member variables**
 
 ## Student.hpp
 
@@ -220,7 +214,9 @@ cout << newStudent.name << "\n" << newStudent.degree << "\n" << newStudent.gpa <
 
 ---
 
-# Program 2: Fraction - A struct with member variables and fractions
+# Program 2: Fraction
+
+**A struct with member variables and fractions**
 
 ## Fraction.hpp
 
@@ -575,7 +571,310 @@ Within the **Program2()** function, do the following:
 
 ![Example output](images/lab05_fractions.png)
 
+## Solution
 
+<details><summary><strong> Struct declaration </strong></summary>
+
+```c++
+#ifndef _FRACTION_HPP
+#define _FRACTION_HPP
+
+struct Fraction
+{
+    int numerator;
+    int denominator;
+
+    void Setup( int n, int d )
+    {
+        numerator = n;
+        denominator = d;
+    }
+
+    void Display()
+    {
+        cout << numerator << "/" << denominator;
+    }
+
+    Fraction Add( Fraction other )
+    {
+        Fraction result;
+        Fraction common1;
+        Fraction common2;
+
+        common1.Setup( this->numerator * other.denominator, this->denominator * other.denominator );
+        common2.Setup( other.numerator * this->denominator, other.denominator * this->denominator );
+
+        result.numerator = common1.numerator + common2.numerator;
+        result.denominator = common1.denominator;
+
+        return result;
+    }
+
+    Fraction Subtract( Fraction other )
+    {
+        Fraction result;
+        Fraction common1;
+        Fraction common2;
+
+        common1.Setup( this->numerator * other.denominator, this->denominator * other.denominator );
+        common2.Setup( other.numerator * this->denominator, other.denominator * this->denominator );
+
+        result.numerator = common1.numerator - common2.numerator;
+        result.denominator = common1.denominator;
+
+        return result;
+    }
+
+    Fraction Multiply( Fraction other )
+    {
+        Fraction result;
+        result.numerator = this->numerator * other.numerator;
+        result.denominator = this->numerator * other.denominator;
+        return result;
+    }
+
+    Fraction Divide( Fraction other )
+    {
+        Fraction result;
+        result.numerator = this->numerator * other.denominator;
+        result.denominator = this->denominator * other.numerator;
+        return result;
+    }
+};
+
+#endif
+```
+
+</details>
+
+<details><summary><strong> Lab function </strong></summary>
+
+```c++
+void Program2()
+{
+    Fraction frac1;
+    frac1.Setup( 2, 3 );
+
+    Fraction frac2;
+    frac2.Setup( 3, 4 );
+
+    Fraction sum, difference, product, quotient;
+    sum         = frac1.Add( frac2 );
+    difference  = frac1.Subtract( frac2 );
+    product     = frac1.Multiply( frac2 );
+    quotient    = frac1.Divide( frac2 );
+
+    frac1.Display();
+    cout << " plus ";
+    frac2.Display();
+    cout << " = ";
+    sum.Display();
+
+    cout << endl;
+
+    frac1.Display();
+    cout << " minus ";
+    frac2.Display();
+    cout << " = ";
+    difference.Display();
+
+    cout << endl;
+
+    frac1.Display();
+    cout << " multiplied by ";
+    frac2.Display();
+    cout << " = ";
+    product.Display();
+
+    cout << endl;
+
+    frac1.Display();
+    cout << " divided by ";
+    frac2.Display();
+    cout << " = ";
+    quotient.Display();
+
+    cout << endl;
+}
+```
+
+</details>
+
+---
+
+# Program 3: Scholarship
+
+**Private member variables and a class containing another class**
+
+## Scholarship.hpp
+
+Start out your Scholarship.hpp file with:
+
+```c++
+#ifndef _SCHOLARSHIP_HPP
+#define _SCHOLARSHIP_HPP
+
+#include <string>
+using namespace std;
+
+#include "Student.hpp"
+
+struct Scholarship
+{
+public:     // accessible outside the struct
+
+
+private:    // only accessible within the struct
+};
+
+#endif
+
+```
+
+Create the following **private member variables:**
+
+* ```name```, a string
+* ```amount```, a float
+* ```studentPtrList```, an array of ```Student*``` pointers, size 3.
+
+Wait, what does an array of pointers look like again?
+
+Oh yeah, this:
+
+```c++
+Student* studentPtrList[3];
+```
+
+And create the following **public member functions**:
+
+1. Display
+    * return type: void
+    * parameters: none
+
+1. Setup
+    * return type: void
+    * parameters:
+        * ```newName```, a string
+        * ```newAmount```, a float
+        * ```student1```, a Student pointer
+        * ```student2```, a Student pointer
+        * ```student3```, a Student pointer
+
+
+### Setup
+
+1. Set the private member variable ```name``` to the value passed in as ```newName```.
+1. Set the private member variable ```amount``` to the value passed in as ```newAmount```.
+1. Set the 0th element of ```studentPtrList``` to the ```student1``` parameter.
+1. Set the 1st element of ```studentPtrList``` to the ```student2``` parameter.
+1. Set the 2nd element of ```studentPtrList``` to the ```student3``` parameter.
+
+<details><summary><strong> Setup </strong></summary>
+
+```c++
+void Setup( string newName, float newAmount, Student* student1, Student* student2, Student* student3 )
+{
+    name = newName;
+    amount = newAmount;
+    studentPtrList[0] = student1;
+    studentPtrList[1] = student2;
+    studentPtrList[2] = student3;
+}
+```
+
+</details>
+
+### Display
+
+In this function, you will use ```cout``` to display the scholarship's
+```name``` and ```amount``` value, as well as each student's name.
+
+Using a **for loop**, iterate from ```i = 0``` to ```2``` to display the three students.
+Use the following code:
+
+```c++
+cout << "\t" << (i+1) << " "
+    << (*studentPtrList[i]).name << "\t"
+    << (*studentPtrList[i]).gpa << endl;
+```
+
+This part might look weird: ```(*studentPtrList[i]).name```
+this is because we're mixing using structs/classes with using pointers.
+We will go into this more later on.
+
+<details><summary><strong> Display </strong></summary>
+
+```c++
+    void Display()
+    {
+        cout << endl;
+        cout << "Scholarship: " << name << ", worth $" << amount << endl;
+        cout << "Students:" << endl;
+
+        for ( int i = 0; i < 3; i++ )
+        {
+            cout << "\t" << (i+1) << " "
+                << (*studentPtrList[i]).name << "\t"
+                << (*studentPtrList[i]).gpa << endl;
+        }
+    }
+```
+
+</details>
+
+
+## Program3() in main.cpp
+
+Create an array of **Students**, size 9. Name is ```students```.
+
+<details><summary><strong> Creating an array of objects </strong></summary>
+
+```c++
+Student students[9];
+```
+
+</details>
+
+
+Set up each student's ```name``` and ```gpa```. Use the Program1() function for reference.
+
+Next, create an array of **Scholarships**, size 3. Name is ```scholarships```.
+
+Use the **Setup** function of Scholarship to set up each scholarship:
+
+* Scholarship 0:
+    * name: "small"
+    * amount: 100
+    * Pass in the **addresses** of ```students[0]```, ```students[1]```, and ```students[2]```.
+    
+* Scholarship 1:
+    * name: "medium"
+    * amount: 1000
+    * Pass in **addresses** of ```students[3]```, ```students[4]```, and ```students[5]```.
+    
+* Scholarship 2:
+    * name: "large"
+    * amount: 100000
+    * Pass in **addresses** of ```students[6]```, ```students[7]```, and ```students[8]```.
+
+When passing in an address, we have to use the **address-of operator** ```&```!
+
+<details><summary><strong> Calling Setup </strong></summary>
+
+```c++
+scholarships[0].Setup( "small", 100, &students[0], &students[1], &students[2] );
+```
+
+</details>
+
+Finally, create a **for loop** from ```i = 0``` to ```2```. Within the for loop,
+call the **Display** function for each ```scholarships``` object.
+
+
+
+## Example output
+
+![Example output](images/lab05_scholarships.png)
 
 
 
