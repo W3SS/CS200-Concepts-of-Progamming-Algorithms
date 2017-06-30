@@ -246,6 +246,8 @@ used. Otherwise, like any other variable, their initial value is garbage.
 Ask the user whether they want a hamburger, fries, or a salad. Based on what their answer is, assign
 ptrPrice the address of the corresponding price variable (priceHamburger, priceFries, or priceSalad).
 
+The only thing that should go within the if statement is assigning an address to ```ptrPrice```.
+
 Create another float called taxAmt. Figure out the tax by multiplying the value of ptrPrice by 0.065.
 Then, increase the price by the tax amount by adding the taxAmt to the value of ptrPrice.
 
