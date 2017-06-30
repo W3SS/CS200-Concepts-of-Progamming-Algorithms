@@ -24,17 +24,12 @@ Questions](#questions)
     * You can also ask classmates questions if you're unsure on something.
     * You can ask the instructor for help at any time.
 
-### Setting up a project in Visual Studio
+## Reference
 
-1. Create a new project. *File > New > Project...*
-    1. Select **Visual C++** from the left category list.
-    2. Select **Empty Project** from the template list.
-    3. Set the project **Name** to "Lab 01c Loops".
-    4. Set the project **Location**.
-    5. Click **OK**.
-2. Create your source file. In the **Solution Explorer**, right-click your project file. *Add > New Item...*
-    1. Select **C++ File (.cpp)** and name it **lab01c.cpp**.
-    2. Click **Add**.
+* [How to use Visual Studio](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/HOW_TO/Visual_Studio.md)
+* [How to use Code::Blocks](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/HOW_TO/Code_Blocks.md)
+* [How to turn in code](https://github.com/Rachels-Courses/Course-Common-Files/blob/organized/STUDENT_REFERENCE/HOW_TO/Turning_in_code.md)
+
 
 ### Turn in
 

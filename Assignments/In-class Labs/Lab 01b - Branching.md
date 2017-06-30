@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper]() |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2001b%20-%20Branching%20-%20Helper.md) |
 [Lab](#lab) |
 [Questions](#questions)
 

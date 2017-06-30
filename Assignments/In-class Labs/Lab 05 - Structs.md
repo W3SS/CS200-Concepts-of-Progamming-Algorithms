@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper]() |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2005%20-%20Structs%20-%20Helper.md) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -51,83 +51,131 @@ Also make sure to turn in a text file with your answers to the [question](#quest
 
 # Lab
 
-## Program 1: Dynamic variables and arrays
+Start by creating a project. We will have separate source files for each struct,
+and the main source file will contain functions for each lab.
 
-### Part 1: Variables
+Create five source files:
 
-In your program, create three pointers:
+* main.cpp
+* Student.hpp
+* Fraction.hpp
+* CoordinatePair.hpp
+* Scholarship.hpp
 
-* myInt, an integer pointer.
-* myStr, a string pointer.
-* myFloat, a float pointer.
+Your **main.cpp** file should start out with the following:
 
-Afterward, you will allocate memory for each of these variables with the **new**
-keyword. Note that the data-type that goes after new must match the pointer type. (See
-the reference for sample code).
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
 
-Then, assign values to each of the variables. Make sure to use the de-reference
-operator!
+#include "Student.hpp"
+#include "Fraction.hpp"
+#include "CoordinatePair.hpp"
+#include "Scholarship.hpp"
 
-* myInt = 20
-* myStr = (your name)
-* myFloat = 199.99
+void Program1()
+{
+}
 
-Display the value of each of the variables. You will also need a de-reference operator
-here.
+void Program2()
+{
+}
 
-Finally, free the memory for each pointer using the delete keyword.
+void Program3()
+{
+}
 
-**Sample Output:**
+void Program4()
+{
+}
 
-        20        yourname      199.99
+int main()
+{
+    while ( true )
+    {
+        cout << "1. Program 1" << endl;
+        cout << "2. Program 2" << endl;
+        cout << "3. Program 3" << endl;
+        cout << "4. Program 4" << endl;
+        cout << "Run which lab? ";
+        int choice;
+        cin >> choice;
+
+        switch( choice )
+        {
+            case 1:     Program1();     break;
+            case 2:     Program2();     break;
+            case 3:     Program3();     break;
+            case 4:     Program4();     break;
+        }
+
+        cout << endl << endl;
+    }
+
+    return 0;
+}
+```
+
+---
 
 
-### Part 2: Arrays
+# Program 1: Student struct
 
-Next, create three additional pointer variables:
+Within **Student.hpp**, start with the following:
 
-* myIntArr, an integer pointer.
-* myStrArr, a string pointer.
-* myFloatArr, a float pointer.
+```c++
+#ifndef _STUDENT_HPP
+#define _STUDENT_HPP
 
-Also create an integer variable named **size**.
+#include <string>
+using namespace std;
 
-Ask the use how big the arrays should be, and store their response in **size**.
+class Student
+{
+public:
+};
 
-For each of these "my____Arr" pointers, create a new **dynamic array** and
-initialize its size to the value stored in the **size** variable.
+#endif
+```
 
-Use a for-loop to iterate from *0* to *size*, asking the user to enter
-a value for each element of myIntArr, myFloatArr, and myStrArr.
+Declare the following variables within this class, under the ```public:``` accessor.
 
-After they enter values for these, display them back.
+* name, a string
+* degree, a string
+* gpa, a double
 
-Finally, after the for loop is finished, make sure to free the memory of all your dynamic arrays.
+Back in **main.cpp**, in the **Program1()** function, do the following:
 
-**Sample Output:**
+**1.** Declare a new variable whose data type is ```Student``` named ```newStudent```.
 
-        Enter array size:       3
+**2.** The Student data-type has the name, degree, and gpa variables. Assign values to these variables.
 
-        i = 0
-                Enter int value:        2
-                Enter string value:     cheese
-                Enter float value       2.10
+Remember that to assign a value to a variable that *belongs to a class*, you need to use
+the dot operator ```.```, for example:
 
-        i = 1
-                Enter int value:        5
-                Enter string value:     horse
-                Enter float value:      9.92
-                
-        i = 2
-                Enter int value:        1
-                Enter string value:     cow
-                Enter float value:      10.2
+```c++
+myClassObject.variable = 123;
+```
 
-        Here is your data:
+**3.** After assigning values to the variables, display the values of these variables with a ```cout``` statement. For example:
 
-        2       cheese          2.10
-        5       horse           9.92
-        1       cow             10.2
+```c++
+cout << myClassObject.variable << endl;
+```
+
+
+
+
+
+
+## Example output
+
+        Student name:   Ashu
+        Degree:         CS
+        GPA:            3.0
+
+
 
 ### Hints
 
