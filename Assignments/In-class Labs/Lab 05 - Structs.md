@@ -327,26 +327,108 @@ For example, if numerator is 1 and denominator is 2:
         1/2
 
 
+### Math functions
 
-### Multiply
+For these math functions, we are doing the math between:
+
+1. **The object the function is being called from** and
+2. The **object being passed in as a parameter**
+
+And the return type is a third Fraction -- the result.
+
+For each of these, you will need to start by creating a variable for the result: ```Fraction result;```
+
+
+
+We're not at this step yet, but when we are calling the function, it will look like this:
+
+        // This is just an example
+    
+        Fraction frac1;
+        frac1.Setup( 2, 3 );
+        
+        Fraction frac2;
+        frac2.Setup( 3, 4 );
+
+        Fraction frac3 = frac1.Multiply( frac2 );
+
+
+
+Inside the **Multiply** function, we will have access to the following:
+
+* ```this->numerator``` - the numerator of the first fraction
+* ```this->denominator``` - the denominator of the first fraction
+* ```other.numerator``` - the numerator of the second fraction
+* ```other.denominator``` - the denominator of the second fraction
+
+And once you create a Fraction named ```result```, we will also have:
+
+* ```result.numerator``` - where to store the result's numerator
+* ```result.denoinator``` - where to store the result's denominator
+
+
+Note that for all these functions, we **will not** reduce the fractions! (Keep it simple!)
+
+
+#### Multiply
 
 ![How to multiply fractions](images/fractions_multiply.png)
 
 To multiply two fractions, you multiply both numerators and denominators together.
+The math is pretty simple:
 
-### Divide
+        a       c       ac
+        -   x   -   =   --
+        b       d       bd
+
+#### Divide
 
 ![How to divide fractions](images/fractions_divide.png)
 
-### Add
+To divide a fraction, we perform a multiplication, but we cross over:
+
+        a       c       ad
+        -   ÷   -   =   --
+        b       d       bc
+
+#### Add
 
 ![How to add fractions](images/fractions_add.png)
 
-### Subtract
+To add a fraction, first we need to find a common denominator.
+For this function, we will do it in the "stupid way", where we can
+get a common denominator just by multiplying both denominators together.
+
+        a       c       
+        -   +   -   
+        b       d       
+
+            d   a       b   c
+        =   - * -   +   - * -
+            d   b       b   d
+
+            da + bc
+        =   -------
+               db
+
+#### Subtract
 
 ![How to subtract fractions](images/fractions_subtract.png)
 
+For subtraction, we also need to find a common denominator:
 
+
+        a       c       
+        -   -   -   
+        b       d       
+
+            d   a       b   c
+        =   - * -   -   - * -
+            d   b       b   d
+
+            da - bc
+        =   -------
+               db
 
 
 
