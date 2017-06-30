@@ -887,6 +887,6 @@ call the **Display** function for each ```scholarships``` object.
 1. Can a struct contain functions?
 1. What does setting a member to private do?
 1. What does setting a member to public do?
-1. When declaring a variable whose data type is a class, you need to add what to the end?
+
 
 
