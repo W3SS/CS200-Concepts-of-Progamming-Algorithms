@@ -235,23 +235,28 @@ Create two member variables:
 And create member functions:
 
 1. Setup
-        * return type: void
-        * parameters: ```int n, int d```
+    * return type: void
+    * parameters: ```int n, int d```
+
 1. Display
-        * return type: void
-        * parameters: none
+    * return type: void
+    * parameters: none
+
 1. Add
-        * return type: Fraction
-        * parameters: ```Fraction other```
+    * return type: Fraction
+    * parameters: ```Fraction other```
+
 1. Subtract 
-        * return type: Fraction
-        * parameters: ```Fraction other```
+    * return type: Fraction
+    * parameters: ```Fraction other```
+
 1. Multiply
-        * return type: Fraction
-        * parameters: ```Fraction other```
+    * return type: Fraction
+    * parameters: ```Fraction other```
+
 1. Divide
-        * return type: Fraction
-        * parameters: ```Fraction other```
+    * return type: Fraction
+    * parameters: ```Fraction other```
 
 
 These functions will be created *inside* the struct. Include your
