@@ -40,8 +40,10 @@ all source files and project/solution files. Turn in this zip file to **Desire2L
 Also make sure to turn in a text file with your answers to the [question](#questions) section.
 
 
+## Make sure it builds!
 
 
+![Beginner best practice - build after every line or two!](images/build_your_code.png)
 
 
 
@@ -380,6 +382,27 @@ The math is pretty simple:
         a       c       ac
         -   x   -   =   --
         b       d       bd
+
+
+1. Declare a **Fraction** variable named ```result```.
+2. For the ```result```'s ```numerator```, set it equal to ```this->numerator``` times ```second.numerator```.
+2. For the ```result```'s ```denominator```, set it equal to ```this->denominator``` times ```second.denominator```.
+2. Return ```result```.
+
+<details><summary><strong> Multiplication </strong></summary>
+
+```c++
+    Fraction Multiply( Fraction other )
+    {
+        Fraction result;
+        result.numerator = this->numerator * other.numerator;
+        result.denominator = this->numerator * other.denominator;
+        return result;
+    }
+```
+
+</details>
+
 
 #### Divide
 
