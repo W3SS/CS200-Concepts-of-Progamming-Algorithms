@@ -164,7 +164,7 @@ newStudent.name = "Bob";
 ```c++
 cout << myClassObject.memberVariable << endl;
 ```
-(The class object is your *newStudent* and the member variable here is *name*. Also display the gpa and degree of the ```newStudent```
+(The class object is your *newStudent* and the member variable here is *name*. Also display the gpa and degree of the ```newStudent```)
 
 
 
