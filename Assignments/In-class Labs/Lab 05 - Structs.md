@@ -156,15 +156,15 @@ Remember that to assign a value to a variable that *belongs to a class*, you nee
 the dot operator ```.```, for example:
 
 ```c++
-myClassObject.variable = 123;
+newStudent.name = "Bob";
 ```
 
 **3.** After assigning values to the variables, display the values of these variables with a ```cout``` statement. For example:
 
 ```c++
-cout << myClassObject.variable << endl;
+cout << myClassObject.memberVariable << endl;
 ```
-
+(The class object is your *myStudent* and the member variable here is *name*.
 
 
 
