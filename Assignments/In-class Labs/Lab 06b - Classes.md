@@ -640,6 +640,357 @@ You can either hard-code this, or use a for-loop. A button should have a rectang
 
 ![Button program screenshot](images/201701_lab16_ButtonProgram.png)
 
+---
+
+# Program 4: Operator Overloading
+
+In C++, we can overload the various operators, such as the **math operators**,
+**relational operators**, **subscript operator**, and more.
+
+You can read about it [in the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md#operator-overloading-introduction)
+
+We will be implementing a Coordinate Pair class and overloading some operators.
+
+Create a new solution, and begin with the following files:
+
+* lab06b_program4.cpp
+* CoordinatePair.hpp
+* CoordinatePair.cpp
+
+## Starter code
+
+**lab06b_program4.cpp**
+
+```c++
+```
+
+**CoordinatePair.hpp**
+
+```c++
+#ifndef _COORD_PAIR_HPP
+#define _COORD_PAIR_HPP
+
+#include <iostream>
+using namespace std;
+
+class CoordinatePair
+{
+public:
+    // Math operators
+	friend CoordinatePair operator+( const CoordinatePair& item1, const CoordinatePair& item2 );
+	friend CoordinatePair operator-( const CoordinatePair& item1, const CoordinatePair& item2 );
+
+    // Relational operators
+	friend bool operator==( const CoordinatePair& item1, const CoordinatePair& item2 );
+	friend bool operator!=( const CoordinatePair& item1, const CoordinatePair& item2 );
+
+    // Stream operators
+	friend ostream& operator<<( ostream& out, CoordinatePair& item );
+	friend istream& operator>>( istream& in, CoordinatePair& item );
+
+private:
+    float m_x, m_y;
+};
+
+#endif
+```
+
+Take note of the private member variables ```m_x``` and ```m_y```.
+
+**CoordinatePair.cpp**
+
+```c++
+#include "CoordinatePair.hpp"
+
+// Math operators
+CoordinatePair operator+( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	CoordinatePair sum;
+
+	// do the math
+
+	return sum;
+}
+
+CoordinatePair operator-( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	CoordinatePair difference;
+
+    // do the math
+    
+	return difference;
+}
+
+// Relational operators
+bool operator==( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	return false; // temp
+}
+
+bool operator!=( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	return false; // temp
+}
+
+// Stream operators
+ostream& operator<<( ostream& out, CoordinatePair& item )
+{
+	return out;
+}
+
+istream& operator>>( istream& in, CoordinatePair& item )
+{
+	return in;
+}
+```
+
+## CoordinatePair functions
+
+### operator+
+
+```c++
+CoordinatePair operator+( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	CoordinatePair sum;
+
+	// do the math
+
+	return sum;
+}
+```
+
+You will be able to access the following variables here:
+
+* ```sum.m_x```
+* ```sum.m_y```
+* ```item1.m_x```
+* ```item1.m_y```
+* ```item2.m_x```
+* ```item2.m_y```
+
+You should add *m_x* from item1 and item2 and store it in the sum,
+and add *m_y* from item1 and item2 and store it in the sum.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - Add        </em></strong></summary>
+
+```c++
+	CoordinatePair sum;
+
+	sum.m_x = item1.m_x + item2.m_x;
+	sum.m_y = item1.m_y + item2.m_y;
+
+	return sum;
+```
+
+</details>
+
+
+
+
+
+
+
+
+### operator-
+
+```c++
+CoordinatePair operator-( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	CoordinatePair difference;
+
+    // do the math
+    
+	return difference;
+}
+```
+
+You will be able to access the following variables here:
+
+* ```sum.m_x```
+* ```sum.m_y```
+* ```item1.m_x```
+* ```item1.m_y```
+* ```item2.m_x```
+* ```item2.m_y```
+
+You should subtract *m_x* from item1 and item2 and store it in the difference,
+and subtract *m_y* from item1 and item2 and store it in the difference.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - subtract        </em></strong></summary>
+
+```c++
+	CoordinatePair difference;
+
+	difference.m_x = item1.m_x - item2.m_x;
+	difference.m_y = item1.m_y - item2.m_y;
+
+	return difference;
+```
+
+</details>
+
+
+
+
+
+
+### operator==
+
+```c++
+bool operator==( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	return false; // temp
+}
+```
+
+Check to see if item1's ```m_x``` equals item2's ```m_x```,
+and see if item1's ```m_y``` equals item2's ```m_y```.
+
+If they both match, return **true**. Otherwise, return **false**.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint -         </em></strong></summary>
+
+```c++
+	return ( item1.m_x == item2.m_x && item1.m_y == item2.m_y );
+```
+
+</details>
+
+
+
+
+
+
+
+### operator!=
+
+```c++
+bool operator!=( const CoordinatePair& item1, const CoordinatePair& item2 )
+{
+	return false; // temp
+}
+```
+
+Basically the opposite logic of the ```==``` operator, if the two coordinate pairs
+are not equivalent, then return **true**. Otherwise, if they are equal, return **false**.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint -         </em></strong></summary>
+
+```c++
+	return !( item1.m_x == item2.m_x && item1.m_y == item2.m_y );
+```
+
+</details>
+
+
+
+
+
+### operator<<
+
+```c++
+ostream& operator<<( ostream& out, CoordinatePair& item )
+{
+	return out;
+}
+```
+
+Above ```return out;```, you will use ```out``` similar to how you would use ```cout```,
+and display the values of ```item.m_x``` and ```item.m_y```.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - Outputting        </em></strong></summary>
+
+```c++
+    out << "(" << item.m_x << ", " << item.m_y << ")";
+	return out;
+```
+
+</details>
+
+
+
+
+### operator>>
+
+```c++
+istream& operator>>( istream& in, CoordinatePair& item )
+{
+	return in;
+}
+```
+
+Above ```return in;```, you will use ```in``` similar to how you would use ```cin```,
+and get input and store it in ```item.m_x``` and ```item.m_y```.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - Getting input        </em></strong></summary>
+
+```c++
+	in >> item.m_x >> item.m_y;
+	return in;
+```
+
+</details>
+
+
+
+
+
+## Example output
+
+**Main menu**
+
+        MAIN MENU
+        1. Set coordinate pair 1
+        2. Set coordinate pair 2
+        3. Display the coordinate pairs
+        
+        4. ADD coordinate pairs
+        5. SUBTRACT coordinate pairs
+
+        6. Are they equal?
+
+        7. Exit
+
+**Option 1**
+
+        Enter x and y for coordinate 1: 3 5
+
+**Option 2**
+
+        Enter x and y for coordinate 2: 2 3
+
+**Option 3**
+
+        Coordinate pairs:
+            (3, 5)
+            (2, 3)
+
+**Option 4**
+
+        (3, 5) + (2, 3) = (5, 8)
+
+
+**Option 5**
+
+        (3, 5) - (2, 3) = (1, 2)
+
+
+**Option 6**
+
+        The coordinate pairs are not equal
+
+
+
+
+
+
+
 
 
 ![horizontal rule](images/hr.png)
@@ -647,10 +998,14 @@ You can either hard-code this, or use a for-loop. A button should have a rectang
 
 # Questions
 
-1. Can a struct contain variables?
-1. Can a struct contain functions?
-1. What does setting a member to private do?
-1. What does setting a member to public do?
+1. What kind of files do function declarations go in?
+1. What kind of files do function definitions go in?
+1. What is the scope resolution operator?
+1. When is a constructor method called?
+1. When is a destructor method called?
+1. What is function overloading?
+1. What is a static member?
+1. What is a friend?
 
 
 
