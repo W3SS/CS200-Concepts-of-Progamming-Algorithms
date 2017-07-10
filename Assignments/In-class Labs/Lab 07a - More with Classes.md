@@ -1,9 +1,9 @@
-# CS 200 Lab 06b: Classes
+# CS 200 Lab 07a: More with Classes
 
 ---
 
 [Information](#information) |
-[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md) |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2007a%20-%20More%20with%20Classes%20-%20Helper.md) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -58,7 +58,7 @@ Make sure to turn in each solution set on its own.
 
 For this lab, we will *wrap* a dynamic array within a class. Using special
 class methods like **constructors** and **destructors**
-(see: [the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md)), we can automatically allocate and deallocate memory.
+(see: [the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2007a%20-%20More%20with%20Classes%20-%20Helper.md)), we can automatically allocate and deallocate memory.
 
 ## Starter code
 
@@ -434,7 +434,7 @@ void Set( int index, string value );
 
 # Program 2: Static members
 
-Make sure to read the [helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md)
+Make sure to read the [helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2007a%20-%20More%20with%20Classes%20-%20Helper.md)
 for information on static members.
 
 Create a new solution and files for this project!
@@ -647,7 +647,7 @@ You can either hard-code this, or use a for-loop. A button should have a rectang
 In C++, we can overload the various operators, such as the **math operators**,
 **relational operators**, **subscript operator**, and more.
 
-You can read about it [in the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md#operator-overloading-introduction)
+You can read about it [in the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2007a%20-%20More%20with%20Classes%20-%20Helper.md#operator-overloading-introduction)
 
 We will be implementing a Coordinate Pair class and overloading some operators.
 

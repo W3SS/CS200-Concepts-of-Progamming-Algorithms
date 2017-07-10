@@ -1,4 +1,4 @@
-# CS 200 Lab 06b: Classes - Helper
+# CS 200 Lab 07a: More with Classes - Helper
 
 ---
 
