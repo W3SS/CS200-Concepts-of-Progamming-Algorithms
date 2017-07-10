@@ -3,7 +3,7 @@
 ---
 
 [Information](#information) |
-[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2005%20-%20Structs%20-%20Helper.md) |
+[Helper](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md) |
 [Lab](#lab) | [
 Questions](#questions)
 
@@ -58,7 +58,7 @@ Make sure to turn in each solution set on its own.
 
 For this lab, we will *wrap* a dynamic array within a class. Using special
 class methods like **constructors** and **destructors**
-(see: [the helper docs]()), we can automatically allocate and deallocate memory.
+(see: [the helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md)), we can automatically allocate and deallocate memory.
 
 ## Starter code
 
@@ -140,7 +140,7 @@ void DynamicArray::Display()
 }
 ```
 
-**main.cpp**
+**lab06b_program1.cpp**
 
 ```c++
 #include <iostream>
@@ -430,6 +430,215 @@ void Set( int index, string value );
 
 ![Program 1 screenshot](images/lab06b_prog1.png)
 
+---
+
+# Program 2: Static members
+
+Make sure to read the [helper docs](https://github.com/Rachels-Courses/CS200-Concepts-of-Progamming-Algorithms/blob/2017-06-Summer/Assignments/In-class%20Labs/Lab%2006b%20-%20Classes%20-%20Helper.md)
+for information on static members.
+
+Create a new solution and files for this project!
+
+## Starter code
+
+Create the following files:
+
+* lab06b_program2.cpp
+* Kitten.hpp
+* Kitten.cpp
+
+**lab06b_program2.cpp**
+
+```c++
+#include <iostream>
+using namespace std;
+
+#include "Kitten.hpp"
+
+int main()
+{
+    Kitten happyCat( "Fluffy" );
+    happyCat.Display();
+
+    Kitten angryCat( "Stripey" );
+    angryCat.Display();
+
+    Kitten sadCat( "Sluggy" );
+    sadCat.Display();
+
+    Kitten curiousCat( "Spotty" );
+    curiousCat.Display();
+
+    return 0;
+}
+```
+
+**Kitten.hpp**
+
+```c++
+#ifndef _KITTEN_HPP
+#define _KITTEN_HPP
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Kitten
+{
+    public:
+    Kitten( string name );
+    void Display();
+
+    private:
+    string m_name;
+    static int m_kittenCount;
+};
+
+#endif
+```
+
+**Kitten.cpp**
+
+```c++#include "Kitten.hpp"
+
+// This is needed for our static member variable
+int Kitten::m_kittenCount = 0;
+
+Kitten::Kitten( string name )
+{
+}
+
+void Kitten::Display()
+{
+}
+```
+
+Notice that in the Kitten class, there is an integer ```m_kittenCount``` that is ```static```.
+This means that all Kittens will share this variable.
+
+This is also why, in **Kitten.cpp**, we need this line of code to initialize it:
+
+```c++
+int Kitten::m_kittenCount = 0;
+```
+
+## Kitten functions
+
+### Kitten constructor
+
+In this function, set the kitten's ```m_name``` member variable to 
+the passed in parameter.
+
+Also increment the static ```m_kittenCount``` by one.
+
+### Display
+
+Use ```cout``` to display the kitten's name and the kitten count.
+
+## Example output
+
+![Kitten screenshot](images/201701_lab16_KittenProg.png)
+
+
+---
+
+# Program 3: Const functions
+
+Create a new solution for this project!
+
+Create the following files:
+
+* lab06b_program3.cpp
+* Button.hpp
+* Button.cpp
+
+## Starter code
+
+**lab06b_program3.cpp**
+
+```c++
+#include <iostream>
+using namespace std;
+
+#include "Button.hpp"
+
+int main()
+{
+    Button btn;
+    btn.SetText( "Button!" );
+    btn.Draw();
+
+    btn.SetText( "Another Button!" );
+    btn.Draw();
+
+    return 0;
+}
+```
+
+**Button.hpp**
+
+```c++
+#ifndef _BUTTON_HPP
+#define _BUTTON_HPP
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Button
+{
+public:
+    void SetText( string text );
+    void Draw() const;
+
+private:
+    string m_text;
+};
+
+#endif
+```
+
+**Button.cpp**
+
+```c++
+#include "Button.hpp"
+
+void Button::SetText( string text )
+{
+}
+
+void Button::Draw() const
+{
+}
+```
+
+The Button class contains a private member variable ```m_text```, a string.
+
+Also notice that the **Draw** function is set as const - if a function is const,
+you will be unable to change any of the class' member variables from within this function.
+
+This is good if you need to *access* data, but not *change* data.
+
+## Button functions
+
+### SetText
+
+The *SetText* function will take the parameter ```text``` and assign its value
+to the private member variable ```m_text```.
+
+### Draw
+
+You should draw a frame for the button, as well as the text.
+
+You can either hard-code this, or use a for-loop. A button should have a rectangular frame around it like:
+
+        ***********
+        * Button! *
+        ***********
+
+## Example output
+
+![Button program screenshot](images/201701_lab16_ButtonProgram.png)
 
 
 

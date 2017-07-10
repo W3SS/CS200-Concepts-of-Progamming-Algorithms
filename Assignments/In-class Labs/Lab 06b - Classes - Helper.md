@@ -332,6 +332,68 @@ handle all that is relevant.
 
 ---
 
+# Const introduction
+
+We can declare named constants in our programs, such as the fixed
+size of an array, as a way to get away from "magic numbers" and
+clearly label everything in our code...
+
+```c++
+Employee eeList[30]; // why is this thirty?
+```
+
+```c++
+Employee eeList[ EMPLOYEE_MAX ]; // ah, it is the limit.
+```
+
+We can also make sure our pass-by-reference parameters are const,
+so that the values can't change within the function, but the function
+will be able to access that data:
+
+```c++
+int Sum( const int arr[], int size )
+{
+	// (Remember that arrays are passed by-reference automatically.)
+	// We can access elements of arr, but we can't change them.
+}
+```
+
+Within classes, we may have certain functions where we don't want the
+*internal member variables* of the class to change. Generally, this will
+be functions that only need to be "read only", like returning information
+or displaying information.
+
+In order to protect the private data inside a class, we can create 
+**const functions** to make sure member data can't change within a function.
+
+To make a const member function, we put the keyword **const** at the *end*
+of the function:
+
+```c++
+class CoordPair
+{
+public:
+	void Set( float x, float y ); // WILL change m_x and m_y
+	float GetX() const; // won't change values
+	float GetY() const; // won't change values
+
+private:
+	float m_x, m_y;
+};
+```
+
+And then the function definition will look like:
+
+```c++
+float CoordPair::GetX() const
+{
+	return m_x;
+}
+```
+
+
+---
+
 # Friend introduction
 
 When we declare member variables and functions as **private** within a class,
