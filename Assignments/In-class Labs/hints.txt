@@ -1,0 +1,8 @@
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint -         </em></strong></summary>
+
+```c++
+
+```
+
+</details>
