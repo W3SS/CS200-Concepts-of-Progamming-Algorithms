@@ -161,6 +161,7 @@ public:
     void Display();
     string GetName();
     void SetNeighbor( string direction, Location* ptrLocation );
+    Location* GetNeighbor( string direction );
 
 private:
     string m_name;
@@ -217,6 +218,11 @@ void Location::Display()
 void Location::SetNeighbor( string direction, Location* ptrLocation )
 {
     // Set up neighbor in the given direction.
+}
+
+Location* Location::GetNeighbor( string direction )
+{
+    // Return the corresponding location pointer
 }
 ```
 
@@ -280,6 +286,23 @@ if we're storing information for the ```m_ptrToNorth```, ```m_ptrToSouth```, ```
 1. If direction is "south", then set ```m_ptrToSouth``` to ```ptrLocation```.
 1. If direction is "east", then set ```m_ptrToEast``` to ```ptrLocation```.
 1. If direction is "west", then set ```m_ptrToWest``` to ```ptrLocation```.
+
+### GetNeighbor function
+
+Look at the value stored in the input parameter ```direction``` to decide
+whether we're returning ```m_ptrToNorth```, ```m_ptrToSouth```, ```m_ptrToEast```, or ```m_ptrToWest``` pointer.
+
+If direction is not "north", "south", "east", or "west", then just return ```nullptr```.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - Returning a direction        </em></strong></summary>
+
+```c++
+return m_ptrToNorth;
+```
+
+</details>
+
 
 ## Example output
 
@@ -353,6 +376,280 @@ Run the program with the test function being called from main(). Your output sho
 	To the NORTH is East cave entrance
 	To the WEST is South cave entrance
 
+---
+
+# Part 2: Game
+
+Create the following files:
+
+* Game.hpp
+* Game.cpp
+
+**Game.hpp**
+
+```c++
+#ifndef _GAME_HPP
+#define _GAME_HPP
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "Location.hpp"
+
+class Game
+{
+public:
+    Game();
+    void Run();
+    char GetChoice();
+    void TryToMove( char direction );
+
+private:
+    void SetupLocations();
+
+    Location locations[9];
+    Location* ptrStart;
+    Location* ptrEnd;
+    Location* ptrCurrent;
+};
+
+#endif
+```
+
+The Game class contains the array of locations now, as well as pointers for
+the starting location, ending location, and current location.
+
+**Game.cpp**
+
+```c++
+#include "Game.hpp"
+
+Game::Game()
+{
+}
+
+void Game::TryToMove( char direction )
+{
+}
+
+void Game::Run()
+{
+    while( true )
+    {
+	// DISPLAY THE CURRENT LOCATION'S INFO HERE
+
+        if ( ptrCurrent == ptrEnd )
+        {
+            // End the game
+            break;
+        }
+
+        char choice = GetChoice();
+
+        if ( choice == 'q' )
+        {
+            break;
+        }
+
+        TryToMove( choice );
+    }
+
+    cout << endl << "You've reached your destination!" << endl;
+    cout << "You win!" << endl;
+}
+
+char Game::GetChoice()
+{
+    cout << endl << "What do you want to do? (N/S/E/W/Q): ";
+    char choice;
+    cin >> choice;
+    return tolower( choice );
+}
+
+void Game::SetupLocations()
+{
+    // Move your array init stuff from the file with main() to here.
+    
+    locations[0].SetInfo( "Forest", "The forest is cool and dark." );
+    locations[1].SetInfo( "Eastern forest edge", "The forest expands to the west." );
+    locations[2].SetInfo( "Lake", "The lake has several plants growing around it." );
+    locations[3].SetInfo( "Southern forest edge", "The forest expands to the north." );
+    locations[4].SetInfo( "Western desert edge", "The desert is barren, but nearby grass is growing." );
+    locations[5].SetInfo( "East cave entrance", "The cave leads further in to the south." );
+    locations[6].SetInfo( "Northern desert edge", "Dry grass speckle the landscape here." );
+    locations[7].SetInfo( "South cave entrance", "The cave leads further in to the east." );
+    locations[8].SetInfo( "Cave internal", "The cave is dark and damp." );
+
+    locations[0].SetNeighbor( "east",   &locations[1] );
+    locations[0].SetNeighbor( "south",  &locations[3] );
+
+    locations[1].SetNeighbor( "west",   &locations[0] );
+    locations[1].SetNeighbor( "south",  &locations[4] );
+    locations[1].SetNeighbor( "east",   &locations[2] );
+
+    locations[2].SetNeighbor( "west",   &locations[1] );
+    locations[2].SetNeighbor( "south",  &locations[5] );
+
+    locations[3].SetNeighbor( "east",   &locations[4] );
+    locations[3].SetNeighbor( "south",  &locations[6] );
+    locations[3].SetNeighbor( "north",  &locations[0] );
+
+    locations[4].SetNeighbor( "west",   &locations[3] );
+    locations[4].SetNeighbor( "south",  &locations[7] );
+    locations[4].SetNeighbor( "north",  &locations[1] );
+    locations[4].SetNeighbor( "east",   &locations[5] );
+
+    locations[5].SetNeighbor( "west",   &locations[4] );
+    locations[5].SetNeighbor( "south",  &locations[8] );
+    locations[5].SetNeighbor( "north",  &locations[2] );
+
+    locations[6].SetNeighbor( "east",   &locations[7] );
+    locations[6].SetNeighbor( "north",  &locations[3] );
+
+    locations[7].SetNeighbor( "west",   &locations[6] );
+    locations[7].SetNeighbor( "north",  &locations[4] );
+    locations[7].SetNeighbor( "east",   &locations[8] );
+
+    locations[8].SetNeighbor( "west",   &locations[7] );
+    locations[8].SetNeighbor( "north",  &locations[5] );
+}
+```
+
+## Game functions
+
+### Game constructor
+
+Within the constructor, do the following:
+
+1. initialize ```ptrStart``` to the address of ```locations[0]```.
+1. initialize ```ptrEnd``` to the address of ```locations[8]```.
+1. initialize ```ptrCurrent``` to ```ptrStart```.
+1. Call the ```SetupLocations()``` function.
+
+### Run function
+
+Within this function, you just need to add one line. Where it says...
+
+	// DISPLAY THE CURRENT LOCATION'S INFO HERE
+
+Use the ```ptrCurrent``` pointer, and call the Location's ```Display``` function from it.
+
+<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<details> <summary><strong><em>       Hint - Calling a class function via a pointer        </em></strong></summary>
+
+```c++
+ptrCurrent->Display();
+```
+
+</details>
+
+### TryToMove function
+
+In this function, you will be checking the input variable ```direction``` to see
+the direction the player wants to move. You also need to check if the neighbor
+in that direction is ```nullptr``` or not. If you *can* move in that direction,
+you're going to update the pointer ```ptrCurrent``` to the neighbor. Otherwise,
+you will just display an error message.
+
+1. If ```direction``` is 'n' AND ```ptrCurrent->GetNeighbor( "north" )``` is not ```nullptr``` then:
+    1. Set ```ptrCurrent``` to ```ptrCurrent->GetNeighbor( "north" )```.
+    1. Display a message like "You move north."
+    
+1. Else if ```direction``` is 's' AND ```ptrCurrent->GetNeighbor( "south" )``` is not ```nullptr``` then:
+    1. Set ```ptrCurrent``` to ```ptrCurrent->GetNeighbor( "south" )```.
+    1. Display a message like "You move south."
+    
+1. Else if ```direction``` is 'e' AND ```ptrCurrent->GetNeighbor( "east" )``` is not ```nullptr``` then:
+    1. Set ```ptrCurrent``` to ```ptrCurrent->GetNeighbor( "east" )```.
+    1. Display a message like "You move east."
+    
+1. Else if ```direction``` is 'w' AND ```ptrCurrent->GetNeighbor( "west" )``` is not ```nullptr``` then:
+    1. Set ```ptrCurrent``` to ```ptrCurrent->GetNeighbor( "west" )```.
+    1. Display a message like "You move west."
+
+
+
+## main() function
+
+Back in the function that has ```main()``` in it, make sure to
+
+```c++
+#include "Game.hpp"
+```
+
+Within main, don't call ```LocationTest()``` anymore. Instead, use this:
+
+```c++
+int main()
+{
+    Game game;
+    game.Run();
+    return 0;
+}
+```
+
+When you run the game, you should be able to "walk around", and once you
+get to location at index 8, the game should end.
+
+## Example output
+
+	--------------------------------
+	Forest
+	The forest is cool and dark.
+
+	To the SOUTH is Southern forest edge
+	To the EAST is Eastern forest edge
+
+	What do you want to do? (N/S/E/W/Q): s
+
+	You move south.
+
+	--------------------------------
+	Southern forest edge
+	The forest expands to the north.
+
+	To the NORTH is Forest
+	To the SOUTH is Northern desert edge
+	To the EAST is Western desert edge
+
+	What do you want to do? (N/S/E/W/Q): s
+
+	You move south.
+
+	--------------------------------
+	Northern desert edge
+	Dry grass speckle the landscape here.
+
+	To the NORTH is Southern forest edge
+	To the EAST is South cave entrance
+
+	What do you want to do? (N/S/E/W/Q): e
+
+	You move east.
+
+	--------------------------------
+	South cave entrance
+	The cave leads further in to the east.
+
+	To the NORTH is Western desert edge
+	To the EAST is Cave internal
+	To the WEST is Northern desert edge
+
+	What do you want to do? (N/S/E/W/Q): e
+
+	You move east.
+
+	--------------------------------
+	Cave internal
+	The cave is dark and damp.
+
+	To the NORTH is East cave entrance
+	To the WEST is South cave entrance
+
+	You've reached your destination!
+	You win!
+
 
 
 
@@ -365,14 +662,15 @@ Run the program with the test function being called from main(). Your output sho
 
 # Questions
 
-1. What kind of files do function declarations go in?
-1. What kind of files do function definitions go in?
-1. What is the scope resolution operator?
-1. When is a constructor method called?
-1. When is a destructor method called?
-1. What is function overloading?
-1. What is a static member?
-1. What is a friend?
+1. True or false - Creating a class means that you can now declare a variable with that class as the data type.
+1. True or false - You can create a pointer that points to a data-type created via a class.
+1. True or false - You can call the functions of a class via a pointer to that object.
+
+1. What is the operator that you use to access a class' function?
+1. What is the operator that you use to access a class' function via a pointer?
+1. When pointers are not being used (i.e., assigned some address of a valid item), they should be defaulted to what value?
+
+
 
 
 
