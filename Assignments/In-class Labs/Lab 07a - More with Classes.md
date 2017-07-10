@@ -13,9 +13,10 @@ Questions](#questions)
 
 ## Lab topics
 
-* Pointers
-* Dynamic variables
-* Dynamic arrays
+* Friend classes
+* Static members
+* Operator overloading
+* Constructors and Destructors
 
 ## Rules
 
@@ -64,7 +65,7 @@ class methods like **constructors** and **destructors**
 
 Create the following files:
 
-* lab06b_program1.cpp
+* lab07a_program1.cpp
 * DynamicArray.hpp
 * DynamicArray.cpp
 
@@ -140,7 +141,7 @@ void DynamicArray::Display()
 }
 ```
 
-**lab06b_program1.cpp**
+**lab07a_program1.cpp**
 
 ```c++
 #include <iostream>
@@ -428,7 +429,7 @@ void Set( int index, string value );
 
 ## Example output
 
-![Program 1 screenshot](images/lab06b_prog1.png)
+![Program 1 screenshot](images/lab07a_prog1.png)
 
 ---
 
@@ -443,11 +444,11 @@ Create a new solution and files for this project!
 
 Create the following files:
 
-* lab06b_program2.cpp
+* lab07a_program2.cpp
 * Kitten.hpp
 * Kitten.cpp
 
-**lab06b_program2.cpp**
+**lab07a_program2.cpp**
 
 ```c++
 #include <iostream>
@@ -548,13 +549,13 @@ Create a new solution for this project!
 
 Create the following files:
 
-* lab06b_program3.cpp
+* lab07a_program3.cpp
 * Button.hpp
 * Button.cpp
 
 ## Starter code
 
-**lab06b_program3.cpp**
+**lab07a_program3.cpp**
 
 ```c++
 #include <iostream>
@@ -653,13 +654,13 @@ We will be implementing a Coordinate Pair class and overloading some operators.
 
 Create a new solution, and begin with the following files:
 
-* lab06b_program4.cpp
+* lab07a_program4.cpp
 * CoordinatePair.hpp
 * CoordinatePair.cpp
 
 ## Starter code
 
-**lab06b_program4.cpp**
+**lab07a_program4.cpp**
 
 ```c++
 ```
