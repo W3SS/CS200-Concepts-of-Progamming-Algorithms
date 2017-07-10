@@ -529,7 +529,7 @@ The steps for this one are almost exactly like for addition, but instead you cal
 <details><summary><strong> Subtraction </strong></summary>
 
 ```c++
-    Fraction Add( Fraction other )
+    Fraction Subtract( Fraction other )
     {
         Fraction result;
         Fraction common1;
