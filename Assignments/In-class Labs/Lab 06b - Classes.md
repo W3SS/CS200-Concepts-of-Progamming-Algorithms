@@ -670,7 +670,7 @@ get to location at index 8, the game should end.
 1. What is the operator that you use to access a class' function via a pointer?
 1. When pointers are not being used (i.e., assigned some address of a valid item), they should be defaulted to what value?
 
-
+    
 
 
 
