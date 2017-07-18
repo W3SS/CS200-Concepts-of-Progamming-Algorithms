@@ -772,9 +772,6 @@ You will be able to access the following variables here:
 You should add *m_x* from item1 and item2 and store it in the sum,
 and add *m_y* from item1 and item2 and store it in the sum.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint - Add        </em></strong></summary>
-
 ```c++
 	CoordinatePair sum;
 
@@ -783,11 +780,6 @@ and add *m_y* from item1 and item2 and store it in the sum.
 
 	return sum;
 ```
-
-</details>
-
-
-
 
 
 
@@ -818,9 +810,6 @@ You will be able to access the following variables here:
 You should subtract *m_x* from item1 and item2 and store it in the difference,
 and subtract *m_y* from item1 and item2 and store it in the difference.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint - subtract        </em></strong></summary>
-
 ```c++
 	CoordinatePair difference;
 
@@ -829,8 +818,6 @@ and subtract *m_y* from item1 and item2 and store it in the difference.
 
 	return difference;
 ```
-
-</details>
 
 
 
@@ -851,14 +838,9 @@ and see if item1's ```m_y``` equals item2's ```m_y```.
 
 If they both match, return **true**. Otherwise, return **false**.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint -         </em></strong></summary>
-
 ```c++
 	return ( item1.m_x == item2.m_x && item1.m_y == item2.m_y );
 ```
-
-</details>
 
 
 
@@ -878,14 +860,9 @@ bool operator!=( const CoordinatePair& item1, const CoordinatePair& item2 )
 Basically the opposite logic of the ```==``` operator, if the two coordinate pairs
 are not equivalent, then return **true**. Otherwise, if they are equal, return **false**.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint -         </em></strong></summary>
-
 ```c++
 	return !( item1.m_x == item2.m_x && item1.m_y == item2.m_y );
 ```
-
-</details>
 
 
 
@@ -903,16 +880,10 @@ ostream& operator<<( ostream& out, CoordinatePair& item )
 Above ```return out;```, you will use ```out``` similar to how you would use ```cout```,
 and display the values of ```item.m_x``` and ```item.m_y```.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint - Outputting        </em></strong></summary>
-
 ```c++
     out << "(" << item.m_x << ", " << item.m_y << ")";
 	return out;
 ```
-
-</details>
-
 
 
 
@@ -928,15 +899,12 @@ istream& operator>>( istream& in, CoordinatePair& item )
 Above ```return in;```, you will use ```in``` similar to how you would use ```cin```,
 and get input and store it in ```item.m_x``` and ```item.m_y```.
 
-<!-- HINT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<details> <summary><strong><em>       Hint - Getting input        </em></strong></summary>
 
 ```c++
 	in >> item.m_x >> item.m_y;
 	return in;
 ```
 
-</details>
 
 
 
