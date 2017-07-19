@@ -49,6 +49,176 @@ The rest of the code is already finished.
 
 ---
 
+**Question.hpp**
+
+```c++
+#ifndef _QUESTION_HPP
+#define _QUESTION_HPP
+
+#endif
+```
+
+**Question.cpp**
+
+```c++
+#include "Question.hpp"
+```
+
+**Quizzer.hpp**
+
+```c++
+#ifndef _QUIZZER_HPP
+#define _QUIZZER_HPP
+
+#include "Question.hpp"
+
+class Quizzer
+{
+public:
+    Quizzer();
+
+    void AddTrueFalseQuestion( TrueFalseQuestion* q );
+    void AddMultipleChoiceQuestion( MultipleChoiceQuestion* q );
+
+    void Run();
+
+private:
+    TrueFalseQuestion* m_tfQuestions[3];
+    MultipleChoiceQuestion* m_mcQuestions[3];
+
+    int m_count_tfQuestions;
+    int m_count_mcQuestions;
+};
+
+#endif
+```
+
+**Quizzer.cpp**
+
+```c++
+#include "Quizzer.hpp"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+Quizzer::Quizzer()
+{
+    m_count_mcQuestions = 0;
+    m_count_tfQuestions = 0;
+}
+
+void Quizzer::AddTrueFalseQuestion( TrueFalseQuestion* q )
+{
+    if ( m_count_tfQuestions >= 3 ) { return; }
+    m_tfQuestions[ m_count_tfQuestions++ ] = q;
+}
+
+void Quizzer::AddMultipleChoiceQuestion( MultipleChoiceQuestion* q )
+{
+    if ( m_count_mcQuestions >= 3 ) { return; }
+    m_mcQuestions[ m_count_mcQuestions++ ] = q;
+}
+
+void Quizzer::Run()
+{
+    int totalQuestions = m_count_tfQuestions + m_count_mcQuestions;
+    int totalRight = 0;
+
+    for ( int i = 0; i < m_count_tfQuestions; i++ )
+    {
+        m_tfQuestions[ i ]->Display();
+
+        string answer;
+        cin >> answer;
+
+        bool correct = m_tfQuestions[i]->CheckAnswer( answer );
+
+        if ( correct )
+        {
+            cout << "CORRECT!" << endl;
+            totalRight++;
+        }
+        else
+        {
+            cout << "INCORRECT!" << endl;
+        }
+    }
+
+    for ( int i = 0; i < m_count_mcQuestions; i++ )
+    {
+        m_mcQuestions[ i ]->Display();
+
+        int answer;
+        cin >> answer;
+
+        bool correct = m_mcQuestions[i]->CheckAnswer( answer );
+
+        if ( correct )
+        {
+            cout << "CORRECT!" << endl;
+            totalRight++;
+        }
+        else
+        {
+            cout << "INCORRECT!" << endl;
+        }
+    }
+
+    cout << endl << endl;
+    cout << "Final Score: " << totalRight << " out of " << totalQuestions << endl;
+}
+```
+
+**main.cpp**
+
+```c++
+#include <iostream>
+using namespace std;
+
+#include "Quizzer.hpp"
+
+int main()
+{
+    Quizzer quizzer;
+
+    TrueFalseQuestion tf1, tf2, tf3;
+    tf1.SetQuestionText( "Static arrays can be resized at run-time." );
+    tf1.SetCorrectAnswer( "false" );
+    quizzer.AddTrueFalseQuestion( &tf1 );
+
+    tf2.SetQuestionText( "Classes can contain member variables and functions." );
+    tf2.SetCorrectAnswer( "true" );
+    quizzer.AddTrueFalseQuestion( &tf2 );
+
+    tf3.SetQuestionText( "If you de-reference a nullptr, your program will crash." );
+    tf3.SetCorrectAnswer( "true" );
+    quizzer.AddTrueFalseQuestion( &tf3 );
+
+    MultipleChoiceQuestion mc1, mc2, mc3;
+    mc1.SetQuestionText( "Which of the following is the address-of operator?" );
+    mc1.SetAnswerChoices( "&", "*", "->", "::" );
+    mc1.SetCorrectAnswer( 0 );
+    quizzer.AddMultipleChoiceQuestion( &mc1 );
+
+    mc2.SetQuestionText( "Dynamic variables are allocated on the..." );
+    mc2.SetAnswerChoices( "stack", "heap", "queue", "array" );
+    mc2.SetCorrectAnswer( 1 );
+    quizzer.AddMultipleChoiceQuestion( &mc2 );
+
+    mc3.SetQuestionText( "When a value is being passed into a function call, it is known as a..." );
+    mc3.SetAnswerChoices( "parameter", "structure", "reference", "argument" );
+    mc3.SetCorrectAnswer( 3 );
+    quizzer.AddMultipleChoiceQuestion( &mc3 );
+
+    quizzer.Run();
+
+    return 0;
+}
+```
+
+---
+
 # The Question family
 
 ![Question class diagrams](images/201701_lab17_diagrams.png)
