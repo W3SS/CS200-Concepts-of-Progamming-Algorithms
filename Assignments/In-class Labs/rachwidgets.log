@@ -1,0 +1,42 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.30)  19 JUL 2017 15:19
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**rachwidgets.sty
+(./rachwidgets.sty
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
+
+LaTeX Warning: You have requested package `',
+               but the package provides `rachwidgets'.
+
+Package: rachwidgets 
+
+./rachwidgets.sty:4: LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \usepackage[utf8]{
+                      inputenc}
+? 
+./rachwidgets.sty:4: Emergency stop.
+ ...                                              
+                                                  
+l.4 \usepackage[utf8]{
+                      inputenc}
+\usepackage may only appear in the document preamble, i.e.,
+between \documentclass and \begin{document}.
+
+ 
+Here is how much of TeX's memory you used:
+ 8 strings out of 494953
+ 301 string characters out of 6180977
+ 45171 words of memory out of 5000000
+ 3391 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 7i,0n,5p,47b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+./rachwidgets.sty:4:  ==> Fatal error occurred, no output PDF file produced!

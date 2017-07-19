@@ -1,0 +1,631 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage[utf8]{inputenc}
+\author{Rachel Morris}
+\date{\today}
+\title{ Lab 07b }
+
+\usepackage{rachwidgets}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{boxedminipage}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{CS 200}
+\chead{Summer 2017}
+\rhead{Lab 07b}
+\rfoot{\thepage\ of \pageref{LastPage}}
+\lfoot{By Rachel Morris \date}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}    
+    \chapter*{CS 200 Lab 07b: Inheritance} \stepcounter{chapter}
+        \section*{Topics}
+        
+            \begin{itemize}
+                \item Classes
+                \item Inheritance
+            \end{itemize}
+
+        \section*{Starting out}
+
+            Make sure to download the following code files:
+
+            \begin{itemize}
+                \item main.cpp
+                \item Question.hpp
+                \item Question.cpp
+                \item Quizzer.hpp
+                \item Quizzer.cpp
+            \end{itemize}
+
+            Starting off, we won't use all the files at first.
+
+            Create a new project, and only import \textbf{ Question.hpp }
+            and \\ \textbf{ Question.cpp }, and create \textbf{ main.cpp } with
+            just the standard program starting point.
+
+            Start off with the code on the next page.
+
+            \newpage            
+                \subsubsection*{Question.hpp}
+\begin{lstlisting}[style=code]
+#ifndef _QUESTION_HPP
+#define _QUESTION_HPP
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Question
+{
+};
+
+class TrueFalseQuestion : public Question
+{
+};
+
+class MultipleChoiceQuestion : public Question
+{
+};
+
+#endif
+\end{lstlisting}
+
+            
+                \subsubsection*{Question.cpp}
+\begin{lstlisting}[style=code]
+#include "Question.hpp"
+\end{lstlisting}
+
+            
+                \subsubsection*{main.cpp}
+\begin{lstlisting}[style=code]
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "Question.hpp"
+
+int main()
+{
+    return 0;
+}
+
+\end{lstlisting}
+
+            \newpage
+            \subsection*{The Question family}
+
+            First, we will build out the \textbf{ Question } base class.
+
+            We aren't going to create any Question objects, but it is the
+            starting point for all other questions - this class will contain
+            that which is in common to all other Questions.
+
+                    \paragraph{ Question class }
+                    
+                        \subparagraph{ Member variables } ~\\
+                            
+                            % table %
+                            \begin{tabular}{ l l l l }
+                                Accessibility & Data Type & Variable Name & Info \\ \hline{}
+                                protected & string & m\_questionText & Used to store the question
+                            \end{tabular}
+                            % table %
+                        
+                        \subparagraph{ Member functions } ~\\
+
+                            % table - functions %
+                            \begin{tabular}{ l l l l l }
+                                Accessibility & Return Type & Function Name & Parameters & Info \\ \hline{}
+                                public & void & Display & - & Used to display the question \\ \hline{}
+                                public & void & SetQuestionText & string text & Used to set m\_questionText
+                            \end{tabular}
+                            % table - functions %
+
+                        \subparagraph{ void Display() } ~\\
+                            Use a \texttt{ cout } statement to display
+                            the value of \texttt{ m\_questionText }.
+
+
+                        \subparagraph{ void SetQuestionText( string text ) } ~\\
+
+                            This function will be reused by the child classes.
+                            Write an assignment statement that will set the
+                            private member variable, \texttt{ m\_questionText },
+                            to the value of the parameter passed in.
+                            
+                            % framed box %
+                            \begin{mdframed}[backgroundcolor=error] 
+                                \textbf{ Common mistake }
+
+                                Make sure that you're not \textit{ redeclaring }
+                                the variable \texttt{ m\_questionText } -- You shouldn't
+                                be using its data type here. \\
+
+                                \texttt{ m\_questionText } is already a \textbf{ member }
+                                of the Question class. Just use it by name.
+                            \end{mdframed}
+                            % framed box %
+
+                    \newpage{}
+                    \paragraph{ Testing } ~\\
+                        Before continuing, test your Question class!
+
+                        Within \texttt{ main() }, declare a Quesiton object,
+                        and make sure that both \texttt{ SetQuestion } and
+                        \texttt{ Display } function calls work correctly.
+                    
+                    \paragraph{ TrueFalseQuestion class } ~\\
+                        This question type will display the question,
+                        then ask the user to enter \textit{ true } or
+                        \textit{ false }, and then figure out if they
+                        answered correctly.
+
+                        This means that we need functions to set whether
+                        \textit{ true } or \textit{ false } is the correct
+                        answer, as well as to check the user's response.
+
+                        \subparagraph{ Member variables } ~\\
+                            
+                            % table %
+                            \begin{tabular}{ l l l l }
+                                Accessibility & Data Type & Variable Name \\ \hline{}
+                                private & string & m\_correctAnswer 
+                            \end{tabular}
+                            % table %
+                        
+                        \subparagraph{ Member functions } ~\\
+
+                            % table - functions %
+                            \begin{tabular}{ l l l l l }
+                                Accessibility & Return Type & Function Name & Parameters  \\ \hline{}
+                                public & void & Display & -  \\ \hline{}
+                                public & void & SetQuestionText & string correctAnswer \\ \hline{}
+                                public & bool & CheckAnswer & string userAnswer
+                            \end{tabular}
+                            % table - functions %
+
+                        \subparagraph{ void Display() } ~\\
+
+                            This function should call the parents' version of
+                            the \texttt{ Display } function first, then add
+                            its own unique code in.
+                            
+% code box %
+\begin{lstlisting}[style=code]
+void TrueFalseQuestion::Display()
+{
+    Question::Display();
+}
+\end{lstlisting}
+% code box %
+                            Afterward, display another message, asking, \\
+                            \textit{ "True or false?" }
+
+                        \newpage
+                        \subparagraph{ void SetCorrectAnswer( string correctAnswer ) }  ~\\
+
+                            This function is responsible for assigning the \textit{ value }
+                            of the parameter \texttt{ correctAnswer } to the member variable
+                            \texttt{ m\_correctAnswer }.
+
+                            % framed box %
+                            \begin{mdframed}[backgroundcolor=hint] 
+                            \textbf{ Assignment statement }
+
+                            VARIABLE = VALUE;
+                            \end{mdframed}
+                            % framed box %
+
+                        \subparagraph{ bool CheckAnswer( string userAnswer ) } ~\\
+
+                            This function receives the answer that the user gave,
+                            as the parameter \texttt{ userAnswer }.
+
+                            This function should compare \texttt{ userAnswer } to
+                            the member variable \texttt{ m\_correctAnswer } in order
+                            to decide if the user was correct or not.
+
+                            \begin{itemize}
+                                \item If \texttt{ userAnswer } and \texttt{ m\_correctAnswer } match, then return \texttt{ true }.
+                                \item Otherwise, return \texttt{ false }.
+                            \end{itemize}
+                        
+                    \paragraph{ Testing } ~\\
+                        Before continuing, test your TrueFalseQuestion class!
+
+                        Within \texttt{ main() }, declare a TrueFalseQuestion object.
+                        Use \texttt{ SetQuestionText } to set its question and
+                        \texttt{ SetCorrectAnswer } to set the correct answer,
+                        then use \texttt{ Display } to view the question text,
+                        and \texttt{ CheckAnswer } to see if it correctly detects
+                        right and wrong answers. \newpage
+
+% code box %
+\begin{lstlisting}[style=code]
+int main()
+{
+    TrueFalseQuestion tfQuestion;
+
+    tfQuestion.SetQuestionText( "Is Kansas a state?" );
+    tfQuestion.SetCorrectAnswer( "true" );
+
+    tfQuestion.Display();
+    string answer;
+    cin >> answer;
+
+    bool result = tfQuestion.CheckAnswer( answer );
+
+    if ( result == true )
+        cout << "Correct answer!" << endl;
+    else
+        cout << "Wrong answer!" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+% code box %
+
+% program output %
+\begin{lstlisting}[style=output]
+Is Kansas a state?
+(true/false): true
+Correct answer!
+\end{lstlisting}
+% program output %
+
+                    \newpage
+                    \paragraph{ MultipleChoiceQuestion class } ~\\
+                        This type of question will display four options
+                        for the user to choose from. The user will select
+                        1, 2, 3, or 4, and only one answer will be right.
+                        
+                        This means that we need functions to set the
+                        text for options 1, 2, 3, and 4, as well as
+                        store whether option 1, 2, 3, or 4 is the
+                        correct answer.
+
+                        \subparagraph{ Member variables } ~\\
+                            
+                            % table %
+                            \begin{tabular}{ l l l l }
+                                Accessibility & Data Type & Variable Name \\ \hline{}
+                                private & string array, size 4 & m\_answers \\ \hline{}
+                                private & int & m\_correctAnswer
+                            \end{tabular}
+                            % table %
+                        
+                        \subparagraph{ Member functions } ~\\
+
+                            % table - functions %
+                            \begin{tabular}{ l l l l l }
+                                Accessibility & Return Type & Function Name & Parameters  \\ \hline{}
+                                public & void & Display & -  \\ \hline{}
+                                public & void & SetAnswerChoices & string a, string b, \\
+                                & & & string c, string d \\ \hline{}
+                                public & void & SetCorrectAnswer & int correctAnswer \\ \hline{}
+                                public & bool & CheckAnswer & int userAnswer
+                            \end{tabular}
+                            % table - functions %
+
+
+                        
+                        \subparagraph{ void SetAnswerChoices( string a, string b, string c, string d ) } ~\\
+                            Set each of the elements of the array \texttt{ m\_answers }
+                            to one of the parameters. \\
+
+                            \begin{tabular}{ c c }
+                                Answer \#0 = a &
+                                Answer \#1 = b \\
+                                Answer \#2 = c &
+                                Answer \#3 = d
+                            \end{tabular}
+                            
+                        \subparagraph{ void Display() } ~\\
+                            Once again, call the \texttt{ Question } class' version of
+                            \texttt{ Display() }, and then use a \textbf{ for loop }
+                            to iterate over all 4 options in the member array,
+                            \texttt{ m\_answers }, displaying them to the screen.
+                        
+                        \subparagraph{ void SetCorrectAnswer( int correct ) } ~\\
+                            The parameter \texttt{ correct } stores the \textit{ index }
+                            of the \texttt{ m\_answers } element that is storing
+                            the correct answer.
+
+                            Store this value in the \texttt{ m\_correctAnswer } member variable.
+
+                        \newpage
+                        \subparagraph{ bool CheckAnswer( int userAnswer ) } ~\\
+
+                            This function receives the answer that the user gave,
+                            as the parameter \texttt{ userAnswer }.
+
+                            This function should compare \texttt{ userAnswer } to
+                            the member variable \texttt{ m\_correctAnswer } in order
+                            to decide if the user was correct or not.
+
+                            \begin{itemize}
+                                \item If \texttt{ userAnswer } and \texttt{ m\_correctAnswer } match, then return \texttt{ true }.
+                                \item Otherwise, return \texttt{ false }.
+                            \end{itemize}
+                        
+                    \paragraph{ Testing } ~\\
+                        Write a test that creates a MultipleChoiceQuestion,
+                        sets the question with \texttt{ SetQuestionText },
+                        sets the answer choices with \texttt{ SetAnswerChoices },
+                        sets the correct answer with \texttt{ SetCorrectAnswer },
+                        displays the question with \texttt{ Display },
+                        and checks if the user's answer was right with \texttt{ CheckAnswer }. \\
+
+                    \newpage
+% code box %
+\begin{lstlisting}[style=code]
+int main()
+{
+    MultipleChoiceQuestion mcQuestion;
+
+    mcQuestion.SetQuestionText( "What is the capital of Kansas?" );
+    mcQuestion.SetAnswerChoices( "Topeka", "Wichita",
+                                "Kansas City", "Boise" );
+    mcQuestion.SetCorrectAnswer( 0 );
+
+    mcQuestion.Display();
+    int answer;
+    cout << ">> ";
+    cin >> answer;
+
+    bool result = mcQuestion.CheckAnswer( answer );
+
+    if ( result == true )
+        cout << "Correct answer!" << endl;
+    else
+        cout << "Wrong answer!" << endl;
+
+    return 0;
+}
+\end{lstlisting}
+% code box %
+
+% program output %
+\begin{lstlisting}[style=output]
+What is the capital of Kansas?
+
+OPTIONS:
+0. Topeka
+1. Wichita
+2. Kansas City
+3. Boise
+>> 2
+Wrong answer!
+
+\end{lstlisting}
+% program output %
+                    
+            \newpage{}
+            \subsection*{The full program}
+
+                Now that your Question classes are working,
+                import in the \textbf{ Quizzer.hpp } and \textbf{ Quizzer.cpp }
+                files to your project, and overwrite \textbf{ main.cpp }
+                with the file provided.
+
+
+            \subsection*{Quizzer.hpp}
+\begin{lstlisting}[style=code]
+#ifndef _QUIZZER_HPP
+#define _QUIZZER_HPP
+
+#include "Question.hpp"
+
+class Quizzer
+{
+public:
+    Quizzer();
+
+    void AddTrueFalseQuestion( TrueFalseQuestion* q );
+    void AddMultipleChoiceQuestion( MultipleChoiceQuestion* q );
+
+    void Run();
+
+private:
+    TrueFalseQuestion* m_tfQuestions[3];
+    MultipleChoiceQuestion* m_mcQuestions[3];
+
+    int m_count_tfQuestions;
+    int m_count_mcQuestions;
+};
+\end{lstlisting}
+
+            
+            \subsection*{Quizzer.cpp}
+\begin{lstlisting}[style=code]
+#include "Quizzer.hpp"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+Quizzer::Quizzer()
+{
+    m_count_mcQuestions = 0;
+    m_count_tfQuestions = 0;
+}
+
+void Quizzer::AddTrueFalseQuestion( TrueFalseQuestion* q )
+{
+    if ( m_count_tfQuestions >= 3 ) { return; }
+    m_tfQuestions[ m_count_tfQuestions++ ] = q;
+}
+
+void Quizzer::AddMultipleChoiceQuestion( MultipleChoiceQuestion* q )
+{
+    if ( m_count_mcQuestions >= 3 ) { return; }
+    m_mcQuestions[ m_count_mcQuestions++ ] = q;
+}
+
+void Quizzer::Run()
+{
+    int totalQuestions = m_count_tfQuestions + m_count_mcQuestions;
+    int totalRight = 0;
+
+    for ( int i = 0; i < m_count_tfQuestions; i++ )
+    {
+        m_tfQuestions[ i ]->Display();
+
+        string answer;
+        cin >> answer;
+
+        bool correct = m_tfQuestions[i]->CheckAnswer( answer );
+
+        if ( correct )
+        {
+            cout << "CORRECT!" << endl;
+            totalRight++;
+        }
+        else
+        {
+            cout << "INCORRECT!" << endl;
+        }
+    }
+
+    for ( int i = 0; i < m_count_mcQuestions; i++ )
+    {
+        m_mcQuestions[ i ]->Display();
+
+        int answer;
+        cin >> answer;
+
+        bool correct = m_mcQuestions[i]->CheckAnswer( answer );
+
+        if ( correct )
+        {
+            cout << "CORRECT!" << endl;
+            totalRight++;
+        }
+        else
+        {
+            cout << "INCORRECT!" << endl;
+        }
+    }
+
+    cout << endl << endl;
+    cout << "Final Score: " << totalRight << " out of " << totalQuestions << endl;
+}
+\end{lstlisting}
+
+            \newpage                    
+            \subsection*{main.cpp}
+\begin{lstlisting}[style=code]
+#include <iostream>
+using namespace std;
+
+#include "Quizzer.hpp"
+
+int main()
+{
+    Quizzer quizzer;
+
+    TrueFalseQuestion tf1, tf2, tf3;
+    tf1.SetQuestionText( "Static arrays can be resized at run-time." );
+    tf1.SetCorrectAnswer( "false" );
+    quizzer.AddTrueFalseQuestion( &tf1 );
+
+    tf2.SetQuestionText( "Classes can contain member variables and functions." );
+    tf2.SetCorrectAnswer( "true" );
+    quizzer.AddTrueFalseQuestion( &tf2 );
+
+    tf3.SetQuestionText( "It is good practice to set a pointer to nullptr when not in use." );
+    tf3.SetCorrectAnswer( "true" );
+    quizzer.AddTrueFalseQuestion( &tf3 );
+
+    MultipleChoiceQuestion mc1, mc2, mc3;
+    mc1.SetQuestionText( "Which of the following is the address-of operator?" );
+    mc1.SetAnswerChoices( "&", "*", "->", "::" );
+    mc1.SetCorrectAnswer( 0 );
+    quizzer.AddMultipleChoiceQuestion( &mc1 );
+
+    mc2.SetQuestionText( "Dynamic variables are allocated on the..." );
+    mc2.SetAnswerChoices( "stack", "heap", "queue", "array" );
+    mc2.SetCorrectAnswer( 1 );
+    quizzer.AddMultipleChoiceQuestion( &mc2 );
+
+    mc3.SetQuestionText( "When a value is being passed into a function call, it is known as a..." );
+    mc3.SetAnswerChoices( "parameter", "structure", "reference", "argument" );
+    mc3.SetCorrectAnswer( 3 );
+    quizzer.AddMultipleChoiceQuestion( &mc3 );
+
+    quizzer.Run();
+
+    return 0;
+}
+\end{lstlisting}
+
+            \newpage{}
+            \subsection*{ Run and test }
+
+                Run the program and make sure it works with your code
+
+% program output %
+\begin{lstlisting}[style=output]
+Static arrays can be resized at run-time.
+(true/false): false
+CORRECT!
+
+Classes can contain member variables and functions.
+(true/false): true
+CORRECT!
+
+It is good practice to set a pointer to nullptr when not in use.
+(true/false): true
+CORRECT!
+
+Which of the following is the address-of operator?
+
+OPTIONS:
+0. &
+1. *
+2. ->
+3. ::
+0
+CORRECT!
+
+Dynamic variables are allocated on the...
+
+OPTIONS:
+0. stack
+1. heap
+2. queue
+3. array
+1
+CORRECT!
+
+When a value is being passed into a function call, it is known as a...
+
+OPTIONS:
+0. parameter
+1. structure
+2. reference
+3. argument
+3
+CORRECT!
+
+
+Final Score: 6 out of 6
+\end{lstlisting}
+% program output %
+
+                        % subparagraph
+                    % paragraph
+                % subsubsection
+            % subsection
+        % section
+    % chapter
+
+
+
+
+\end{document}
