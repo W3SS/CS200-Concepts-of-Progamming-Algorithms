@@ -500,7 +500,8 @@ class Kitten
 
 **Kitten.cpp**
 
-```c++#include "Kitten.hpp"
+```c++
+#include "Kitten.hpp"
 
 // This is needed for our static member variable
 int Kitten::m_kittenCount = 0;
