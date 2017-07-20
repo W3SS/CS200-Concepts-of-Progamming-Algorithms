@@ -500,7 +500,8 @@ class Kitten
 
 **Kitten.cpp**
 
-```c++#include "Kitten.hpp"
+```c++
+#include "Kitten.hpp"
 
 // This is needed for our static member variable
 int Kitten::m_kittenCount = 0;
@@ -636,6 +637,24 @@ You can either hard-code this, or use a for-loop. A button should have a rectang
         ***********
         * Button! *
         ***********
+
+If you want the border to resize based on the text length, do the following:
+
+```c++
+// Draw a line of *'s that is the size of the text + 4.
+for (int i = 0; i < text.size() + 4; i++)
+{
+	cout << "*";
+}
+cout << endl;
+```
+
+Use the above to draw the top and bottom edges, then draw
+the text output in-between like this:
+
+```c++
+cout << "* " << text << " *" << endl;
+```
 
 ## Example output
 
