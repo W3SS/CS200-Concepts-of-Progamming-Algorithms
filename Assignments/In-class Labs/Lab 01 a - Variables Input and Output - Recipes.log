@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.30)  19 JUL 2017 19:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.30)  19 JUL 2017 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1068,52 +1068,57 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 2460) in paragraph at lines 50--53
+Underfull \hbox (badness 2460) in paragraph at lines 56--59
 []\OT1/cmr/m/n/12 First, you will need to cre-ate a new
  []
 
 
-Underfull \hbox (badness 7256) in paragraph at lines 50--53
+Underfull \hbox (badness 7256) in paragraph at lines 56--59
 \OT1/cmr/m/n/12 project in your IDE (Vi-sual Stu-dio,
  []
 
 
-Underfull \hbox (badness 1314) in paragraph at lines 50--53
+Underfull \hbox (badness 1314) in paragraph at lines 56--59
 \OT1/cmr/m/n/12 Code::Blocks, etc.). Name the project
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-
+Underfull \hbox (badness 1983) in paragraph at lines 56--59
+\OT1/cmr/bx/n/12 LAB1[]INTRO[]PROJECT \OT1/cmr/m/n/12 . You will
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
+Underfull \hbox (badness 5637) in paragraph at lines 56--59
+\OT1/cmr/m/n/12 also cre-ate one source file, name it
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
-Package mdframed Info: mdframed works in twoside mode on input line 59.
+Package mdframed Info: mdframed works in twoside mode on input line 65.
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
-Package mdframed Info: Not enough space on this page on input line 91.
+Package mdframed Info: Not enough space on this page on input line 97.
 [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package mdframed Info: Not enough space on this page on input line 91.
+Package mdframed Info: Not enough space on this page on input line 97.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1122,17 +1127,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Underfull \hbox (badness 1264) in paragraph at lines 99--101
+Underfull \hbox (badness 1264) in paragraph at lines 105--107
 []\OT1/cmr/m/n/12 A  \OT1/cmr/bx/n/12 li-brary  \OT1/cmr/m/n/12 is code
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 99--101
+Underfull \hbox (badness 1168) in paragraph at lines 105--107
 \OT1/cmr/m/n/12 that has been writ-ten
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
 
  []
 
@@ -1147,128 +1152,187 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 112.
+put line 118.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 113.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 119.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 113.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 113.
+put line 119.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 114.
+put line 120.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 115.
+put line 121.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 115.
+put line 121.
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 144.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 150.
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--188
+Underfull \hbox (badness 10000) in paragraph at lines 190--194
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 204--207
+Underfull \hbox (badness 10000) in paragraph at lines 210--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 269--273
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--290
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 293.
+
+Overfull \hbox (6.57182pt too wide) in paragraph at lines 300--302
+[]\OT1/cmr/m/n/12 To make sure your pro-gram doesn't end im-me-di-ately, add  \
+OT1/cmtt/m/n/12 cin.get();
+ []
+
+[6]
+Overfull \hbox (26.52425pt too wide) in paragraph at lines 309--312
+\OT1/cmr/m/n/12 Create a new project in your IDE. Name the project  \OT1/cmr/bx
+/n/12 LAB1[]PART1[]PROJECT
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--331
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 342
+.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 342.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 342.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 340--344
 
  []
 
 
 AED: lastpage setting LastPage
-[5] (./Lab 01 a - Variables Input and Output - Recipes.aux) ) 
+[7] (./Lab 01 a - Variables Input and Output - Recipes.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
 Here is how much of TeX's memory you used:
- 21414 strings out of 494953
- 412920 string characters out of 6180977
- 572586 words of memory out of 5000000
- 24379 multiletter control sequences out of 15000+600000
+ 21444 strings out of 494953
+ 413211 string characters out of 6180977
+ 593603 words of memory out of 5000000
+ 24407 multiletter control sequences out of 15000+600000
  13545 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,11n,75p,10478b,1502s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
->
-Output written on "Lab 01 a - Variables Input and Output - Recipes.pdf" (5 page
-s, 115130 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt12.pfb>
+Output written on "Lab 01 a - Variables Input and Output - Recipes.pdf" (7 page
+s, 122243 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 71 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

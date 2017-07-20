@@ -38,7 +38,13 @@
                     Once you are finished, turn in each \textbf{ part }'s source file. These will
                     have the extention .cpp, and in Windows, it will show up as \textbf{ C++ source file }.
 
-        \section*{ Program 1: Output only }
+
+
+
+
+
+
+        \section*{ Introduction: Project, main, and cout }
             \subsection*{ Create the project }
 
 % side box %
@@ -48,15 +54,15 @@
 % side box %
             
                 First, you will need to create a new project in your IDE (Visual Studio, Code::Blocks, etc.).
-                Name the project \textbf{ lab1\_yourname }. You will also create one source file,
-                name it \textbf{ lab1\_part1.cpp } \\
+                Name the project \textbf{ LAB1\_INTRO\_PROJECT }. You will also create one source file,
+                name it \textbf{ lab1\_intro.cpp } \\
 
                 For help on how to create a project and a file, see below.
 
                 
             
 % introduction %
-\begin{mdframed}[backgroundcolor=intro] 
+\begin{mdframed}[backgroundcolor=intro]
 \textbf{ Creating a project in Visual Studio } ~\\
 
 \begin{enumerate}
@@ -225,16 +231,131 @@ int main()
                 and are used to start writing text on a new line.
                 The output for this example code would look like this:
 
+% output %
 \begin{lstlisting}[style=output]
 Hello
 World!
 \end{lstlisting}
+% output %
 
                 ~\\
                 If we didn't have any \texttt{ endl } statements, then
                 all text would run together on the same line.
+
+                ~\\
+
+                Type out the following code, adn then build and run to practice.
+
+% code %
+\begin{lstlisting}[style=code]
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Hello, world!" << endl;
+
+    cin.get();
+    return 0;
+}
+\end{lstlisting}
+% code %
+
+
+                    
+                    \newpage
+                    \paragraph{ Build your program: }
+
+                        In order to test out your program, you must first
+                        \textit{ build } it, and then \textit{ run } it.
+                        To build your program in Visual Studio, go to
+                        \textbf{ Build - Build Solution } from the top menu. \\
+
+                    \paragraph{ Build status: }
+                        At the bottom of the screen, there is a pane
+                        titled \\ \textbf{ Output }. This will show the status
+                        while your program is building. \\
+
+                    \paragraph{ Build errors: }
+                        If there is a \textbf{ syntax error } in  your program,
+                        such as a typo, then you will get a \textbf{ build error },
+                        and you will have to fix it and build again. 
+                        Build errors are listed out in the \textbf{ Error List } pane.
+
+                    \paragraph{ Run your program: }
+
+                        Once the build is completed, you can run the program
+                        by going to 
+                        \textbf{ Build - Start Debugging }. ~\\
+
+
+                    
+                        \begin{mdframed}[backgroundcolor=error]
+                            \textbf{ Program opens and closes immediately! }
+                            
+                            If you see a black box pop up and immediately close,
+                            that's your program running. Once the program hits
+                            the \texttt{ return 0; } command, it closes the program.
+
+                            To make sure your program doesn't end immediately, add
+                            \texttt{ cin.get(); } before the \texttt{ return 0; }
+                        \end{mdframed}
+
+
+
+        \newpage
+        \section*{ Project 1: Displaying a recipe }
             
-            
+                Create a new project in your IDE.
+                Name the project \textbf{ LAB1\_PART1\_PROJECT }. You will also create one source file,
+                name it \textbf{ lab1\_part1.cpp } \\
+
+                Use the following as the starting point for the program:
+
+% code %
+\begin{lstlisting}[style=code]
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    return 0;
+}
+\end{lstlisting}
+% code %
+
+                ~\\
+                For this project, you will display a cookie recipe to the screen.
+                Using \texttt{ cout } statements, write out each of the following ingredients: \\
+
+                \begin{tabular}{ l l }
+                    1 tsp & baking soda \\
+                    1/2 tsp & baking powder \\
+                    1 c & butter \\
+                    1 1/2 c & white sugar \\
+                    1 & egg
+                \end{tabular}
+
+                ~\\
+                You can have multiple \texttt{ cout } statements, or put all of these
+                in the same statement. You can also use \texttt{ "\textbackslash t" } to add a tab
+                in your output. \\
+
+                When you run the program, your output should look like this:
+
+% output %
+\begin{lstlisting}[style=output]
+1 tsp baking soda
+1/2 tsp baking powder
+1 c butter
+1 1/2 c white sugar
+1 egg
+\end{lstlisting}
+% output %
+
+                
+                
                         % subparagraph
                     % paragraph
                 % subsubsection
