@@ -111,8 +111,8 @@ int main()
                             
                             % table %
                             \begin{tabular}{ l l l l }
-                                Accessibility & Data Type & Variable Name & Info \\ \hline{}
-                                protected & string & m\_questionText & Used to store the question
+                                Accessibility & Data Type & Variable Name  \\ \hline{}
+                                protected & string & m\_questionText
                             \end{tabular}
                             % table %
                         
@@ -120,15 +120,26 @@ int main()
 
                             % table - functions %
                             \begin{tabular}{ l l l l l }
-                                Accessibility & Return Type & Function Name & Parameters & Info \\ \hline{}
-                                public & void & Display & - & Used to display the question \\ \hline{}
-                                public & void & SetQuestionText & string text & Used to set m\_questionText
+                                Accessibility & Return Type & Function Name & Parameters \\ \hline{}
+                                public & void & Display & - \\ \hline{}
+                                public & void & SetQuestionText & string text 
                             \end{tabular}
                             % table - functions %
 
                         \subparagraph{ void Display() } ~\\
                             Use a \texttt{ cout } statement to display
                             the value of \texttt{ m\_questionText }.
+
+                            % framed box %
+                            \begin{mdframed}[backgroundcolor=hint] 
+                            \textbf{ Display the value of the variable... }
+
+                            \texttt{ cout $ << $ VARIABLE $ << $ endl; }
+                            
+                            The \textbf{ variable } is \texttt{ m\_questionText }
+                            \end{mdframed}
+                            % framed box %
+                            
 
 
                         \newpage
