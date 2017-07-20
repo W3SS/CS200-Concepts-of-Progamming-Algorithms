@@ -57,13 +57,171 @@
             
 % introduction %
 \begin{mdframed}[backgroundcolor=intro] 
-\textbf{ Creating a project in Visual Studio }
-In any right triangle, the area of the square whose side is the hypotenuse is equal to the sum of the areas of the squares whose sides are the two legs.
+\textbf{ Creating a project in Visual Studio } ~\\
+
+\begin{enumerate}
+    \item Go to \textbf{ File - New - Project... }.
+    \item In the New Project window, select \textbf{ Visual C++ } from the left side.
+    \item In the center, select \textbf{ Empty Project }. (It must be Empty Project!)
+    \item At the bottom, give your project a name in the \textbf{ Name } textbox.
+    \item Next to the \textbf{ Location } textbox, click on \textbf{ Browse... }
+    \begin{itemize}
+        \item If you're working on a school computer, it might be good to
+        navigate to the Desktop and place your project here for quick access.
+        \item Avoid putting your project in the \textit{ temp } directory.
+        \item If you store your project on a thumbdrive, the compile process
+        will be very slow. Move the project to your thumbdrive after you're done
+        with your work.
+    \end{itemize}
+    \item Click OK
+\end{enumerate}
+
+At this point, you will have a new project, but it will be empty. You will need to add a source file.
+
+\begin{enumerate}
+    \item In the \textbf{ Solution Explorer }, right click your project and select
+        \textbf{ Add - New Item... }.
+    \item Select \textbf{ C++ File (.cpp) }, and at the bottom of the window,
+        enter a name in the \textbf{ Name } textbox.
+    \item Click \textbf{ Add }.
+\end{enumerate}
+
+Now when you double-click the source file in the Solution Explorer, it will open up.
+
 \end{mdframed}
 % introduction %
 
+            \newpage
+            \subsection*{ Add libraries }
+            
+% side box %
+\begin{WrapTextSide}
+    A \textbf{ library } is code that has been written by somebody else,
+    and ``packaged" so that the code can be used across multiple programs.
+\end{WrapTextSide}
+% side box %
 
+               To display text to the screen, we will need to include
+               the \textbf{ iostream } library in our program. The
+               iostream library contains a command called \texttt{ cout }
+               which allows us to do this.
 
+               At the top of your source file, add the following lines: ~\\
+
+% code %
+\begin{lstlisting}[style=code]
+#include <iostream>
+using namespace std;
+\end{lstlisting}
+% code %
+
+                ~\\
+               To import libraries of code, we use the \texttt{ \#include } command.
+
+               The C++ Standard Library contains many types of functionality,
+               including drawing text to the screen, getting input from the keyboard,
+               calculating square roots and trig functions, reading and writing
+               text files, and a lot more.
+               \textbf{ iostream } allows us to use \texttt{ cin } (console-input)
+               and \texttt{ cout } (console-output) in our programs.
+
+               The \texttt{ using namespace std; } line, for the time being,
+               we can take for granted. It is basically stating that we're using
+               the \textit{ standard } C++ library.
+
+           
+            \subsection*{ Add comments }
+
+                In C++, there are two ways to add comments:
+                
+\begin{lstlisting}[style=code]
+// single line
+\end{lstlisting}
+
+or
+
+\begin{lstlisting}[style=code]
+/*
+Multi-
+Line
+Comment !
+*/
+\end{lstlisting}
+
+                At the top of your source file, add a comment
+                with your name.
+
+            \newpage
+            \subsection*{ Program starting point }
+
+                Every program in C++ begins at the \textbf{ main } function.
+                For now, we will just memorize how this part of the code looks.
+                Later on, we will write our own functions. \\
+                
+% code %
+\begin{lstlisting}[style=code]
+int main()
+{
+    return 0;
+}
+\end{lstlisting}
+% code %
+
+                ~\\
+                \textbf{ main } is the name of the function. Every function
+                opens and closes with \{ and \}, respectively. Any code
+                between the opening and closing curly braces are
+                \textit{ inside } the function.
+
+                The \texttt{ return 0; } command is where our program ends -
+                the 0 signifies, ``no errors occurred during the program execution".
+
+                While working in main() for now, your program code will go
+                below the \{ and above the \texttt{ return 0; }.
+
+            \subsection*{ Displaying output }
+
+                To write text to the screen in C++, we use the \textbf{ cout } command.
+                It will look like the following, and go within the \texttt{ main() }
+                function, after the opening curly brace \{ and before the
+                \texttt{ return 0; }. ~\\
+
+% code %
+\begin{lstlisting}[style=code]
+int main()
+{
+    cout << "Hello, world!";
+    return 0;
+}
+\end{lstlisting}
+% code %
+
+                ~\\
+                In C++, \textbf{ statements } end with a semicolon \texttt{ ; }.
+                The semicolon is how C++ knows you're done with a command.
+
+                \newpage
+                Commands can span several lines, as long as the semicolon
+                is there at the end. In the following example, the \texttt{ cout }
+                statement spans five lines, and ends at \texttt{ $<<$ endl; } \\
+
+% code %
+\begin{lstlisting}[style=code]
+int main()
+{
+    cout
+        << "Hello"
+        << endl
+        << "World!"
+        << endl;
+        
+    return 0;
+}
+\end{lstlisting}
+% code %
+
+                asdf
+            
             
                         % subparagraph
                     % paragraph

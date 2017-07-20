@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.30)  19 JUL 2017 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.30)  19 JUL 2017 19:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,9 +1082,9 @@ LaTeX Font Info:    Try loading font information for OML+cmr on input line 58.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <8> not available
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
 (Font)              Font shape `OML/cmm/b/it' tried instead on input line 58.
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <8> not available
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 63.
 
 
@@ -1143,6 +1143,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--182
  []
 
 
+Overfull \hbox (5.09647pt too wide) in paragraph at lines 184--191
+[][] 
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
@@ -1189,35 +1194,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 356--363
 
  []
 
-[8] [9] [10] [11] [12] 
+[8]
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <8> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 402.
+ [9] [10]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12] [13] [14]
+LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 590.
+ 
 AED: lastpage setting LastPage
-[13] (./Lab 07b - Inheritance.aux)
+[15] (./Lab 07b - Inheritance.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 21596 strings out of 494953
- 414338 string characters out of 6180977
- 736432 words of memory out of 5000000
- 24561 multiletter control sequences out of 15000+600000
- 12494 words of font info for 47 fonts, out of 8000000 for 9000
+ 21609 strings out of 494953
+ 414493 string characters out of 6180977
+ 724432 words of memory out of 5000000
+ 24571 multiletter control sequences out of 15000+600000
+ 14469 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 61i,12n,75p,10452b,1783s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmtt12.pfb>
-Output written on "Lab 07b - Inheritance.pdf" (13 pages, 140623 bytes).
+ 61i,12n,75p,10452b,1795s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmtt12.pfb>
+Output written on "Lab 07b - Inheritance.pdf" (15 pages, 175743 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
